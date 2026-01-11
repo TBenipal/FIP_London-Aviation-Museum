@@ -10,7 +10,7 @@
 - [License](#license)
 
 ## Description:
-This Project if for teams of students to design, develop, and pitch a professional marketing and advertising campaign and website for their Final Integrated Project London Aviation Museum.
+This project is for Team 1, and we will showcase our design, development, and pitch a professional marketing and advertising campaign, along with a website, for the 420 Squadron London Aviation Museum Project Final Integration. We are committed to delivering a compelling and impactful presentation.
 
 ## Languages:
 HTML5, CSS3, SASS, Javascript, PHP, mySQL
@@ -23,7 +23,13 @@ Cinema 4D, Microsoft 365, GSAP, WAMP
 2026 - Present
 
 ## Credits:
-Zakia Sultana, Tapshveer Benipal, Aayush Diyali, Andrea Do, Ajay Chakaravarthy Anthony Raj, Luciano Clementi 
+- Zakia Sultana : Project Manager 
+- Tapshveer Benipal : Front End Devloper
+- Aayush Diyali : Motion Designer 
+- Andrea Do : Graphic Designer 
+- Ajay Chakaravarthy : Back End Devloper 
+- Luciano Clementi : Flex
+- Felipe Yamashiro Souza : UX Designer
 
 ## License:
 MIT License
