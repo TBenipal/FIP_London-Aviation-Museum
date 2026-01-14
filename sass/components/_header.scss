@@ -1,1 +1,106 @@
 @use '../abstracts' as a;
+
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+.hidden {
+    display: none;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+#header-section {
+    width: 100%;
+    height: 75px;
+    background-color: a.$primary-color;
+}
+
+#header-logo {
+    width: 175px;
+    height: 50px;
+    background-color: darkgray;
+}
+
+@media screen and (min-width: 768px) {
+
+    #header-section {
+        height: 100px;
+        padding-right: 5vw;
+        padding-left: 5vw;
+    }
+
+    #menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #sidebar {
+      position: static;
+      display: flex;
+      padding: 0px;
+    }
+
+    #sidebar ul {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #sidebar a {
+      font-size: 22px;
+      color: white;
+      text-decoration: none;
+      width: 100%;
+      cursor: pointer;           
+    }
+
+  #sidebar ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #sidebar ul li a:hover {
+    color: a.$accent-color;
+  }
+
+  #sidebar ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background-color: a.$accent-color;
+    transition: width 0.3s ease;
+  }
+
+  #sidebar ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+    #header-section {
+        height: 100px;
+    }
+
+    #sidebar ul li a {
+        font-size: 24px;
+        padding: 5px 15px;              
+    }
+}
