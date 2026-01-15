@@ -1,1 +1,77 @@
 @use '../abstracts' as a;
+
+
+@media screen and (min-width: 1200px) {
+
+    #footer-section {
+        background-color: a.$primary-color;
+        height: auto;
+        padding-left: 75px;
+        padding-right: 75px;
+        padding-bottom: 100px;
+    }
+
+    #footer-logo {
+        margin-top: 50px;
+        width: 175px;
+        height: 50px;
+        background-color: darkgray;
+    }
+
+    #footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #about-museum, #services, #book-event, #professionals {
+        margin-top: 75px;
+    }
+
+    #am-content, #services-content, #bk-content, #pro-content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        gap: 5px;
+    }
+
+    .footer-sub-headers {
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer-links {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #social-section {
+        height: auto;
+    }
+
+    #social-header {
+        margin-top: 100px;
+        font-size: 4rem;
+        color: white;
+        justify-self: center;
+    }
+
+    #social-content {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        justify-self: center;
+        margin-top: 75px;
+    }
+
+    .social-icon {
+        width: 150px;
+        height: 150px;
+        background-color: gray;
+    }
+}

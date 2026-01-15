@@ -90,10 +90,77 @@ ul, li {
   }
 }
 @media screen and (min-width: 1200px) {
+  #footer-section {
+    background-color: #0C0E0C;
+    height: auto;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 100px;
+  }
+  #footer-logo {
+    margin-top: 50px;
+    width: 175px;
+    height: 50px;
+    background-color: darkgray;
+  }
+  #footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #about-museum, #services, #book-event, #professionals {
+    margin-top: 75px;
+  }
+  #am-content, #services-content, #bk-content, #pro-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 5px;
+  }
+  .footer-sub-headers {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+  }
+  .footer-links {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #social-section {
+    height: auto;
+  }
+  #social-header {
+    margin-top: 100px;
+    font-size: 4rem;
+    color: white;
+    justify-self: center;
+  }
+  #social-content {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-self: center;
+    margin-top: 75px;
+  }
+  .social-icon {
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+  }
+}
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
   #hero-section {
     position: relative;
     width: 100%;
-    height: 1000px;
+    height: 950px;
     background-color: #0C0E0C;
     padding-right: 75px;
   }
@@ -102,26 +169,205 @@ ul, li {
     background-color: darkgray;
   }
   .sub-headings {
+    color: white;
+    font-weight: 800;
+  }
+  #hero-header {
     position: absolute;
     top: 250px;
+    left: 5vw;
     font-size: 7rem;
     color: white;
-    margin-left: 100px;
+  }
+  .hero-sub-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 10px;
+    height: auto;
+    width: 25vw;
+    top: 525px;
   }
   .hero-sub-img {
-    position: absolute;
-    top: 525px;
     height: 20vw;
-    width: 25vw;
+    width: 27vw;
     background-color: gray;
   }
+  #hsi-container {
+    display: flex;
+    flex-direction: row;
+  }
   #hsi-1 {
-    left: 100px;
+    left: 5vw;
   }
   #hsi-2 {
-    left: 450px;
+    left: 35vw;
   }
   #hsi-3 {
-    left: 800px;
+    left: 65vw;
+  }
+  .hero-sub-heading {
+    font-size: 1.5rem;
+    color: white;
+  }
+  #our-museum {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #A08B63;
+    padding-bottom: 100px;
+  }
+  #om-right-content {
+    order: 2;
+  }
+  #om-heading {
+    margin-top: 75px;
+    font-size: 5rem;
+  }
+  .om-blocks {
+    background-color: gray;
+  }
+  #om-block-1 {
+    height: 25vw;
+    width: 40vw;
+    margin-top: 15px;
+  }
+  #om-block-2 {
+    height: 25vw;
+    width: 35vw;
+    margin-top: 50px;
+  }
+  #om-block-3 {
+    height: 50vw;
+    width: 40vw;
+    margin-top: 75px;
+  }
+  #om-block-4 {
+    height: 25vw;
+    width: 30vw;
+    margin-top: 75px;
+    margin-left: 5vw;
+  }
+  #om-text-block {
+    display: flex;
+    justify-content: center;
+    background-color: #0C0E0C;
+    width: 400px;
+    height: auto;
+    align-self: start;
+    padding-bottom: 50px;
+    order: 1;
+  }
+  .text-body {
+    margin-top: 25px;
+    width: 300px;
+    color: white;
+  }
+  #om-text {
+    font-size: 1.5rem;
+    line-height: 25px;
+  }
+  .om-blocks {
+    order: 3;
+  }
+  .block-text {
+    color: white;
+    padding: 10px;
+  }
+  .gutter {
+    position: absolute;
+  }
+  #gutter-1 {
+    bottom: -37px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 75px;
+    background-color: #333223;
+    z-index: 10;
+  }
+  #whats-on {
+    position: relative;
+    background-color: #0C0E0C;
+    padding-bottom: 100px;
+    width: 100%;
+    height: auto;
+  }
+  #wo-heading {
+    font-size: 5rem;
+    justify-self: center;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  #wo-content, #ss-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+  }
+  .wo-blocks, .ss-blocks {
+    width: 300px;
+    height: 400px;
+    background-color: gray;
+  }
+  .wo-block-img, .ss-block-img {
+    width: 100%;
+    height: 225px;
+    background-color: #333223;
+  }
+  .wo-block-headings, .ss-block-headings {
+    color: #333223;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .wo-block-texts {
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+  #wo-content-btn {
+    margin-top: 50px;
+    background-color: gray;
+    height: 50px;
+    width: 225px;
+    align-self: center;
+    justify-self: center;
+    border: none;
+    font-size: 1rem;
+  }
+  #gutter-2 {
+    bottom: -75px;
+    background: #333223;
+    height: 125px;
+    width: 80vw;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  }
+  #support-us {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+  }
+  #gutter-3 {
+    margin-top: 125px;
+    background: #333223;
+    height: 125px;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    order: 1;
+  }
+  #ss-heading {
+    margin-top: 100px;
+    color: black;
+    order: 2;
+    font-size: 4.5rem;
+    justify-self: center;
+  }
+  #ss-content {
+    justify-items: space-around;
+    margin-top: 50px;
+    order: 3;
+  }
+  .ss-block-headings {
+    font-size: 1.5rem;
   }
 }/*# sourceMappingURL=main.css.map */
