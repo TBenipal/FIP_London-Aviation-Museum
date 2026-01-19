@@ -55,7 +55,7 @@ ul, li {
       flex-direction: row;
     }
 
-    #sidebar a {
+    .nav-item a {
       font-size: 22px;
       color: white;
       text-decoration: none;
@@ -63,7 +63,7 @@ ul, li {
       cursor: pointer;           
     }
 
-  #sidebar ul li a {
+  .nav-item a {
     position: relative;
     display: inline-block;
     padding: 5px 10px;
@@ -71,11 +71,11 @@ ul, li {
     text-decoration: none;
   }
 
-  #sidebar ul li a:hover {
+  .nav-item a:hover {
     color: a.$accent-color;
   }
 
-  #sidebar ul li a::after {
+  .nav-item a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -86,7 +86,7 @@ ul, li {
     transition: width 0.3s ease;
   }
 
-  #sidebar ul li a:hover::after {
+  .nav-item a:hover::after {
     width: 100%;
     left: 0;
     right: 0;
