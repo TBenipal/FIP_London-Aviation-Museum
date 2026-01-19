@@ -46,6 +46,50 @@
 
     #section-2 {
         background-color: a.$accent-color;
-        height: 1000px;
+        height: auto;
+        padding: 75px 0px;
+    }
+
+    #s2-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #s2-nav .nav-item a {
+        font-size: 2rem;
+    }
+
+    #s2-nav .nav-item a:hover {
+        color: black;
+    }
+
+    #s2-nav .nav-item a::after {
+        background-color: black;
+    }
+
+    #s2-text {
+        font-size: 1.2rem;
+        margin-left: 10px;
+        padding-right: 25px;
+        padding-top: 10px;
+    }
+
+    #s2-btn {
+        margin-top: 50px;
+        font-size: 1.3rem;
+        border: none;
+        padding: 10px 25px;
+        background-color: a.$secondary-color;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-left: 10px;
+        
+    }
+
+    #s2-block {
+        background-color: gray;
+        height: 500px;
     }
 }
