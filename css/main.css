@@ -18,6 +18,7 @@ ul, li {
   width: 100%;
   height: 75px;
   background-color: #0C0E0C;
+  align-items: center;
 }
 
 #header-logo {
@@ -26,40 +27,102 @@ ul, li {
   background-color: darkgray;
 }
 
+#mobile-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hamburger, .close-hamburger {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.close-hamburger {
+  align-self: self-end;
+  margin-top: 12px;
+  margin-right: 40px;
+}
+
+.hamburger-icon {
+  width: 45px;
+  transition: transform 0.5s ease;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  background-color: transparent;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+  z-index: 999;
+}
+
+#sidebar.active {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+#sidebar a {
+  font-size: 4vw;
+  color: white;
+  font-family: "Kanit";
+  font-weight: 600;
+  display: block;
+}
+
+#sidebar .nav-item a:hover, #sidebar .nav-item a:active {
+  color: #A08B63;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (min-width: 768px) {
   #header-section {
     height: 100px;
-    padding-right: 5vw;
+    padding-right: 3vw;
     padding-left: 5vw;
+  }
+  .hamburger, .close-hamburger, .hamburger-icon {
+    display: none;
   }
   #menu {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
   }
-  #sidebar {
-    position: static;
+  #sidebar, #sidebar.active {
     display: flex;
-    padding: 0px;
+    align-items: center;
+    position: static;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
+    transform: none;
+    transition: none;
+    padding-bottom: 10px;
+    margin: 0px;
   }
   #sidebar ul {
     display: flex;
     flex-direction: row;
   }
-  .nav-item a {
+  #sidebar ul .nav-item a {
+    position: relative;
     font-size: 22px;
     color: white;
     text-decoration: none;
     width: 100%;
     cursor: pointer;
-  }
-  .nav-item a {
-    position: relative;
-    display: inline-block;
-    padding: 5px 10px;
-    color: white;
+    padding: 0px 10px;
     text-decoration: none;
+    overflow: hidden;
   }
   .nav-item a:hover {
     color: #A08B63;
@@ -68,7 +131,7 @@ ul, li {
     content: "";
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 15px;
     height: 2px;
     width: 0;
     background-color: #A08B63;
@@ -81,12 +144,10 @@ ul, li {
   }
 }
 @media screen and (min-width: 1200px) {
-  #header-section {
-    height: 100px;
-  }
-  #sidebar ul li a {
+  #sidebar ul .nav-item a {
+    position: relative;
     font-size: 24px;
-    padding: 5px 15px;
+    padding: 0px 15px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -176,7 +237,7 @@ ul, li {
   }
   #hero-header {
     position: absolute;
-    top: 250px;
+    top: 150px;
     left: 5vw;
     font-size: 7rem;
     color: white;
@@ -188,7 +249,7 @@ ul, li {
     gap: 10px;
     height: auto;
     width: 25vw;
-    top: 525px;
+    top: 425px;
   }
   .hero-sub-img {
     height: 20vw;
@@ -209,7 +270,7 @@ ul, li {
     left: 65vw;
   }
   .hero-sub-heading {
-    font-size: 1.5rem;
+    font-size: 2vw;
     color: white;
   }
   #our-museum {
@@ -240,7 +301,7 @@ ul, li {
     margin-top: 50px;
   }
   #om-block-3 {
-    height: 50vw;
+    height: 47.3vw;
     width: 40vw;
     margin-top: 75px;
   }
@@ -451,32 +512,35 @@ ul, li {
     margin-top: 25px;
     pointer-events: auto;
   }
-  #section-2 {
+  #a-section-2 {
+    position: relative;
     background-color: #A08B63;
     height: auto;
-    padding: 75px 0px;
+    padding-top: 100px;
   }
-  #s2-nav {
+  #as2-nav {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
   }
-  #s2-nav .nav-item a {
+  #as2-nav .nav-item a {
     font-size: 2rem;
+    font-weight: 600;
   }
-  #s2-nav .nav-item a:hover {
+  #as2-nav .nav-item a:hover {
     color: black;
   }
-  #s2-nav .nav-item a::after {
+  #as2-nav .nav-item a::after {
     background-color: black;
   }
-  #s2-text {
+  #as2-text {
     font-size: 1.2rem;
     margin-left: 10px;
     padding-right: 25px;
-    padding-top: 10px;
+    padding-top: 25px;
+    color: white;
   }
-  #s2-btn {
+  #as2-btn {
     margin-top: 50px;
     font-size: 1.3rem;
     border: none;
@@ -487,8 +551,23 @@ ul, li {
     cursor: pointer;
     margin-left: 10px;
   }
-  #s2-block {
+  #as2-block {
     background-color: gray;
-    height: 500px;
+    height: 600px;
+  }
+  #as2-gutter-con {
+    background-color: white;
+  }
+  #s2-gutter {
+    position: static;
+    background: #333223;
+    height: 150px;
+    width: 80vw;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  }
+  .as2-seperator {
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 600;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -9,66 +9,130 @@
 /* Header */
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 ul, li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #header-section {
-    width: 100%;
-    height: 75px;
-    background-color: a.$primary-color;
+  width: 100%;
+  height: 75px;
+  background-color: a.$primary-color;
+  align-items: center;
 }
 
 #header-logo {
-    width: 175px;
-    height: 50px;
-    background-color: darkgray;
+  width: 175px;
+  height: 50px;
+  background-color: darkgray;
+}
+
+#mobile-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hamburger, .close-hamburger {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.close-hamburger {
+  align-self: self-end;
+  margin-top: 12px;
+  margin-right: 40px;
+}
+
+.hamburger-icon {
+  width: 45px;
+  transition: transform .5s ease;
+}
+
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  background-color: transparent;
+  box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+  transform: translateX(100%);
+  transition: transform .2s ease-in-out;
+  z-index: 999;
+}
+
+#sidebar.active {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+#sidebar a {
+  font-size: 4vw;
+  color: white;
+  font-family: "Kanit";
+  font-weight: 600;
+  display: block;
+}
+
+#sidebar .nav-item a:hover, #sidebar .nav-item a:active {
+  color: a.$accent-color;
+  box-shadow: -10px 0 10px rgba(0,0,0,0.1);
 }
 
 @media screen and (min-width: 768px) {
 
-    #header-section {
-        height: 100px;
-        padding-right: 5vw;
-        padding-left: 5vw;
-    }
+  #header-section {
+    height: 100px;
+    padding-right: 3vw;
+    padding-left: 5vw;
+  }
 
-    #menu {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+  .hamburger, .close-hamburger, .hamburger-icon {
+    display: none;
+  }
 
-    #sidebar {
-      position: static;
-      display: flex;
-      padding: 0px;
-    }
+  #menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    #sidebar ul {
-      display: flex;
-      flex-direction: row;
-    }
+  #sidebar, #sidebar.active {
+    display: flex;
+    align-items: center;
+    position: static;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
+    transform: none;
+    transition: none;
+    padding-bottom: 10px;
+    margin: 0px;
+  }
 
-    .nav-item a {
-      font-size: 22px;
-      color: white;
-      text-decoration: none;
-      width: 100%;
-      cursor: pointer;           
-    }
+  #sidebar ul {
+    display: flex;
+    flex-direction: row;
+  }
 
-  .nav-item a {
+  #sidebar ul .nav-item a {
     position: relative;
-    display: inline-block;
-    padding: 5px 10px;
+    font-size: 22px;
     color: white;
     text-decoration: none;
+    width: 100%;
+    cursor: pointer; 
+    padding: 0px 10px;
+    text-decoration: none;
+    overflow: hidden;        
   }
 
   .nav-item a:hover {
@@ -79,7 +143,7 @@ ul, li {
     content: "";
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 15px;
     height: 2px;
     width: 0;
     background-color: a.$accent-color;
@@ -94,13 +158,10 @@ ul, li {
 }
 
 @media screen and (min-width: 1200px) {
+  #sidebar ul .nav-item a {
+    position: relative;
+    font-size: 24px;
+    padding: 0px 15px;       
+  }
 
-    #header-section {
-        height: 100px;
-    }
-
-    #sidebar ul li a {
-        font-size: 24px;
-        padding: 5px 15px;              
-    }
 }
