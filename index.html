@@ -20,22 +20,22 @@
                     <img src="" alt="London Aviation Museum Logo"></a>
                 </div>
                 
-                <button class="hamburger" aria-label="Open navigation menu" aria-controls="primary-navigation">
-                    <img class="hamburger-icon" src="" alt="Open Menu">
+                <button class="hamburger" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
+
             </div>
 
             <nav id="sidebar">
-                <a class="close-hamburger" id="primary-navigation">
-                    <img class="hamburger-icon" src="images/Menu_Icon-2.svg" alt="Close Menu">
-                </a>
-            <ul>
-                <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item"><a>Honors</a></li>
-                <li class="nav-item"><a href="airplane.html">Airplane</a></li>
-                <li class="nav-item"><a>Exhibition</a></li>
-                <li class="nav-item"><a>Contact!</a></li>
-            </ul>
+                <ul>
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a>Honors</a></li>
+                    <li class="nav-item"><a href="airplane.html">Airplane</a></li>
+                    <li class="nav-item"><a>Exhibition</a></li>
+                    <li class="nav-item"><a>Contact!</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -43,21 +43,35 @@
     <main>
         <section id="h-hero" class="hero-section grid-con">
             <h1 id="hero-header" class="sub-headings">Welcome to <br> London Museum</h1>
-            <div id="hero-img" class="l-col-start-5 l-col-end-13"></div>
+            <div class="video-overlay l-col-start-1 l-col-end-13"></div>
+            <!--Loop Video-->
+            <section id="loop-video" class="l-col-start-1 l-col-end-13">
+                <h2 class="hidden">Loop Video</h2>
+                <div id="lp-container">
+                    <video id="lp-player" muted playsinline autoplay loop data-poster="" aria-label="Loop Video">
+                        <source src="" type="video/mp4" media="(max-width: 767px)">
+                        <source src="" type="video/mp4" media="(max-width: 1199px)">
+                        <source src="video/IDP_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag. Please update your browser or try a different one.
+                    </video>
+                </div>
+            </section>
             
-            <div id="hsi-1" class="hero-sub-container">
-                <div class="hero-sub-img"></div>
-                <span class="hero-sub-heading">Events</span>
-            </div>
+            <div id="hs-container" class="l-col-start-1 l-col-end-13">
+                <div id="hsi-1" class="hero-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Events</span>
+                </div>
 
-            <div id="hsi-2" class="hero-sub-container">
-                <div class="hero-sub-img"></div>
-                <span class="hero-sub-heading">Guide Tour</span>
-            </div>
+                <div id="hsi-2" class="hero-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Guide Tour</span>
+                </div>
 
-            <div id="hsi-3" class="hero-sub-container">
-                <div class="hero-sub-img"></div>
-                <span class="hero-sub-heading">Gallary</span>
+                <div id="hsi-3" class="hero-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Gallery</span>
+                </div>
             </div>
         </section>
 
@@ -80,6 +94,20 @@
                 <div id="om-block-2" class="om-blocks"><p class="block-text">Name #2</p></div>
                 <div id="om-block-4" class="om-blocks"><p class="block-text">Name #4</p></div>
             </div>
+
+            <!--Introduction Video-->
+            <section id="intro-video" class="col-start-2 col-end-12">
+                <h2 class="hidden">Loop Video</h2>
+                <div id="intro-container">
+                    <video id="intro-player" playsinline controls data-poster="images/Video-poster.png" aria-label="Tapshveer Benipal Portfolio Demo-Reel 2024">
+                        <source src="" type="video/mp4" media="(max-width: 767px)">
+                        <source src="" type="video/mp4" media="(max-width: 1199px)">
+                        <source src="video/IDP_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag. Please update your browser or try a different one.
+                    </video>
+                </div>
+            </section>
+
             <div id="gutter-1" class="gutter"></div>
         </section>
 
