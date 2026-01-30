@@ -33,13 +33,34 @@
                     <li class="nav-item"><a>Honors</a></li>
                     <li class="nav-item"><a href="airplane.html">Airplane</a></li>
                     <li class="nav-item"><a>Exhibition</a></li>
-                    <li class="nav-item"><a>Contact!</a></li>
+                    <li class="nav-item"><a href="contact.html">Contact!</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
+
+                <!--Contact-->
+        <section id="contact-section" class="grid-con">
+            <h2 class="contact-header l-col-start-1 l-col-end-13">Reach Out!</h2>
+            <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore perferendis quasi recusandae natus laboriosam est ipsa totam incidunt quia iure a maxime itaque quod, pariatur, ipsam ab error cum?</p>
+            
+            <!--Form-->
+           <form id="contact-form" class="col-span-full" method="post" action="includes/send.php">
+                <div id="form">
+                    <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required aria-label="First Name">
+                    <br>
+                    <input type="text" placeholder="Last Name *" class="field" name="last_name" id="last_name" required aria-label="Last Name">
+                    <br>
+                    <input type="email" placeholder="Email *" class="field" name="email" id="email" required aria-label="Email Address">
+                    <br>
+                </div>
+                <textarea id="message" placeholder="Message *" class="field" name="message" required aria-label="Your Message"></textarea>
+            </form>
+
+            <button id="submit-btn" form="contact-form" type="submit" class="l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit !</button>
+        </section>
 
         <section id="newsletter" class="grid-con">
             <h1 id="nl-header" class="sub-headings l-col-start-1 l-col-end-13">Newsletter!</h1>
@@ -49,9 +70,9 @@
                 
                 <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required>
+                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
                         <br>
-                        <input type="email" placeholder="Email *" class="field" name="email" id="email" required>
+                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
                         <br>
                     </div>
                     <button id="nl-subscribe">Subscribe</button>

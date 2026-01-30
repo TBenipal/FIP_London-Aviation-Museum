@@ -547,7 +547,7 @@ ul, li {
     flex-direction: column;
     gap: 10px;
   }
-  .field {
+  .nl-field {
     height: 50px;
     width: 40vw;
     padding: 5px;
@@ -637,16 +637,6 @@ ul, li {
     background-color: gray;
     height: 600px;
   }
-  #as2-gutter-con {
-    background-color: white;
-  }
-  #s2-gutter {
-    position: static;
-    background: #333223;
-    height: 150px;
-    width: 80vw;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
-  }
   .as2-seperator {
     position: relative;
     display: inline-block;
@@ -674,5 +664,71 @@ ul, li {
     width: 100%;
     left: 0;
     right: 0;
+  }
+  #making-of {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  #gutter-4 {
+    position: absolute;
+    background: #333223;
+    height: 150px;
+    width: 80vw;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  #contact-section {
+    width: 90%;
+    padding: 50px;
+    background-color: #A08B63;
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+  .contact-header {
+    font-size: 48px;
+    color: #333223;
+  }
+  #contact-text {
+    justify-self: center;
+    font-size: 24px;
+    margin: 10px 0px;
+    color: #333223;
+  }
+  #contact-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .field {
+    height: 50px;
+    margin: 15px 0px;
+    padding: 10px;
+    width: 35vw;
+    font-size: 14px;
+    border: none;
+    color: black;
+    background-color: white;
+  }
+  #message {
+    height: 215px;
+    width: 50vw;
+  }
+  #submit-btn {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+  #submit-btn:hover, #submit-btn:active {
+    color: #A08B63;
+    background-color: #0C0E0C;
   }
 }/*# sourceMappingURL=main.css.map */
