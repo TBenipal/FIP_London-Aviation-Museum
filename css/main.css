@@ -219,6 +219,92 @@ ul, li {
     padding: 0px 15px;
   }
 }
+#footer-section {
+  background-color: #0C0E0C;
+  height: auto;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: center;
+}
+
+#footer-logo {
+  margin-top: 50px;
+  width: 175px;
+  height: 50px;
+  background-color: darkgray;
+}
+
+#footer-content {
+  gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+#am-content, #services-content, #bk-content, #pro-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.footer-sub-headers {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#social-section {
+  height: auto;
+}
+
+#social-header {
+  margin-top: 100px;
+  font-size: 3rem;
+  color: white;
+  justify-self: center;
+}
+
+#social-content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  gap: 50px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+}
+
+@media screen and (min-width: 768px) {
+  #footer-logo {
+    margin-top: 50px;
+    width: 175px;
+    height: 50px;
+    background-color: darkgray;
+  }
+  #footer-content {
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+}
 @media screen and (min-width: 1200px) {
   #footer-section {
     background-color: #0C0E0C;
@@ -228,6 +314,7 @@ ul, li {
     padding-bottom: 100px;
   }
   #footer-logo {
+    justify-self: start;
     margin-top: 50px;
     width: 175px;
     height: 50px;
@@ -237,6 +324,8 @@ ul, li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 0px;
+    gap: 0px;
   }
   #about-museum, #services, #book-event, #professionals {
     margin-top: 75px;
