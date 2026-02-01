@@ -24,10 +24,10 @@ Cinema 4D, Microsoft 365, GSAP, WAMP
 
 ## Credits:
 - Zakia Sultana : Project Manager 
-- Tapshveer Benipal : Front End Devloper
+- Tapshveer Benipal : Front End Developer
 - Aayush Diyali : Motion Designer 
 - Andrea Do : Graphic Designer 
-- Ajay Chakaravarthy : Back End Devloper 
+- Ajay Chakaravarthy : Back End Developer 
 - Luciano Clementi : Flex
 - Felipe Yamashiro Souza : UX Designer
 
