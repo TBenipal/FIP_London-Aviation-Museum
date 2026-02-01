@@ -634,7 +634,6 @@ ul, li {
   #nl-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
   .nl-field {
     height: 50px;
