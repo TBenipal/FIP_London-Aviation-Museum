@@ -650,6 +650,9 @@ ul, li {
   }
 }
 @media screen and (min-width: 1200px) {
+  main {
+    position: relative;
+  }
   #a-hero-model {
     position: relative;
     height: 800px;
@@ -705,22 +708,23 @@ ul, li {
     color: white;
   }
   #as2-text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-left: 10px;
-    padding-right: 25px;
     padding-top: 25px;
     color: white;
   }
   #as2-btn {
-    margin-top: 50px;
+    margin-top: 25px;
+    background-color: #333223;
+    margin-left: 10px;
+  }
+  .airplane-btn {
     font-size: 1.3rem;
     border: none;
     padding: 10px 25px;
-    background-color: #333223;
     color: white;
     border-radius: 10px;
     cursor: pointer;
-    margin-left: 10px;
   }
   #as2-block {
     background-color: gray;
@@ -732,14 +736,13 @@ ul, li {
     align-self: center;
     font-size: 2rem;
     font-weight: 600;
-    color: white;
+    color: #333223;
   }
   #as2-nav .nav-item a:hover {
     color: #333223;
     cursor: pointer;
   }
   #as2-nav .nav-item a::after {
-    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -754,17 +757,119 @@ ul, li {
     left: 0;
     right: 0;
   }
+  #gutter-4, #gutter-5 {
+    margin-bottom: -1px;
+    background: #333223;
+    height: 125px;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    z-index: 1;
+  }
   #making-of {
+    margin-top: -50px;
     position: relative;
     width: 100%;
-    height: 400px;
+    height: auto;
+    background-color: #0C0E0C;
+    gap: 75px;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
-  #gutter-4 {
-    position: absolute;
-    background: #333223;
-    height: 150px;
-    width: 80vw;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  #mo-heading, #tg-heading {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  #mo-img, #tg-img {
+    background-color: gray;
+    height: 500px;
+  }
+  #mo-text, #tg-text {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    color: white;
+    line-height: 30px;
+    font-weight: 400;
+    min-width: 500px;
+  }
+  #mo-btn, #tg-btn {
+    margin-top: 25px;
+    background-color: #333223;
+    cursor: pointer;
+  }
+  #gutter-5 {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  }
+  #training-ground {
+    margin-top: -50px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #0C0E0C;
+    justify-content: center;
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+  #tg-heading {
+    margin-top: 25px;
+  }
+  #tg-img {
+    height: 525px;
+  }
+  #airplane-gallery {
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+    padding: 0px 25px;
+  }
+  #ag-heading {
+    text-align: center;
+    font-size: 4rem;
+  }
+  #ag-underline {
+    margin-top: 10px;
+    background-color: #A08B63;
+    height: 10px;
+  }
+  #ag-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+  .ag-card {
+    margin-top: 25px;
+    background-color: gray;
+    height: 500px;
+    width: 400px;
+  }
+  #ag-slider {
+    display: flex;
+    justify-self: center;
+    gap: 5px;
+    margin-top: 25px;
+  }
+  .ag-circle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: darkgray;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  #text-1, .circle-text {
+    align-self: center;
+    font-size: 2rem;
+  }
+  .circle-text {
+    opacity: 0;
+  }
+  .ag-circle:hover {
+    background-color: gray;
+  }
+  .ag-circle:hover .circle-text {
+    opacity: 1;
   }
 }
 @media screen and (min-width: 1200px) {
