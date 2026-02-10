@@ -970,6 +970,30 @@ ul, li {
   }
 }
 @media screen and (min-width: 1200px) {
+  #timeline-section {
+    width: 100%;
+    height: auto;
+    padding: 200px 0px;
+    background-color: #0C0E0C;
+  }
+  #timeline-content {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+  }
+  #timeline {
+    width: 1000px;
+    height: auto;
+    overflow: visible;
+  }
+  .timeline {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+}
+@media screen and (min-width: 1200px) {
   #contact-section {
     width: 90%;
     padding: 50px;

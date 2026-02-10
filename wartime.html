@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="icon" type="image/x-icon" href=""> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Aviation Museum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header-section" class="grid-con">
+        <h1 class="hidden">Navbar</h1>
+
+        <div id="menu" class="col-span-full">
+
+            <div id="mobile-header">
+                <div id="header-logo"><a href="index.html">
+                    <img src="" alt="London Aviation Museum Logo"></a>
+                </div>
+                
+                <button class="hamburger" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+            <nav id="sidebar">
+                <ul>
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a>Honors</a></li>
+                    <li class="nav-item"><a href="airplane.html">Wartime</a></li>
+                    <li class="nav-item"><a href="exhibition.html">Exhibition</a></li>
+                    <li class="nav-item"><a href="contact.html">Contact!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-section" class="grid-con">
+            <div id="hero-container" class="col-span-full l-col-start-1 l-col-end-13">
+                <h1 id="hero-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Welcome to <br> London Aviation Museum</h1>
+                <div id="video-overlay"></div>
+                <!--Loop Video-->
+                <section id="loop-video">
+                    <h2 class="hidden">Loop Video</h2>
+                    <div id="lp-container">
+                        <video id="lp-player" muted playsinline autoplay loop data-poster="" aria-label="Loop Video">
+                            <source src="video/Mobile-Kids-Bumper.mp4" type="video/mp4" media="(max-width: 767px)">
+                            <source src="" type="video/mp4" media="(max-width: 1199px)">
+                            <source src="video/Mobile-Kids-Bumper.mp4" type="video/mp4">
+                            Your browser does not support the video tag. Please update your browser or try a different one.
+                        </video>
+                    </div>
+                </section>
+                <div class="scroll-arrow">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <div id="hs-container" class="col-span-full l-col-start-1 l-col-end-13">
+                <div id="hsi-1" class="hero-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Events</span>
+                </div>
+
+                <div id="hsi-2" class="hero-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Guide Tour</span>
+                </div>
+
+                <div id="hsi-3" class="hero-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Gallery</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline-section" class="grid-con">
+            <div id="timeline-content" class="l-col-start-1 l-col-end-13">
+                <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
+                    <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
+                    <g id="plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
+                        <path id="plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
+                        c-12.698,7.339-36.19,23.066-71.663,47.974L80.701,127.669c-6.554-1.758-13.534-0.836-19.405,2.56l-22.144,12.8
+                        c-8.047,4.651-12.945,13.312-12.783,22.622c0.162,9.301,5.359,17.792,13.568,22.161l138.257,73.574
+                        c-23.356,16.41-46.106,32.068-59.904,41.515l-62.037-36.523c-7.936-4.676-17.775-4.71-25.754-0.102l-17.715,10.24
+                        c-7.262,4.198-12.006,11.699-12.698,20.062c-0.691,8.371,2.765,16.538,9.242,21.879l84.369,69.478
+                        c4.983,4.104,11.332,6.17,17.775,5.786l57.079-3.43c3.959-0.239,7.817-1.399,11.255-3.379l243.61-140.8
+                        c48.956-28.297,82.935-79.275,84.352-81.434C512.3,157.809,513.256,149.181,510.338,141.484z"/>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <section id="newsletter" class="grid-con">
+            <h1 id="nl-header" class="sub-headings l-col-start-1 l-col-end-13">Newsletter!</h1>
+
+            <div id="nl-content" class="l-col-start-1 l-col-end-13">
+                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
+                
+                <form id="nl-form-con" class="col-span-full">
+                    <div id="nl-form">
+                        <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required>
+                        <br>
+                        <input type="email" placeholder="Email *" class="field" name="email" id="email" required>
+                        <br>
+                    </div>
+                    <button id="nl-subscribe">Subscribe</button>
+                </form>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <footer id="footer-section" class="grid-con">
+        <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12"></div>
+        <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
+            <div id="about-museum">
+                <h2 class="footer-sub-headers">About Museum</h2>
+                <div id="am-content">
+                    <a class="footer-links">Our Purpose</a>
+                    <a class="footer-links">Get To Know</a>
+                    <a class="footer-links">Plans</a>
+                    <a class="footer-links">Sustainability</a>
+                </div>
+            </div>
+
+            <div id="services">
+                <h2 class="footer-sub-headers">Services</h2>
+                <div id="services-content">
+                    <a class="footer-links">Membership</a>
+                    <a class="footer-links">Way of Giving</a>
+                    <a class="footer-links">Donate</a>
+                    <a class="footer-links">Volunteer</a>
+                </div>
+            </div>
+
+            <div id="book-event">
+                <h2 class="footer-sub-headers">Book Event</h2>
+                <div id="bk-content">
+                    <a class="footer-links">Rental Options</a>
+                    <a class="footer-links">Catering Services</a>
+                </div>
+            </div>
+
+            <div id="professionals">
+                    <h2 class="footer-sub-headers">Professionals</h2>
+                    <div id="pro-content">
+                        <a class="footer-links">Media</a>
+                        <a class="footer-links">Exhibition</a>
+                        <a class="footer-links">Business With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
+            <h2 id="social-header">Social Media</h2>
+            <div id="social-content">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script src="js/main.js"></script>
+</html>
