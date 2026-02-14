@@ -107,6 +107,10 @@ ul, li {
   box-shadow: -10px 0 10px rgba(0,0,0,0.1);
 }
 
+#sidebar .nav-item a.active {
+  color: a.$accent-color;
+}
+
 .hamburger {
   width: 45px;
   height: 30px;

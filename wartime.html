@@ -10,7 +10,7 @@
     <link href="css/grid.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 </head>
-<body>
+<body data-page="wartime">
     <!-- Header -->
     <header id="header-section" class="grid-con">
         <h1 class="hidden">Navbar</h1>
@@ -34,7 +34,7 @@
                 <ul>
                     <li class="nav-item"><a href="index.html">Home</a></li>
                     <li class="nav-item"><a>Honors</a></li>
-                    <li class="nav-item"><a href="airplane.html">Wartime</a></li>
+                    <li class="nav-item"><a href="wartime.html" class="active">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.html">Exhibition</a></li>
                     <li class="nav-item"><a href="contact.html">Contact!</a></li>
                 </ul>
@@ -45,7 +45,7 @@
     <main>
         <section id="hero-section" class="grid-con">
             <div id="hero-container" class="col-span-full l-col-start-1 l-col-end-13">
-                <h1 id="hero-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Welcome to <br> London Aviation Museum</h1>
+                <h1 class="hidden">Wartime Introduction</h1>
                 <div id="video-overlay"></div>
                 <!--Loop Video-->
                 <section id="loop-video">
@@ -180,5 +180,5 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/DrawSVGPlugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 </html>
