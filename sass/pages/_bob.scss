@@ -1,265 +1,138 @@
 @use '../abstracts' as a;
 
 @media screen and (min-width: 1200px) {
-
-    main {
-        position: relative;
-    }
-    
-   #a-hero-model {
-        position: relative;
-        height: 800px;
-        overflow: hidden;
-        display: flex;
-        align-items: end;
-        justify-content: center;
-    }
-
-    model-viewer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color: gray;
-
-    }
-
-    #a-hero-content {
-        position: relative;
-        z-index: 2;
-        pointer-events: none;
-        color: white;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        padding-bottom: 50px;
-    }
-
-    #a-hero-header {
-        text-align: center;
-        font-size: 6rem;
-        margin: 0;
-    }
-
-    #a-hero-text {
-        font-size: 1.5rem;
-        width: 800px;
-        margin-top: 25px;
-        pointer-events: auto;
-    }
-
-    #a-section-2 {
-        position: relative;
-        background-color: a.$accent-color;
-        height: auto;
-        padding-top: 100px;
-    }
-
-    #as2-nav {
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        padding-left: 10px;
-    }
-
-    #as2-nav .nav-item a {
-        position: relative;
-        font-size: 2rem;
-        font-weight: 600;
-        color: white;
-    }
-
-    #as2-text {
-        font-size: 1.5rem;
-        margin-left: 10px;
-        padding-top: 25px;
-        color: white;
-    }
-
-    #as2-btn {
-        margin-top: 25px;
-        background-color: a.$secondary-color;
-        margin-left: 10px;
-    }
-
-    .airplane-btn {
-        font-size: 1.3rem;
-        border: none;
-        padding: 10px 25px;
-        color: white;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    #as2-block {
-        background-color: gray;
-        height: 600px;
-    }
-
-    .as2-seperator {
-        position: relative;
-        display: inline-block;
-        align-self: center;
-        font-size: 2rem;
-        font-weight: 600;
-        color: a.$secondary-color;
-    }
-
-    #as2-nav .nav-item a:hover {
-        color: a.$secondary-color;
-        cursor: pointer;
-    }
-
-    #as2-nav .nav-item a::after {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: 2px;
-        width: 0;
-        background-color: a.$secondary-color;
-        transition: width 0.3s ease;
-    }
-
-    #as2-nav .nav-item a:hover::after {
-        width: 100%;
-        left: 0;
-        right: 0;
-    }
-
-    #gutter-4, #gutter-5 {
-        margin-bottom: -1px;
-        background: a.$secondary-color;
-        height: 125px;
-        clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
-        z-index: 1;
-    }
-
-    #making-of {
-        margin-top: -50px;
+    #bob-hero {
         position: relative;
         width: 100%;
         height: auto;
         background-color: a.$primary-color;
-        gap: 75px;
-        justify-content: center;
-        padding-top: 100px;
-        padding-bottom: 50px;
+        padding: 25px 65px 100px 25px;
     }
 
-    #mo-heading, #tg-heading {
-        font-size: 3rem;
-        font-weight: 600;
-    }
-
-    #mo-img, #tg-img {
-        background-color: gray;
-        height: 500px;
-    }
-
-    #mo-text, #tg-text {
-        margin-top: 25px;
-        font-size: 1.5rem;
-        color: white;
-        line-height: 30px;
-        font-weight: 400;
-        min-width: 500px;
-    }
-
-    #mo-btn, #tg-btn {
-        margin-top: 25px;
-        background-color: a.$secondary-color;
-        cursor: pointer;
-    }
-
-    #gutter-5 {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
-    }
-
-    #training-ground {
-        margin-top: -50px;
-        position: relative;
-        width: 100%;
-        height: auto;
-        background-color: a.$primary-color;
-        justify-content: center;
-        padding-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    #tg-heading {
-        margin-top: 25px;
-    }
-
-    #tg-img {
-        height: 525px;
-    }
-
-    #airplane-gallery {
-        width: 100%;
-        height: auto;
-        margin-bottom: 100px;
-        padding: 0px 25px;
-    }
-
-    #ag-heading {
-        text-align: center;
-        font-size: 4rem;
-    }
-
-    #ag-underline {
-        margin-top: 10px;
-        background-color: a.$accent-color;
-        height: 10px;
-    }
-
-    #ag-content {
+    #bob-content {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
         gap: 50px;
     }
 
-    .ag-card {
-        margin-top: 25px;
+    .vertical-slider {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .pilot-container {
+        width: 100px;
+        height: 100px;
         background-color: gray;
-        height: 500px;
-        width: 400px;
     }
 
-    #ag-slider {
-        display: flex;
-        justify-self: center;
-        gap: 5px;
-        margin-top: 25px;
+    .pilot-bkground {
+        height: 800px;
+        width: 85%;
+        background-color: gray;
     }
 
-    .ag-circle {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        background-color: darkgray;
-        height: 50px;
-        width: 50px;
-        border-radius: 25px;
+    .pilot-name {
+        position: absolute;
+        color: white;
+        font-size: 5rem;
+    }
+
+    .pilot-span {
+        position: absolute;
+        margin-top: 100px;
+        color: white;
+        font-size: 3rem;
+    }
+
+    .pilot-description {
+        position: absolute;
+        margin-top: 160px;
+        color: white;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    #bob-history {
+        width: 100%;
+        height: auto;
+        background-color: a.$primary-color;
+        padding: 0px 75px;
+    }
+
+    #bh-img {
+        height: 600px;
+        background-color: gray;
+    }
+
+    #bh-heading {
+        font-size: 4rem;
+        margin-bottom: 25px;
+    }
+
+    #bh-text {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+    }
+
+    #bh-content {
+        height: auto;
+    }
+
+    #bh-btn {
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        background-color: a.$secondary-color;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
     }
 
-    #text-1, .circle-text {
-        align-self: center;
-        font-size: 2rem;
+    #bob-description {
+        width: 100%;
+        height: auto;
+        background-color: a.$secondary-color;
+        padding: 50px 75px 50px 75px;
+        margin-bottom: 100px;
     }
 
-    .circle-text {
-        opacity: 0;
+    #bd-heading {
+        font-size: 4rem;
+        margin-bottom: 25px;
     }
 
-    .ag-circle:hover {
+    #bd-content {
+        display: flex;
+        gap: 50px;
+    }
+
+    .bd-text {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    #bd-btn {
+        justify-self: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border: none;
+        background-color: a.$primary-color;
+        color: white;
+        width: 200px;
+        padding: 10px 10px;
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+
+    #bd-img {
+        height: 850px;
         background-color: gray;
-    }
-
-    .ag-circle:hover .circle-text {
-        opacity: 1;
     }
 
 }
