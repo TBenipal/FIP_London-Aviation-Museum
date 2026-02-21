@@ -43,39 +43,22 @@
     </header>
 
     <main>
-        <section id="hero-section" class="grid-con">
-            <div id="hero-container" class="col-span-full l-col-start-1 l-col-end-13">
-                <h1 class="hidden">Wartime Introduction</h1>
-                <div id="video-overlay"></div>
-                <!--Loop Video-->
-                <section id="loop-video">
-                    <h2 class="hidden">Loop Video</h2>
-                    <div id="lp-container">
-                        <video id="lp-player" muted playsinline autoplay loop data-poster="" aria-label="Loop Video">
-                            <source src="video/Mobile-Kids-Bumper.mp4" type="video/mp4" media="(max-width: 767px)">
-                            <source src="" type="video/mp4" media="(max-width: 1199px)">
-                            <source src="video/Mobile-Kids-Bumper.mp4" type="video/mp4">
-                            Your browser does not support the video tag. Please update your browser or try a different one.
-                        </video>
-                    </div>
-                </section>
-                <div class="scroll-arrow">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
+        <section id="wartime-hero" class="grid-con">
+            <h1 class="hidden">Wartime Introduction</h1>
+            <div id="wartime-main" class="l-col-start-1 l-col-end-13"></div>
             
-            <div id="hs-container" class="col-span-full l-col-start-1 l-col-end-13">
-                <div id="hsi-1" class="hero-sub-container">
+            <div id="wh-container" class="col-span-full l-col-start-1 l-col-end-13">
+                <div id="whi-1" class="wh-sub-container">
                     <div class="hero-sub-img"></div>
                     <span class="hero-sub-heading">Events</span>
                 </div>
 
-                <div id="hsi-2" class="hero-sub-container">
+                <div id="whi-2" class="wh-sub-container">
                     <div class="hero-sub-img"></div>
                     <span class="hero-sub-heading">Guide Tour</span>
                 </div>
 
-                <div id="hsi-3" class="hero-sub-container">
+                <div id="whi-3" class="wh-sub-container">
                     <div class="hero-sub-img"></div>
                     <span class="hero-sub-heading">Gallery</span>
                 </div>
@@ -83,7 +66,65 @@
         </section>
 
         <section id="timeline-section" class="grid-con">
-            <div id="timeline-content" class="l-col-start-1 l-col-end-13">
+            <h1 id="ts-header" class="sub-headings l-col-start-1 l-col-end-4">Timeline <br> of Aviation <br> History</h1>
+            <p id="ts-text" class="l-col-start-5 l-col-end-13">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, consequuntur ad quo reprehenderit excepturi architecto quidem harum, rem qui a asperiores saepe nesciunt consectetur, aliquam accusantium possimus repellendus voluptates voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cupiditate corporis numquam harum a repellendus expedita, quos iste aspernatur. Reiciendis ratione sapiente corporis consectetur fuga? Rem dolor ducimus at deserunt.</p>
+            <div id="ts-content" class="l-col-start-1 l-col-end-13">
+
+                <div id="ts1-container" class="ts-container">
+                    <div class="ts-img"></div>
+                    <h2 class="ts-year">1900-1918</h2>
+                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
+                </div>
+
+                <div id="ts2-container" class="ts-container">
+                    <div class="ts-img"></div>
+                    <h2 class="ts-year">1900-1918</h2>
+                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
+                </div>
+
+                <div id="ts3-container" class="ts-container">
+                    <div class="ts-img"></div>
+                    <h2 class="ts-year">1900-1918</h2>
+                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
+                </div>
+
+                <div id="ts4-container" class="ts-container">
+                    <div class="ts-img"></div>
+                    <h2 class="ts-year">1900-1918</h2>
+                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="detail-timeline" class="grid-con">
+            <h1 class="hidden">Detailed Timeline</h1>
+            <div id="dt-main-img" class="l-col-start-1 l-col-end-8"></div>
+            <div id="dt-sub-img" class="l-col-start-8 l-col-end-13"></div>
+            <div id="dt-container" class="l-col-start-1 l-col-end-13">
+                <div class="dt-img"></div>
+                <div class="dt-img"></div>
+                <div class="dt-img"></div>
+            </div>
+
+            <div id="dt-content" class="l-col-start-1 l-col-end-13">
+
+                <div id="dt1-profile" class="dt-profile"> 
+                    <div class="dt-container">
+                        <div class="dt-profile-img"></div>
+                        <h2 class="dt-profile-heading">1900-1918</h2>
+                        <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
+                    </div>
+                </div>
+
+                <div id="dt2-profile" class="dt-profile"> 
+                    <div class="dt-container">
+                        <div class="dt-profile-img"></div>
+                        <h2 class="dt-profile-heading">1900-1918</h2>
+                        <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
+                    </div>
+                </div>
+
                 <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
                     <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
                     <g id="plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
@@ -98,6 +139,7 @@
                 </svg>
             </div>
         </section>
+    
 
         <section id="newsletter" class="grid-con">
             <h1 id="nl-header" class="sub-headings l-col-start-1 l-col-end-13">Newsletter!</h1>

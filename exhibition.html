@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <!-- <link rel="icon" type="image/x-icon" href=""> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
+    <title>Exhibition</title>
 </head>
 <body data-page="exhibition">
     <!-- Header -->
@@ -42,6 +44,98 @@
 
     <main>
 
+        <section id="exhibition-hero" class="grid-con">
+            <h1 class="hidden">Exhibition Introduction</h1>
+            <div id="exhibition-main" class="l-col-start-1 l-col-end-13"></div>
+            
+            <div id="eh-container" class="col-span-full l-col-start-1 l-col-end-13">
+                <div id="ehi-1" class="eh-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Events</span>
+                </div>
+
+                <div id="ehi-2" class="eh-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Guide Tour</span>
+                </div>
+
+                <div id="ehi-3" class="eh-sub-container">
+                    <div class="hero-sub-img"></div>
+                    <span class="hero-sub-heading">Gallery</span>
+                </div>
+            </div>
+        </section>
+
+        <div id="gutter-7"></div>
+
+        <section id="exhibition-social" class="grid-con">
+            <h1 id="es-heading" class="sub-headings l-col-start-1 l-col-end-13">Social Media</h1>
+            <div class="video-container l-col-start-2 l-col-end-12">
+                <video class="video-player" playsinline controls controls data-poster="" aria-label="Loop Video">
+                    <source src="" type="video/mp4" media="(max-width: 767px)">
+                    <source src="" type="video/mp4" media="(max-width: 1199px)">
+                    <source src="video/IDP_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag. Please update your browser or try a different one.
+                </video>
+            </div>
+
+            <div id="es-content" class="l-col-start-1 l-col-end-13">
+                <div class="es-container">
+                    <div class="es-sub-img"></div>
+                    <h2 class="es-sub-heading">Name #1</h2>
+                    <div class="es-gutter"></div>
+                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                </div>
+                <div class="es-container">
+                    <div class="es-sub-img"></div>
+                    <h2 class="es-sub-heading">Name #2</h2>
+                    <div class="es-gutter"></div>
+                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                </div>
+                <div class="es-container">
+                    <div class="es-sub-img"></div>
+                    <h2 class="es-sub-heading">Name #3</h2>
+                    <div class="es-gutter"></div>
+                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                </div>
+            </div>
+
+            <div id="es-sub-content" class="l-col-start-1 l-col-end-13">
+                <div id="es-about-img"></div>
+                <div id="es-about-text">
+                    <h2 id="es-about-heading" class="sub-headings">About London Aviation Museum</h2>
+                    <p id="es-about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatum soluta molestias, optio repudiandae aliquid ullam totam. Accusamus, sequi nisi exercitationem ea sed illum dolorem dolore obcaecati consectetur porro quae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi totam a amet reiciendis facilis quis quas, illo excepturi aspernatur beatae hic in adipisci sunt omnis voluptatum, voluptate maxime ab nam?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="exhibition-gallery" class="grid-con">
+            <h1 id="eg-heading" class="sub-headings l-col-start-1 l-col-end-13">Gallery Collection</h1>
+    
+            <div class="gallery-box l-col-start-1 l-col-end-4">
+                <img src="images/gallery1.jpg" alt="">
+            </div>
+
+            <div class="gallery-box l-col-start-4 l-col-end-8">
+                <img src="images/gallery2.jpg" alt="">
+            </div>
+
+            <div class="gallery-box l-col-start-8 l-col-end-13">
+                <img src="images/gallery3.jpg" alt="">
+            </div>
+
+            <div class="gallery-box l-col-start-1 l-col-end-6">
+                <img src="images/gallery4.jpg" alt="">
+            </div>
+
+            <div class="gallery-box l-col-start-6 l-col-end-13">
+                <img src="images/gallery5.jpg" alt="">
+            </div>
+
+            <div id="eg-btn-container" class="l-col-start-1 l-col-end-13">
+                <button id="eg-btn">Show more</button>
+            </div>
+        </section>
 
         <section id="newsletter" class="grid-con">
             <h1 id="nl-header" class="sub-headings l-col-start-1 l-col-end-13">Newsletter!</h1>
@@ -119,6 +213,7 @@
     
     
 </body>
+<script src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script type="module" src="js/main.js"></script>

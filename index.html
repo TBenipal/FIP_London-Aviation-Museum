@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <!-- <link rel="icon" type="image/x-icon" href=""> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>London Aviation Museum</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
+    <title>London Aviation Museum</title>
 </head>
-<body data-page="home">
+<body data-page="homepage">
     <!-- Header -->
     <header id="header-section" class="grid-con">
         <h1 class="hidden">Navbar</h1>
@@ -104,15 +105,16 @@
             <!--Introduction Video-->
             <section id="intro-video" class="l-col-start-2 l-col-end-12">
                     <h2 class="hidden">Loop Video</h2>
-                    <div id="intro-container">
-                        <video id="intro-player" controls data-poster="" aria-label="Loop Video">
-                            <source src="video/" type="video/mp4" media="(max-width: 767px)">
+                    <div class="video-container">
+                        <video class="video-player" playsinline controls controls data-poster="" aria-label="Loop Video">
+                            <source src="" type="video/mp4" media="(max-width: 767px)">
                             <source src="" type="video/mp4" media="(max-width: 1199px)">
-                            <source src="video/Desktop-Kids-Bumper.mp4" type="video/mp4">
+                            <source src="video/IDP_video.mp4" type="video/mp4">
                             Your browser does not support the video tag. Please update your browser or try a different one.
                         </video>
                     </div>
             </section>
+
             <div id="gutter-1" class="gutter"></div>
         </section>
 
@@ -241,6 +243,7 @@
     
     
 </body>
+<script src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script type="module" src="js/main.js"></script>

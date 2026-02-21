@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airplane</title>
+    <title>Battle of Britian</title>
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
 </head>
@@ -83,6 +83,63 @@
             <div id="bd-img" class="l-col-start-1 l-col-end-13"></div>
         </section>
 
+        <section id="bob-airplane" class="grid-con">
+            <h1 id="ba-heading" class="l-col-start-1 l-col-end-13">Jett 3D Model</h1>
+            
+            <div id="ba-model" class="l-col-start-2 l-col-end-12">
+                <model-viewer></model-viewer>
+            </div>
+
+            <div id="ba-navbar" class="l-col-start-1 l-col-end-13">
+
+                <ul id="ba-nav">
+                    <li class="nav-item">
+                        <button class="ba-tab" data-content="name">Name</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="ba-tab" data-content="mechanic">Mechanic</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="ba-tab" data-content="history">History</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="ba-text" class="l-col-start-3 l-col-end-11"></div>
+            <template id="name">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, ad voluptatem? Itaque ex aperiam delectus. Obcaecati placeat laudantium minus doloribus earum eligendi ut! Repellendus harum quo aliquid ab? Consequatur, expedita.</p>
+            </template>
+
+            <template id="mechanic">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum ipsum assumenda, qui ipsam fugit reprehenderit quam officiis voluptatibus suscipit repellat at dolor provident odio cumque, delectus placeat beatae excepturi laboriosam.</p>
+            </template>
+
+            <template id="history">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam, doloribus, aperiam perferendis dolorem, distinctio porro architecto voluptatibus ratione iste magni error commodi quam? Reiciendis nemo natus ea cumque rerum.</p>
+            </template>
+
+            <div id="ba-images" class="l-col-start-1 l-col-end-13">
+                <div class="ba-img"></div>
+                <div class="ba-img"></div>
+                <div class="ba-img"></div>
+            </div>
+
+        </section>
+
+        <section id="bob-gallery" class="grid-con">
+            <h1 class="hidden">Battle of Britain Gallery</h1>
+            <div id="gutter-6" class="l-col-start-1 l-col-end-13"></div>
+            <div id="bg-main" class="l-col-start-1 l-col-end-13"></div>
+            <div id="bg-content" class="l-col-start-1 l-col-end-13">
+                <div class="bg-img"></div>
+                <div class="bg-img"></div>
+                <div class="bg-img"></div>
+                <div class="bg-img"></div>
+            </div>
+        </section>
+
+
         <section id="newsletter" class="grid-con">
             <h1 id="nl-header" class="sub-headings l-col-start-1 l-col-end-13">Newsletter!</h1>
 
@@ -158,7 +215,6 @@
     </footer>
     
 </body>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
 <script type="module" src="js/main.js"></script>
 </html>

@@ -1,11 +1,11 @@
 export function videoplayer() {
     const lpPlayer = new Plyr('#lp-player', {
-    autoplay: true,
-    muted: true,
-    loop: { active: true },
-    controls: []
+        autoplay: true,
+        muted: true,
+        loop: { active: true },
+        controls: []
     });
-    const player = new Plyr('#player', {
+    const player = new Plyr('.video-player', {
         controls: [
             'play-large',
             'play',
@@ -14,10 +14,10 @@ export function videoplayer() {
             'duration',
             'mute',
             'volume',
+            'captions',
             'pip',
             'airplay',
             'fullscreen'
         ],
-        settings: ['captions', 'quality', 'speed', 'loop'],
     });
 }
