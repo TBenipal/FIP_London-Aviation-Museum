@@ -18,10 +18,12 @@ ul, li {
 }
 
 #header-section {
+  position: sticky;
   width: 100%;
   height: 75px;
   background-color: a.$primary-color;
   align-items: center;
+  z-index: 1000;
 }
 
 #header-logo {
@@ -150,9 +152,12 @@ ul, li {
 @media screen and (min-width: 768px) {
 
   #header-section {
+    position: sticky;
+    top: 0px;
     height: 100px;
     padding-right: 3vw;
     padding-left: 5vw;
+    z-index: 1000;
   }
 
   .hamburger, .close-hamburger, .hamburger-icon {

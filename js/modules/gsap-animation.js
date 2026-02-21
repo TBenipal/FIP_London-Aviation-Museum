@@ -5,20 +5,21 @@ export function GSAP() {
 
         gsap.timeline({
             scrollTrigger: {
-                trigger: "#timeline-section",
-                start: "top 80%",
-                end: "bottom 40%",
+                trigger: "#detail-timeline",
+                start: "top 10%",
+                end: "bottom 0%",
                 scrub: 1
             }
             })
             .fromTo("#timeline-path", { 
                 drawSVG: "0%" 
 
-            }, { drawSVG: "100%", 
+            }, { 
+                drawSVG: "100%", 
                 ease: "none" 
             })
             .fromTo("#plane", { 
-                opacity: 1 
+                opacity: 1
             }, {
                 motionPath: {
                     path: "#timeline-path",
