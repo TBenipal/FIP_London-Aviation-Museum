@@ -52,7 +52,7 @@ ul, li {
 .close-hamburger {
   align-self: self-end;
   margin-top: 12px;
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 .hamburger-icon {
@@ -87,7 +87,7 @@ ul, li {
   flex-direction: column;
   text-align: start;
   padding-top: 90px;
-  padding-left: 35px;
+  padding-left: 25px;
   gap: 10px;
 }
 
@@ -195,12 +195,12 @@ ul, li {
 
   #sidebar ul .nav-item a {
     position: relative;
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
     width: 100%;
     cursor: pointer; 
-    padding: 0px 5px;
+    padding: 0px 4px;
     text-decoration: none;
     overflow: hidden;        
   }
