@@ -5,8 +5,8 @@ export function GSAP() {
 
         gsap.timeline({
             scrollTrigger: {
-                trigger: "#detail-timeline",
-                start: "top 10%",
+                trigger: "#timeline-content",
+                start: "top 90%",
                 end: "bottom 0%",
                 scrub: 1
             }
