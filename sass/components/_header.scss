@@ -19,17 +19,22 @@ ul, li {
 
 #header-section {
   position: sticky;
+  top: 0px;
   width: 100%;
-  height: 75px;
+  height: auto;
   background-color: a.$primary-color;
   align-items: center;
   z-index: 1000;
+  padding: 5px 0px;
 }
 
 #header-logo {
-  width: 175px;
-  height: 50px;
-  background-color: darkgray;
+  width: 200px;
+}
+
+#header-logo img {
+  width: 100%;
+  height: auto;
 }
 
 #mobile-header {
@@ -154,9 +159,9 @@ ul, li {
   #header-section {
     position: sticky;
     top: 0px;
-    height: 100px;
-    padding-right: 3vw;
-    padding-left: 5vw;
+    height: auto;
+    padding-right: 2vw;
+    padding-left: 2vw;
     z-index: 1000;
   }
 
@@ -175,6 +180,7 @@ ul, li {
   #sidebar, #sidebar.active {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: static;
     height: auto;
     background-color: transparent;
@@ -182,7 +188,6 @@ ul, li {
     width: auto;
     transform: none;
     transition: none;
-    padding-top: 10px;
     margin: 0px;
   }
 
@@ -228,10 +233,22 @@ ul, li {
 }
 
 @media screen and (min-width: 1200px) {
+
+  #header-section {
+    padding: 0px 4vw;
+  }
+
   #sidebar ul .nav-item a {
     position: relative;
     font-size: 26px;
     padding: 0px 15px;       
+  }
+
+  #header-logo {
+    width: 275px;
+    height: auto;
+    padding: 5px 0px;
+
   }
 
 }

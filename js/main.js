@@ -1,16 +1,21 @@
 import { burgermenu } from "./modules/burger-menu.js";
-import { GSAP } from "./modules/gsap-animation.js";
+import { timeline } from "./modules/timeline.js";
 import { videoplayer } from "./modules/video-player.js";
 import { bobairplane } from "./modules/bob-airplane.js";
+import { GSAP } from "./modules/gsap-animation.js";
+import { homepage } from "./modules/homepage.js";
+
 
 burgermenu();
 
 if(document.body.dataset.page === "homepage") {
     videoplayer();
+    GSAP();
+    homepage();
 }
 
 if(document.body.dataset.page === "wartime") {
-    GSAP();
+    timeline();
 }
 
 if(document.body.dataset.page === "bob") {
