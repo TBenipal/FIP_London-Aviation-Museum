@@ -4,16 +4,18 @@
         background-color: a.$primary-color;
         height: auto;
         padding-bottom: 100px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
         justify-content: center;
     }
 
     #footer-logo {
-        margin-top: 50px;
-        width: 175px;
-        height: 50px;
-        background-color: darkgray;
+        margin-top: 25px;
+        width: 400px;
+    }
+
+    #footer-logo img {
+        width: 100%;
     }
 
     #footer-content {
@@ -84,10 +86,12 @@
 @media screen and (min-width: 768px) { 
 
     #footer-logo {
-        margin-top: 50px;
-        width: 175px;
-        height: 50px;
-        background-color: darkgray;
+        margin-top: 25px;
+        width: 400px;
+    }
+
+    #footer-logo img {
+        width: 100%;
     }
 
     #footer-content {
@@ -112,12 +116,14 @@
     }
 
     #footer-logo {
-        justify-self: start;
-        margin-top: 50px;
-        width: 175px;
-        height: 50px;
-        background-color: darkgray;
+        margin-top: 25px;
+        width: 400px;
     }
+
+    #footer-logo img {
+        width: 100%;
+    }
+
 
     #footer-content {
         display: flex;

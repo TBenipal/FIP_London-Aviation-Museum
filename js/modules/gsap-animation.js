@@ -13,12 +13,12 @@ export function GSAP() {
         });
 
         gsap.to("#header-section", {
-            opacity: 0.90,
+            opacity: 0.95,
             scrollTrigger: {
                 trigger: "body",
                 start: "top 0%",
                 end: "bottom 90%",
-                scrub: .1
+                scrub: .1,
             },
         });
 
