@@ -774,14 +774,18 @@ html, body {
         position: absolute;
     }
 
-    #gutter-1 {
+    #gutter-2 {
         bottom: -37px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0px;
+        transform: translateX(-0%);
         width: 75%;
         height: 75px;
         background-color: a.$secondary-color;
         z-index: 10;
+    }
+
+    .slide-next, .slide-prev {
+        display: none;
     }
 
     #whats-on {
@@ -805,11 +809,12 @@ html, body {
     //     text-align: center;
     // }
 
+
     #wo-content, #ss-content {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        flex: 0%;
+        overflow-x: unset;
         gap: 4vw;
         margin: 0 auto;
     }
@@ -817,6 +822,7 @@ html, body {
     .wo-blocks, .ss-blocks {
         width: 350px;
         height: 450px;
+        flex: 0%;
         background-color: gray;
     }
 
@@ -865,6 +871,8 @@ html, body {
     }
 
     #gutter-3 {
+        position: relative;
+        right: -25px;
         margin-top: 125px;
         background: a.$secondary-color;
         height: 125px;
@@ -906,7 +914,8 @@ html, body {
     #nl-content {
         display: flex;
         flex-direction: row;
-        align-self: flex-start;
+        justify-content: center;
+        align-self: center;
         text-align: start;
         gap: 3vw;
     }
