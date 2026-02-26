@@ -11,7 +11,7 @@
 
     #footer-logo {
         margin-top: 25px;
-        width: 400px;
+        width: 300px;
     }
 
     #footer-logo img {
@@ -26,6 +26,8 @@
         flex-wrap: wrap;
         justify-content: space-between;
         margin-top: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
     #am-content, #services-content, #bk-content, #pro-content {
@@ -85,6 +87,15 @@
 
 @media screen and (min-width: 768px) { 
 
+    #footer-section {
+        background-color: a.$primary-color;
+        height: auto;
+        padding-bottom: 100px;
+        padding-left: 0px;
+        padding-right: 0px;
+        justify-content: center;
+    }
+
     #footer-logo {
         margin-top: 25px;
         width: 400px;
@@ -102,6 +113,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         margin-top: 50px;
+        padding: 0px;
     }
 }
 
@@ -116,7 +128,7 @@
     }
 
     #footer-logo {
-        margin-top: 25px;
+        margin-top: 50px;
         width: 400px;
     }
 

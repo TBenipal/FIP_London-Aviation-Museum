@@ -1,0 +1,89 @@
+@use '../abstracts' as a;
+
+#login-container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-color: a.$secondary-color;
+}
+
+.login-form {
+    justify-self: center;
+    align-self: center;
+    background-color: a.$primary-color;
+    backdrop-filter: blur(15px);
+    padding: 75px 100px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;;
+    max-width: 500px;
+}
+
+.login-form h2 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 2rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    // background: rgba(255,255,255,0.15);
+    background-color: a.$secondary-color;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: gray;
+}
+
+.input-group input:focus {
+    background-color: a.$accent-color;
+    transform: scale(1.1);
+}
+
+.input-group input:focus::placeholder {
+    color: black;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: a.$accent-color;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.1);
+    background-color: a.$secondary-color;
+}
+
+.error-message {
+    font-size: 2rem;
+    background: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #ffb3b3;
+}

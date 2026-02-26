@@ -1,5 +1,122 @@
 @use '../abstracts' as a;
 
+#contact-section {
+  width: 90%;
+  padding: 25px;
+  background-color: a.$accent-color;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.contact-header {
+  font-size: 48px;
+  color: a.$secondary-color;
+}
+
+#contact-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 10px 0px;
+  color: a.$secondary-color;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.field {
+  height: 50px;
+  margin: 15px 0px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  border: none;
+  color: black;
+  background-color: white;
+}
+
+#message {
+  height: 215px;
+  width: 100%;
+}
+
+#submit-btn {
+  margin: 0px;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 0px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+#submit-btn:hover, #submit-btn:active {
+  color: a.$accent-color;
+  background-color: a.$primary-color;
+}
+
+#thanks-container {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0,0,0, .75);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#thanks-container #thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: a.$primary-font;
+  background: a.$accent-color;
+  color: white;
+  padding: 10vw 10vw;
+  border-radius: 2vw;
+  text-align: center;
+  width: 80%;
+}
+
+#thanks h3 {
+  font-size: 2rem;
+}
+
+#explore-btn {
+  background: a.$primary-color;
+  color: white;
+  padding: 2vw 4vw;
+  border-radius: 1vw;
+  font-size: 4vw;
+  font-weight: 600;
+  margin: 7vw 0vw;
+  border: 2px solid transparent;
+}
+
+#explore-btn:hover, #explore-btn:active {
+  background-color: a.$secondary-color;
+  color: a.$accent-color;
+}
+
+#thanks p {
+  font-size: 3.5vw;
+  line-height: normal;
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+
 @media screen and (min-width: 1200px) {
   #contact-section {
     width: 90%;
