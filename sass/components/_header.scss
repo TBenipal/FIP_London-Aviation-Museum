@@ -154,6 +154,20 @@ ul, li {
   margin-left: 12px;
 }
 
+.nav-item .admin-icon {
+  display: block !important;
+  width: 25px;
+  height: auto;
+}
+
+.admin-icon .cls-1, .admin-icon .cls-2 {
+  fill: white;
+}
+
+.admin-icon:hover .cls-1, .admin-icon:hover .cls-2 {
+  fill: a.$accent-color;
+}
+
 @media screen and (min-width: 768px) {
 
   #header-section {
@@ -205,9 +219,9 @@ ul, li {
     text-decoration: none;
     width: 100%;
     cursor: pointer; 
-    padding: 0px 4px;
+    padding: 0px 2px;
     text-decoration: none;
-    overflow: hidden;        
+    // overflow: hidden;        
   }
 
   .nav-item a:hover {
@@ -230,6 +244,16 @@ ul, li {
     left: 0;
     right: 0;
   }
+
+  .nav-item .admin-icon {
+    margin-top: 0px;
+    width: 20px;
+    height: auto;
+  }
+
+  .icon-link::after {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -241,14 +265,19 @@ ul, li {
   #sidebar ul .nav-item a {
     position: relative;
     font-size: 26px;
-    padding: 0px 15px;       
+    padding: 0px 10px;       
   }
 
   #header-logo {
     width: 275px;
     height: auto;
     padding: 5px 0px;
+  }
 
+  .nav-item .admin-icon {
+    margin-top: 0px;
+    width: 25px;
+    height: auto;
   }
 
 }

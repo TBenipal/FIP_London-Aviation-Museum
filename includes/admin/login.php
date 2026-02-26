@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
 
     // Demo credentials (change later)
-    if ($username === "admin" && $password === "1234") {
+    if ($username === "admin" && $password === "password") {
         $_SESSION["admin"] = true;
         header("Location: ../../index.php");
         exit();
@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <body>
 
-<div class="login-container grid-con">
-    <form method="POST" class="login-form l-col-start-5 l-col-end-9">
+<div id="login-container" class="grid-con">
+    <form method="POST" class="login-form col-span-full l-col-start-5 l-col-end-9">
         <h2>Admin Login</h2>
 
         <?php if (!empty($error)): ?>

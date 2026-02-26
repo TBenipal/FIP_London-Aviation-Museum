@@ -158,6 +158,20 @@ ul, li {
   margin-left: 12px;
 }
 
+.nav-item .admin-icon {
+  display: block !important;
+  width: 25px;
+  height: auto;
+}
+
+.admin-icon .cls-1, .admin-icon .cls-2 {
+  fill: white;
+}
+
+.admin-icon:hover .cls-1, .admin-icon:hover .cls-2 {
+  fill: #A08B63;
+}
+
 @media screen and (min-width: 768px) {
   #header-section {
     position: sticky;
@@ -203,9 +217,8 @@ ul, li {
     text-decoration: none;
     width: 100%;
     cursor: pointer;
-    padding: 0px 4px;
+    padding: 0px 2px;
     text-decoration: none;
-    overflow: hidden;
   }
   .nav-item a:hover {
     color: #A08B63;
@@ -225,6 +238,14 @@ ul, li {
     left: 0;
     right: 0;
   }
+  .nav-item .admin-icon {
+    margin-top: 0px;
+    width: 20px;
+    height: auto;
+  }
+  .icon-link::after {
+    display: none !important;
+  }
 }
 @media screen and (min-width: 1200px) {
   #header-section {
@@ -233,12 +254,17 @@ ul, li {
   #sidebar ul .nav-item a {
     position: relative;
     font-size: 26px;
-    padding: 0px 15px;
+    padding: 0px 10px;
   }
   #header-logo {
     width: 275px;
     height: auto;
     padding: 5px 0px;
+  }
+  .nav-item .admin-icon {
+    margin-top: 0px;
+    width: 25px;
+    height: auto;
   }
 }
 #footer-section {
@@ -411,30 +437,33 @@ ul, li {
     background-color: gray;
   }
 }
-.login-container {
+#login-container {
   width: 100%;
   height: 100vh;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-color: #333223;
 }
 
 .login-form {
-  background: rgba(255, 255, 255, 0.08);
+  justify-self: center;
+  align-self: center;
+  background-color: #0C0E0C;
   backdrop-filter: blur(15px);
-  padding: 75px 30px;
+  padding: 75px 100px;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   text-align: center;
   color: white;
+  max-width: 500px;
 }
 
 .login-form h2 {
   margin-bottom: 25px;
   font-weight: 600;
   letter-spacing: 1px;
+  font-size: 2rem;
 }
 
 .input-group {
@@ -447,23 +476,31 @@ ul, li {
   border-radius: 8px;
   border: none;
   outline: none;
-  background: rgba(255, 255, 255, 0.15);
+  background-color: #333223;
   color: white;
   font-size: 14px;
   transition: 0.3s ease;
 }
 
 .input-group input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: gray;
 }
 
 .input-group input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: gray;
 }
 
 .input-group input:focus {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.02);
+  background-color: #A08B63;
+  transform: scale(1.1);
+}
+
+.input-group input:focus::-moz-placeholder {
+  color: black;
+}
+
+.input-group input:focus::placeholder {
+  color: black;
 }
 
 .login-btn {
@@ -474,18 +511,18 @@ ul, li {
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
-  background: #00c6ff;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
+  background-color: #A08B63;
   color: white;
   transition: 0.3s ease;
 }
 
 .login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  background-color: #333223;
 }
 
 .error-message {
+  font-size: 2rem;
   background: rgba(255, 0, 0, 0.2);
   padding: 10px;
   margin-bottom: 15px;
@@ -2249,6 +2286,59 @@ model-viewer {
 #submit-btn:hover, #submit-btn:active {
   color: #A08B63;
   background-color: #0C0E0C;
+}
+
+#thanks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#thanks-container #thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ogg";
+  background: #A08B63;
+  color: white;
+  padding: 10vw 10vw;
+  border-radius: 2vw;
+  text-align: center;
+  width: 80%;
+}
+
+#thanks h3 {
+  font-size: 2rem;
+}
+
+#explore-btn {
+  background: #0C0E0C;
+  color: white;
+  padding: 2vw 4vw;
+  border-radius: 1vw;
+  font-size: 4vw;
+  font-weight: 600;
+  margin: 7vw 0vw;
+  border: 2px solid transparent;
+}
+
+#explore-btn:hover, #explore-btn:active {
+  background-color: #333223;
+  color: #A08B63;
+}
+
+#thanks p {
+  font-size: 3.5vw;
+  line-height: normal;
 }
 
 @media screen and (min-width: 1200px) {
