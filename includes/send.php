@@ -1,99 +1,66 @@
-(() => {
+<?php
 
-        // --- CONTACT FORM ---
-    const contactForm = document.getElementById('contact-form');
-    const contactBtn  = document.getElementById('submit-btn');
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    header('Content-Type: application/json');
 
-            contactBtn.disabled = true;
-            contactBtn.textContent = 'Sending...';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            const formData = new FormData(contactForm);
-            const feedback = document.getElementById('contact-feedback');
+        $recipient = 'no-reply@londonaviation.com';
+        $subject   = 'Inquiry from London Aviation Museum';
 
-            try {
-                const res  = await fetch('includes/send.php', {
-                    method: 'POST',
-                    body: formData
-                });
+        $first_raw = $_POST['first_name'] ?? '';
+        $last_raw  = $_POST['last_name']  ?? '';
+        $email_raw = $_POST['email']      ?? '';
+        $msg_raw   = $_POST['message']    ?? '';
 
-                const text = await res.text();
-                let data;
+        $first         = trim(strip_tags($first_raw));
+        $last          = trim(strip_tags($last_raw));
+        $visitor_name  = trim($first . ' ' . $last);
+        $email_clean   = str_replace(["\r", "\n", "%0a", "%0d"], '', trim($email_raw));
+        $visitor_email = filter_var($email_clean, FILTER_VALIDATE_EMAIL);
+        $message       = trim(strip_tags($msg_raw));
 
-                try {
-                    data = JSON.parse(text);
-                } catch {
-                    feedback.innerHTML = `<p class="form-error">Server error — check console.</p>`;
-                    console.error('Non-JSON response:', text);
-                    return;
-                }
+        $fail = [];
 
-                if (data.errors) {
-                    feedback.innerHTML = `<p class="form-error">${data.errors.join('<br>')}</p>`;
-                } else {
-                    feedback.innerHTML = `<p class="form-success">${data.message}</p>`;
-                    contactForm.reset();
-                }
+        if ($first === '')   $fail[] = 'First name is required.';
+        if ($last === '')    $fail[] = 'Last name is required.';
+        if (!$visitor_email) $fail[] = 'A valid email is required.';
+        if ($message === '') $fail[] = 'Message cannot be empty.';
 
-            } catch (err) {
-                feedback.innerHTML = `<p class="form-error">Something went wrong. Please try again.</p>`;
-                console.error(err);
-            } finally {
-                contactBtn.disabled = false;
-                contactBtn.textContent = 'Submit!';
-            }
-        });
+        if (!empty($fail)) {
+            echo json_encode(['errors' => $fail]);
+            exit;
+        }
+
+        $emailBody  = "You received a new inquiry:\r\n\r\n";
+        $emailBody .= "Name: {$visitor_name}\r\n";
+        $emailBody .= "Email: {$visitor_email}\r\n\r\n";
+        $emailBody .= "Message:\r\n{$message}\r\n";
+
+        $fromAddress = "no-reply@londonaviation.com";
+
+        $headers  = "From: London Aviation <{$fromAddress}>\r\n";
+        $headers .= "Reply-To: {$visitor_email}\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+
+        // $sent = mail($recipient, $subject, $emailBody, $headers);
+        $sent = true; // remove before launch
+
+        if ($sent) {
+            echo json_encode([
+                'message' => "Thank you " . htmlspecialchars($visitor_name, ENT_QUOTES, 'UTF-8') . ", we will get back to you soon!"
+            ]);
+        } else {
+            echo json_encode([
+                'errors' => ['Sorry, your message could not be sent. Please try again.']
+            ]);
+        }
+
+    } else {
+        echo json_encode(['errors' => ['Direct access not allowed.']]);
     }
-
-    // --- NEWSLETTER FORM ---
-    const nlForm = document.getElementById('nl-form-con');
-    const nlBtn  = document.getElementById('nl-subscribe');
-
-    if (nlForm) {
-        nlForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            nlBtn.disabled = true;
-            nlBtn.textContent = 'Subscribing...';
-
-            const formData = new FormData(nlForm);
-            const feedback = document.getElementById('nl-feedback');
-
-            try {
-                const res  = await fetch('includes/newsletter.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const text = await res.text();
-                let data;
-
-                try {
-                    data = JSON.parse(text);
-                } catch {
-                    feedback.innerHTML = `<p class="form-error">Server error — check console.</p>`;
-                    console.error('Non-JSON response:', text);
-                    return;
-                }
-
-                if (data.errors) {
-                    feedback.innerHTML = `<p class="form-error">${data.errors.join('<br>')}</p>`;
-                } else {
-                    feedback.innerHTML = `<p class="form-success">${data.message}</p>`;
-                    nlForm.reset();
-                }
-
-            } catch (err) {
-                feedback.innerHTML = `<p class="form-error">Something went wrong. Please try again.</p>`;
-                console.error(err);
-            } finally {
-                nlBtn.disabled = false;
-                nlBtn.textContent = 'Subscribe';
-            }
-        });
-    }
-
-})();
+?>
