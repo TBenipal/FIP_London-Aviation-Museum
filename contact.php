@@ -118,9 +118,27 @@
             <?php endif; ?>
 
 >>>>>>> Stashed changes:contact.php
+<<<<<<< Updated upstream:contact.html
+            
+=======
+
+            <?php if (isset($_GET['msg'])): ?>
+                <div id="thanks-container">
+                    <div id="thanks">
+                        <h3>Thank you for<br>contacting</h3>
+                        <a id="explore-btn" href="index.php">Explore!</a>
+                        <p><?php echo htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+>>>>>>> Stashed changes:contact.php
             <!--Form-->
             <form id="contact-form" class="col-span-full" method="POST" >
             <form id="contact-form" class="col-span-full" method="POST" >
+<<<<<<< Updated upstream:contact.php
+>>>>>>> Stashed changes:contact.html
+=======
 >>>>>>> Stashed changes:contact.html
                 <div id="form">
                     <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required aria-label="First Name">
@@ -140,6 +158,8 @@
             <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit!</button>
              <div id="contact-feedback"></div>   
             <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit!</button>
+             <div id="contact-feedback"></div>   
+            <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit!</button>
 
 <<<<<<< Updated upstream:contact.html
 <<<<<<< Updated upstream:contact.html
@@ -148,6 +168,9 @@
 >>>>>>> Stashed changes:contact.php
 =======
 >>>>>>> Stashed changes:contact.php
+<<<<<<< Updated upstream:contact.php
+>>>>>>> Stashed changes:contact.html
+=======
 >>>>>>> Stashed changes:contact.html
         </section>
 
@@ -169,6 +192,7 @@
 =======
                         <input type="text" placeholder="Name *" class="nl-field" name="nl_name" id="nl_name" required>
                         <input type="text" placeholder="Name *" class="nl-field" name="nl_name" id="nl_name" required>
+                        <input type="text" placeholder="Name *" class="nl-field" name="nl_name" id="nl_name" required>
                         <br>
                         <input type="email" placeholder="Email *" class="nl-field" name="nl_email" id="nl_email" required>
                         <input type="email" placeholder="Email *" class="nl-field" name="nl_email" id="nl_email" required>
@@ -178,6 +202,9 @@
                     <button id="nl-subscribe" type="submit">Subscribe</button>
                     <div id="nl-feedback"></div>
                     <button id="nl-subscribe" type="submit">Subscribe</button>
+<<<<<<< Updated upstream:contact.php
+>>>>>>> Stashed changes:contact.html
+=======
 >>>>>>> Stashed changes:contact.html
                 </form>
             </div>
