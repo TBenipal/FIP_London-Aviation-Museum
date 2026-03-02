@@ -13,13 +13,6 @@ $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-<<<<<<< Updated upstream
-    // Demo credentials (change later)
-    if ($username === "admin" && $password === "password") {
-        $_SESSION["admin"] = true;
-        header("Location: ../../index.php");
-        exit();
-=======
     $username_raw = $_POST["username"] ?? '';
     $password_raw = $_POST["password"] ?? '';
 
@@ -28,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($username === '' || $password === '') {
         $error = "Please enter both username and password.";
->>>>>>> Stashed changes
     } else {
         try {
             $db   = getConnection();
