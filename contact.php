@@ -29,12 +29,42 @@
 
             <nav id="sidebar">
                 <ul>
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="battle-of-britain.html">Battle of Britian</a></li>
-                    <li class="nav-item"><a href="wartime.html">Wartime</a></li>
-                    <li class="nav-item"><a href="exhibition.html">Exhibition</a></li>
-                    <li class="nav-item"><a href="contact.html" class="active">Contact!</a></li>
+                    <li class="nav-item"><a href="index.php">Home</a></li>
+                    <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
+                    <li class="nav-item"><a href="wartime.php">Wartime</a></li>
+                    <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
+                    <li class="nav-item"><a href="contact.php" class="active">Contact!</a></li>
+                    <li class="nav-item">
+                        <?php if (isset($_SESSION["admin"])): ?>
+                            <a class="icon-link" href="includes/admin/logout.php">
+                                <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 73.2 90.1">
+                                    <g data-name="Layer 2">
+                                        <path class="cls-2" d="M61.9,33.8h-2.8v-10.8C59.1,10.1,49.8,0,36.5,0S14.1,10.3,14.1,23v10.7h0q0,.1,0,0h-2.8c-6.2,0-11.2,5-11.3,11.3v33.8c0,6.2,5,11.2,11.3,11.3h50.6c6.2,0,11.2-5,11.3-11.3v-33.8c0-6.2-5.1-11.2-11.3-11.2ZM19.7,33.8v-10.8c0-9.6,6.6-17.4,16.8-17.4s17,7.6,17,17.4v10.7h0q0,.1,0,0H19.7v.1h0ZM67.5,78.8c0,3.1-2.5,5.6-5.6,5.6H11.3c-3.1,0-5.6-2.5-5.6-5.6v-33.8c0-3.1,2.5-5.6,5.6-5.6h50.6c3.1,0,5.6,2.5,5.6,5.6v33.8ZM42.2,56.3c0,2.1-1.1,3.9-2.8,4.9h-.1.1v9.2c0,1.6-1.3,2.8-2.8,2.8-1.6,0-2.8-1.3-2.8-2.8v-9.2h.1-.1c-1.7-1-2.8-2.8-2.8-4.9,0-3.1,2.5-5.6,5.6-5.6,3.1-.1,5.6,2.4,5.6,5.6Z"/>
+                                    </g>
+                                </svg>
+                            </a>
+                        <?php else: ?>
+                            <a class="icon-link" href="includes/admin/login.php">
+                                <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 600 700">
+                                    <g data-name="Layer 1">
+                                        <g>
+                                        <path class="cls-1" d="M300,300c82.84,0,150-67.16,150-150S382.84,0,300,0s-150,67.16-150,150,67.16,150,150,150Z"/>
+                                        <path class="cls-1" d="M600,550c0-82.85-67.15-150-150-150H150C67.16,400,0,467.15,0,550v150h600v-150Z"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+                    </li>
                 </ul>
+
+                <!-- <?php if (isset($_SESSION["admin"])): ?>
+                    <div class="admin-panel">
+                        <a href="includes/admin/logout.php">Logout</a>
+                        <a href="#">Add Post</a>
+                        <a href="#">Edit Content</a>
+                    </div>
+                <?php endif; ?> -->
             </nav>
         </div>
     </header>
@@ -46,6 +76,18 @@
             <h2 class="contact-header col-span-full l-col-start-1 l-col-end-13">Reach Out!</h2>
             <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore perferendis quasi recusandae natus laboriosam est ipsa totam incidunt quia iure a maxime itaque quod, pariatur, ipsam ab error cum?</p>
             
+            <?php
+                if (isset($_GET['msg'])) {
+                    echo '
+                    <div id="thanks-container">
+                        <div id="thanks">
+                            <h3>Thank you for<br>contacting</h3>
+                            <a id="explore-btn" href="index.php#project-1">Explore!</a>
+                            <p>' . htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8') . '</p>
+                        </div>
+                    </div>'; 
+                } ?>
+
             <!--Form-->
            <form id="contact-form" class="col-span-full" method="post" action="includes/send.php">
                 <div id="form">
@@ -59,7 +101,7 @@
                 <textarea id="message" placeholder="Message *" class="field" name="message" required aria-label="Your Message"></textarea>
             </form>
 
-            <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit !</button>
+            <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit !</button>
         </section>
 
         <section id="newsletter" class="grid-con">
