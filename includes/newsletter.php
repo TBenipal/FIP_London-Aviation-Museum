@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 
 header('Content-Type: application/json');
 
-require_once '../includes/database.php';
+require_once '../database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
