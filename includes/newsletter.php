@@ -5,11 +5,9 @@ ini_set('display_errors', 1);
 
 header('Content-Type: application/json');
 
-<<<<<<< Updated upstream
-require_once __DIR__ . '/../database.php';
-=======
+
 require_once __DIR__ . '/database.php';
->>>>>>> Stashed changes
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
