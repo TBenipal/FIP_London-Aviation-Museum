@@ -1,82 +1,99 @@
-<?php
+(() => {
 
-    // Error reporting, turn off when we launch
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+        // --- CONTACT FORM ---
+    const contactForm = document.getElementById('contact-form');
+    const contactBtn  = document.getElementById('submit-btn');
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-        $recipent = 'no-reply@londonaviation.com';
+            contactBtn.disabled = true;
+            contactBtn.textContent = 'Sending...';
 
-        $subject = 'Inquiry from London Aviation Museum';
+            const formData = new FormData(contactForm);
+            const feedback = document.getElementById('contact-feedback');
 
-        $first_raw = $_POST['first_name'] ?? '';
-        $last_raw = $_POST['last_name'] ?? '';
-        $email_raw = $_POST['email'] ?? '';
-        $msg_raw = $_POST['message'] ?? '';
+            try {
+                const res  = await fetch('includes/send.php', {
+                    method: 'POST',
+                    body: formData
+                });
 
-        $first = trim(strip_tags($first_raw));
-        $last = trim(strip_tags($last_raw));
+                const text = await res.text();
+                let data;
 
-        $visitor_name = trim($first.' '.$last);
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    feedback.innerHTML = `<p class="form-error">Server error — check console.</p>`;
+                    console.error('Non-JSON response:', text);
+                    return;
+                }
 
-        $email_clean = str_replace(["\r", "\n", "%0a", "%0d"], '', trim($email_raw));
+                if (data.errors) {
+                    feedback.innerHTML = `<p class="form-error">${data.errors.join('<br>')}</p>`;
+                } else {
+                    feedback.innerHTML = `<p class="form-success">${data.message}</p>`;
+                    contactForm.reset();
+                }
 
-        $visitor_email = filter_var($email_clean, FILTER_VALIDATE_EMAIL);
-
-        $message = trim(strip_tags($msg_raw));
-
-        $fail = [];
-
-        if ($first === '') {
-            $fail[] = 'first_name';
-        }
-
-        if ($last === '') {
-            $fail[] = 'last_name';
-        }
-
-        if (!$visitor_email) {
-            $fail[] = 'email';
-        }
-
-        if ($message === '') {
-            $fail[] = 'message';
-        }
-
-        if (!empty($fail)) {
-            echo '<p><strong>Validation failed.</strong></p>';
-            echo '<p>Please fix:' .htmlspecialchars(implode(', ', $fail), ENT_QUOTES, 'UTF-8').'</p>';
-            exit; //If the aboves run stop the script.
-        }
-
-        $emailBody = "You received a new inquiry:\r\n\r\n";
-        $emailBody .= "Name: {$visitor_name}\r\n";
-        $emailBody .= "Email: {$visitor_email}\r\n\r\n";
-        $emailBody .= "Message:\r\n{$message}\r\n";
-
-        $fromAddress = "no-reply@londonaviation.com";
-
-        // Create the email headers (metadata for the message)
-        $headers = "From: London Aviation <{$fromAddress}>\r\n"; // Sender Company
-        $headers .= "Reply-To: {$visitor_email}\r\n"; // Where replies will go
-        $headers .= "MIME-Version: 1.0\r\n"; // Email standard version
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n"; // Plain text email
-        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n"; // Identifies PHP mailer
-
-        $sent = mail($recipent, $subject, $emailBody, $headers);
-        //$sent = true;
-
-        if ($sent) {
-            $thankyou = urlencode("Thank you for contacting us, " . htmlspecialchars($visitor_name,ENT_QUOTES, 'UTF-8'). " we will get back to you soon");
-            header("Location: ../contact.php?msg=$thankyou");
-            exit();
-        } else {
-            $thankyou = urlencode("Sorry your message was not sent.");
-            header("Location: ../contact.php?msg=$thankyou");
-            exit();
-        }
-    } else {
-        echo "<p>These are not the droids you are looking for...</p>";
+            } catch (err) {
+                feedback.innerHTML = `<p class="form-error">Something went wrong. Please try again.</p>`;
+                console.error(err);
+            } finally {
+                contactBtn.disabled = false;
+                contactBtn.textContent = 'Submit!';
+            }
+        });
     }
-?>
+
+    // --- NEWSLETTER FORM ---
+    const nlForm = document.getElementById('nl-form-con');
+    const nlBtn  = document.getElementById('nl-subscribe');
+
+    if (nlForm) {
+        nlForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            nlBtn.disabled = true;
+            nlBtn.textContent = 'Subscribing...';
+
+            const formData = new FormData(nlForm);
+            const feedback = document.getElementById('nl-feedback');
+
+            try {
+                const res  = await fetch('includes/newsletter.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const text = await res.text();
+                let data;
+
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    feedback.innerHTML = `<p class="form-error">Server error — check console.</p>`;
+                    console.error('Non-JSON response:', text);
+                    return;
+                }
+
+                if (data.errors) {
+                    feedback.innerHTML = `<p class="form-error">${data.errors.join('<br>')}</p>`;
+                } else {
+                    feedback.innerHTML = `<p class="form-success">${data.message}</p>`;
+                    nlForm.reset();
+                }
+
+            } catch (err) {
+                feedback.innerHTML = `<p class="form-error">Something went wrong. Please try again.</p>`;
+                console.error(err);
+            } finally {
+                nlBtn.disabled = false;
+                nlBtn.textContent = 'Subscribe';
+            }
+        });
+    }
+
+})();

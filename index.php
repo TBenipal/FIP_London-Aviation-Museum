@@ -214,23 +214,28 @@
         </section>
 
         <section id="newsletter" class="grid-con">
-            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
+    <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
-            <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
-                
-                <form id="nl-form-con" class="col-span-full">
-                    <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
-                        <br>
-                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
-                        <br>
-                    </div>
-                    <button id="nl-subscribe">Subscribe</button>
-                </form>
+    <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
+        <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde.</p>
+
+        <?php if (isset($_GET['msg'])): ?>
+            <p class="nl-msg"><?php echo htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8'); ?></p>
+        <?php endif; ?>
+
+        <form id="nl-form-con" class="col-span-full" method="POST">
+            <div id="nl-form">
+                <input type="text" placeholder="Name *" class="nl-field" name="nl_name" id="nl_name" required>
+                <br>
+                <input type="email" placeholder="Email *" class="nl-field" name="nl_email" id="nl_email" required>
+                <br>
             </div>
+            <div id="nl-feedback"></div>
+            <button id="nl-subscribe" type="submit">Subscribe</button>
+        </form>
+    </div>
 
-        </section>
+</section>
         
     </main>
 
