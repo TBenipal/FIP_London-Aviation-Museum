@@ -1,15 +1,277 @@
 @use '../abstracts' as a;
 
-  
-
-@media screen and (min-width: 768px) {
+#timeline {
+    display: none;
 }
 
-@media screen and (min-width: 1200px) {
+#wartime-hero {
+    width: 100%;
+    height: auto;
+}
 
-    #wartime-hero {
-        width: 100%;
-        height: auto;
+#wartime-main {
+    background-color: darkgray;
+    height: 90vh;
+}
+
+#wartime-main picture, #wartime-main img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#wartime-main img {
+    object-fit: cover;
+}
+
+#wh-container {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#wh-container .hero-sub-heading {
+    font-size: 4vw;
+}
+
+.wh-sub-container {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 28vw;
+    // width: 350px;
+    // height: 300px;
+    gap: 10px;
+} 
+
+#timeline-section {
+    width: 100%;
+    background-color: a.$primary-color;
+    padding: 50px 25px;
+}
+
+#ts-header {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#ts-header br {
+    display: none;
+}
+
+#ts-text {
+    font-size: 1rem;
+    color: white;
+    line-height: 25px;
+    width: 100%;
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+#ts-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+}
+
+.ts-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+}
+
+.ts-img {
+    background-color: gray;
+    height: 400px;
+    width: 100%;
+}
+
+.ts-img picture, .ts-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.ts-img img {
+    object-fit: cover;
+}
+
+.ts-year {
+    position: absolute;
+    top: 325px;
+    align-self: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.ts-text {
+    font-size: 1rem;
+    color: white;
+    padding: 10px 10px 20px 10px;
+    line-height: 25px;
+}
+
+#detail-timeline {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: a.$primary-color;
+    padding: 0px 25px;
+}
+
+#dt-heading {
+    text-align: center;
+    color: white;
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+}
+
+#dt-main-img, #dt-sub-img {
+    height: 75vw;
+    width: 100%;
+    max-width: 500px;
+    background-color: gray;
+    margin: 5px auto;
+}
+
+#dt-main-img picture, #dt-main-img img,
+#dt-sub-img picture, #dt-sub-img img,
+.dt-img picture, .dt-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#dt-main-img img, #dt-sub-img img, .dt-img img  {
+    object-fit: cover;
+}
+
+#dt-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.dt-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.dt-img {
+    width: 100%;
+    height: 75vw;
+    max-width: 500px;
+    background-color: gray;
+}
+
+.dt-profile-img {
+    // width: 8vw;
+    // height: 8vw;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-color: grey;
+}
+
+.dt-profile-img picture, .dt-profile-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100px;
+}
+
+.dt-profile-img img {
+    object-fit: cover;
+}
+
+
+.dt-profile-heading {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.dt-profile-text {
+    font-size: 1.5rem;
+    color: white;
+    // margin: 0px 175px;
+    width: 300px;
+}
+
+
+#timeline-content {
+    position: relative;
+    width: 800px;
+    margin: 50px auto;
+}
+
+.dt-profile {
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+#dt1-profile {
+    left: 0px;
+}
+
+#dt2-profile {
+    top: 600px;
+    right: 0px;
+}
+
+#dt3-profile {
+    left: 0px;
+    bottom: 700px;
+}
+
+#dt4-profile {
+    right: 0px;
+    bottom: 0px;
+}
+
+#mobile-timeline {
+    display: none;
+}
+
+.timeline {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.ts-img picture, .ts-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.ts-img img {
+    object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+
+    #mobile-timeline {
+        display: none;
     }
 
     #wartime-main {
@@ -17,46 +279,63 @@
         height: 90vh;
     }
 
-    #wh-container {
-        position: absolute;
-        bottom: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-
-     .wh-sub-container {
+    .wh-sub-container {
         display: flex;
         flex-direction: column;
         width: 25vw;
-        height: 20vw;
+        height: 25vw;
         // width: 350px;
         // height: 300px;
         gap: 10px;
     } 
 
+    #wh-container .hero-sub-heading {
+        font-size: 3vw;
+    }
+
     #timeline-section {
         width: 100%;
         background-color: a.$primary-color;
-        padding: 50px 75px;
+        padding: 50px 25px;
     }
 
+    // #ts-text-content {
+    //     display: flex;
+    // }
+
     #ts-header {
-        font-size: 5rem;
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 25px;
+        width: 100%;
+        max-width: unset;
+        margin: 0 auto;
+    }
+
+    #ts-header br {
+        display: none;
     }
 
     #ts-text {
-        font-size: 2rem;
+        font-size: 1rem;
         color: white;
+        line-height: 25px;
+        width: 100%;
+        max-width: unset;
+        margin: 0 auto;
+        padding-left: 25px;
     }
 
     #ts-content {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        gap: 1vw;
-        margin-top: 75px;
+        align-items: start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        max-width: unset;
+        margin: 25px auto;
     }
 
     .ts-container {
@@ -64,51 +343,58 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        width: 25vw;
+        width: 250px;
         height: auto;
+    }
+
+    #ts2-container, #ts4-container {
+        margin-top: 25px;
     }
 
     .ts-img {
         background-color: gray;
-        height: 25vw;
+        height: 300px;
     }
 
     .ts-year {
         position: absolute;
-        top: 20vw;
+        top: 225px;
         align-self: center;
-        font-size: 3.5vw;
+        font-size: 3rem;
         color: white;
     }
 
     .ts-text {
-        font-size: 1.5vw;
+        font-size: 1rem;
         color: white;
-        padding: 10px 10px 20px 10px;
-    }
-
-    #ts2-container, #ts4-container {
-        margin-top: 50px;
+        padding: 0px;
+        line-height: 25px;
     }
 
     #detail-timeline {
         position: relative;
+        display: grid;
+        // gap: 10px;
         width: 100%;
         height: auto;
         background-color: a.$primary-color;
-        padding-bottom: 50px;
+    }
+
+    #dt-heading {
+        font-size: 3rem;
     }
 
     #dt-main-img, #dt-sub-img {
-        height: 25vw;
-        background-color: gray;
-        margin-left: 75px;
+        display: flex;
+        height: 40vw;
+        background-color: transparent;
+        padding: 5px 5px;
     }
 
     #dt-sub-img {
-        margin-left: 25px;
-        margin-right: 75px;
+        max-width: unset;
     }
+
 
     #dt-container {
         display: flex;
@@ -117,7 +403,7 @@
         align-items: center;
         gap: 1.5vw;
         height: auto;
-        margin: 25px 75px;
+        margin: 0px 5px;
     }
 
     .dt-container {
@@ -161,6 +447,207 @@
     }
 
     .dt-profile {
+        position: absolute;
+        z-index: 2;
+    }
+
+    #dt1-profile {
+        left: 0px;
+    }
+
+    #dt2-profile {
+        top: 600px;
+        right: 0px;
+    }
+
+    #dt3-profile {
+        left: 0px;
+        bottom: 700px;
+    }
+
+    #dt4-profile {
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    #timeline {
+        display: block;
+    }
+
+    #wartime-hero {
+        width: 100%;
+        height: auto;
+    }
+
+    #wartime-main {
+        background-color: darkgray;
+        height: 90vh;
+    }
+
+    #wh-container {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+     .wh-sub-container {
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        height: 20vw;
+        // width: 350px;
+        // height: 300px;
+        gap: 10px;
+    } 
+
+    #wh-container .hero-sub-heading {
+        font-size: 2.2vw;
+    }
+    
+
+    #timeline-section {
+        width: 100%;
+        background-color: a.$primary-color;
+        padding: 50px 75px;
+    }
+
+    #ts-header {
+        font-size: 4rem;
+    }
+
+    #ts-text {
+        font-size: 1.5rem;
+        line-height: 25px;
+        color: white;
+        padding-left: 0px;
+    }
+
+    #ts-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1vw;
+        margin-top: 75px;
+    }
+
+    .ts-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 21vw;
+        height: auto;
+    }
+
+    .ts-img {
+        background-color: gray;
+        height: 25vw;
+    }
+
+    .ts-year {
+        position: absolute;
+        top: 20vw;
+        align-self: center;
+        font-size: 3.5vw;
+        color: white;
+    }
+
+    .ts-text {
+        font-size: 1.5vw;
+        color: white;
+        padding: 10px 10px 20px 10px;
+    }
+
+    #ts2-container, #ts4-container {
+        margin-top: 50px;
+    }
+
+    #detail-timeline {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: a.$primary-color;
+        padding-bottom: 50px;
+    }
+
+    #dt-heading {
+        font-size: 4rem;
+    }
+
+    #dt-main-img, #dt-sub-img {
+        height: 25vw;
+        margin: 10px 0px;
+        max-width: unset;
+        padding: 10px 10px;
+    }
+
+    #dt-main-img {
+        padding-left: 50px;
+    }
+
+    #dt-sub-img {
+        padding-right: 50px;
+    }
+
+    #dt-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+        margin: 0px 25px;
+    }
+
+    .dt-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .dt-profile-img {
+        // width: 8vw;
+        // height: 8vw;
+        width: 150px;
+        height: 150px;
+        border-radius: 100px;
+        background-color: grey;
+    }
+
+    .dt-profile-heading {
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    .dt-profile-text {
+        font-size: 1.5rem;
+        color: white;
+        // margin: 0px 175px;
+        width: 300px;
+    }
+
+    .dt-img {
+        width: 30vw;
+        height: 20vw;
+        background-color: gray;
+    }
+
+    #timeline-content {
+        position: relative;
+        width: 800px;
+        margin: 50px auto;
+    }
+
+    .dt-profile {
+        display: block;
         position: absolute;
         z-index: 2;
     }

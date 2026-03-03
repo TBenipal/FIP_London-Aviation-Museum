@@ -34,7 +34,7 @@
                     <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
-                    <li class="nav-item"><a href="contact.php" class="active">Contact!</a></li>
+                    <li class="nav-item"><a href="contact.php" class="active">Contact</a></li>
                     <li class="nav-item">
                         <?php if (isset($_SESSION["admin"])): ?>
                             <a class="icon-link" href="includes/admin/logout.php">
@@ -74,21 +74,23 @@
 
         <!--Contact-->
         <section id="contact-section" class="grid-con">
-            <h2 class="contact-header col-span-full l-col-start-1 l-col-end-13">Reach Out!</h2>
-            <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">We'd love to hear from you. Whether you have a question about the museum, want to learn more about our exhibitions, or are interested in supporting the preservation of London's aviation history — reach out and we'll get back to you as soon as possible.</p>
-
-            <?php if (isset($_GET['msg'])): ?>
-                <div id="thanks-container">
-                    <div id="thanks">
-                        <h3>Thank you for<br>contacting</h3>
-                        <a id="explore-btn" href="index.php">Explore!</a>
-                        <p><?php echo htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8'); ?></p>
-                    </div>
-                </div>
-            <?php endif; ?>
+            <h2 class="contact-header col-span-full l-col-start-1 l-col-end-13">Contact!</h2>
+            <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">Get in touch with 427 Wing's Museum, located in the historic 1943 airmen’s canteen at London International Airport. Whether you have questions about visiting, supporting the museum, volunteering, or learning more about the British Commonwealth Air Training Plan and the nearly 250 local men who served with the RCAF during the Second World War, we’re here to help.</p>
+            
+            <?php
+                if (isset($_GET['msg'])) {
+                    echo '
+                    <div id="thanks-container">
+                        <div id="thanks">
+                            <h3>Thank you for<br>contacting</h3>
+                            <a id="explore-btn" href="index.php#project-1">Explore!</a>
+                            <p>' . htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8') . '</p>
+                        </div>
+                    </div>'; 
+                } ?>
 
             <!--Form-->
-            <form id="contact-form" class="col-span-full" method="POST" >
+           <form id="contact-form" class="col-span-full" method="post" action="includes/send.php">
                 <div id="form">
                     <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required aria-label="First Name">
                     <br>
@@ -99,30 +101,24 @@
                 </div>
                 <textarea id="message" placeholder="Message *" class="field" name="message" required aria-label="Your Message"></textarea>
             </form>
-             <div id="contact-feedback"></div>   
-            <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit!</button>
 
+            <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit !</button>
         </section>
 
         <section id="newsletter" class="grid-con">
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
-
-                <?php if (isset($_GET['nl_msg'])): ?>
-                    <p class="nl-msg"><?php echo htmlspecialchars($_GET['nl_msg'], ENT_QUOTES, 'UTF-8'); ?></p>
-                <?php endif; ?>
-
-                <form id="nl-form-con" class="col-span-full" method="POST" action="includes/newsletter.php">
+                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
+                
+                <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="nl-field" name="nl_name" id="nl_name" required>
+                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
                         <br>
-                        <input type="email" placeholder="Email *" class="nl-field" name="nl_email" id="nl_email" required>
+                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
                         <br>
                     </div>
-                    <div id="nl-feedback"></div>
-                    <button id="nl-subscribe" type="submit">Subscribe</button>
+                    <button id="nl-subscribe">Subscribe</button>
                 </form>
             </div>
 
@@ -177,10 +173,18 @@
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
             <h2 id="social-header">Social Media</h2>
             <div id="social-content">
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
+                <div class="social-icon">
+                    <img src="images/instagram.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/facebook.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/tiktok.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/x.png" alt="Instagram Icon">
+                </div>
             </div>
         </div>
     </footer>

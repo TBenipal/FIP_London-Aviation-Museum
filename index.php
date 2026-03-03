@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
-    <title>London Aviation Musadasdseum</title>
+    <title>Where London Met the Sky</title>
 </head>
 <body data-page="homepage">
     <!-- Header -->
@@ -37,7 +37,7 @@
                     <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
-                    <li class="nav-item"><a href="contact.php">Contact!</a></li>
+                    <li class="nav-item"><a href="contact.php">Contact</a></li>
                     <li class="nav-item">
                         <?php if (isset($_SESSION["admin"])): ?>
                             <a class="icon-link" href="includes/admin/logout.php">
@@ -82,9 +82,9 @@
                     <h2 class="hidden">Loop Video</h2>
                     <div id="lp-container">
                         <video id="lp-player" muted playsinline autoplay loop data-poster="" aria-label="Loop Video">
-                            <source src="video/IDP_video.mp4" type="video/mp4" media="(max-width: 767px)">
-                            <source src="video/IDP_video.mp4" type="video/mp4" media="(max-width: 1199px)">
-                            <source src="video/IDP_video.mp4" type="video/mp4">
+                            <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 767px)">
+                            <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 1199px)">
+                            <source src="video/des-loop-video.mp4" type="video/mp4">
                             Your browser does not support the video tag. Please update your browser or try a different one.
                         </video>
                     </div>
@@ -102,17 +102,35 @@
 
                 <div id="hs-slider">
                     <div id="hsi-1" class="hero-sub-container">
-                        <div class="hero-sub-img"></div>
+                        <div class="hero-sub-img">
+                            <picture>
+                                <source srcset="images/Homepage/mob-events-thumbnail.webp" media="(max-width: 767px)">
+                                <source srcset="images/Homepage/tab-events-thumbnail.webp" media="(max-width: 1199px)">
+                                <img src="images/Homepage/des-events-thumbnail.webp" alt="Events">
+                            </picture>
+                        </div>
                         <span class="hero-sub-heading">Events</span>
                     </div>
 
                     <div id="hsi-2" class="hero-sub-container">
-                        <div class="hero-sub-img"></div>
+                        <div class="hero-sub-img">
+                            <picture>
+                                <source srcset="images/Homepage/mob-guide-thumbnail.webp" media="(max-width: 767px)">
+                                <source srcset="images/Homepage/tab-guide-thumbnail.webp" media="(max-width: 1199px)">
+                                <img src="images/Homepage/des-guide-thumbnail.webp" alt="Guide Tour">
+                            </picture>
+                        </div>
                         <span class="hero-sub-heading">Guide Tour</span>
                     </div>
 
                     <div id="hsi-3" class="hero-sub-container">
-                        <div class="hero-sub-img"></div>
+                        <div class="hero-sub-img">
+                            <picture>
+                                <source srcset="images/Homepage/mob-gallery-thumbnail.webp" media="(max-width: 767px)">
+                                <source srcset="images/Homepage/tab-gallery-thumbnail.webp" media="(max-width: 1199px)">
+                                <img src="images/Homepage/des-gallery-thumbnail.webp" alt="Events">
+                            </picture>
+                        </div>
                         <span class="hero-sub-heading">Gallery</span>
                     </div>
                 </div>
@@ -124,22 +142,46 @@
             <h1 id="mobile-om-heading" class="col-span-full">Our Museum</h1>
             <div id="om-right-content" class="col-span-full m-col-start-5 m-col-end-9 l-col-start-7 l-col-end-13">
                 <h2 id="desktop-om-heading">Our Museum</h2>
-                <div id="om-block-1" class="om-blocks"><p class="block-text">Name #1</p></div>
-                <div id="om-block-3" class="om-blocks"><p class="block-text">Name #3</p></div>
+                <div id="om-block-1" class="om-blocks">
+                        <picture>
+                            <source srcset="images/Homepage/mob-name-1.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/tab-name-1.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-name-1.webp" alt="Name #1">
+                        </picture>
+                </div>
+                <div id="om-block-3" class="om-blocks">
+                    <picture>
+                        <source srcset="images/Homepage/des-name-3.jpg" media="(max-width: 767px)">
+                        <source srcset="images/Homepage/des-name-3.jpg" media="(max-width: 1199px)">
+                        <img src="images/Homepage/des-name-3.jpg" alt="Name #3">
+                    </picture>
+                </div>
             </div>
 
             <div id="om-left-content" class="col-span-full m-col-start-1 m-col-end-5 l-col-start-2 l-col-end-7">
                 <div id="om-text-block">
-                   <p id="om-text" class="om-text-body">
-                        A project of 427 Wing (London), Royal Canadian Air Force Association.
+                    <p id="om-text" class="om-text-body">
                         427 Wing's museum is housed in a 1943 airmen's canteen at the London International Airport. The canteen is the last surviving building from the British Commonwealth Air Training Plan (BCATP) base that existed at London's airport during World War II. It is a London landmark and is listed in the city's Register of Cultural Heritage Resources.
-                        <br><br>
                         The museum commemorates the thousands of Canadian and Commonwealth airmen who trained at this site, as well as the military and civilian personnel who supported and instructed them. It will also commemorate the nearly 250 London men who lost their lives while serving with the RCAF during World War Two.
+                        The museum is currently installing a permanent exhibition in the main hall of the canteen building, illustrating the history of military and civilian aviation in the London region. It will focus primarily on the two BCATP training schools - a navigator's school and an elementary flying school. The exhibit will incorporate uniforms, a variety of artifacts, historic images and several
+                        model aircraft from the museum's collection, including a Spitfire and a Lancaster. The exhibition is slated to open in the fall of 2026.
                     </p>
                 </div>
                 <div id="om-block-2-4">
-                    <div id="om-block-2" class="om-blocks"><p class="block-text">Name #2</p></div>
-                    <div id="om-block-4" class="om-blocks"><p class="block-text">Name #4</p></div>
+                    <div id="om-block-2" class="om-blocks">
+                        <picture>
+                            <source srcset="images/Homepage/des-name-2.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-name-2.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-name-2.jpg" alt="Name #2">
+                        </picture>
+                    </div>
+                    <div id="om-block-4" class="om-blocks">
+                        <picture>
+                            <source srcset="images/Homepage/des-name-4.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-name-4.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-name-4.jpg" alt="Name #4">
+                        </picture>
+                    </div>
                 </div>
             </div>
 
@@ -148,9 +190,9 @@
                     <h2 class="hidden">Loop Video</h2>
                     <div class="video-container">
                         <video class="video-player" playsinline controls controls data-poster="" aria-label="Loop Video">
-                            <source src="" type="video/mp4" media="(max-width: 767px)">
-                            <source src="" type="video/mp4" media="(max-width: 1199px)">
-                            <source src="video/IDP_video.mp4" type="video/mp4">
+                            <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 767px)">
+                            <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 1199px)">
+                            <source src="video/des-loop-video.mp4" type="video/mp4">
                             Your browser does not support the video tag. Please update your browser or try a different one.
                         </video>
                     </div>
@@ -167,19 +209,37 @@
 
             <div id="wo-content" class="col-span-full l-col-start-1 l-col-end-13">
                 <div id="wo-block-1" class="wo-blocks">
-                    <div class="wo-block-img"></div>
+                    <div class="wo-block-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-wo-exhibtion.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-wo-exhibtion.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-wo-exhibtion.jpg" alt="Exhibitions">
+                        </picture>
+                    </div>
                     <h2 class="wo-block-headings">Exhibitions</h2>
                     <p class="wo-block-texts">Name #1</p>
                 </div>
 
                 <div id="wo-block-2" class="wo-blocks">
-                    <div class="wo-block-img"></div>
+                    <div class="wo-block-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-wo-activities.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-wo-activities.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-wo-activities.jpg" alt="Activities and Experiences">
+                        </picture>
+                    </div>
                     <h2 class="wo-block-headings">Activities and Experiences</h2>
                     <p class="wo-block-texts">Name #2</p>
                 </div>
 
                 <div id="wo-block-3" class="wo-blocks">
-                    <div class="wo-block-img"></div>
+                    <div class="wo-block-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-wo-exhibtion2.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-wo-exhibtion2.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-wo-exhibtion2.jpg" alt="Exhibitions">
+                        </picture>
+                    </div>
                     <h2 class="wo-block-headings">Exhibitions</h2>
                     <p class="wo-block-texts">Name #3</p>
                 </div>
@@ -197,17 +257,35 @@
 
             <div id="ss-content" class="col-span-full l-col-start-1 l-col-end-13">
                 <div id="ss-block-1" class="ss-blocks">
-                    <div class="ss-block-img"></div>
+                    <div class="ss-block-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-ss-donate.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-ss-donate.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-ss-donate.jpg" alt="Donate">
+                        </picture>
+                    </div>
                     <h2 class="ss-block-headings">DONATE</h2>
                 </div>
 
                 <div id="ss-block-2" class="ss-blocks">
-                    <div class="ss-block-img"></div>
+                    <div class="ss-block-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-ss-charity.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-ss-charity.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-ss-charity.jpg" alt="Charity">
+                        </picture>
+                    </div>
                     <h2 class="ss-block-headings">CHARITY</h2>
                 </div>
 
                 <div id="ss-block-3" class="ss-blocks">
-                    <div class="ss-block-img"></div>
+                    <div class="ss-block-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-ss-lunch.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-ss-lunch.jpg" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-ss-lunch.jpg" alt="Lunch Charity">
+                        </picture>
+                    </div>
                     <h2 class="ss-block-headings">LUNCH CHARITY</h2>
                 </div>
             </div>
@@ -215,28 +293,23 @@
         </section>
 
         <section id="newsletter" class="grid-con">
-    <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
+            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
-    <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-        <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
-
-        <?php if (isset($_GET['msg'])): ?>
-            <p class="nl-msg"><?php echo htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8'); ?></p>
-        <?php endif; ?>
-
-        <form id="nl-form-con" class="col-span-full" method="POST">
-            <div id="nl-form">
-                <input type="text" placeholder="Name *" class="nl-field" name="nl_name" id="nl_name" required>
-                <br>
-                <input type="email" placeholder="Email *" class="nl-field" name="nl_email" id="nl_email" required>
-                <br>
+            <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
+                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
+                
+                <form id="nl-form-con" class="col-span-full">
+                    <div id="nl-form">
+                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
+                        <br>
+                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
+                        <br>
+                    </div>
+                    <button id="nl-subscribe">Subscribe</button>
+                </form>
             </div>
-            <div id="nl-feedback"></div>
-            <button id="nl-subscribe" type="submit">Subscribe</button>
-        </form>
-    </div>
 
-</section>
+        </section>
         
     </main>
 
@@ -287,10 +360,18 @@
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
             <h2 id="social-header">Social Media</h2>
             <div id="social-content">
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
+                <div class="social-icon">
+                    <img src="images/instagram.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/facebook.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/tiktok.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/x.png" alt="Instagram Icon">
+                </div>
             </div>
         </div>
     </footer>

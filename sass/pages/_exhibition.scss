@@ -1,7 +1,392 @@
 @use '../abstracts' as a;
 
+    #exhibition-hero {
+        width: 100%;
+        height: auto;
+    }
+
+    #exhibition-main {
+        background-color: darkgray;
+        height: 90vh;
+    }
+
+    #exhibition-main picture, #exhibition-main img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    #exhibition-main img {
+        object-fit: cover;
+    }
+
+    #eh-container {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+
+    .eh-sub-container {
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        height: 28vw;
+        // width: 125px;
+        // height: 150px;
+        // width: 350px;
+        // height: 300px;
+        gap: 10px;
+    }
+
+    #eh-container .hero-sub-heading {
+        font-size: 4vw;
+    }
+
+    #gutter-7, #gutter-8 {
+        height: 50px;
+        width: 100%;
+        background-color: a.$accent-color;
+    }
+
+    #exhibition-social {
+        background-color: a.$primary-color;
+        height: auto;
+        padding: 50px 0px;
+    }
+
+    #es-heading {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 25px;
+        color: white;
+    }
+
+    #exhibition-social .video-container {
+        width: 90%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    #es-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        margin: 25px auto;
+        padding: 0px 25px;
+    }
+
+    .es-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .es-sub-img {
+        background-color: gray;
+        height: 300px;
+        width: 100%;
+    }
+
+    .es-sub-img picture, .es-sub-img img,
+    #es-about-img picture, #es-about-img img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .es-sub-img img, #es-about-img img {
+        object-fit: cover;
+    }
+
+    .es-gutter {
+        height: 5px;
+        width: 100%;
+        background-color: a.$accent-color;
+    }
+
+    .es-sub-heading {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .es-sub-text {
+        color: white;
+        font-size: 1rem;
+    }
+    
+    #es-sub-content {
+        display: flex;
+        flex-direction: column;
+        background-color: a.$accent-color;
+        width: 100%;
+        padding: 50px 25px;
+    }
+
+    #es-about-img {
+        background-color: gray;
+        width: 100%;
+        max-width: 420px;
+        height: 400px;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    #es-about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 420px;
+        padding-bottom: 25px;
+        margin: 0 auto;
+        order: 1;
+    }
+
+    #es-about-heading {
+        color: white;
+        font-size: 2rem;
+    }
+
+    #es-about-description {
+        color: white;
+        font-size: 1rem;
+    }
+
+    #exhibition-gallery {
+        width: 100%;
+        background-color: a.$primary-color;
+        padding: 0px 25px 35px 25px;
+        gap: 10px;
+    }
+
+    #eg-heading {
+        font-size: 2rem;
+        text-align: center;
+        padding-bottom: 25px;
+        color: white;
+    }
+
+    .gallery-box {
+        gap: 10px;
+        width: 100%;
+        max-width: 420px;
+        height: 600px;
+        background-color: gray;
+        margin: 0 auto;
+    }
+
+    .gallery-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #eg-btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #eg-btn {
+        padding: 10px 50px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        background-color: a.$secondary-color;
+        border: 3px solid  a.$accent-color;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+
 
 @media screen and (min-width: 768px) {
+
+    #exhibition-hero {
+        width: 100%;
+        height: auto;
+    }
+
+    #exhibition-main {
+        background-color: darkgray;
+        height: 90vh;
+    }
+
+    #eh-container {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+
+    .eh-sub-container {
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        height: 25vw;
+        // width: 125px;
+        // height: 150px;
+        gap: 10px;
+    }
+
+    #eh-container .hero-sub-heading {
+        font-size: 3vw;
+    }
+
+    #gutter-7, #gutter-8 {
+        height: 50px;
+        width: 100%;
+        background-color: a.$accent-color;
+    }
+
+    #exhibition-social {
+        background-color: a.$primary-color;
+        height: auto;
+        padding: 50px 0px;
+    }
+
+    #es-heading {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 25px;
+        color: white;
+    }
+
+    #exhibition-social .video-container {
+        width: 90%;
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    #es-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .es-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .es-sub-img {
+        background-color: gray;
+        height: 300px;
+        width: 100%;
+    }
+
+    .es-gutter {
+        height: 5px;
+        width: 100%;
+        background-color: a.$accent-color;
+    }
+
+    .es-sub-heading {
+        color: white;
+    }
+
+    .es-sub-text {
+        color: white;
+    }
+    
+    #es-sub-content {
+        display: flex;
+        flex-direction: row;
+        background-color: a.$accent-color;
+        gap: 10px;
+        width: 100%;
+        padding: 50px 25px;
+    }
+
+    #es-about-img {
+        background-color: gray;
+        width: 100%;
+        max-width: unset;
+        height: 400px;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    #es-about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: unset;
+        padding-bottom: 25px;
+        margin: 0 auto;
+        order: 1;
+    }
+
+    #es-about-heading {
+        color: white;
+        font-size: 3rem;
+    }
+
+    #es-about-description {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    #exhibition-gallery {
+        width: 100%;
+        background-color: a.$primary-color;
+        padding: 0px 25px 35px 25px;
+        gap: 10px;
+    }
+
+    #eg-heading {
+        font-size: 3rem;
+        text-align: center;
+        padding-bottom: 25px;
+        color: white;
+    }
+
+    .gallery-box {
+        gap: 10px;
+        width: 100%;
+        height: 65vw;
+        max-width: unset;
+        background-color: gray;
+    }
+
+
+    .gallery-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #eg-btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #eg-btn {
+        padding: 10px 50px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        background-color: a.$secondary-color;
+        border: 3px solid  a.$accent-color;
+        margin-top: 25px;
+        cursor: pointer;
+    }
 
 }
 
@@ -38,6 +423,10 @@
         gap: 10px;
     }
 
+    #eh-container .hero-sub-heading {
+        font-size: 2.2vw;
+    }
+
     #gutter-7, #gutter-8 {
         height: 50px;
         width: 100%;
@@ -51,16 +440,22 @@
     }
 
     #es-heading {
-        font-size: 5vw;
+        font-size: 4rem;
         text-align: center;
-        margin-bottom: 25px;
+    }
+
+    #exhibition-social .video-container {
+        width: 100%;
+        max-width: unset;
+        margin: 0 auto;
     }
 
     #es-content {
         display: flex;
-        justify-content: center;
-        gap: 50px;
-        padding: 75px;
+        margin: 50px 0px;
+        gap: 75px;
+        width: 100%;
+        max-width: unset;
     }
 
     .es-container {
@@ -68,7 +463,8 @@
         flex-direction: column;
         height: auto;
         gap: 10px;
-        width: 400px;
+        width: 25%;
+        max-width: unset;
     }
 
     .es-sub-img {
@@ -85,10 +481,12 @@
 
     .es-sub-heading {
         color: white;
+        font-size: 2rem;
     }
 
     .es-sub-text {
         color: white;
+        font-size: 1rem;
     }
     
     #es-sub-content {
@@ -99,7 +497,8 @@
 
     #es-about-img {
         background-color: gray;
-        width: 50%;
+        width: 40%;
+        max-width: unset;
         height: 100%;
         order: 2;
     }
@@ -108,10 +507,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: center;
-        gap: 10px;
-        width: 50%;
-        padding: 100px 75px;
+        width: 40%;
+        max-width: unset;
         order: 1;
     }
 
@@ -122,7 +519,7 @@
 
     #es-about-description {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     #exhibition-gallery {
@@ -141,10 +538,9 @@
     .gallery-box {
         gap: 10px;
         width: 100%;
-        height: 400px;
+        height: 40vw;
         background-color: gray;
     }
-
 
     .gallery-box img {
         width: 100%;
@@ -167,7 +563,4 @@
         margin-top: 25px;
         cursor: pointer;
     }
-
-
-    
 }

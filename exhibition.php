@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +37,7 @@
                     <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php" class="active">Exhibition</a></li>
-                    <li class="nav-item"><a href="contact.php">Contact!</a></li>
+                    <li class="nav-item"><a href="contact.php">Contact</a></li>
                     <li class="nav-item">
                         <?php if (isset($_SESSION["admin"])): ?>
                             <a class="icon-link" href="includes/admin/logout.php">
@@ -76,92 +77,169 @@
 
         <section id="exhibition-hero" class="grid-con">
             <h1 class="hidden">Exhibition Introduction</h1>
-            <div id="exhibition-main" class="l-col-start-1 l-col-end-13"></div>
+            <div id="exhibition-main" class="col-span-full l-col-start-1 l-col-end-13">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-hero.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-hero.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-hero.jpg" alt="Exhibition Hero Image">
+                </picture>
+            </div>
             
             <div id="eh-container" class="col-span-full l-col-start-1 l-col-end-13">
                 <div id="ehi-1" class="eh-sub-container">
-                    <div class="hero-sub-img"></div>
+                    <div class="hero-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-events-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-events-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-events-thumbnail.webp" alt="Events Thumbnail Image">
+                        </picture>
+                    </div>
                     <span class="hero-sub-heading">Events</span>
                 </div>
 
                 <div id="ehi-2" class="eh-sub-container">
-                    <div class="hero-sub-img"></div>
+                    <div class="hero-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-guide-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-guide-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-guide-thumbnail.webp" alt="Guide Tour Thumbnail Image">
+                        </picture>
+                    </div>
                     <span class="hero-sub-heading">Guide Tour</span>
                 </div>
 
                 <div id="ehi-3" class="eh-sub-container">
-                    <div class="hero-sub-img"></div>
+                    <div class="hero-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-gallery-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-gallery-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-gallery-thumbnail.webp" alt="Gallery Thumbnail Image">
+                        </picture>
+                    </div>
                     <span class="hero-sub-heading">Gallery</span>
                 </div>
             </div>
         </section>
 
-        <div id="gutter-7"></div>
+        <!-- <div id="gutter-7"></div> -->
 
         <section id="exhibition-social" class="grid-con">
-            <h1 id="es-heading" class="sub-headings l-col-start-1 l-col-end-13">Social Media</h1>
-            <div class="video-container l-col-start-2 l-col-end-12">
+            <h1 id="es-heading" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Social Media</h1>
+            <div class="video-container col-span-full l-col-start-2 l-col-end-12">
                 <video class="video-player" playsinline controls controls data-poster="" aria-label="Loop Video">
-                    <source src="" type="video/mp4" media="(max-width: 767px)">
-                    <source src="" type="video/mp4" media="(max-width: 1199px)">
-                    <source src="video/IDP_video.mp4" type="video/mp4">
+                    <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 767px)">
+                    <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 1199px)">
+                    <source src="video/des-loop-video.mp4" type="video/mp4">
                     Your browser does not support the video tag. Please update your browser or try a different one.
                 </video>
             </div>
 
-            <div id="es-content" class="l-col-start-1 l-col-end-13">
+            <div id="es-content" class="col-span-full l-col-start-1 l-col-end-13">
                 <div class="es-container">
-                    <div class="es-sub-img"></div>
+                    <div class="es-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-events-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-events-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-events-thumbnail.webp" alt="Name #1 Image">
+                        </picture>
+                    </div>
                     <h2 class="es-sub-heading">Name #1</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">From training fields to the front lines — London's aviation story is one of courage, community, and service. Our museum preserves this legacy for generations to come. Visit us at the London International Airport to experience it firsthand.</p>
+                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
                 </div>
                 <div class="es-container">
-                    <div class="es-sub-img"></div>
+                    <div class="es-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-guide-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-guide-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-guide-thumbnail.webp" alt="Name #2 Image">
+                        </picture>
+                    </div>
                     <h2 class="es-sub-heading">Name #2</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Did you know? The canteen building housing our museum dates back to 1943 and is the last surviving structure from the wartime BCATP base at London's airport. A London landmark listed in the city's Register of Cultural Heritage Resources.</p>
+                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
                 </div>
                 <div class="es-container">
-                    <div class="es-sub-img"></div>
+                    <div class="es-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-gallery-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-gallery-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-gallery-thumbnail.webp" alt="Name #3 Image">
+                        </picture>
+                    </div>
                     <h2 class="es-sub-heading">Name #3</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Thousands of Commonwealth airmen trained here during World War II. Their stories of service and sacrifice live on through our exhibits, archives, and the Book of Remembrance. Honouring the past that took flight.</p>
+                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
                 </div>
             </div>
 
-            <div id="es-sub-content" class="l-col-start-1 l-col-end-13">
-                <div id="es-about-img"></div>
+            <div id="es-sub-content" class="col-span-full l-col-start-1 l-col-end-13">
+                <div id="es-about-img">
+                    <picture>
+                        <source srcset="images/Exhibtion/des-exhibtion-about.jpg" media="(max-width: 767px)">
+                        <source srcset="images/Exhibtion/des-exhibtion-about.jpg" media="(max-width: 1199px)">
+                        <img src="images/Exhibtion/des-exhibtion-about.jpg" alt="About Image">
+                    </picture>
+                </div>
                 <div id="es-about-text">
                     <h2 id="es-about-heading" class="sub-headings">About London Aviation Museum</h2>
-                    <p id="es-about-description">427 Wing's museum is housed in a 1943 airmen's canteen at the London International Airport — the last surviving building from the British Commonwealth Air Training Plan base that existed at London's airport during World War II. It is a London landmark listed in the city's Register of Cultural Heritage Resources. The museum is currently installing a permanent exhibition illustrating the history of military and civilian aviation in the London region, incorporating uniforms, artifacts, historic images, and model aircraft including a Spitfire and a Lancaster. The exhibition is slated to open in the fall of 2026.</p>
+                    <p id="es-about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatum soluta molestias, optio repudiandae aliquid ullam totam. Accusamus, sequi nisi exercitationem ea sed illum dolorem dolore obcaecati consectetur porro quae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi totam a amet reiciendis facilis quis quas, illo excepturi aspernatur beatae hic in adipisci sunt omnis voluptatum, voluptate maxime ab nam?</p>
+                </div>
             </div>
         </section>
 
         <section id="exhibition-gallery" class="grid-con">
-            <h1 id="eg-heading" class="sub-headings l-col-start-1 l-col-end-13">Gallery Collection</h1>
+            <h1 id="eg-heading" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Gallery Collection</h1>
     
-            <div class="gallery-box l-col-start-1 l-col-end-4">
-                <img src="images/gallery1.jpg" alt="">
+            <div class="gallery-box col-span-full m-col-start-1 m-col-end-5 l-col-start-1 l-col-end-4">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-1.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-1.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-gallery-img-1.jpg" alt="Gallery Image 1">
+                </picture>
             </div>
 
-            <div class="gallery-box l-col-start-4 l-col-end-8">
-                <img src="images/gallery2.jpg" alt="">
+            <div class="gallery-box col-span-full m-col-start-5 m-col-end-9 l-col-start-4 l-col-end-8">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-2.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-2.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-gallery-img-2.jpg" alt="Gallery Image 2">
+                </picture>
             </div>
 
-            <div class="gallery-box l-col-start-8 l-col-end-13">
-                <img src="images/gallery3.jpg" alt="">
+            <div class="gallery-box col-span-full m-col-start-1 m-col-end-5 l-col-start-8 l-col-end-13">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-3.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-3.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-gallery-img-3.jpg" alt="Gallery Image 3">
+                </picture>
             </div>
 
-            <div class="gallery-box l-col-start-1 l-col-end-6">
-                <img src="images/gallery4.jpg" alt="">
+            <div class="gallery-box col-span-full m-col-start-5 m-col-end-9 l-col-start-1 l-col-end-4">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-4.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-4.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-gallery-img-4.jpg" alt="Gallery Image 4">
+                </picture>
             </div>
 
-            <div class="gallery-box l-col-start-6 l-col-end-13">
-                <img src="images/gallery5.jpg" alt="">
+            <div class="gallery-box col-span-full m-col-start-1 m-col-end-5 l-col-start-4 l-col-end-9">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-5.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-5.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-gallery-img-5.jpg" alt="Gallery Image 5">
+                </picture>
             </div>
 
-            <div id="eg-btn-container" class="l-col-start-1 l-col-end-13">
+            <div class="gallery-box col-span-full m-col-start-5 m-col-end-9 l-col-start-9 l-col-end-13">
+                <picture>
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-6.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Exhibtion/des-exhibtion-gallery-img-6.jpg" media="(max-width: 1199px)">
+                    <img src="images/Exhibtion/des-exhibtion-gallery-img-6.jpg" alt="Gallery Image 5">
+                </picture>
+            </div>
+
+            <div id="eg-btn-container" class="col-span-full m-col-start-1 m-col-end-9 l-col-start-1 l-col-end-13">
                 <button id="eg-btn">Show more</button>
             </div>
         </section>
@@ -170,7 +248,8 @@
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
+                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
+                
                 <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">
                         <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
@@ -233,10 +312,18 @@
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
             <h2 id="social-header">Social Media</h2>
             <div id="social-content">
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
+                <div class="social-icon">
+                    <img src="images/instagram.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/facebook.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/tiktok.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/x.png" alt="Instagram Icon">
+                </div>
             </div>
         </div>
     </footer>
