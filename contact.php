@@ -75,7 +75,7 @@
         <!--Contact-->
         <section id="contact-section" class="grid-con">
             <h2 class="contact-header col-span-full l-col-start-1 l-col-end-13">Reach Out!</h2>
-            <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore perferendis quasi recusandae natus laboriosam est ipsa totam incidunt quia iure a maxime itaque quod, pariatur, ipsam ab error cum?</p>
+            <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">We'd love to hear from you. Whether you have a question about the museum, want to learn more about our exhibitions, or are interested in supporting the preservation of London's aviation history — reach out and we'll get back to you as soon as possible.</p>
 
             <?php if (isset($_GET['msg'])): ?>
                 <div id="thanks-container">
@@ -108,7 +108,7 @@
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde.</p>
+                <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
 
                 <?php if (isset($_GET['nl_msg'])): ?>
                     <p class="nl-msg"><?php echo htmlspecialchars($_GET['nl_msg'], ENT_QUOTES, 'UTF-8'); ?></p>
