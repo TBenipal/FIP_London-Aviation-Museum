@@ -98,7 +98,7 @@
             <div id="bh-img" class="l-col-start-1 l-col-end-6"></div>
             <div id="bh-content" class="l-col-start-7 l-col-end-13">
                 <h2 id="bh-heading" class="sub-headings">The Battle of Britain</h2>
-                <p id="bh-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam vitae qui, dolor repellat deserunt iste cupiditate natus facilis provident optio ipsa asperiores dicta esse eius, minima eos consequuntur suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et esse aperiam odio debitis atque excepturi tempora eligendi, vel quibusdam repellat impedit ad inventore, ipsa aliquid animi neque molestias ea cum.</p>
+                <p id="bh-text">The Battle of Britain, fought between July and October 1940, marked a critical turning point in the Second World War. It was the first major military campaign fought entirely in the air and played a decisive role in preventing a German invasion of the United Kingdom. London, Ontario, played an important supporting role through its connection to aircrew training and aviation preparation — individuals from the London region served as pilots, navigators, and ground crew.</p>
                 <button id="bh-btn">Read More History!</button>
             </div>
         </section>
@@ -106,8 +106,8 @@
         <section id="bob-description" class="grid-con">
             <h1 id="bd-heading" class="sub-headings l-col-start-1 l-col-end-4">Description</h1>
             <div id="bd-content" class="l-col-start-1 l-col-end-13">
-                <p class="bd-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat error inventore ut voluptatum consectetur architecto iusto dignissimos! Quas ea blanditiis eum sint amet vitae soluta, eaque quos, enim maxime quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio asperiores consequatur accusamus recusandae doloremque enim iusto molestiae illo magnam libero! Incidunt, ducimus assumenda asperiores accusantium commodi ab natus repudiandae mollitia!</p>
-                <p class="bd-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rerum deserunt nulla quos ipsam corporis totam, vel delectus impedit pariatur nostrum repudiandae illo magnam odio sed ipsa, saepe ea iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos praesentium, voluptates vitae, ipsam earum tempora officiis similique dolores, accusantium reprehenderit doloribus. Odio totam sunt assumenda. Quae praesentium modi nostrum culpa.</p>
+                <p class="bd-text">The skills developed in Canadian training schools — including those right here in London — helped sustain the Royal Air Force during one of its most challenging periods. Individuals from the London region contributed indirectly through training programs that later fed into front-line squadrons flying Hurricanes and Spitfires over the skies of Britain.</p>
+                <p class="bd-text">By highlighting Londoners' involvement in the Battle of Britain, this section emphasizes the city's contribution to a global conflict. It demonstrates how local communities were deeply connected to international events and how efforts made at home influenced the outcome of the war abroad. Remembering these connections helps place London's aviation history within a wider historical and global context.</p>
             </div>
             <button id="bd-btn" class="l-col-start-1 l-col-end-13">Read More!</button>
             <div id="bd-img" class="l-col-start-1 l-col-end-13"></div>
@@ -138,15 +138,15 @@
             </div>
             <div id="ba-text" class="l-col-start-3 l-col-end-11"></div>
             <template id="name">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, ad voluptatem? Itaque ex aperiam delectus. Obcaecati placeat laudantium minus doloribus earum eligendi ut! Repellendus harum quo aliquid ab? Consequatur, expedita.</p>
+                <p>The Supermarine Spitfire became the iconic symbol of British air defence during the Second World War. Sleek, agile, and fast, the Spitfire was the aircraft of choice for many pilots who trained at Canadian BCATP schools before being posted overseas to defend Britain's skies.</p>
             </template>
 
             <template id="mechanic">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum ipsum assumenda, qui ipsam fugit reprehenderit quam officiis voluptatibus suscipit repellat at dolor provident odio cumque, delectus placeat beatae excepturi laboriosam.</p>
+                <p>Powered by a Rolls-Royce Merlin engine producing over 1,000 horsepower, the Spitfire could reach speeds exceeding 360 mph. Its elliptical wings provided exceptional manoeuvrability, making it one of the most advanced fighter aircraft of its era. Ground crews at London's training stations maintained similar aircraft daily.</p>
             </template>
 
             <template id="history">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam, doloribus, aperiam perferendis dolorem, distinctio porro architecto voluptatibus ratione iste magni error commodi quam? Reiciendis nemo natus ea cumque rerum.</p>
+                <p>First flown in 1936, the Spitfire entered RAF service in 1938. During the Battle of Britain in 1940, it became a symbol of resistance alongside the Hawker Hurricane. Pilots trained through the British Commonwealth Air Training Plan — many of them passing through London, Ontario — flew these aircraft in combat over Britain and Europe.</p>
             </template>
 
             <div id="ba-images" class="l-col-start-1 l-col-end-13">
@@ -174,8 +174,7 @@
                     <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
                     <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                        <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
-                        
+                        <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
                         <form id="nl-form-con" class="col-span-full">
                             <div id="nl-form">
                                 <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>

@@ -130,10 +130,11 @@
 
             <div id="om-left-content" class="col-span-full m-col-start-1 m-col-end-5 l-col-start-2 l-col-end-7">
                 <div id="om-text-block">
-                    <p id="om-text" class="om-text-body">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim blanditiis nostrum consequatur sed quas illo minus inventore vel qui ex, alias reprehenderit temporibus nobis soluta iure culpa quisquam libero atque?
+                   <p id="om-text" class="om-text-body">
+                        A project of 427 Wing (London), Royal Canadian Air Force Association.
+                        427 Wing's museum is housed in a 1943 airmen's canteen at the London International Airport. The canteen is the last surviving building from the British Commonwealth Air Training Plan (BCATP) base that existed at London's airport during World War II. It is a London landmark and is listed in the city's Register of Cultural Heritage Resources.
                         <br><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis qui corrupti sint doloremque impedit velit...
+                        The museum commemorates the thousands of Canadian and Commonwealth airmen who trained at this site, as well as the military and civilian personnel who supported and instructed them. It will also commemorate the nearly 250 London men who lost their lives while serving with the RCAF during World War Two.
                     </p>
                 </div>
                 <div id="om-block-2-4">
@@ -217,7 +218,7 @@
     <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
     <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-        <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde.</p>
+        <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
 
         <?php if (isset($_GET['msg'])): ?>
             <p class="nl-msg"><?php echo htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8'); ?></p>
