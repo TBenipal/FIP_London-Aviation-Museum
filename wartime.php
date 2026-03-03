@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +37,7 @@
                     <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
                     <li class="nav-item"><a href="wartime.php" class="active">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
-                    <li class="nav-item"><a href="contact.php">Contact!</a></li>
+                    <li class="nav-item"><a href="contact.php">Contact</a></li>
                     <li class="nav-item">
                         <?php if (isset($_SESSION["admin"])): ?>
                             <a class="icon-link" href="includes/admin/logout.php">
@@ -75,98 +76,203 @@
     <main>
         <section id="wartime-hero" class="grid-con">
             <h1 class="hidden">Wartime Introduction</h1>
-            <div id="wartime-main" class="l-col-start-1 l-col-end-13"></div>
+            <div id="wartime-main" class="col-span-full l-col-start-1 l-col-end-13">
+                <picture>
+                    <source srcset="images/Wartime/des-wartime-hero.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Wartime/des-wartime-hero.jpg" media="(max-width: 1199px)">
+                    <img src="images/Wartime/des-wartime-hero.jpg" alt="Wartime Hero Image">
+                </picture>
+            </div>
             
             <div id="wh-container" class="col-span-full l-col-start-1 l-col-end-13">
                 <div id="whi-1" class="wh-sub-container">
-                    <div class="hero-sub-img"></div>
+                    <div class="hero-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-events-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-events-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-events-thumbnail.webp" alt="Events Thumbnail Image">
+                        </picture>
+                    </div>
                     <span class="hero-sub-heading">Events</span>
                 </div>
 
                 <div id="whi-2" class="wh-sub-container">
-                    <div class="hero-sub-img"></div>
+                    <div class="hero-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-guide-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-guide-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-guide-thumbnail.webp" alt="Guide Tour Thumbnail Image">
+                        </picture>
+                    </div>
                     <span class="hero-sub-heading">Guide Tour</span>
                 </div>
 
                 <div id="whi-3" class="wh-sub-container">
-                    <div class="hero-sub-img"></div>
+                    <div class="hero-sub-img">
+                        <picture>
+                            <source srcset="images/Homepage/des-gallery-thumbnail.webp" media="(max-width: 767px)">
+                            <source srcset="images/Homepage/des-gallery-thumbnail.webp" media="(max-width: 1199px)">
+                            <img src="images/Homepage/des-gallery-thumbnail.webp" alt="Gallery Thumbnail Image">
+                        </picture>
+                    </div>
                     <span class="hero-sub-heading">Gallery</span>
                 </div>
             </div>
         </section>
 
         <section id="timeline-section" class="grid-con">
-            <h1 id="ts-header" class="sub-headings l-col-start-1 l-col-end-4">Timeline <br> of Aviation <br> History</h1>
-            <p id="ts-text" class="l-col-start-5 l-col-end-13">This timeline traces the evolution of aviation in London from early experimentation to post-war development. Visitors are encouraged to consider how technological progress, public interest, and global conflict shaped aviation's role in the city — from the first public flight demonstrations to the massive Commonwealth training effort of the Second World War.</p>
+            <h1 id="ts-header" class="sub-headings col-span-full m-col-start-1 m-col-end-5 l-col-start-1 l-col-end-6">Timeline <br> of Aviation <br> History</h1>
+            <p id="ts-text" class="col-span-full m-col-start-5 m-col-end-9 l-col-start-6 l-col-end-13">This timeline traces the evolution of aviation in London from early experimentation to post-war development. Visitors are encouraged to consider how technological progress, public interest, and global conflict shaped aviation's role in the city.</p>
+            <div id="ts-content" class="col-span-full m-col-start-1 m-col-end-9 l-col-start-1 l-col-end-13">
 
                 <div id="ts1-container" class="ts-container">
-                        <div class="ts-img"></div>
-                        <h2 class="ts-year">1900–1918</h2>
-                        <p class="ts-text">Early Flight: International pioneers brought powered flight to Canada. Beckwith Havens demonstrated flight in London in 1911, sparking public fascination with the new age of aviation.</p>
+                    <div class="ts-img">
+                        <picture>
+                            <source srcset="images/Wartime/des-timeline-1918.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Wartime/des-timeline-1918.jpg" media="(max-width: 1199px)">
+                            <img src="images/Wartime/des-timeline-1918.jpg" alt="1900-1918 Image">
+                        </picture>
                     </div>
+                    <h2 class="ts-year">1900-1918</h2>
+                    <p class="ts-text">International pioneers and the Silver Dart First recorded flights over London Public reactions to early aircraft Characteristics of early aircraft design</p>
+                </div>
 
-                    <div id="ts2-container" class="ts-container">
-                        <div class="ts-img"></div>
-                        <h2 class="ts-year">1919–1939</h2>
-                        <p class="ts-text">Growth of Aviation: Post-war enthusiasm led to the establishment of Lambeth Airfield in 1928 and the founding of the London Flying Club, cementing London's place in Canadian aviation culture.</p>
+                <div id="ts2-container" class="ts-container">
+                    <div class="ts-img">
+                        <picture>
+                            <source srcset="images/Wartime/des-timeline-1939.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Wartime/des-timeline-1939.jpg" media="(max-width: 1199px)">
+                            <img src="images/Wartime/des-timeline-1939.jpg" alt="1919-1939 Image">
+                        </picture>
                     </div>
+                    <h2 class="ts-year">1919-1939</h2>
+                    <p class="ts-text">Increased public enthusiasm following the First World War The proposed London-to-London transatlantic flight Establishment of Lambeth Airfield Formation of flying clubs and local aviation culture</p>
+                </div>
 
-                    <div id="ts3-container" class="ts-container">
-                        <div class="ts-img"></div>
-                        <h2 class="ts-year">1940–1945</h2>
-                        <p class="ts-text">WWII & the BCATP: Crumlin Airport became a major training hub. No. 3 Elementary Flying Training School and No. 4 Air Observer School trained thousands of aircrew from across the Commonwealth.</p>
+                <div id="ts3-container" class="ts-container">
+                    <div class="ts-img">
+                        <picture>
+                            <source srcset="images/Wartime/des-timeline-1945.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Wartime/des-timeline-1945.jpg" media="(max-width: 1199px)">
+                            <img src="images/Wartime/des-timeline-1945.jpg" alt="1940-1945 Image">
+                        </picture>
                     </div>
+                    <h2 class="ts-year">1940-1945</h2>
+                    <p class="ts-text">Establishment of training schools at Crumlin Airport London's role within the British Commonwealth Air Training Plan Training of aircrew from across the Commonwealth Civilian infrastructure adapted for military purposes</p>
+                </div>
 
-                    <div id="ts4-container" class="ts-container">
-                        <div class="ts-img"></div>
-                        <h2 class="ts-year">1945–1956</h2>
-                        <p class="ts-text">Post-War Aviation: London's military presence continued with 420 Squadron operating from 1948 to 1956. The wartime infrastructure evolved into what is now London International Airport.</p>
+                <div id="ts4-container" class="ts-container">
+                    <div class="ts-img">
+                        <picture>
+                            <source srcset="images/Wartime/des-timeline-postwar.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Wartime/des-timeline-postwar.jpg" media="(max-width: 1199px)">
+                            <img src="images/Wartime/des-timeline-postwar.jpg" alt="Post War Image">
+                        </picture>
                     </div>
+                    <h2 class="ts-year">POST WAR</h2>
+                    <p class="ts-text">Continued military activity and auxiliary squadrons 420 Squadron operations (1948-1956) Shift toward modern aviation Lasting impact of wartime infrastructure</p>
+                </div>
 
             </div>
         </section>
 
         <section id="detail-timeline" class="grid-con">
-            <h1 class="hidden">Detailed Timeline</h1>
-            <div id="dt-main-img" class="l-col-start-1 l-col-end-8"></div>
-            <div id="dt-sub-img" class="l-col-start-8 l-col-end-13"></div>
-            <div id="dt-container" class="l-col-start-1 l-col-end-13">
-                <div class="dt-img"></div>
-                <div class="dt-img"></div>
-                <div class="dt-img"></div>
+            <h1 id="dt-heading" class="col-span-full m-col-start-1 m-col-end-9 l-col-start-1 l-col-end-13">Detailed Timeline</h1>
+            <div id="dt-main-img" class="col-span-full m-col-start-1 m-col-end-4 l-col-start-1 l-col-end-8">
+                <picture>
+                    <source srcset="images/Wartime/des-detail-main.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Wartime/des-detail-main.jpg" media="(max-width: 1199px)">
+                    <img src="images/Wartime/des-detail-main.jpg" alt="Detail Timeline Gallery Main Image">
+                </picture>
             </div>
-
-            <div id="dt1-profile" class="dt-profile"> 
-                <div class="dt-container">
-                    <div class="dt-profile-img"></div>
-                    <h2 class="dt-profile-heading">Early Flight — 1900–1918</h2>
-                    <p class="dt-profile-text">The Silver Dart's first powered flight in Canada in 1909 inspired a generation. By 1911, Beckwith Havens was performing demonstrations over London, Ontario. Public exhibitions by Brookins and Labatt in 1912 captured imaginations across the city, laying the groundwork for local aviation interest.</p>
+            <div id="dt-sub-img" class="col-span-full m-col-start-4 m-col-end-9 l-col-start-8 l-col-end-13">
+                <picture>
+                    <source srcset="images/Wartime/des-detail-sub.jpg" media="(max-width: 767px)">
+                    <source srcset="images/Wartime/des-detail-sub.jpg" media="(max-width: 1199px)">
+                    <img src="images/Wartime/des-detail-sub.jpg" alt="Detail Timeline Gallery Sub Image">
+                </picture>
+            </div>
+            <div id="dt-container" class="col-span-full l-col-start-1 l-col-end-13">
+                <div class="dt-img">
+                    <picture>
+                        <source srcset="images/Wartime/des-detail-img-1.jpg" media="(max-width: 767px)">
+                        <source srcset="images/Wartime/des-detail-img-1.jpg" media="(max-width: 1199px)">
+                        <img src="images/Wartime/des-detail-img-1.jpg" alt="Detail Timeline Gallery Image 1">
+                    </picture>
+                </div>
+                <div class="dt-img">
+                    <picture>
+                        <source srcset="images/Wartime/des-detail-img-2.jpg" media="(max-width: 767px)">
+                        <source srcset="images/Wartime/des-detail-img-2.jpg" media="(max-width: 1199px)">
+                        <img src="images/Wartime/des-detail-img-2.jpg" alt="Detail Timeline Gallery Image 2">
+                    </picture>
+                </div>
+                <div class="dt-img">
+                    <picture>
+                        <source srcset="images/Wartime/des-detail-img-3.jpg" media="(max-width: 767px)">
+                        <source srcset="images/Wartime/des-detail-img-3.jpg" media="(max-width: 1199px)">
+                        <img src="images/Wartime/des-detail-img-3.jpg" alt="Detail Timeline Gallery Image 3">
+                    </picture>
                 </div>
             </div>
 
-            <div id="dt2-profile" class="dt-profile"> 
-                <div class="dt-container">
-                    <div class="dt-profile-img"></div>
-                    <h2 class="dt-profile-heading">Growth of Aviation — 1919–1939</h2>
-                    <p class="dt-profile-text">Following World War I, civilian aviation flourished. The Lambeth Airport site was selected in 1926, officially opening on August 24, 1928. The London Flying Club was established that same year with a DeHavilland Cirrus Moth. By 1929, London saw its first regular airmail flight.</p>
-                </div>
-            </div>
+            <div id="dt-content" class="col-span-full l-col-start-1 l-col-end-13">
+                <div id="timeline-content">
+                    <div id="dt1-profile" class="dt-profile"> 
+                        <div class="dt-container">
+                            <div class="dt-profile-img">
+                                <picture>
+                                    <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 767px)">
+                                    <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 1199px)">
+                                    <img src="images/Wartime/des-detail-1918.png" alt="Detail Timeline 1900-1918">
+                                </picture>
+                            </div>
+                            <h2 class="dt-profile-heading">1900-1918</h2>
+                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
+                        </div>
+                    </div>
 
-            <div id="dt3-profile" class="dt-profile"> 
-                <div class="dt-container">
-                    <div class="dt-profile-img"></div>
-                    <h2 class="dt-profile-heading">WWII & the BCATP — 1940–1945</h2>
-                    <p class="dt-profile-text">On January 19, 1940, the first flight into Crumlin Airport took place. No. 3 Elementary Flying Training School opened June 24, 1940, followed by No. 4 Air Observer School on December 17, 1940. Together, they trained pilots and navigators from Canada, Britain, New Zealand, and beyond.</p>
-                </div>
-            </div>
+                    <div id="dt2-profile" class="dt-profile"> 
+                        <div class="dt-container">
+                            <div class="dt-profile-img">
+                                <picture>
+                                    <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 767px)">
+                                    <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 1199px)">
+                                    <img src="images/Wartime/des-detail-1939.png" alt="Detail Timeline 1919-1939">
+                                </picture>
+                            </div>
+                            <h2 class="dt-profile-heading">1919-1939</h2>
+                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
+                        </div>
+                    </div>
 
-            <div id="dt4-profile" class="dt-profile"> 
-                <div class="dt-container">
-                    <div class="dt-profile-img"></div>
-                    <h2 class="dt-profile-heading">Post-War Aviation — 1945–1956</h2>
-                    <p class="dt-profile-text">After the war, London maintained its military aviation legacy. The 420 Squadron auxiliary operated from 1948 to 1956, ensuring continued readiness and training. The wartime canteen building — now home to 427 Wing's museum — stands as the last surviving BCATP structure on the airport grounds.</p>
-                </div>
-            </div>
+                    <div id="dt3-profile" class="dt-profile"> 
+                        <div class="dt-container">
+                            <div class="dt-profile-img">
+                                <picture>
+                                    <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 767px)">
+                                    <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 1199px)">
+                                    <img src="images/Wartime/des-detail-1945.png" alt="Detail Timeline 1940-1945">
+                                </picture>
+                            </div>
+                            <h2 class="dt-profile-heading">1940-1945</h2>
+                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
+                        </div>
+                    </div>
+
+                    <div id="dt4-profile" class="dt-profile"> 
+                        <div class="dt-container">
+                            <div class="dt-profile-img">
+                                <picture>
+                                    <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 767px)">
+                                    <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 1199px)">
+                                    <img src="images/Wartime/des-detail-postwar.png" alt="Detail Timeline Post War">
+                                </picture>
+                            </div>
+                            <h2 class="dt-profile-heading">Post War</h2>
+                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
+                        </div>
+                    </div>
 
                     <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
                         <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
@@ -180,6 +286,10 @@
                             c48.956-28.297,82.935-79.275,84.352-81.434C512.3,157.809,513.256,149.181,510.338,141.484z"/>
                         </g>
                     </svg>
+
+                    <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="35" height="2478" viewBox="0 0 35 2478" fill="none">
+                        <path id="mobile-timeline-path" d="M17.3204 2478L34.6409 2448L-8.94514e-05 2448L17.3204 2478ZM17.3203 0L14.3203 1.31134e-07L14.3204 2451L17.3204 2451L20.3204 2451L20.3203 -1.31134e-07L17.3203 0Z" fill="#A28C63"/>
+                    </svg>
                 </div>
             </div>
         </section>
@@ -189,7 +299,7 @@
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
+                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
                 
                 <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">
@@ -253,10 +363,18 @@
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
             <h2 id="social-header">Social Media</h2>
             <div id="social-content">
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
-                <div class="social-icon"></div>
+                <div class="social-icon">
+                    <img src="images/instagram.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/facebook.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/tiktok.png" alt="Instagram Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="images/x.png" alt="Instagram Icon">
+                </div>
             </div>
         </div>
     </footer>

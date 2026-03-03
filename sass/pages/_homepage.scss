@@ -148,7 +148,7 @@ html, body {
     flex-direction: column;
     justify-self: center;
     align-self: center;
-    padding: 0 75px;
+    padding: 0 25px;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -156,20 +156,32 @@ html, body {
 }
 
 .hero-sub-img {
-    background-color: gray;
     width: 100%;
-    height: 300px;
-    // height: 70vw;
+    height: 250px;
+    // height: 300px;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.hero-sub-img picture, .hero-sub-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hero-sub-img img {
+    object-fit: cover;
 }
 
 .hero-sub-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
     color: white;
 }
 
-#intro-video {
+#our-museum #intro-video {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -287,6 +299,16 @@ html, body {
     background-color: gray;
 }
 
+.om-blocks picture, .om-blocks img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.om-blocks img {
+    object-fit: cover;
+}
+
 #om-block-1 {
     height: 60vw;
     margin-top: 25px;
@@ -374,7 +396,7 @@ html, body {
     flex-direction: column;
     width: 100px;
     height: 450px;
-    background-color: gray;
+    background-color: a.$accent-color;
     flex: 0 0 100%;
     flex-shrink: 0;
 }
@@ -383,6 +405,23 @@ html, body {
     width: 100%;
     height: 250px;
     background-color: a.$secondary-color;
+}
+
+.om-blocks, .ss-blocks {
+    max-width: 600px;
+    width: 100%;
+    background-color: gray;
+}
+
+.wo-block-img picture, .wo-block-img img, 
+.ss-block-img picture, .ss-block-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wo-block-img img, .ss-block-img img {
+    object-fit: cover;
 }
 
 .wo-block-headings {
@@ -399,13 +438,23 @@ html, body {
 
 #wo-content-btn {
     margin-top: 50px;
-    background-color: gray;
-    height: 50px;
-    width: 225px;
+    padding: 15px 25px;
+    background-color: a.$accent-color;
     align-self: center;
     justify-self: center;
     border: none;
     font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+#wo-content-btn:hover {
+    background-color: a.$secondary-color;
+}
+
+#wo-content-btn:active {
+    background-color: a.$secondary-color;
 }
 
 #gutter-2 {
@@ -423,7 +472,7 @@ html, body {
     padding: 50px 25px;
 }
 
- #ss-heading {
+#ss-heading {
     margin-top: 25px;
     color: black;
     order: 2;
@@ -447,6 +496,7 @@ html, body {
 
 .ss-blocks {
     width: 100px;
+    background-color: a.$accent-color;
 }
 
 .block-text {
@@ -586,7 +636,7 @@ html, body {
         display: flex;
         flex-direction: column;
         padding: 25px 25px;
-        width: 350px;
+        width: 375px;
         height: auto;
     }
 
@@ -603,7 +653,7 @@ html, body {
         color: white;
     }
 
-    #intro-video {
+   #our-museum #intro-video {
         width: 100%;
         max-width: unset;
     }
@@ -725,6 +775,99 @@ html, body {
     #om-text {
         font-size: 1rem;
         line-height: 25px;
+    }
+
+    #whats-on {
+        position: relative;
+        background-color: a.$primary-color;
+        padding-bottom: 100px;
+        width: 100%;
+        height: auto;
+    }
+
+    #wo-heading {
+        font-size: 3rem;
+        color: white;
+        justify-self: center;
+        margin-top: 75px;
+        padding-bottom: 50px;
+    }
+
+    #wo-content, #ss-content {
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        margin: 0 auto;
+    }
+
+
+    .wo-blocks, .ss-blocks {
+        display: flex;
+        flex-direction: column;
+        width: 125px;
+        height: 475px;
+    }
+
+    .wo-block-img, .ss-block-img{
+        width: 100%;
+        height: 250px;
+        background-color: a.$secondary-color;
+    }
+
+    .wo-block-headings {
+        color: a.$secondary-color;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .wo-block-texts {
+        color: white;
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+
+    #gutter-2 {
+        bottom: -35px;
+        background: a.$secondary-color;
+        height: 75px;
+        width: 80vw;
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    }
+
+    #support-us {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 50px 25px;
+    }
+
+    #ss-heading {
+        margin-top: 25px;
+        color: black;
+        order: 2;
+        font-size: 3rem;
+        justify-self: center;
+    }
+
+    #ss-content {
+        margin-top: 50px;
+        order: 3;
+    }
+
+    .ss-block-headings {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    #support-us .slide-prev, #support-us .slide-next {
+        top: 60%;
+    }
+
+
+    .block-text {
+        color: white;
+        padding: 10px;
     }
 
     #newsletter {
@@ -891,7 +1034,7 @@ html, body {
         width: 100%;
         height: auto;
         background-color: a.$accent-color;
-            padding: 0px 0px 100px 0px;
+        padding: 0px 0px 100px 0px;
     }
 
     #mobile-om-heading {
@@ -922,10 +1065,12 @@ html, body {
 
     #om-text-block {
         margin: 0px;
+        width: 600px;
     }
 
     .om-blocks {
         background-color: gray;
+        width: 600px;
     }
 
     #om-block-1 {
@@ -967,10 +1112,10 @@ html, body {
         order: 3
     }
 
-    #intro-video, .video-container, .video-player {
-        width: 100%;
-        height: 100%;;
-    }
+    // #intro-video, .video-container, .video-player {
+    //     width: 100%;
+    //     height: 100%;;
+    // }
 
     .plyr--full-ui .plyr__control--overlaid {
         transform: translate(-50%, -50%) scale(1.5) !important;
@@ -998,7 +1143,7 @@ html, body {
         display: flex;
         justify-content: center;
         background-color: a.$primary-color;
-        width: 400px;
+        width: 38vw;
         height: auto;
         align-self: start;
         padding-bottom: 50px;
@@ -1007,7 +1152,6 @@ html, body {
 
     .om-text-body {
         margin-top: 25px;
-        width: 300px;
         color: white;
     }
 
@@ -1078,7 +1222,6 @@ html, body {
         width: 350px;
         height: 450px;
         flex: 0%;
-        background-color: gray;
     }
 
     .wo-block-img, .ss-block-img {
@@ -1097,17 +1240,6 @@ html, body {
         color: white;
         padding: 10px;
         font-size: 1.5rem;
-    }
-
-    #wo-content-btn {
-        margin-top: 50px;
-        background-color: gray;
-        height: 50px;
-        width: 225px;
-        align-self: center;
-        justify-self: center;
-        border: none;
-        font-size: 1rem;
     }
 
     #gutter-2 {
