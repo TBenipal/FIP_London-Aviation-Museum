@@ -114,19 +114,19 @@
                     <div class="es-sub-img"></div>
                     <h2 class="es-sub-heading">Name #1</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                    <p class="es-sub-text">From training fields to the front lines — London's aviation story is one of courage, community, and service. Our museum preserves this legacy for generations to come. Visit us at the London International Airport to experience it firsthand.</p>
                 </div>
                 <div class="es-container">
                     <div class="es-sub-img"></div>
                     <h2 class="es-sub-heading">Name #2</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                    <p class="es-sub-text">Did you know? The canteen building housing our museum dates back to 1943 and is the last surviving structure from the wartime BCATP base at London's airport. A London landmark listed in the city's Register of Cultural Heritage Resources.</p>
                 </div>
                 <div class="es-container">
                     <div class="es-sub-img"></div>
                     <h2 class="es-sub-heading">Name #3</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                    <p class="es-sub-text">Thousands of Commonwealth airmen trained here during World War II. Their stories of service and sacrifice live on through our exhibits, archives, and the Book of Remembrance. Honouring the past that took flight.</p>
                 </div>
             </div>
 
@@ -134,8 +134,7 @@
                 <div id="es-about-img"></div>
                 <div id="es-about-text">
                     <h2 id="es-about-heading" class="sub-headings">About London Aviation Museum</h2>
-                    <p id="es-about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatum soluta molestias, optio repudiandae aliquid ullam totam. Accusamus, sequi nisi exercitationem ea sed illum dolorem dolore obcaecati consectetur porro quae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi totam a amet reiciendis facilis quis quas, illo excepturi aspernatur beatae hic in adipisci sunt omnis voluptatum, voluptate maxime ab nam?</p>
-                </div>
+                    <p id="es-about-description">427 Wing's museum is housed in a 1943 airmen's canteen at the London International Airport — the last surviving building from the British Commonwealth Air Training Plan base that existed at London's airport during World War II. It is a London landmark listed in the city's Register of Cultural Heritage Resources. The museum is currently installing a permanent exhibition illustrating the history of military and civilian aviation in the London region, incorporating uniforms, artifacts, historic images, and model aircraft including a Spitfire and a Lancaster. The exhibition is slated to open in the fall of 2026.</p>
             </div>
         </section>
 
@@ -171,8 +170,7 @@
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
-                
+                <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
                 <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">
                         <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>

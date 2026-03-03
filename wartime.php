@@ -97,32 +97,31 @@
 
         <section id="timeline-section" class="grid-con">
             <h1 id="ts-header" class="sub-headings l-col-start-1 l-col-end-4">Timeline <br> of Aviation <br> History</h1>
-            <p id="ts-text" class="l-col-start-5 l-col-end-13">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, consequuntur ad quo reprehenderit excepturi architecto quidem harum, rem qui a asperiores saepe nesciunt consectetur, aliquam accusantium possimus repellendus voluptates voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cupiditate corporis numquam harum a repellendus expedita, quos iste aspernatur. Reiciendis ratione sapiente corporis consectetur fuga? Rem dolor ducimus at deserunt.</p>
-            <div id="ts-content" class="l-col-start-1 l-col-end-13">
+            <p id="ts-text" class="l-col-start-5 l-col-end-13">This timeline traces the evolution of aviation in London from early experimentation to post-war development. Visitors are encouraged to consider how technological progress, public interest, and global conflict shaped aviation's role in the city — from the first public flight demonstrations to the massive Commonwealth training effort of the Second World War.</p>
 
                 <div id="ts1-container" class="ts-container">
-                    <div class="ts-img"></div>
-                    <h2 class="ts-year">1900-1918</h2>
-                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
-                </div>
+                        <div class="ts-img"></div>
+                        <h2 class="ts-year">1900–1918</h2>
+                        <p class="ts-text">Early Flight: International pioneers brought powered flight to Canada. Beckwith Havens demonstrated flight in London in 1911, sparking public fascination with the new age of aviation.</p>
+                    </div>
 
-                <div id="ts2-container" class="ts-container">
-                    <div class="ts-img"></div>
-                    <h2 class="ts-year">1900-1918</h2>
-                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
-                </div>
+                    <div id="ts2-container" class="ts-container">
+                        <div class="ts-img"></div>
+                        <h2 class="ts-year">1919–1939</h2>
+                        <p class="ts-text">Growth of Aviation: Post-war enthusiasm led to the establishment of Lambeth Airfield in 1928 and the founding of the London Flying Club, cementing London's place in Canadian aviation culture.</p>
+                    </div>
 
-                <div id="ts3-container" class="ts-container">
-                    <div class="ts-img"></div>
-                    <h2 class="ts-year">1900-1918</h2>
-                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
-                </div>
+                    <div id="ts3-container" class="ts-container">
+                        <div class="ts-img"></div>
+                        <h2 class="ts-year">1940–1945</h2>
+                        <p class="ts-text">WWII & the BCATP: Crumlin Airport became a major training hub. No. 3 Elementary Flying Training School and No. 4 Air Observer School trained thousands of aircrew from across the Commonwealth.</p>
+                    </div>
 
-                <div id="ts4-container" class="ts-container">
-                    <div class="ts-img"></div>
-                    <h2 class="ts-year">1900-1918</h2>
-                    <p class="ts-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia perferendis quam aliquam? Provident, a! Praesentium molestiae rerum, soluta dolor esse impedit illo totam, officiis sunt, voluptatibus possimus ducimus asperiores?</p>
-                </div>
+                    <div id="ts4-container" class="ts-container">
+                        <div class="ts-img"></div>
+                        <h2 class="ts-year">1945–1956</h2>
+                        <p class="ts-text">Post-War Aviation: London's military presence continued with 420 Squadron operating from 1948 to 1956. The wartime infrastructure evolved into what is now London International Airport.</p>
+                    </div>
 
             </div>
         </section>
@@ -137,39 +136,37 @@
                 <div class="dt-img"></div>
             </div>
 
-            <div id="dt-content" class="l-col-start-1 l-col-end-13">
-                <div id="timeline-content">
-                    <div id="dt1-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img"></div>
-                            <h2 class="dt-profile-heading">1900-1918</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                        </div>
-                    </div>
+            <div id="dt1-profile" class="dt-profile"> 
+                <div class="dt-container">
+                    <div class="dt-profile-img"></div>
+                    <h2 class="dt-profile-heading">Early Flight — 1900–1918</h2>
+                    <p class="dt-profile-text">The Silver Dart's first powered flight in Canada in 1909 inspired a generation. By 1911, Beckwith Havens was performing demonstrations over London, Ontario. Public exhibitions by Brookins and Labatt in 1912 captured imaginations across the city, laying the groundwork for local aviation interest.</p>
+                </div>
+            </div>
 
-                    <div id="dt2-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img"></div>
-                            <h2 class="dt-profile-heading">1900-1918</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                        </div>
-                    </div>
+            <div id="dt2-profile" class="dt-profile"> 
+                <div class="dt-container">
+                    <div class="dt-profile-img"></div>
+                    <h2 class="dt-profile-heading">Growth of Aviation — 1919–1939</h2>
+                    <p class="dt-profile-text">Following World War I, civilian aviation flourished. The Lambeth Airport site was selected in 1926, officially opening on August 24, 1928. The London Flying Club was established that same year with a DeHavilland Cirrus Moth. By 1929, London saw its first regular airmail flight.</p>
+                </div>
+            </div>
 
-                    <div id="dt3-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img"></div>
-                            <h2 class="dt-profile-heading">1900-1918</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                        </div>
-                    </div>
+            <div id="dt3-profile" class="dt-profile"> 
+                <div class="dt-container">
+                    <div class="dt-profile-img"></div>
+                    <h2 class="dt-profile-heading">WWII & the BCATP — 1940–1945</h2>
+                    <p class="dt-profile-text">On January 19, 1940, the first flight into Crumlin Airport took place. No. 3 Elementary Flying Training School opened June 24, 1940, followed by No. 4 Air Observer School on December 17, 1940. Together, they trained pilots and navigators from Canada, Britain, New Zealand, and beyond.</p>
+                </div>
+            </div>
 
-                    <div id="dt4-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img"></div>
-                            <h2 class="dt-profile-heading">1900-1918</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                        </div>
-                    </div>
+            <div id="dt4-profile" class="dt-profile"> 
+                <div class="dt-container">
+                    <div class="dt-profile-img"></div>
+                    <h2 class="dt-profile-heading">Post-War Aviation — 1945–1956</h2>
+                    <p class="dt-profile-text">After the war, London maintained its military aviation legacy. The 420 Squadron auxiliary operated from 1948 to 1956, ensuring continued readiness and training. The wartime canteen building — now home to 427 Wing's museum — stands as the last surviving BCATP structure on the airport grounds.</p>
+                </div>
+            </div>
 
                     <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
                         <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
@@ -192,7 +189,7 @@
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
+                <p id="nl-text">Stay connected with the London Aviation Museum. Subscribe to receive updates on upcoming exhibitions, events, and the latest stories from London's rich aviation history. Be the first to hear about our permanent exhibition opening in the fall of 2026.</p>
                 
                 <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">
