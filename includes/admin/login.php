@@ -3,7 +3,7 @@ session_start();
 
 // Redirect if already logged in
 if (isset($_SESSION['admin'])) {
-    header("Location: ../../index.php");
+    header("Location: ../../admin/dashboard.php");
     exit();
 }
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $update = $db->prepare('UPDATE admins SET last_login = NOW() WHERE id = :id');  // changed from admin_id
             $update->execute([':id' => $admin['id']]);   // changed from admin_id
 
-            header("Location: ../../index.php");
+            header("Location: ../../admin/dashboard.php");
             exit();
     } else {
                 $error = "Invalid username or password.";
