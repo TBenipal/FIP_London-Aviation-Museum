@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2026 at 04:05 AM
+-- Generation Time: Mar 13, 2026 at 05:36 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -330,6 +330,27 @@ INSERT INTO `contact_submissions` (`id`, `first_name`, `last_name`, `email`, `me
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `event_date` date NOT NULL,
+  `event_time` time DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `featured_image_url` varchar(255) DEFAULT NULL,
+  `category` varchar(100) DEFAULT NULL,
+  `status` enum('draft','published','archived') NOT NULL DEFAULT 'draft',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `newsletter_subscribers`
 --
 
@@ -349,6 +370,25 @@ INSERT INTO `newsletter_subscribers` (`id`, `name`, `email`, `subscribed_at`, `s
 (1, 'ajay ajay', 'ajay@gmail.com', '2026-02-25 02:44:20', 'active'),
 (3, 'ajay', 'ajayajay@gmail.com', '2026-03-02 05:06:12', 'active'),
 (4, 'ajay ajay', 'asdasdas@gmail.com', '2026-03-02 05:15:03', 'active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social_posts`
+--
+
+CREATE TABLE `social_posts` (
+  `id` int(11) NOT NULL,
+  `platform` enum('instagram','facebook','twitter','youtube') NOT NULL,
+  `media_url` varchar(255) NOT NULL,
+  `media_type` enum('image','video') NOT NULL DEFAULT 'image',
+  `caption` text DEFAULT NULL,
+  `hashtags` varchar(500) DEFAULT NULL,
+  `external_link` varchar(255) DEFAULT NULL,
+  `status` enum('draft','published') NOT NULL DEFAULT 'draft',
+  `published_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -375,11 +415,24 @@ ALTER TABLE `contact_submissions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
+
+--
 -- Indexes for table `newsletter_subscribers`
 --
 ALTER TABLE `newsletter_subscribers`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `social_posts`
+--
+ALTER TABLE `social_posts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -404,10 +457,22 @@ ALTER TABLE `contact_submissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `newsletter_subscribers`
 --
 ALTER TABLE `newsletter_subscribers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `social_posts`
+--
+ALTER TABLE `social_posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
