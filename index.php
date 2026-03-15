@@ -216,8 +216,8 @@
                             <img src="images/Homepage/des-wo-exhibtion.jpg" alt="Exhibitions">
                         </picture>
                     </div>
-                    <h2 class="wo-block-headings">Exhibitions</h2>
-                    <p class="wo-block-texts">Name #1</p>
+                    <h2 class="wo-block-headings">Permanent Exhibition — Opening Fall 2026</h2>
+                    <p class="wo-block-texts">Military & civilian aviation history of the London region</p>
                 </div>
 
                 <div id="wo-block-2" class="wo-blocks">
@@ -228,8 +228,8 @@
                             <img src="images/Homepage/des-wo-activities.jpg" alt="Activities and Experiences">
                         </picture>
                     </div>
-                    <h2 class="wo-block-headings">Activities and Experiences</h2>
-                    <p class="wo-block-texts">Name #2</p>
+                    <h2 class="wo-block-headings">Explore the Aviation Timeline</h2>
+                    <p class="wo-block-texts">From early flight to WWII — key events in London's aviation story</p>
                 </div>
 
                 <div id="wo-block-3" class="wo-blocks">
@@ -240,8 +240,8 @@
                             <img src="images/Homepage/des-wo-exhibtion2.jpg" alt="Exhibitions">
                         </picture>
                     </div>
-                    <h2 class="wo-block-headings">Exhibitions</h2>
-                    <p class="wo-block-texts">Name #3</p>
+                    <h2 class="wo-block-headings">Book of Remembrance</h2>
+                    <p class="wo-block-texts">Honouring those who gave their lives in BCATP training</p>
                 </div>
             </div>
             <button id="wo-content-btn" class="col-span-full l-col-start-1 l-col-end-13">More Activities & Exhibition</button>
@@ -265,6 +265,7 @@
                         </picture>
                     </div>
                     <h2 class="ss-block-headings">DONATE</h2>
+                    <p class="ss-block-texts">Help preserve London's aviation heritage and fund our 2026 exhibition</p>
                 </div>
 
                 <div id="ss-block-2" class="ss-blocks">
@@ -276,6 +277,7 @@
                         </picture>
                     </div>
                     <h2 class="ss-block-headings">CHARITY</h2>
+                    <p class="ss-block-texts">Support 427 Wing RCAF Association's community commemoration programs</p>
                 </div>
 
                 <div id="ss-block-3" class="ss-blocks">
@@ -287,16 +289,17 @@
                         </picture>
                     </div>
                     <h2 class="ss-block-headings">LUNCH CHARITY</h2>
+                    <p class="ss-block-texts">Join us for our annual fundraising luncheon honouring RCAF veterans and their families</p>
                 </div>
             </div>
 
         </section>
 
         <section id="newsletter" class="grid-con">
-            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Newsletter!</h1>
+            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
 
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores explicabo, cum rem error sunt velit, dolorum et architecto quaerat hic quae! Laborum tenetur provident perferendis nemo, dolor enim maiores unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eum saepe molestias obcaecati sit? Placeat sed ipsam quis voluptate nisi eius vero nostrum dolore ipsa possimus suscipit repudiandae, accusantium neque.</p>
+                <p id="nl-text">Sign up for updates on the museum's opening, new exhibitions, and upcoming events honouring London's aviation heritage.</p>
                 
                 <form id="nl-form-con" class="col-span-full">
                     <div id="nl-form">

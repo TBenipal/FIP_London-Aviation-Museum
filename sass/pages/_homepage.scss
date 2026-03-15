@@ -424,16 +424,16 @@ html, body {
     object-fit: cover;
 }
 
-.wo-block-headings {
+.wo-block-headings, .ss-block-headings {
     color: a.$secondary-color;
-    padding: 10px;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    padding: 10px 10px 0px 10px;
 }
 
-.wo-block-texts {
+.wo-block-texts, .ss-block-texts {
     color: white;
-    padding: 10px;
     font-size: 1.5rem;
+    padding: 10px;
 }
 
 #wo-content-btn {
@@ -485,11 +485,6 @@ html, body {
     order: 3;
 }
 
-.ss-block-headings {
-    font-size: 1.5rem;
-    padding: 10px;
-}
-
 #support-us .slide-prev, #support-us .slide-next {
     top: 60%;
 }
@@ -497,11 +492,6 @@ html, body {
 .ss-blocks {
     width: 100px;
     background-color: a.$accent-color;
-}
-
-.block-text {
-    color: white;
-    padding: 10px;
 }
 
 #newsletter {
@@ -817,8 +807,8 @@ html, body {
 
     .wo-block-headings {
         color: a.$secondary-color;
-        padding: 10px;
-        font-size: 1rem;
+        padding: 10px 10px 0px 10px;
+        font-size: 1.5rem;
     }
 
     .wo-block-texts {
@@ -857,7 +847,7 @@ html, body {
 
     .ss-block-headings {
         font-size: 1.5rem;
-        padding: 10px;
+        padding: 10px 10px 0px 10px;
     }
 
     #support-us .slide-prev, #support-us .slide-next {
@@ -1232,8 +1222,8 @@ html, body {
 
     .wo-block-headings, .ss-block-headings {
         color: a.$secondary-color;
-        padding: 10px;
-        font-size: 1rem;
+        padding: 10px 10px 0px 10px;
+        font-size: 1.5rem;
     }
 
     .wo-block-texts {
@@ -1278,10 +1268,6 @@ html, body {
     #ss-content {
         margin-top: 50px;
         order: 3;
-    }
-
-    .ss-block-headings {
-        font-size: 1.5rem;
     }
 
     #newsletter {

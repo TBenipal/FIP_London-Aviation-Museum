@@ -3,7 +3,7 @@
 #footer-section {
         background-color: a.$primary-color;
         height: auto;
-        padding-bottom: 100px;
+        padding-bottom: 25px;
         padding-left: 25px;
         padding-right: 25px;
         justify-content: center;
@@ -56,10 +56,6 @@
         color: a.$accent-color;
     }
 
-    #social-section {
-        height: auto;
-    }
-
     #social-header {
         margin-top: 100px;
         font-size: 3rem;
@@ -68,21 +64,22 @@
     }
 
     #social-content {
-        // display: grid;
-        // grid-template-columns: repeat(2, 1fr);
-        // justify-self: center;
-        // gap: 50px;
-        margin-top: 50px;
         display: flex;
         flex-direction: row;
         justify-self: center;
-        gap: 50px;
+        gap: 25px;
     }
 
     .social-icon {
-        width: 40px;
-        height: 40px;
-        background-color: gray;
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .social-icon img {
+        width: 75px;
+        height: 75px;
     }
 
 @media screen and (min-width: 768px) { 
@@ -90,7 +87,7 @@
     #footer-section {
         background-color: a.$primary-color;
         height: auto;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
         padding-left: 0px;
         padding-right: 0px;
         justify-content: center;
@@ -114,6 +111,25 @@
         justify-content: space-between;
         margin-top: 50px;
         padding: 0px;
+    }
+
+    #social-content {
+        display: flex;
+        flex-direction: row;
+        justify-self: center;
+        gap: 50px;
+    }
+
+    .social-icon {
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .social-icon img {
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -185,14 +201,19 @@
     #social-content {
         display: flex;
         flex-direction: row;
-        gap: 100px;
         justify-self: center;
-        margin-top: 50px;
+        gap: 50px;
     }
 
     .social-icon {
-        width: 40px;
-        height: 40px;
-        background-color: gray;
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .social-icon img {
+        width: 100px;
+        height: 100px;
     }
 }
