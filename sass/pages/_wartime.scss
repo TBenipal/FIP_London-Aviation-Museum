@@ -1,5 +1,4 @@
 @use '../abstracts' as a;
-
 #timeline {
     display: none;
 }
@@ -53,12 +52,16 @@
     padding: 50px 25px;
 }
 
+#timeline-content {
+    height: auto;
+}
+
 #ts-header {
     color: white;
     font-size: 2rem;
     margin-bottom: 25px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -71,7 +74,7 @@
     color: white;
     line-height: 25px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 25px auto;
 }
 
@@ -81,7 +84,7 @@
     justify-content: center;
     gap: 25px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0px auto;
 }
 
@@ -140,7 +143,7 @@
 }
 
 #dt-main-img, #dt-sub-img {
-    height: 75vw;
+    height: auto;
     width: 100%;
     max-width: 500px;
     background-color: gray;
@@ -157,6 +160,8 @@
 
 #dt-main-img img, #dt-sub-img img, .dt-img img  {
     object-fit: cover;
+    width: 100%;
+    max-width: 500px;
 }
 
 #dt-container {
@@ -169,6 +174,25 @@
     margin-top: 5px;
 }
 
+#mobile-timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#mobile-timeline {
+    width: 100%;
+}
+
+.dt-profile {
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
 .dt-container {
     display: flex;
     flex-direction: column;
@@ -178,7 +202,7 @@
 
 .dt-img {
     width: 100%;
-    height: 75vw;
+    height: auto;
     max-width: 500px;
     background-color: gray;
 }
@@ -216,19 +240,6 @@
     width: 300px;
 }
 
-
-#timeline-content {
-    position: relative;
-    width: 800px;
-    margin: 50px auto;
-}
-
-.dt-profile {
-    display: none;
-    position: absolute;
-    z-index: 2;
-}
-
 #dt1-profile {
     left: 0px;
 }
@@ -246,10 +257,6 @@
 #dt4-profile {
     right: 0px;
     bottom: 0px;
-}
-
-#mobile-timeline {
-    display: none;
 }
 
 .timeline {
@@ -270,7 +277,7 @@
 
 @media screen and (min-width: 768px) {
 
-    #mobile-timeline {
+    #timeline {
         display: none;
     }
 
@@ -384,17 +391,20 @@
         font-size: 3rem;
     }
 
+
     #dt-main-img, #dt-sub-img {
         display: flex;
         height: 40vw;
         background-color: transparent;
         padding: 5px 5px;
-    }
-
-    #dt-sub-img {
         max-width: unset;
     }
 
+    #dt-main-img img, #dt-sub-img img, .dt-img img  {
+        object-fit: cover;
+        width: 100%;
+        max-width: unset;
+    }
 
     #dt-container {
         display: flex;
@@ -404,6 +414,10 @@
         gap: 1.5vw;
         height: auto;
         margin: 0px 5px;
+    }
+
+    #mobile-timeline {
+
     }
 
     .dt-container {
@@ -440,12 +454,6 @@
         background-color: gray;
     }
 
-    #timeline-content {
-        position: relative;
-        width: 800px;
-        margin: 50px auto;
-    }
-
     .dt-profile {
         position: absolute;
         z-index: 2;
@@ -476,6 +484,10 @@
 
     #timeline {
         display: block;
+    }
+
+    #mobile-timeline {
+        display: none;
     }
 
     #wartime-hero {

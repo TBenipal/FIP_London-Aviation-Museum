@@ -20,7 +20,7 @@
 
             <div id="mobile-header">
                 <div id="header-logo"><a href="index.html">
-                    <img src="images/logo_horizontal.png" alt="London Aviation Museum Logo"></a>
+                    <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
                 <button class="hamburger" aria-label="Open menu">
@@ -276,7 +276,7 @@
 
                     <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
                         <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
-                        <g id="plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
+                        <g class="plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
                             <path id="plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
                             c-12.698,7.339-36.19,23.066-71.663,47.974L80.701,127.669c-6.554-1.758-13.534-0.836-19.405,2.56l-22.144,12.8
                             c-8.047,4.651-12.945,13.312-12.783,22.622c0.162,9.301,5.359,17.792,13.568,22.161l138.257,73.574
@@ -287,9 +287,21 @@
                         </g>
                     </svg>
 
-                    <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="35" height="2478" viewBox="0 0 35 2478" fill="none">
-                        <path id="mobile-timeline-path" d="M17.3204 2478L34.6409 2448L-8.94514e-05 2448L17.3204 2478ZM17.3203 0L14.3203 1.31134e-07L14.3204 2451L17.3204 2451L20.3204 2451L20.3203 -1.31134e-07L17.3203 0Z" fill="#A28C63"/>
-                    </svg>
+                    <div id="mobile-timeline-container">
+                        <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="10" height="2000px" fill="none">
+                            <path id="mobile-timeline-path" d="M5 0V2473.36" stroke="#A28C63" stroke-width="10"/>
+                            <g class="mobile-plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
+                                <path id="mobile-plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
+                                c-12.698,7.339-36.19,23.066-71.663,47.974L80.701,127.669c-6.554-1.758-13.534-0.836-19.405,2.56l-22.144,12.8
+                                c-8.047,4.651-12.945,13.312-12.783,22.622c0.162,9.301,5.359,17.792,13.568,22.161l138.257,73.574
+                                c-23.356,16.41-46.106,32.068-59.904,41.515l-62.037-36.523c-7.936-4.676-17.775-4.71-25.754-0.102l-17.715,10.24
+                                c-7.262,4.198-12.006,11.699-12.698,20.062c-0.691,8.371,2.765,16.538,9.242,21.879l84.369,69.478
+                                c4.983,4.104,11.332,6.17,17.775,5.786l57.079-3.43c3.959-0.239,7.817-1.399,11.255-3.379l243.61-140.8
+                                c48.956-28.297,82.935-79.275,84.352-81.434C512.3,157.809,513.256,149.181,510.338,141.484z"/>
+                            </g>
+                        </svg>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -318,7 +330,7 @@
 
     <footer id="footer-section" class="grid-con">
         <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12">
-            <img src="images/logo_horizontal.png" alt="London Aviation Museum Logo">
+            <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo">
         </div>
         <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
             <div id="about-museum">

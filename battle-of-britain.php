@@ -17,7 +17,7 @@
 
             <div id="mobile-header">
                 <div id="header-logo"><a href="index.html">
-                    <img src="images/logo_horizontal.png" alt="London Aviation Museum Logo"></a>
+                    <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
                 <button class="hamburger" aria-label="Open menu">
@@ -291,7 +291,7 @@
 
     <footer id="footer-section" class="grid-con">
         <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12">
-            <img src="images/logo_horizontal.png" alt="London Aviation Museum Logo">
+            <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo">
         </div>
         <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
                 <div id="about-museum">
