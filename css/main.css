@@ -259,7 +259,7 @@ ul, li {
   #header-logo {
     width: 275px;
     height: auto;
-    padding: 5px 0px;
+    padding: 10px 0px;
   }
   .nav-item .admin-icon {
     margin-top: 0px;
@@ -3206,12 +3206,16 @@ model-viewer {
   padding: 50px 25px;
 }
 
+#timeline-content {
+  height: auto;
+}
+
 #ts-header {
   color: white;
   font-size: 2rem;
   margin-bottom: 25px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -3224,7 +3228,7 @@ model-viewer {
   color: white;
   line-height: 25px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 25px auto;
 }
 
@@ -3234,7 +3238,7 @@ model-viewer {
   justify-content: center;
   gap: 25px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0px auto;
 }
 
@@ -3294,7 +3298,7 @@ model-viewer {
 }
 
 #dt-main-img, #dt-sub-img {
-  height: 75vw;
+  height: auto;
   width: 100%;
   max-width: 500px;
   background-color: gray;
@@ -3312,6 +3316,8 @@ model-viewer {
 #dt-main-img img, #dt-sub-img img, .dt-img img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  max-width: 500px;
 }
 
 #dt-container {
@@ -3324,6 +3330,25 @@ model-viewer {
   margin-top: 5px;
 }
 
+#mobile-timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#mobile-timeline {
+  width: 100%;
+}
+
+.dt-profile {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
 .dt-container {
   display: flex;
   flex-direction: column;
@@ -3333,7 +3358,7 @@ model-viewer {
 
 .dt-img {
   width: 100%;
-  height: 75vw;
+  height: auto;
   max-width: 500px;
   background-color: gray;
 }
@@ -3368,18 +3393,6 @@ model-viewer {
   width: 300px;
 }
 
-#timeline-content {
-  position: relative;
-  width: 800px;
-  margin: 50px auto;
-}
-
-.dt-profile {
-  display: none;
-  position: absolute;
-  z-index: 2;
-}
-
 #dt1-profile {
   left: 0px;
 }
@@ -3397,10 +3410,6 @@ model-viewer {
 #dt4-profile {
   right: 0px;
   bottom: 0px;
-}
-
-#mobile-timeline {
-  display: none;
 }
 
 .timeline {
@@ -3421,7 +3430,7 @@ model-viewer {
 }
 
 @media screen and (min-width: 768px) {
-  #mobile-timeline {
+  #timeline {
     display: none;
   }
   #wartime-main {
@@ -3517,8 +3526,12 @@ model-viewer {
     height: 40vw;
     background-color: transparent;
     padding: 5px 5px;
+    max-width: unset;
   }
-  #dt-sub-img {
+  #dt-main-img img, #dt-sub-img img, .dt-img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
     max-width: unset;
   }
   #dt-container {
@@ -3556,11 +3569,6 @@ model-viewer {
     height: 20vw;
     background-color: gray;
   }
-  #timeline-content {
-    position: relative;
-    width: 800px;
-    margin: 50px auto;
-  }
   .dt-profile {
     position: absolute;
     z-index: 2;
@@ -3584,6 +3592,9 @@ model-viewer {
 @media screen and (min-width: 1200px) {
   #timeline {
     display: block;
+  }
+  #mobile-timeline {
+    display: none;
   }
   #wartime-hero {
     width: 100%;

@@ -17,7 +17,7 @@ export function timeline() {
                 drawSVG: "100%", 
                 ease: "none" 
             })
-            .fromTo("#plane", { 
+            .fromTo(".plane", { 
                 opacity: 1
             }, {
                 motionPath: {
@@ -31,6 +31,37 @@ export function timeline() {
             0
         );
     }
-
     timeline();
+
+    function mobtimeline() {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#mobile-timeline-container",
+                start: "top 100%",
+                end: "bottom 0%",
+                scrub: 1
+            }
+            })
+            .fromTo("#mobile-timeline-path", { 
+                drawSVG: "0%" 
+
+            }, { 
+                drawSVG: "100%", 
+                ease: "none" 
+            })
+            .fromTo(".mobile-plane", { 
+                opacity: 1,
+            }, {
+                motionPath: {
+                    path: "#mobile-timeline-path",
+                    align: "#mobile-timeline-path",
+                    alignOrigin: [1.2, .5],
+                    autoRotate: 30
+                },
+                ease: "none"
+            },
+            0
+        );
+    }
+    mobtimeline();
 }
