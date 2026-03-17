@@ -218,59 +218,61 @@
 
             <div id="dt-content" class="col-span-full l-col-start-1 l-col-end-13">
                 <div id="timeline-content">
-                    <div id="dt1-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img">
-                                <picture>
-                                    <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 767px)">
-                                    <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 1199px)">
-                                    <img src="images/Wartime/des-detail-1918.png" alt="Detail Timeline 1900-1918">
-                                </picture>
+                    <div id="dt-profile-container">
+                        <div id="dt1-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-1918.png" alt="Detail Timeline 1900-1918">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">1900-1918</h2>
+                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                             </div>
-                            <h2 class="dt-profile-heading">1900-1918</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                         </div>
-                    </div>
 
-                    <div id="dt2-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img">
-                                <picture>
-                                    <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 767px)">
-                                    <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 1199px)">
-                                    <img src="images/Wartime/des-detail-1939.png" alt="Detail Timeline 1919-1939">
-                                </picture>
+                        <div id="dt2-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-1939.png" alt="Detail Timeline 1919-1939">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">1919-1939</h2>
+                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                             </div>
-                            <h2 class="dt-profile-heading">1919-1939</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                         </div>
-                    </div>
 
-                    <div id="dt3-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img">
-                                <picture>
-                                    <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 767px)">
-                                    <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 1199px)">
-                                    <img src="images/Wartime/des-detail-1945.png" alt="Detail Timeline 1940-1945">
-                                </picture>
+                        <div id="dt3-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-1945.png" alt="Detail Timeline 1940-1945">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">1940-1945</h2>
+                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                             </div>
-                            <h2 class="dt-profile-heading">1940-1945</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                         </div>
-                    </div>
 
-                    <div id="dt4-profile" class="dt-profile"> 
-                        <div class="dt-container">
-                            <div class="dt-profile-img">
-                                <picture>
-                                    <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 767px)">
-                                    <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 1199px)">
-                                    <img src="images/Wartime/des-detail-postwar.png" alt="Detail Timeline Post War">
-                                </picture>
+                        <div id="dt4-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-postwar.png" alt="Detail Timeline Post War">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">Post War</h2>
+                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                             </div>
-                            <h2 class="dt-profile-heading">Post War</h2>
-                            <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
                         </div>
                     </div>
 
@@ -288,9 +290,9 @@
                     </svg>
 
                     <div id="mobile-timeline-container">
-                        <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="10" height="2000px" fill="none">
+                        <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="10" height="1400px" fill="none">
                             <path id="mobile-timeline-path" d="M5 0V2473.36" stroke="#A28C63" stroke-width="10"/>
-                            <g class="mobile-plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
+                            <g class="mobile-plane" transform="translate(0 0) scale(0.15)" fill="#A08B63">
                                 <path id="mobile-plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
                                 c-12.698,7.339-36.19,23.066-71.663,47.974L80.701,127.669c-6.554-1.758-13.534-0.836-19.405,2.56l-22.144,12.8
                                 c-8.047,4.651-12.945,13.312-12.783,22.622c0.162,9.301,5.359,17.792,13.568,22.161l138.257,73.574

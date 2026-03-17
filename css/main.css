@@ -3332,6 +3332,7 @@ model-viewer {
 
 #mobile-timeline-container {
   position: relative;
+  top: 0px;
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -3344,9 +3345,29 @@ model-viewer {
 }
 
 .dt-profile {
-  display: none;
   position: absolute;
   z-index: 2;
+}
+
+#dt1-profile {
+  top: 75px;
+  right: 50px;
+}
+
+#dt2-profile {
+  top: 400px;
+  right: 50px;
+}
+
+#dt3-profile {
+  top: 750px;
+  bottom: unset;
+  right: 50px;
+}
+
+#dt4-profile {
+  top: 1100px;
+  right: 50px;
 }
 
 .dt-container {
@@ -3364,8 +3385,8 @@ model-viewer {
 }
 
 .dt-profile-img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 100px;
   background-color: grey;
 }
@@ -3383,33 +3404,21 @@ model-viewer {
 }
 
 .dt-profile-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
 }
 
 .dt-profile-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   width: 300px;
 }
 
-#dt1-profile {
-  left: 0px;
-}
-
-#dt2-profile {
-  top: 600px;
-  right: 0px;
-}
-
-#dt3-profile {
-  left: 0px;
-  bottom: 700px;
-}
-
-#dt4-profile {
-  right: 0px;
-  bottom: 0px;
+#timeline-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .timeline {
@@ -3431,6 +3440,9 @@ model-viewer {
 
 @media screen and (min-width: 768px) {
   #timeline {
+    display: block;
+  }
+  #mobile-timeline {
     display: none;
   }
   #wartime-main {
@@ -3549,12 +3561,6 @@ model-viewer {
     text-align: center;
     align-items: center;
   }
-  .dt-profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
-    background-color: grey;
-  }
   .dt-profile-heading {
     font-size: 2.5rem;
     color: white;
@@ -3569,24 +3575,74 @@ model-viewer {
     height: 20vw;
     background-color: gray;
   }
+  .dt-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: grey;
+  }
+  .dt-profile-heading {
+    font-size: 2rem;
+    color: white;
+  }
+  .dt-profile-text {
+    font-size: 1rem;
+    color: white;
+    width: 400px;
+  }
+  .dt-img {
+    width: 30vw;
+    height: 20vw;
+    background-color: gray;
+  }
+  #timeline-content {
+    position: relative;
+    width: 700px;
+    max-width: unset;
+    margin: 50px auto;
+  }
   .dt-profile {
+    display: block;
     position: absolute;
     z-index: 2;
   }
   #dt1-profile {
+    top: 10px;
     left: 0px;
+    right: 325px;
+    bottom: 0px;
   }
   #dt2-profile {
-    top: 600px;
+    top: 500px;
     right: 0px;
+    left: unset;
+    bottom: 0px;
   }
   #dt3-profile {
     left: 0px;
-    bottom: 700px;
+    bottom: 500px;
+    top: unset;
+    right: unset;
   }
   #dt4-profile {
     right: 0px;
-    bottom: 0px;
+    bottom: 75px;
+    left: unset;
+    top: unset;
+  }
+  #timeline {
+    padding-top: 60px;
+    display: block;
+    margin: 0px auto;
+    width: 600px;
+    height: auto;
+    overflow: visible;
+    z-index: 1;
+  }
+  .timeline {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -3707,9 +3763,12 @@ model-viewer {
     text-align: center;
     align-items: center;
   }
+  #timeline-content {
+    max-width: unset;
+  }
   .dt-profile-img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 100px;
     background-color: grey;
   }
@@ -3720,7 +3779,7 @@ model-viewer {
   .dt-profile-text {
     font-size: 1.5rem;
     color: white;
-    width: 300px;
+    width: 400px;
   }
   .dt-img {
     width: 30vw;
@@ -3729,8 +3788,8 @@ model-viewer {
   }
   #timeline-content {
     position: relative;
-    width: 800px;
-    margin: 50px auto;
+    width: 1000px;
+    margin: 75px auto;
   }
   .dt-profile {
     display: block;
@@ -3738,25 +3797,34 @@ model-viewer {
     z-index: 2;
   }
   #dt1-profile {
+    top: 0px;
     left: 0px;
+    right: unset;
+    bottom: 0px;
   }
   #dt2-profile {
-    top: 600px;
+    top: 800px;
     right: 0px;
+    left: unset;
+    bottom: 0px;
   }
   #dt3-profile {
     left: 0px;
-    bottom: 700px;
+    bottom: 800px;
+    top: unset;
+    right: unset;
   }
   #dt4-profile {
     right: 0px;
     bottom: 0px;
+    left: unset;
+    top: unset;
   }
   #timeline {
-    padding-top: 60px;
+    padding-top: 100px;
     display: block;
     margin: 0px auto;
-    width: 800px;
+    width: 1000px;
     height: auto;
     overflow: visible;
     z-index: 1;

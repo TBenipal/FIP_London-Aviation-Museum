@@ -23,8 +23,8 @@ export function timeline() {
                 motionPath: {
                     path: "#timeline-path",
                     align: "#timeline-path",
-                    alignOrigin: [.7, 2],
-                    autoRotate: true
+                    alignOrigin: [.6, .5],
+                    autoRotate: 30
                 },
                 ease: "none"
             },
@@ -37,7 +37,7 @@ export function timeline() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: "#mobile-timeline-container",
-                start: "top 100%",
+                start: "top 50%",
                 end: "bottom 0%",
                 scrub: 1
             }
