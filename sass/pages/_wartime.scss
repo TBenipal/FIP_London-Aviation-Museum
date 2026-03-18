@@ -10,7 +10,7 @@
 
 #wartime-main {
     background-color: darkgray;
-    height: 90vh;
+    height: 92vh;
 }
 
 #wartime-main picture, #wartime-main img {
@@ -24,12 +24,13 @@
 }
 
 #wh-container {
-    position: absolute;
-    bottom: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 15px;
     width: 100%;
+    background-color: a.$accent-color;
+    padding: 25px 25px 20px 25px;
 }
 
 #wh-container .hero-sub-heading {
@@ -39,8 +40,8 @@
 .wh-sub-container {
     display: flex;
     flex-direction: column;
-    width: 25vw;
-    height: 28vw;
+    width: 100%;
+    height: auto;
     // width: 350px;
     // height: 300px;
     gap: 10px;
@@ -135,6 +136,11 @@
     padding: 0px 25px;
 }
 
+#dt-content {
+    position: relative;
+    top: 0px;
+}
+
 #dt-heading {
     text-align: center;
     color: white;
@@ -189,29 +195,28 @@
 }
 
 .dt-profile {
-    position: absolute;
-    z-index: 2;
+    position: relative;
 }
 
 #dt1-profile {
-    top: 75px;
-    right: 50px;
+    top: 50px;
+    right: 25px;
 }
 
 #dt2-profile {
-    top: 400px;
-    right: 50px;
+    top: 100px;
+    right: 25px;
 }
 
 #dt3-profile {
-    top: 750px;
+    top: 150px;
     bottom: unset;
-    right: 50px;
+    right: 25px;
 }
 
 #dt4-profile {
-    top: 1100px;
-    right: 50px;
+    top: 200px;
+    right: 25px;
 }
 
 .dt-container {
@@ -262,6 +267,9 @@
 }
 
 #timeline-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     position: relative;
     width: 100%;
     max-width: 500px;
@@ -296,13 +304,23 @@
 
     #wartime-main {
         background-color: darkgray;
-        height: 90vh;
+        height: 92vh;
+    }
+
+    #wh-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+        background-color: a.$accent-color;
+        padding: 30px 25px 20px 25px;
     }
 
     .wh-sub-container {
         display: flex;
         flex-direction: column;
-        width: 25vw;
+        width: 100%;
         height: 25vw;
         // width: 350px;
         // height: 300px;
@@ -393,7 +411,6 @@
 
     #detail-timeline {
         position: relative;
-        display: grid;
         // gap: 10px;
         width: 100%;
         height: auto;
@@ -417,6 +434,14 @@
         object-fit: cover;
         width: 100%;
         max-width: unset;
+    }
+
+    #dt-profile-container {
+        width: 100%;
+        height: auto;
+        max-width: unset;
+        margin: 0 auto;
+        pointer-events: none;
     }
 
     #dt-container {
@@ -487,40 +512,42 @@
         width: 700px;
         max-width: unset;
         margin: 50px auto;
+        display: flex;
+        flex-direction: column; /* Stack container on top of SVG */
+        align-items: center;
     }
 
     .dt-profile {
-        display: block;
         position: absolute;
-        z-index: 2;
+        display: block;
     }
 
     #dt1-profile {
         top: 10px;
         left: 0px;
-        right: 325px;
+        right: 300px;
         bottom: 0px;
     }
 
     #dt2-profile {
-        top: 500px;
+        top: 450px;
         right: 0px;
-        left: unset;
+        left: 200px;
         bottom: 0px;
     }
 
     #dt3-profile {
         left: 0px;
-        bottom: 500px;
-        top: unset;
-        right: unset;
+        bottom: 0px;
+        top: 1000px;
+        right: 200px;
     }
 
     #dt4-profile {
         right: 0px;
-        bottom: 75px;
-        left: unset;
-        top: unset;
+        bottom: 0px;
+        left: 200px;
+        top: 1425px;
     }
 
     #timeline {
@@ -563,19 +590,20 @@
     }
 
     #wh-container {
-        position: absolute;
-        bottom: 50px;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        gap: 50px;
         width: 100%;
+        background-color: a.$accent-color;
+        padding: 35px 75px 20px 75px;
     }
 
      .wh-sub-container {
         display: flex;
         flex-direction: column;
-        width: 25vw;
-        height: 20vw;
+        width: 100%;
+        height: 25vw;
         // width: 350px;
         // height: 300px;
         gap: 10px;
@@ -670,6 +698,17 @@
         padding-right: 50px;
     }
 
+    #dt-profile-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-width: unset;
+        margin: 0 auto;
+        pointer-events: none;
+    }
+
     #dt-container {
         display: flex;
         flex-direction: row;
@@ -687,8 +726,15 @@
         align-items: center;
     }
 
+
     #timeline-content {
+        position: relative;
+        width: 1000px;
         max-width: unset;
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column; /* Stack container on top of SVG */
+        align-items: center;
     }
 
     .dt-profile-img {
@@ -718,12 +764,6 @@
         background-color: gray;
     }
 
-    #timeline-content {
-        position: relative;
-        width: 1000px;
-        margin: 75px auto;
-    }
-
     .dt-profile {
         display: block;
         position: absolute;
@@ -738,7 +778,7 @@
     }
 
     #dt2-profile {
-        top: 800px;
+        top: 750px;
         right: 0px;
         left: unset;
         bottom: 0px;
@@ -746,8 +786,8 @@
 
     #dt3-profile {
         left: 0px;
-        bottom: 800px;
-        top: unset;
+        bottom: unset;
+        top: 1650px;
         right: unset;
     }
 
@@ -755,7 +795,7 @@
         right: 0px;
         bottom: 0px;
         left: unset;
-        top: unset;
+        top: 2325px;
     }
 
     #timeline {
