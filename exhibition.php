@@ -124,7 +124,7 @@
         <!-- <div id="gutter-7"></div> -->
 
         <section id="exhibition-social" class="grid-con">
-            <h1 id="es-heading" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Social Media</h1>
+            <h1 id="es-heading" class="sub-headings col-span-full l-col-start-1 l-col-end-13">A City in the Air London's Aviation Story</h1>
             <div class="video-container col-span-full l-col-start-2 l-col-end-12">
                 <video class="video-player" playsinline controls controls data-poster="" aria-label="Loop Video">
                     <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 767px)">
@@ -143,9 +143,9 @@
                             <img src="images/Homepage/des-events-thumbnail.webp" alt="Name #1 Image">
                         </picture>
                     </div>
-                    <h2 class="es-sub-heading">Name #1</h2>
+                    <h2 class="es-sub-heading">Events</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                    <p class="es-sub-text">Opened June 24, 1940 at Crumlin Airport, this school provided primary pilot training using Fleet Finch II aircraft. Student pilots learned fundamental flight skills, aerobatics, and basic navigation — both Canadian and international trainees progressed from here to advanced training schools across the Commonwealth.</p>
                 </div>
                 <div class="es-container">
                     <div class="es-sub-img">
@@ -155,9 +155,9 @@
                             <img src="images/Homepage/des-guide-thumbnail.webp" alt="Name #2 Image">
                         </picture>
                     </div>
-                    <h2 class="es-sub-heading">Name #2</h2>
+                    <h2 class="es-sub-heading">Guided Tour</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                    <p class="es-sub-text">Opened December 17, 1940, this school trained navigators and air observers using the Avro Anson and Harvard aircraft. Trainees from New Zealand, the United States, and across the Commonwealth completed navigation, bombing, gunnery, and map-reading courses, supported by Link trainers for instrument flight simulation.</p>
                 </div>
                 <div class="es-container">
                     <div class="es-sub-img">
@@ -167,9 +167,9 @@
                             <img src="images/Homepage/des-gallery-thumbnail.webp" alt="Name #3 Image">
                         </picture>
                     </div>
-                    <h2 class="es-sub-heading">Name #3</h2>
+                    <h2 class="es-sub-heading">Gallery</h2>
                     <div class="es-gutter"></div>
-                    <p class="es-sub-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est veritatis aliquam exercitationem rerum neque dolores enim. Quia maxime porro reprehenderit magni eum commodi consectetur amet eveniet neque aliquam. Ratione!</p>
+                    <p class="es-sub-text">A lasting tribute to those who lost their lives during aviation training in and around London. The Book of Remembrance records the names of aircrew, instructors, and support personnel who made the ultimate sacrifice preparing to defend freedom — searchable by name, rank, squadron, date of loss, and service number.</p>
                 </div>
             </div>
 
@@ -183,7 +183,7 @@
                 </div>
                 <div id="es-about-text">
                     <h2 id="es-about-heading" class="sub-headings">About London Aviation Museum</h2>
-                    <p id="es-about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatum soluta molestias, optio repudiandae aliquid ullam totam. Accusamus, sequi nisi exercitationem ea sed illum dolorem dolore obcaecati consectetur porro quae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi totam a amet reiciendis facilis quis quas, illo excepturi aspernatur beatae hic in adipisci sunt omnis voluptatum, voluptate maxime ab nam?</p>
+                    <p id="es-about-description">A project of 427 Wing (London), Royal Canadian Air Force Association. The museum is housed in a 1943 airmen's canteen at the London International Airport — the last surviving building from the British Commonwealth Air Training Plan (BCATP) base that existed at London's airport during World War II. The canteen is a London landmark, listed in the city's Register of Cultural Heritage Resources. The museum commemorates the thousands of Canadian and Commonwealth airmen who trained at this site, as well as the military and civilian personnel who supported them — and the nearly 250 London men who lost their lives serving with the RCAF during World War Two.</p>
                 </div>
             </div>
         </section>

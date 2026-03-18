@@ -218,64 +218,6 @@
 
             <div id="dt-content" class="col-span-full l-col-start-1 l-col-end-13">
                 <div id="timeline-content">
-                    <div id="dt-profile-container">
-                        <div id="dt1-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-1918.png" alt="Detail Timeline 1900-1918">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">1900-1918</h2>
-                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                            </div>
-                        </div>
-
-                        <div id="dt2-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-1939.png" alt="Detail Timeline 1919-1939">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">1919-1939</h2>
-                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                            </div>
-                        </div>
-
-                        <div id="dt3-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-1945.png" alt="Detail Timeline 1940-1945">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">1940-1945</h2>
-                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                            </div>
-                        </div>
-
-                        <div id="dt4-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-postwar.png" alt="Detail Timeline Post War">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">Post War</h2>
-                                <p class="dt-profile-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi rerum voluptatum animi impedit illum possimus ipsum, perspiciatis nisi corporis, saepe deleniti pariatur ad error. Distinctio nemo placeat recusandae quibusdam?</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
                         <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
                         <g class="plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
@@ -290,7 +232,7 @@
                     </svg>
 
                     <div id="mobile-timeline-container">
-                        <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="10" height="1400px" fill="none">
+                        <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="10" height="1475px" fill="none">
                             <path id="mobile-timeline-path" d="M5 0V2473.36" stroke="#A28C63" stroke-width="10"/>
                             <g class="mobile-plane" transform="translate(0 0) scale(0.15)" fill="#A08B63">
                                 <path id="mobile-plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
@@ -302,6 +244,64 @@
                                 c48.956-28.297,82.935-79.275,84.352-81.434C512.3,157.809,513.256,149.181,510.338,141.484z"/>
                             </g>
                         </svg>
+                    </div>
+
+                    <div id="dt-profile-container">
+                        <div id="dt1-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-1918.png" alt="Detail Timeline 1900-1918">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">1900-1918</h2>
+                                <p class="dt-profile-text">The earliest chapter in London's aviation history was shaped by international pioneers whose daring flights captivated local communities. Public demonstrations introduced the city to heavier-than-air flight, and the characteristics of early aircraft design — fragile frames, open cockpits, and uncertain engines — made every flight an act of bravery.</p>
+                            </div>
+                        </div>
+
+                        <div id="dt2-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-1939.png" alt="Detail Timeline 1919-1939">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">1919-1939</h2>
+                                <p class="dt-profile-text">The interwar years brought a surge of public enthusiasm for aviation. Post-war aerial photography awakened civilian interest, while ambitious plans — including the proposed London-to-London transatlantic flight — captured the imagination of the city. The formation of Lambeth Airfield and the establishment of flying clubs transformed aviation from spectacle into an accessible community endeavour.</p>
+                            </div>
+                        </div>
+
+                        <div id="dt3-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-1945.png" alt="Detail Timeline 1940-1945">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">1940-1945</h2>
+                                <p class="dt-profile-text">London's wartime role was defined by the British Commonwealth Air Training Plan — a massive international effort that trained thousands of aircrew from Canada, Britain, Australia, New Zealand, and other Allied nations. Two major BCATP schools operated at Crumlin Airport, transforming civilian infrastructure into a vital engine of the Allied war machine.</p>
+                            </div>
+                        </div>
+
+                        <div id="dt4-profile" class="dt-profile"> 
+                            <div class="dt-container">
+                                <div class="dt-profile-img">
+                                    <picture>
+                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 767px)">
+                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 1199px)">
+                                        <img src="images/Wartime/des-detail-postwar.png" alt="Detail Timeline Post War">
+                                    </picture>
+                                </div>
+                                <h2 class="dt-profile-heading">Post War</h2>
+                                <p class="dt-profile-text">The post-war years saw London transition from a wartime training hub to a modern aviation centre. Auxiliary squadrons maintained military readiness, while the infrastructure built for the BCATP became the foundation of the London International Airport. The wartime canteen — now the museum — stands as the last surviving link to this transformative era.</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

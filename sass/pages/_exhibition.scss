@@ -7,7 +7,7 @@
 
     #exhibition-main {
         background-color: darkgray;
-        height: 90vh;
+        height: 92vh;
     }
 
     #exhibition-main picture, #exhibition-main img {
@@ -21,20 +21,21 @@
     }
 
     #eh-container {
-        position: absolute;
-        bottom: 50px;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        gap: 15px;
         width: 100%;
+        padding: 25px 25px 20px 25px;
+        background-color: a.$accent-color;
     }
 
 
     .eh-sub-container {
         display: flex;
         flex-direction: column;
-        width: 25vw;
-        height: 28vw;
+        width: 100%;
+        height: 25vw;
         // width: 125px;
         // height: 150px;
         // width: 350px;
@@ -52,23 +53,40 @@
         background-color: a.$accent-color;
     }
 
+    #es-heading {
+        font-size: 2.5rem;
+        color: white;
+        width: 100%;
+        max-width: 550px;
+        margin: 0px auto;
+        margin-top: 50px;
+        margin-bottom: 25px;
+        padding: 0px 25px;
+    }
+
     #exhibition-social {
         background-color: a.$primary-color;
         height: auto;
-        padding: 50px 0px;
-    }
-
-    #es-heading {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 25px;
-        color: white;
-    }
-
-    #exhibition-social .video-container {
-        width: 90%;
-        max-width: 420px;
+        width: 100%;
         margin: 0 auto;
+    }
+
+    .video-container .plyr {
+        border-radius: 20px; /* Slightly smaller than the container to fit inside the 5px border */
+        overflow: hidden;
+    }
+
+    .video-container, .video-player {
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 25px;
+    }
+
+    .video-container {
+        border-radius: 25px;
+        border: 5px solid a.$secondary-color;
     }
 
     #es-content {
@@ -77,7 +95,7 @@
         justify-content: center;
         gap: 50px;
         margin: 25px auto;
-        padding: 0px 25px;
+        padding: 25px 25px;
     }
 
     .es-container {
@@ -86,12 +104,12 @@
         height: auto;
         gap: 10px;
         width: 100%;
-        max-width: 420px;
+        max-width: 500px;
     }
 
     .es-sub-img {
         background-color: gray;
-        height: 300px;
+        height: auto;
         width: 100%;
     }
 
@@ -127,14 +145,14 @@
         flex-direction: column;
         background-color: a.$accent-color;
         width: 100%;
-        padding: 50px 25px;
+        padding: 25px 25px;
     }
 
     #es-about-img {
         background-color: gray;
         width: 100%;
-        max-width: 420px;
-        height: 400px;
+        max-width: 500px;
+        height: auto;
         margin: 0 auto;
         order: 2;
     }
@@ -145,7 +163,7 @@
         justify-content: center;
         gap: 10px;
         width: 100%;
-        max-width: 420px;
+        max-width: 500px;
         padding-bottom: 25px;
         margin: 0 auto;
         order: 1;
@@ -153,7 +171,7 @@
 
     #es-about-heading {
         color: white;
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     #es-about-description {
@@ -169,17 +187,17 @@
     }
 
     #eg-heading {
-        font-size: 2rem;
+        font-size: 2.5rem;
         text-align: center;
-        padding-bottom: 25px;
+        padding: 25px 0px;
         color: white;
     }
 
     .gallery-box {
         gap: 10px;
         width: 100%;
-        max-width: 420px;
-        height: 600px;
+        max-width: 500px;
+        height: auto;
         background-color: gray;
         margin: 0 auto;
     }
@@ -216,23 +234,21 @@
 
     #exhibition-main {
         background-color: darkgray;
-        height: 90vh;
+        height: 92vh;
     }
 
     #eh-container {
-        position: absolute;
-        bottom: 50px;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
+        padding: 30px 25px 20px 25px;
     }
-
 
     .eh-sub-container {
         display: flex;
         flex-direction: column;
-        width: 25vw;
+        width: 100%;
         height: 25vw;
         // width: 125px;
         // height: 150px;
@@ -252,7 +268,7 @@
     #exhibition-social {
         background-color: a.$primary-color;
         height: auto;
-        padding: 50px 0px;
+        padding: 0px 0px;
     }
 
     #es-heading {
@@ -260,12 +276,15 @@
         text-align: center;
         margin-bottom: 25px;
         color: white;
+        max-width: unset;
     }
 
-    #exhibition-social .video-container {
+    .video-container, .video-player {
         width: 90%;
-        max-width: 1050px;
+        max-width: unset;
+        height: auto;
         margin: 0 auto;
+        border-radius: 25px;
     }
 
     #es-content {
@@ -279,8 +298,8 @@
         flex-direction: column;
         height: auto;
         gap: 10px;
-        width: 100%;
-        max-width: 310px;
+        width: 300px;
+        height: auto;
     }
 
     .es-sub-img {
@@ -307,7 +326,7 @@
         display: flex;
         flex-direction: row;
         background-color: a.$accent-color;
-        gap: 10px;
+        gap: 25px;
         width: 100%;
         padding: 50px 25px;
     }
@@ -315,8 +334,8 @@
     #es-about-img {
         background-color: gray;
         width: 100%;
-        max-width: unset;
-        height: 400px;
+        max-width: 400px;
+        height: auto;
         margin: 0 auto;
         order: 2;
     }
@@ -335,7 +354,7 @@
 
     #es-about-heading {
         color: white;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     #es-about-description {
@@ -351,8 +370,9 @@
     }
 
     #eg-heading {
-        font-size: 3rem;
+        font-size: 2.8rem;
         text-align: center;
+        padding-top: 50px;
         padding-bottom: 25px;
         color: white;
     }
@@ -360,7 +380,7 @@
     .gallery-box {
         gap: 10px;
         width: 100%;
-        height: 65vw;
+        height: auto;
         max-width: unset;
         background-color: gray;
     }
@@ -399,25 +419,23 @@
 
     #exhibition-main {
         background-color: darkgray;
-        height: 90vh;
+        height: 92vh;
     }
 
     #eh-container {
-        position: absolute;
-        bottom: 50px;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
-        // gap: 50px;
-        // padding: 0px 75px;
+        gap: 50px;
+        padding: 35px 75px 20px 75px;
     }
 
     .eh-sub-container {
         display: flex;
         flex-direction: column;
-        width: 25vw;
-        height: 20vw;
+        width: 100%;
+        height: 25vw;
         // width: 350px;
         // height: 300px;
         gap: 10px;
@@ -436,7 +454,7 @@
     #exhibition-social {
         background-color: a.$primary-color;
         height: auto;
-        padding: 50px 0px;
+        padding: 0px 0px;
     }
 
     #es-heading {
@@ -444,10 +462,12 @@
         text-align: center;
     }
 
-    #exhibition-social .video-container {
+    .video-container, .video-player {
         width: 100%;
         max-width: unset;
+        height: auto;
         margin: 0 auto;
+        border-radius: 25px;
     }
 
     #es-content {
@@ -498,7 +518,7 @@
     #es-about-img {
         background-color: gray;
         width: 40%;
-        max-width: unset;
+        max-width: 600px;
         height: 100%;
         order: 2;
     }
@@ -519,7 +539,7 @@
 
     #es-about-description {
         color: white;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     #exhibition-gallery {
@@ -530,7 +550,7 @@
     }
 
     #eg-heading {
-        font-size: 4rem;
+        font-size: 3.5rem;
         text-align: center;
         padding-bottom: 25px;
     }

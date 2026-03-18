@@ -1106,14 +1106,14 @@ html, body {
   align-self: center;
   padding: 0 25px;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   gap: 10px;
 }
 
 .hero-sub-img {
   width: 100%;
-  height: 250px;
+  height: auto;
   overflow: hidden;
   background-color: gray;
 }
@@ -1138,7 +1138,7 @@ html, body {
 
 #our-museum #intro-video {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -1199,7 +1199,7 @@ html, body {
   transform: rotate(90deg) scale(1.5);
 }
 
-.video-container {
+.intro-video-container {
   border-radius: 25px;
   overflow: hidden;
   border: 5px solid #333223;
@@ -1250,7 +1250,7 @@ html, body {
 }
 
 .om-blocks {
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   background-color: gray;
 }
@@ -1288,7 +1288,7 @@ html, body {
 
 #om-text-block {
   background-color: #0C0E0C;
-  max-width: 600px;
+  max-width: 500px;
   height: auto;
   align-self: start;
   padding: 0px 25px 25px 25px;
@@ -1363,7 +1363,7 @@ html, body {
 }
 
 .om-blocks, .ss-blocks {
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   background-color: gray;
 }
@@ -1506,6 +1506,18 @@ html, body {
   transition: 0.2s ease-in-out;
 }
 
+#our-museum #intro-video {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.intro-video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
   #hero-section {
     position: relative;
@@ -1524,7 +1536,7 @@ html, body {
   }
   #lp-player {
     width: 100%;
-    height: 91vh;
+    height: 92vh;
   }
   .scroll-arrow {
     display: none;
@@ -1557,8 +1569,6 @@ html, body {
   #hs-slider {
     display: flex;
     flex-direction: row;
-    align-self: center;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 0;
     margin-top: 50px;
@@ -1574,7 +1584,7 @@ html, body {
   .hero-sub-img {
     background-color: gray;
     width: 100%;
-    height: 30vh;
+    height: auto;
   }
   .hero-sub-heading {
     font-size: 2rem;
@@ -1582,7 +1592,11 @@ html, body {
     text-align: center;
     color: white;
   }
-  #our-museum #intro-video {
+  #our-museum {
+    width: 100%;
+    max-width: unset;
+  }
+  #intro-video, #intro-player {
     width: 100%;
     max-width: unset;
   }
@@ -1899,11 +1913,11 @@ html, body {
   }
   #om-text-block {
     margin: 0px;
-    width: 600px;
+    width: 500px;
   }
   .om-blocks {
     background-color: gray;
-    width: 600px;
+    width: 500px;
   }
   #om-block-1 {
     height: 25vw;
@@ -2243,7 +2257,11 @@ body {
   margin-bottom: 25px;
 }
 
-#bh-text {
+#bh-sub-heading {
+  font-size: 1.5rem;
+}
+
+.bh-text {
   color: white;
   font-size: 1rem;
   margin: 25px 0px;
@@ -2359,7 +2377,6 @@ model-viewer {
 
 #ba-heading {
   color: white;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 25px;
@@ -2610,7 +2627,10 @@ model-viewer {
     margin: 0 auto;
     margin-bottom: 25px;
   }
-  #bh-text {
+  #bh-sub-heading {
+    font-size: 1.7rem;
+  }
+  .bh-text {
     color: white;
     font-size: 1.2rem;
     margin: 25px 0px;
@@ -2711,7 +2731,6 @@ model-viewer {
   }
   #ba-heading {
     color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     font-size: 3rem;
     width: 100%;
@@ -2914,7 +2933,7 @@ model-viewer {
     font-size: 4rem;
     margin-bottom: 25px;
   }
-  #bh-text {
+  .bh-text {
     color: white;
     font-size: 1.5rem;
     margin-bottom: 50px;
@@ -2953,9 +2972,12 @@ model-viewer {
     width: 100%;
     max-width: unset;
     margin: 0 auto;
-    margin-bottom: 25px;
   }
-  #bh-text {
+  #bh-sub-heading {
+    font-size: 1.7rem;
+    margin: 25px 0px;
+  }
+  .bh-text {
     color: white;
     font-size: 1.2rem;
     line-height: 25px;
@@ -3044,7 +3066,6 @@ model-viewer {
   }
   #ba-heading {
     color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     font-size: 4rem;
     margin-bottom: 25px;
@@ -3165,7 +3186,7 @@ model-viewer {
 
 #wartime-main {
   background-color: darkgray;
-  height: 90vh;
+  height: 92vh;
 }
 
 #wartime-main picture, #wartime-main img {
@@ -3180,12 +3201,13 @@ model-viewer {
 }
 
 #wh-container {
-  position: absolute;
-  bottom: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 15px;
   width: 100%;
+  background-color: #A08B63;
+  padding: 25px 25px 20px 25px;
 }
 
 #wh-container .hero-sub-heading {
@@ -3195,8 +3217,8 @@ model-viewer {
 .wh-sub-container {
   display: flex;
   flex-direction: column;
-  width: 25vw;
-  height: 28vw;
+  width: 100%;
+  height: auto;
   gap: 10px;
 }
 
@@ -3290,6 +3312,11 @@ model-viewer {
   padding: 0px 25px;
 }
 
+#dt-content {
+  position: relative;
+  top: 0px;
+}
+
 #dt-heading {
   text-align: center;
   color: white;
@@ -3345,29 +3372,28 @@ model-viewer {
 }
 
 .dt-profile {
-  position: absolute;
-  z-index: 2;
+  position: relative;
 }
 
 #dt1-profile {
-  top: 75px;
-  right: 50px;
+  top: 50px;
+  right: 25px;
 }
 
 #dt2-profile {
-  top: 400px;
-  right: 50px;
+  top: 100px;
+  right: 25px;
 }
 
 #dt3-profile {
-  top: 750px;
+  top: 150px;
   bottom: unset;
-  right: 50px;
+  right: 25px;
 }
 
 #dt4-profile {
-  top: 1100px;
-  right: 50px;
+  top: 200px;
+  right: 25px;
 }
 
 .dt-container {
@@ -3415,6 +3441,9 @@ model-viewer {
 }
 
 #timeline-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   position: relative;
   width: 100%;
   max-width: 500px;
@@ -3447,12 +3476,21 @@ model-viewer {
   }
   #wartime-main {
     background-color: darkgray;
-    height: 90vh;
+    height: 92vh;
+  }
+  #wh-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    background-color: #A08B63;
+    padding: 30px 25px 20px 25px;
   }
   .wh-sub-container {
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 100%;
     height: 25vw;
     gap: 10px;
   }
@@ -3525,7 +3563,6 @@ model-viewer {
   }
   #detail-timeline {
     position: relative;
-    display: grid;
     width: 100%;
     height: auto;
     background-color: #0C0E0C;
@@ -3545,6 +3582,13 @@ model-viewer {
        object-fit: cover;
     width: 100%;
     max-width: unset;
+  }
+  #dt-profile-container {
+    width: 100%;
+    height: auto;
+    max-width: unset;
+    margin: 0 auto;
+    pointer-events: none;
   }
   #dt-container {
     display: flex;
@@ -3600,35 +3644,37 @@ model-viewer {
     width: 700px;
     max-width: unset;
     margin: 50px auto;
+    display: flex;
+    flex-direction: column; /* Stack container on top of SVG */
+    align-items: center;
   }
   .dt-profile {
-    display: block;
     position: absolute;
-    z-index: 2;
+    display: block;
   }
   #dt1-profile {
     top: 10px;
     left: 0px;
-    right: 325px;
+    right: 300px;
     bottom: 0px;
   }
   #dt2-profile {
-    top: 500px;
+    top: 450px;
     right: 0px;
-    left: unset;
+    left: 200px;
     bottom: 0px;
   }
   #dt3-profile {
     left: 0px;
-    bottom: 500px;
-    top: unset;
-    right: unset;
+    bottom: 0px;
+    top: 1000px;
+    right: 200px;
   }
   #dt4-profile {
     right: 0px;
-    bottom: 75px;
-    left: unset;
-    top: unset;
+    bottom: 0px;
+    left: 200px;
+    top: 1425px;
   }
   #timeline {
     padding-top: 60px;
@@ -3661,18 +3707,19 @@ model-viewer {
     height: 90vh;
   }
   #wh-container {
-    position: absolute;
-    bottom: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 50px;
     width: 100%;
+    background-color: #A08B63;
+    padding: 35px 75px 20px 75px;
   }
   .wh-sub-container {
     display: flex;
     flex-direction: column;
-    width: 25vw;
-    height: 20vw;
+    width: 100%;
+    height: 25vw;
     gap: 10px;
   }
   #wh-container .hero-sub-heading {
@@ -3748,6 +3795,16 @@ model-viewer {
   #dt-sub-img {
     padding-right: 50px;
   }
+  #dt-profile-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: unset;
+    margin: 0 auto;
+    pointer-events: none;
+  }
   #dt-container {
     display: flex;
     flex-direction: row;
@@ -3764,7 +3821,13 @@ model-viewer {
     align-items: center;
   }
   #timeline-content {
+    position: relative;
+    width: 1000px;
     max-width: unset;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column; /* Stack container on top of SVG */
+    align-items: center;
   }
   .dt-profile-img {
     width: 200px;
@@ -3786,11 +3849,6 @@ model-viewer {
     height: 20vw;
     background-color: gray;
   }
-  #timeline-content {
-    position: relative;
-    width: 1000px;
-    margin: 75px auto;
-  }
   .dt-profile {
     display: block;
     position: absolute;
@@ -3803,22 +3861,22 @@ model-viewer {
     bottom: 0px;
   }
   #dt2-profile {
-    top: 800px;
+    top: 750px;
     right: 0px;
     left: unset;
     bottom: 0px;
   }
   #dt3-profile {
     left: 0px;
-    bottom: 800px;
-    top: unset;
+    bottom: unset;
+    top: 1650px;
     right: unset;
   }
   #dt4-profile {
     right: 0px;
     bottom: 0px;
     left: unset;
-    top: unset;
+    top: 2325px;
   }
   #timeline {
     padding-top: 100px;
@@ -4009,7 +4067,7 @@ model-viewer {
 
 #exhibition-main {
   background-color: darkgray;
-  height: 90vh;
+  height: 92vh;
 }
 
 #exhibition-main picture, #exhibition-main img {
@@ -4024,19 +4082,20 @@ model-viewer {
 }
 
 #eh-container {
-  position: absolute;
-  bottom: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 15px;
   width: 100%;
+  padding: 25px 25px 20px 25px;
+  background-color: #A08B63;
 }
 
 .eh-sub-container {
   display: flex;
   flex-direction: column;
-  width: 25vw;
-  height: 28vw;
+  width: 100%;
+  height: 25vw;
   gap: 10px;
 }
 
@@ -4050,23 +4109,40 @@ model-viewer {
   background-color: #A08B63;
 }
 
+#es-heading {
+  font-size: 2.5rem;
+  color: white;
+  width: 100%;
+  max-width: 550px;
+  margin: 0px auto;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  padding: 0px 25px;
+}
+
 #exhibition-social {
   background-color: #0C0E0C;
   height: auto;
-  padding: 50px 0px;
-}
-
-#es-heading {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 25px;
-  color: white;
-}
-
-#exhibition-social .video-container {
-  width: 90%;
-  max-width: 420px;
+  width: 100%;
   margin: 0 auto;
+}
+
+.video-container .plyr {
+  border-radius: 20px; /* Slightly smaller than the container to fit inside the 5px border */
+  overflow: hidden;
+}
+
+.video-container, .video-player {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.video-container {
+  border-radius: 25px;
+  border: 5px solid #333223;
 }
 
 #es-content {
@@ -4075,7 +4151,7 @@ model-viewer {
   justify-content: center;
   gap: 50px;
   margin: 25px auto;
-  padding: 0px 25px;
+  padding: 25px 25px;
 }
 
 .es-container {
@@ -4084,12 +4160,12 @@ model-viewer {
   height: auto;
   gap: 10px;
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
 }
 
 .es-sub-img {
   background-color: gray;
-  height: 300px;
+  height: auto;
   width: 100%;
 }
 
@@ -4126,14 +4202,14 @@ model-viewer {
   flex-direction: column;
   background-color: #A08B63;
   width: 100%;
-  padding: 50px 25px;
+  padding: 25px 25px;
 }
 
 #es-about-img {
   background-color: gray;
   width: 100%;
-  max-width: 420px;
-  height: 400px;
+  max-width: 500px;
+  height: auto;
   margin: 0 auto;
   order: 2;
 }
@@ -4144,7 +4220,7 @@ model-viewer {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   padding-bottom: 25px;
   margin: 0 auto;
   order: 1;
@@ -4152,7 +4228,7 @@ model-viewer {
 
 #es-about-heading {
   color: white;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 #es-about-description {
@@ -4168,17 +4244,17 @@ model-viewer {
 }
 
 #eg-heading {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
-  padding-bottom: 25px;
+  padding: 25px 0px;
   color: white;
 }
 
 .gallery-box {
   gap: 10px;
   width: 100%;
-  max-width: 420px;
-  height: 600px;
+  max-width: 500px;
+  height: auto;
   background-color: gray;
   margin: 0 auto;
 }
@@ -4213,20 +4289,19 @@ model-viewer {
   }
   #exhibition-main {
     background-color: darkgray;
-    height: 90vh;
+    height: 92vh;
   }
   #eh-container {
-    position: absolute;
-    bottom: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+    padding: 30px 25px 20px 25px;
   }
   .eh-sub-container {
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 100%;
     height: 25vw;
     gap: 10px;
   }
@@ -4241,18 +4316,21 @@ model-viewer {
   #exhibition-social {
     background-color: #0C0E0C;
     height: auto;
-    padding: 50px 0px;
+    padding: 0px 0px;
   }
   #es-heading {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 25px;
     color: white;
+    max-width: unset;
   }
-  #exhibition-social .video-container {
+  .video-container, .video-player {
     width: 90%;
-    max-width: 1050px;
+    max-width: unset;
+    height: auto;
     margin: 0 auto;
+    border-radius: 25px;
   }
   #es-content {
     display: flex;
@@ -4264,8 +4342,8 @@ model-viewer {
     flex-direction: column;
     height: auto;
     gap: 10px;
-    width: 100%;
-    max-width: 310px;
+    width: 300px;
+    height: auto;
   }
   .es-sub-img {
     background-color: gray;
@@ -4287,15 +4365,15 @@ model-viewer {
     display: flex;
     flex-direction: row;
     background-color: #A08B63;
-    gap: 10px;
+    gap: 25px;
     width: 100%;
     padding: 50px 25px;
   }
   #es-about-img {
     background-color: gray;
     width: 100%;
-    max-width: unset;
-    height: 400px;
+    max-width: 400px;
+    height: auto;
     margin: 0 auto;
     order: 2;
   }
@@ -4312,7 +4390,7 @@ model-viewer {
   }
   #es-about-heading {
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   #es-about-description {
     color: white;
@@ -4325,15 +4403,16 @@ model-viewer {
     gap: 10px;
   }
   #eg-heading {
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-align: center;
+    padding-top: 50px;
     padding-bottom: 25px;
     color: white;
   }
   .gallery-box {
     gap: 10px;
     width: 100%;
-    height: 65vw;
+    height: auto;
     max-width: unset;
     background-color: gray;
   }
@@ -4365,21 +4444,21 @@ model-viewer {
   }
   #exhibition-main {
     background-color: darkgray;
-    height: 90vh;
+    height: 92vh;
   }
   #eh-container {
-    position: absolute;
-    bottom: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+    gap: 50px;
+    padding: 35px 75px 20px 75px;
   }
   .eh-sub-container {
     display: flex;
     flex-direction: column;
-    width: 25vw;
-    height: 20vw;
+    width: 100%;
+    height: 25vw;
     gap: 10px;
   }
   #eh-container .hero-sub-heading {
@@ -4393,16 +4472,18 @@ model-viewer {
   #exhibition-social {
     background-color: #0C0E0C;
     height: auto;
-    padding: 50px 0px;
+    padding: 0px 0px;
   }
   #es-heading {
     font-size: 4rem;
     text-align: center;
   }
-  #exhibition-social .video-container {
+  .video-container, .video-player {
     width: 100%;
     max-width: unset;
+    height: auto;
     margin: 0 auto;
+    border-radius: 25px;
   }
   #es-content {
     display: flex;
@@ -4445,7 +4526,7 @@ model-viewer {
   #es-about-img {
     background-color: gray;
     width: 40%;
-    max-width: unset;
+    max-width: 600px;
     height: 100%;
     order: 2;
   }
@@ -4463,7 +4544,7 @@ model-viewer {
   }
   #es-about-description {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   #exhibition-gallery {
     width: 100%;
@@ -4472,7 +4553,7 @@ model-viewer {
     gap: 10px;
   }
   #eg-heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     padding-bottom: 25px;
   }

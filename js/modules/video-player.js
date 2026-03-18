@@ -5,7 +5,22 @@ export function videoplayer() {
         loop: { active: true },
         controls: []
     });
-    const player = new Plyr('.video-player', {
+    const generalplayer = new Plyr('.video-player', {
+        controls: [
+            'play-large',
+            'play',
+            'progress',
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'pip',
+            'airplay',
+            'fullscreen'
+        ],
+    });
+    const introplayer = new Plyr('.intro-video-player', {
         controls: [
             'play-large',
             'play',

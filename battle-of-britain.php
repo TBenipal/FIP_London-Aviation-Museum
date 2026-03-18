@@ -139,8 +139,8 @@
             </div>
             <div id="bh-content" class="col-span-full l-col-start-7 l-col-end-13">
                 <h2 id="des-bh-heading" class="sub-headings col-span-full">The Battle of Britain</h2>
-                <p id="bh-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam vitae qui, dolor repellat deserunt iste cupiditate natus facilis provident optio ipsa asperiores dicta esse eius, minima eos consequuntur suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et esse aperiam odio debitis atque excepturi tempora eligendi, vel quibusdam repellat impedit ad inventore, ipsa aliquid animi neque molestias ea cum.</p>
-                <p id="bh-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam vitae qui, dolor repellat deserunt iste cupiditate natus facilis provident optio ipsa asperiores dicta esse eius, minima eos consequuntur suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et esse aperiam odio debitis atque excepturi tempora eligendi, vel quibusdam repellat impedit ad inventore, ipsa aliquid animi neque molestias ea cum.</p>
+                <p id="bh-sub-heading" class="bh-text"><strong>A Critical Turning Point in the Second World War</strong></p>
+                <p class="bh-text">The Battle of Britain, fought between July and October 1940, marked a critical turning point in the Second World War. It was the first major military campaign fought entirely in the air and played a decisive role in preventing a German invasion of the United Kingdom. While the battle took place overseas, its impact reached far beyond Britain's borders. London, Ontario, played an important supporting role through its connection to aircrew training and aviation preparation.</p>
                 <button id="bh-btn">Read More History!</button>
             </div>
         </section>
@@ -148,9 +148,9 @@
         <section id="bob-description" class="grid-con">
             <h1 class="hidden">Description</h1>
             <div id="bd-content" class="col-span-full l-col-start-1 l-col-end-6">
-                <h2 id="bd-heading" class="sub-headings">Description</h2>
-                <p class="bd-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat error inventore ut voluptatum consectetur architecto iusto dignissimos! Quas ea blanditiis eum sint amet vitae soluta, eaque quos, enim maxime quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio asperiores consequatur accusamus recusandae doloremque enim iusto molestiae illo magnam libero! Incidunt, ducimus assumenda asperiores accusantium commodi ab natus repudiandae mollitia!</p>                
-                <p class="bd-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat error inventore ut voluptatum consectetur architecto iusto dignissimos! Quas ea blanditiis eum sint amet vitae soluta, eaque quos, enim maxime quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio asperiores consequatur accusamus recusandae doloremque enim iusto molestiae illo magnam libero! Incidunt, ducimus assumenda asperiores accusantium commodi ab natus repudiandae mollitia!</p>                
+                <h2 id="bd-heading" class="sub-headings">Londoners and the Battle of Britain</h2>
+                <p class="bd-text">Individuals from the London region served as pilots, navigators, and ground crew, while others contributed indirectly through training programs that later fed into front-line squadrons. The skills developed in Canadian training schools helped sustain the Royal Air Force during one of its most challenging periods. By highlighting Londoners' involvement in the Battle of Britain, this section emphasizes the city's contribution to a global conflict. It demonstrates how local communities were deeply connected to international events and how efforts made at home influenced the outcome of the war abroad.</p>                
+                <p class="bd-text">London, Ontario, played an important supporting role through its connection to aircrew training and aviation preparation. The British Commonwealth Air Training Plan (BCATP) schools operated at Crumlin Airport prepared aviators who would go on to serve in decisive engagements over British skies. Remembering these connections helps place London's aviation history within a wider historical and global context — demonstrating that the war effort was as much a community endeavour as it was a military one.</p>                
                 <button id="bd-btn" class="col-span-full">Read More!</button>
             </div>
             <div id="bd-img" class="col-span-full l-col-start-7 l-col-end-13">
@@ -163,7 +163,7 @@
         </section>
 
         <section id="bob-airplane" class="grid-con">
-            <h1 id="ba-heading" class="col-span-full l-col-start-1 l-col-end-13">Jett 3D Model</h1>
+            <h1 id="ba-heading" class="col-span-full l-col-start-1 l-col-end-13">Aircraft Flown by London's Airmen</h1>
             
             <div id="ba-model" class="col-span-full l-col-start-2 l-col-end-12">
                 <model-viewer src="model/military+fighter+plane+3d+model.glb" src="model/military+fighter+plane+3d+model.glb" camera-controls auto-rotate ar>
@@ -188,7 +188,7 @@
             </div>
             <div id="ba-text" class="col-span-full l-col-start-3 l-col-end-11"></div>
             <template id="name">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, ad voluptatem? Itaque ex aperiam delectus. Obcaecati placeat laudantium minus doloribus earum eligendi ut! Repellendus harum quo aliquid ab? Consequatur, expedita.</p>
+                <p>Londoners who served in the Battle of Britain flew iconic British aircraft that became symbols of the Allied struggle for air supremacy over the English Channel.</p>
             </template>
 
             <template id="mechanic">
