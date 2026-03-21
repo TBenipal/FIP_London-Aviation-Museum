@@ -1,0 +1,236 @@
+@use '../abstracts' as a;
+
+#bor-heading {
+    display: none;
+}
+
+#bor-book-4 {
+    display: none;
+}
+
+#bor-hero {
+    width: 100%;
+    height: auto;
+    background-color: a.$primary-color;
+    padding: 0px 25px;
+}
+
+#bor-content {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+#mobile-bor-heading {
+    color: white;
+    font-size: 2.8rem;
+    margin: 25px auto;
+    width: 100%;
+    max-width: 390px;
+}
+
+.bor-text {
+    color: white;
+    font-size: 1rem;
+    line-height: 25px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 390px;
+}
+
+#book-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+}
+
+#bor-books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px;
+    height: auto;
+    margin-bottom: 25px;
+    margin: 25px auto;
+    width: 100%;
+    max-width: 390px;
+}
+
+.bor-book {
+    background-color: gray;
+    width: 110px;
+    height: 150px;
+}
+
+@media screen and (min-width: 768px) {
+
+    #mobile-bor-heading {
+        display: none;
+    }
+
+    #bor-hero {
+        width: 100%;
+        height: auto;
+        background-color: a.$primary-color;
+        padding: 0px 50px;
+    }
+
+    #bor-book-1 {
+        display: none;
+    }
+
+    #bor-book-4 {
+        display: block;
+        width: 125px;
+        height: 175px;
+    }
+
+    #bor-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+        margin: 50px auto;
+        padding-left: 0px;
+        max-width: 900px;
+    }
+
+    #bor-heading {
+        display: block;
+        color: white;
+        font-size: 3rem;
+        margin: 0px auto;
+        width: 100%;
+        max-width: unset;
+    }
+
+    #book-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        gap: 10px;
+        width: auto;
+    }
+
+    #bor-text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .bor-text {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 25px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: unset;
+    }
+
+    #bor-books {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        height: auto;
+        margin-bottom: 25px;
+        margin: 0px auto;
+        width: unset;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+   #mobile-bor-heading {
+        display: none;
+    }
+
+    #bor-hero {
+        width: 100%;
+        height: auto;
+        background-color: a.$primary-color;
+        padding: 0px 100px;
+    }
+
+    #bor-book-1 {
+        display: none;
+    }
+
+    #bor-book-4 {
+        display: block;
+        width: 125px;
+        height: 175px;
+    }
+
+    #bor-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+        margin: 50px auto;
+        padding-left: 0px;
+        max-width: unset;
+    }
+
+    #bor-heading {
+        display: block;
+        color: white;
+        font-size: 3rem;
+        margin: 0px auto;
+        width: 100%;
+        max-width: unset;
+    }
+
+    #book-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        gap: 10px;
+        width: auto;
+    }
+
+    #bor-text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .bor-text {
+        color: white;
+        font-size: 1.3rem;
+        line-height: 25px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: unset;
+    }
+
+    #bor-books {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        height: auto;
+        margin-bottom: 25px;
+        margin: 0px auto;
+        width: unset;
+    }
+
+    #bor-book-4 {
+        display: block;
+        width: 200px;
+        height: 250px;
+    }
+
+    .bor-book {
+        background-color: gray;
+        width: 160px;
+        height: 200px;
+    }
+}
