@@ -26,7 +26,7 @@
     font-size: 2.8rem;
     margin: 25px auto;
     width: 100%;
-    max-width: 390px;
+    max-width: 500px;
 }
 
 .bor-text {
@@ -35,12 +35,12 @@
     line-height: 25px;
     margin: 0 auto;
     width: 100%;
-    max-width: 390px;
+    max-width: 500px;
 }
 
 #book-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 25px;
     width: 100%;
 }
@@ -55,13 +55,72 @@
     margin-bottom: 25px;
     margin: 25px auto;
     width: 100%;
-    max-width: 390px;
+    max-width: 500px;
 }
 
 .bor-book {
     background-color: gray;
-    width: 110px;
-    height: 150px;
+    width: 100%;
+    height: 40vw;
+    max-height: 225px;
+}
+
+#books-section {
+    width: 100%;
+    height: auto;
+    background-color: a.$accent-color;
+    padding: 50px 25px;
+}
+
+#books {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.book-section {
+    max-width: 500px;
+    margin: 0px auto;
+}
+
+.book-cover {
+    background-color: gray;
+    width: 100%;
+    height: 600px;
+}
+
+.book-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px 0px;
+}
+
+.book-sub-heading {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.book-heading {
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.book-text {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.book-points {
+    padding-left: 25px;
+}
+
+.book-points .book-list {
+    list-style-type: circle;
+    color: white;
+    font-size: 1.2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -83,19 +142,17 @@
 
     #bor-book-4 {
         display: block;
-        width: 125px;
-        height: 175px;
     }
 
     #bor-content {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 25px;
         width: 100%;
         margin: 50px auto;
         padding-left: 0px;
-        max-width: 900px;
+        max-width: unset;
     }
 
     #bor-heading {
@@ -110,6 +167,7 @@
     #book-container {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         justify-content: unset;
         gap: 10px;
         width: auto;
@@ -127,19 +185,103 @@
         line-height: 25px;
         margin: 0 auto;
         width: 100%;
-        max-width: unset;
+        max-width: 900px;
     }
 
     #bor-books {
         display: flex;
         flex-direction: row;
         align-items: center;
-        flex-wrap: nowrap;
+        justify-content: end;
         gap: 10px;
         height: auto;
         margin-bottom: 25px;
         margin: 0px auto;
+        padding: 0px;
         width: unset;
+    }
+
+    #bor-book-4 {
+        display: block;
+        width: 150px;
+        height: 200px;
+    }
+
+    .bor-book {
+        background-color: gray;
+        width: 150px;
+        height: 200px;
+    }
+
+    #books-section {
+        width: 100%;
+        height: auto;
+        background-color: a.$accent-color;
+        padding: 50px 25px;
+    }
+
+    #books {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .book-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        max-width: unset;
+        margin: 0 auto;
+    }
+
+    .book-cover {
+        background-color: gray;
+        width: 50vw;
+        height: 45vw;
+    }
+
+    .book-text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 25px 0px;
+        width: 100%;
+    }
+
+    .book-sub-heading {
+        color: white;
+        font-size: 2vw;
+        font-weight: 600;
+    }
+
+    .book-heading {
+        color: white;
+        font-size: 3vw;
+        font-weight: 800;
+    }
+
+    .book-text {
+        color: white;
+        font-size: 2vw;
+    }
+
+    .book-points {
+        padding-left: 25px;
+    }
+
+    .book-points .book-list {
+        list-style-type: circle;
+        color: white;
+        font-size: 2vw;
+    }
+
+    #book-2-container {
+        order: 1;
+    }
+
+    #book-2-cover {
+        order: 2;
     }
 
 }
@@ -154,24 +296,18 @@
         width: 100%;
         height: auto;
         background-color: a.$primary-color;
-        padding: 0px 100px;
+        padding: 0px 75px;
     }
 
     #bor-book-1 {
         display: none;
     }
 
-    #bor-book-4 {
-        display: block;
-        width: 125px;
-        height: 175px;
-    }
-
     #bor-content {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 75px;
         width: 100%;
         margin: 50px auto;
         padding-left: 0px;
@@ -181,8 +317,9 @@
     #bor-heading {
         display: block;
         color: white;
-        font-size: 3rem;
+        font-size: 4rem;
         margin: 0px auto;
+        margin-bottom: 50px;
         width: 100%;
         max-width: unset;
     }
@@ -224,13 +361,74 @@
 
     #bor-book-4 {
         display: block;
-        width: 200px;
+        width: 150px;
         height: 250px;
     }
 
     .bor-book {
         background-color: gray;
-        width: 160px;
-        height: 200px;
+        width: 150px;
+        height: 250px;
+    }
+
+    #books-section {
+        width: 100%;
+        height: auto;
+        background-color: a.$accent-color;
+        padding: 75px 75px;
+    }
+
+    #books {
+        gap: 75px;
+    }
+
+    .book-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+        max-width: unset;
+        margin: 0 auto;
+    }
+
+    .book-cover {
+        background-color: gray;
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .book-text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 25px 0px;
+        width: 100%;
+    }
+
+    .book-sub-heading {
+        color: white;
+        font-size: 2vw;
+        font-weight: 600;
+    }
+
+    .book-heading {
+        color: white;
+        font-size: 3vw;
+        font-weight: 800;
+    }
+
+    .book-text {
+        color: white;
+        font-size: 1.5vw;
+    }
+
+    .book-points {
+        padding-left: 25px;
+    }
+
+    .book-points .book-list {
+        list-style-type: circle;
+        color: white;
+        font-size: 1.5vw;
     }
 }
