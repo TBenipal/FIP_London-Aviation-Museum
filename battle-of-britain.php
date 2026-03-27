@@ -145,7 +145,7 @@
                 <h2 id="bd-heading" class="sub-headings">Londoners and the Battle of Britain</h2>
                 <p class="bd-text">Individuals from the London region served as pilots, navigators, and ground crew, while others contributed indirectly through training programs that later fed into front-line squadrons. The skills developed in Canadian training schools helped sustain the Royal Air Force during one of its most challenging periods. By highlighting Londoners' involvement in the Battle of Britain, this section emphasizes the city's contribution to a global conflict. It demonstrates how local communities were deeply connected to international events and how efforts made at home influenced the outcome of the war abroad.</p>                
                 <p class="bd-text">London, Ontario, played an important supporting role through its connection to aircrew training and aviation preparation. The British Commonwealth Air Training Plan (BCATP) schools operated at Crumlin Airport prepared aviators who would go on to serve in decisive engagements over British skies. Remembering these connections helps place London's aviation history within a wider historical and global context — demonstrating that the war effort was as much a community endeavour as it was a military one.</p>                
-                <button id="bd-btn" class="col-span-full">Read More!</button>
+                <button id="bd-btn" class="col-span-full"><a href="book-of-remembrance.php">Honor & Remember</a></button>
             </div>
             <div id="bd-img" class="col-span-full l-col-start-7 l-col-end-13">
                 <picture>

@@ -309,6 +309,11 @@ body {
     cursor: pointer;
 }
 
+#bh-btn:hover {
+    background-color: a.$accent-color;
+    cursor: pointer;
+}
+
 #bob-description {
     width: 100%;
     height: auto;
@@ -341,14 +346,23 @@ body {
 
 #bd-btn {
     align-self: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     border: none;
     background-color: a.$primary-color;
     color: white;
-    width: 175px;
-    padding: 15px 0px;
+    width: auto;
+    padding: 10px 20px;
     margin-bottom: 50px;
+    cursor: pointer;
+}
+
+#bd-btn a {
+    color: white;
+}
+
+#bd-btn:hover {
+    background-color: a.$accent-color;
     cursor: pointer;
 }
 
@@ -917,7 +931,7 @@ model-viewer {
         border: none;
         background-color: a.$primary-color;
         color: white;
-        width: 200px;
+        width: auto;
         padding: 10px 10px;
         cursor: pointer;
     }
@@ -1493,15 +1507,14 @@ model-viewer {
         border: none;
         background-color: a.$primary-color;
         color: white;
-        width: 200px;
-        padding: 10px 10px;
+        width: auto;
+        padding: 10px 20px;
         margin-bottom: 50px;
         cursor: pointer;
     }
 
     #bd-img {
         height: 40vw;
-        
         align-self: center;
     }
 
