@@ -3,11 +3,14 @@ session_start();
 header('Content-Type: application/json');
 require_once __DIR__ . '/database.php';
 
+// I use 401 because the user is unauthenticated, not just unauthorized
 function requireAdmin() {
-    if (session_status() === PHP_SESSION_NONE) session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if (!isset($_SESSION['admin'])) {
-        http_response_code(403);
-        echo json_encode(['error' => 'Unauthorized']);
+        http_response_code(401);
+        echo json_encode(['error' => 'Authentication required']);
         exit;
     }
 }
@@ -22,11 +25,20 @@ try {
         if ($id) {
             $stmt = $db->prepare('SELECT * FROM social_posts WHERE id = :id');
             $stmt->execute([':id' => $id]);
-            echo json_encode($stmt->fetch() ?: ['error' => 'Not found']);
+            $post = $stmt->fetch();
+
+            if ($post) {
+                echo json_encode($post);
+            } else {
+                http_response_code(404);
+                echo json_encode(['error' => 'Post not found']);
+            }
+
         } elseif (isset($_GET['all'])) {
             requireAdmin();
             $stmt = $db->query('SELECT * FROM social_posts ORDER BY created_at DESC');
             echo json_encode($stmt->fetchAll());
+
         } else {
             $stmt = $db->query("SELECT * FROM social_posts WHERE status='published' ORDER BY published_at DESC");
             echo json_encode($stmt->fetchAll());
@@ -35,22 +47,28 @@ try {
     } elseif ($method === 'POST') {
         requireAdmin();
 
-        // Handle multipart (file upload) vs JSON
-        $platform   = $_POST['platform'] ?? '';
-        $caption    = trim($_POST['caption'] ?? '');
-        $hashtags   = trim($_POST['hashtags'] ?? '');
-        $ext_link   = trim($_POST['external_link'] ?? '');
-        $status     = in_array($_POST['status'] ?? '', ['draft','published']) ? $_POST['status'] : 'draft';
+        $platform = $_POST['platform'] ?? '';
+        $caption  = trim($_POST['caption'] ?? '');
+        $hashtags = trim($_POST['hashtags'] ?? '');
+        $ext_link = trim($_POST['external_link'] ?? '');
+
+        if (in_array($_POST['status'] ?? '', ['draft', 'published'])) {
+            $status = $_POST['status'];
+        } else {
+            $status = 'draft';
+        }
+
+        if (!in_array($platform, ['instagram', 'facebook', 'twitter', 'youtube'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Invalid platform.']);
+            exit;
+        }
+
         $media_type = 'image';
         $media_url  = '';
 
-        if (!in_array($platform, ['instagram','facebook','twitter','youtube'])) {
-            echo json_encode(['error' => 'Invalid platform.']); exit;
-        }
-
-        // Handle file upload
         if (isset($_FILES['media']) && $_FILES['media']['error'] === UPLOAD_ERR_OK) {
-            $allowed_images = ['image/jpeg','image/png','image/webp','image/gif'];
+            $allowed_images = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
             $allowed_videos = ['video/mp4'];
             $mime = mime_content_type($_FILES['media']['tmp_name']);
 
@@ -59,21 +77,32 @@ try {
             } elseif (in_array($mime, $allowed_videos)) {
                 $media_type = 'video';
             } else {
-                echo json_encode(['error' => 'Unsupported file type.']); exit;
+                http_response_code(400);
+                echo json_encode(['error' => 'Unsupported file type.']);
+                exit;
             }
 
             $upload_dir = __DIR__ . '/../uploads/social/';
-            if (!is_dir($upload_dir)) mkdir($upload_dir, 0755, true);
+            if (!is_dir($upload_dir)) {
+                mkdir($upload_dir, 0755, true);
+            }
 
             $ext      = pathinfo($_FILES['media']['name'], PATHINFO_EXTENSION);
             $filename = uniqid('post_') . '.' . $ext;
             move_uploaded_file($_FILES['media']['tmp_name'], $upload_dir . $filename);
             $media_url = 'uploads/social/' . $filename;
+
         } else {
-            echo json_encode(['error' => 'Media file required.']); exit;
+            http_response_code(400);
+            echo json_encode(['error' => 'Media file is required.']);
+            exit;
         }
 
-        $published_at = $status === 'published' ? date('Y-m-d H:i:s') : null;
+        if ($status === 'published') {
+            $published_at = date('Y-m-d H:i:s');
+        } else {
+            $published_at = null;
+        }
 
         $stmt = $db->prepare('
             INSERT INTO social_posts (platform, media_url, media_type, caption, hashtags, external_link, status, published_at)
@@ -93,8 +122,13 @@ try {
 
     } elseif ($method === 'DELETE') {
         requireAdmin();
-        if (!$id) { echo json_encode(['error' => 'ID required']); exit; }
-        // Optionally delete file here
+
+        if (!$id) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Post ID is required.']);
+            exit;
+        }
+
         $stmt = $db->prepare('DELETE FROM social_posts WHERE id = :id');
         $stmt->execute([':id' => $id]);
         echo json_encode(['message' => 'Post deleted.']);
@@ -102,5 +136,5 @@ try {
 
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+    echo json_encode(['error' => 'A database error occurred. Please try again later.']);
 }
