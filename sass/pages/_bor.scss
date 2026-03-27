@@ -18,7 +18,7 @@
 #bor-content {
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
 }
 
 #mobile-bor-heading {
@@ -32,7 +32,7 @@
 .bor-text {
     color: white;
     font-size: 1rem;
-    line-height: 25px;
+    line-height: 27px;
     margin: 0 auto;
     width: 100%;
     max-width: 500px;
@@ -52,17 +52,27 @@
     justify-content: space-between;
     gap: 0px;
     height: auto;
-    margin-bottom: 25px;
     margin: 25px auto;
     width: 100%;
     max-width: 500px;
 }
 
 .bor-book {
-    background-color: gray;
+    object-fit: cover;
     width: 100%;
     height: 40vw;
     max-height: 225px;
+}
+
+.bor-book:hover {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.bor-book img {
+    width: 100%;
+    height: auto;
 }
 
 #books-section {
@@ -81,19 +91,37 @@
 .book-section {
     max-width: 500px;
     margin: 0px auto;
+    margin-top: 50px;
+}
+
+#book-1-section {
+    margin-top: 0px;
 }
 
 .book-cover {
-    background-color: gray;
     width: 100%;
+    object-fit: cover;
     height: 600px;
+    cursor: pointer;
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
+}
+
+.book-cover img {
+    width: 100%;
+    max-width: 425px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .book-text-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 25px 0px;
+    margin: 0px 0px;
 }
 
 .book-sub-heading {
@@ -103,9 +131,14 @@
 }
 
 .book-heading {
-    color: white;
+    color: a.$secondary-color;
     font-size: 2rem;
     font-weight: 800;
+}
+
+.book-heading:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .book-text {
@@ -142,6 +175,12 @@
 
     #bor-book-4 {
         display: block;
+        object-fit: cover;
+    }
+
+    #bor-book-4 img {
+        width: 100%;
+        height: auto;
     }
 
     #bor-content {
@@ -208,7 +247,6 @@
     }
 
     .bor-book {
-        background-color: gray;
         width: 150px;
         height: 200px;
     }
@@ -236,7 +274,6 @@
     }
 
     .book-cover {
-        background-color: gray;
         width: 50vw;
         height: 45vw;
     }
@@ -256,7 +293,7 @@
     }
 
     .book-heading {
-        color: white;
+        color: a.$secondary-color;
         font-size: 3vw;
         font-weight: 800;
     }
@@ -264,6 +301,7 @@
     .book-text {
         color: white;
         font-size: 2vw;
+        line-height: 30px;
     }
 
     .book-points {
@@ -328,7 +366,7 @@
         display: flex;
         flex-direction: column;
         justify-content: unset;
-        gap: 10px;
+        gap: 0px;
         width: auto;
     }
 
@@ -341,7 +379,7 @@
     .bor-text {
         color: white;
         font-size: 1.3rem;
-        line-height: 25px;
+        line-height: 30px;
         margin: 0 auto;
         width: 100%;
         max-width: unset;
@@ -352,7 +390,7 @@
         flex-direction: row;
         align-items: center;
         flex-wrap: nowrap;
-        gap: 10px;
+        gap: 30px;
         height: auto;
         margin-bottom: 25px;
         margin: 0px auto;
@@ -366,7 +404,7 @@
     }
 
     .bor-book {
-        background-color: gray;
+        
         width: 150px;
         height: 250px;
     }
@@ -392,7 +430,6 @@
     }
 
     .book-cover {
-        background-color: gray;
         width: 35vw;
         height: 35vw;
     }
@@ -412,7 +449,7 @@
     }
 
     .book-heading {
-        color: white;
+        color: a.$secondary-color;
         font-size: 3vw;
         font-weight: 800;
     }
