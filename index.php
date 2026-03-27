@@ -189,10 +189,10 @@
             <section id="intro-video" class="col-span-full l-col-start-2 l-col-end-12">
                     <h2 class="hidden">Loop Video</h2>
                     <div class="intro-video-container">
-                        <video class="intro-video-player" playsinline controls controls data-poster="" aria-label="Loop Video">
-                            <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 767px)">
-                            <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 1199px)">
-                            <source src="video/des-loop-video.mp4" type="video/mp4">
+                        <video class="intro-video-player" playsinline controls controls data-poster="" aria-label="Intro Video">
+                            <source src="video/des-intro-video.mp4" type="video/mp4" media="(max-width: 767px)">
+                            <source src="video/des-intro-video.mp4" type="video/mp4" media="(max-width: 1199px)">
+                            <source src="video/des-intro-video.mp4" type="video/mp4">
                             Your browser does not support the video tag. Please update your browser or try a different one.
                         </video>
                     </div>
