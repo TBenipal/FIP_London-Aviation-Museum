@@ -16,7 +16,7 @@
         <div id="menu" class="col-span-full">
 
             <div id="mobile-header">
-                <div id="header-logo"><a href="index.html">
+                <div id="header-logo"><a href="index.php">
                     <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
@@ -45,7 +45,7 @@
                                 </svg>
                             </a>
                         <?php else: ?>
-                            <a class="icon-link" href="admin/login.php">
+                            <a class="icon-link" href="includes/admin/login.php">
                                 <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 600 700">
                                     <g data-name="Layer 1">
                                         <g>

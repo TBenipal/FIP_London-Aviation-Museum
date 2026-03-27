@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin'])) {
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/grid.css" rel="stylesheet">
 </head>
-<body>
+<body id="event-panel">
 <div id="admin-events">
     <div class="page-header">
         <div>

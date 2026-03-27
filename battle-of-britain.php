@@ -16,7 +16,7 @@
         <div id="menu" class="col-span-full">
 
             <div id="mobile-header">
-                <div id="header-logo"><a href="index.html">
+                <div id="header-logo"><a href="index.php">
                     <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
@@ -27,7 +27,6 @@
                 </button>
 
             </div>
-
             <nav id="sidebar">
                 <ul>
                     <li class="nav-item"><a href="index.php">Home</a></li>
@@ -72,58 +71,53 @@
 
     <main>
         <section id="bob-hero" class="grid-con">
-            <h1 class="hidden">Battle of Britain Pilot Information</h1>
-            <div id="bob-content" class="col-span-full l-col-start-2 l-col-end-12">
+            <div id="bob-content" class="container hero-container col-span-full">
                 <div class="bob-slider">
-                    <div class="pilot-container">
-                        <picture>
-                            <source srcset="images/Bob/des-pilot-1.jpg" media="(max-width: 767px)">
-                            <source srcset="images/Bob/des-pilot-1.jpg" media="(max-width: 1199px)">
-                            <img src="images/Bob/des-pilot-1.jpg" alt="Pilot Image">
-                        </picture>
+                <div class="active-display"></div>
+
+                <div class="preview-row">
+                    <div class="item">
+                    <img src="images/Bob/des-pilot-1.jpg" alt="Switzerland" />
+                    <div class="content">
+                        <h2 class="name">Pilot 1</h2>
+                        <p class="des">Position: </p>
+                        <button>See More</button>
                     </div>
-                    <div class="pilot-container">
-                        <picture>
-                            <source srcset="images/Bob/des-pilot-2.jpg" media="(max-width: 767px)">
-                            <source srcset="images/Bob/des-pilot-2.jpg" media="(max-width: 1199px)">
-                            <img src="images/Bob/des-pilot-2.jpg" alt="Pilot Image">
-                        </picture>
                     </div>
-                    <div class="pilot-container">
-                        <picture>
-                            <source srcset="images/Bob/des-pilot-3.jpg" media="(max-width: 767px)">
-                            <source srcset="images/Bob/des-pilot-3.jpg" media="(max-width: 1199px)">
-                            <img src="images/Bob/des-pilot-3.jpg" alt="Pilot Image">
-                        </picture>
+                    <div class="item">
+                    <img src="images/Bob/des-pilot-2.jpg" alt="Pilot 2" />
+                    <div class="content">
+                        <h2 class="name">Pilot 2</h2>
+                        <p class="des">Position: </p>
+                        <button>See More</button>
                     </div>
-                    <div class="pilot-container">
-                        <picture>
-                            <source srcset="images/Bob/des-pilot-4.jpg" media="(max-width: 767px)">
-                            <source srcset="images/Bob/des-pilot-4.jpg" media="(max-width: 1199px)">
-                            <img src="images/Bob/des-pilot-4.jpg" alt="Pilot Image">
-                        </picture>
                     </div>
-                    <div class="pilot-container">
-                        <picture>
-                            <source srcset="images/Bob/des-pilot-5.jpg" media="(max-width: 767px)">
-                            <source srcset="images/Bob/des-pilot-5.jpg" media="(max-width: 1199px)">
-                            <img src="images/Bob/des-pilot-5.jpg" alt="Pilot Image">
-                        </picture>
+                    <div class="item">
+                    <img src="images/Bob/des-pilot-3.jpg" alt="Pilot 3" />
+                    <div class="content">
+                        <h2 class="name">Pilot 3</h2>
+                        <p class="des">Position: </p>
+                        <button>See More</button>
+                    </div>
+                    </div>
+                    <div class="item">
+                    <img src="images/Bob/des-pilot-4.jpg" alt="Pilot 4" />
+                    <div class="content">
+                        <h2 class="name">Pilot 4</h2>
+                        <p class="des">Position: </p>
+                        <button>See More</button>
+                    </div>
+                    </div>
+                    <div id="pilot-5" class="item">
+                    <img src="images/Bob/des-pilot-5.jpg" alt="Pilot 5" />
+                    <div class="content">
+                        <h2 class="name">Pilot 5</h2>
+                        <p class="des">Position: </p>
+                        <button>See More</button>
+                    </div>
                     </div>
                 </div>
 
-                <div class="pilot-info">
-                    <h2 class="pilot-name">Pilot Name</h2>
-                    <h3 class="pilot-span">DOB - DOD</h3>
-                    <P class="pilot-description">Pilot Description</P>
-                </div>
-
-                <div class="pilot-bkground">
-                    <picture>
-                        <source srcset="images/Bob/des-pilot-1.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-pilot-1.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-pilot-1.jpg" alt="Pilot Image">
-                    </picture>
                 </div>
             </div>
         </section>
@@ -163,43 +157,46 @@
         </section>
 
         <section id="bob-airplane" class="grid-con">
-            <h1 id="ba-heading" class="col-span-full l-col-start-1 l-col-end-13">Aircraft Flown by London's Airmen</h1>
-            
-            <div id="ba-model" class="col-span-full l-col-start-2 l-col-end-12">
-                <model-viewer src="model/military+fighter+plane+3d+model.glb" src="model/military+fighter+plane+3d+model.glb" camera-controls auto-rotate ar>
-                </model-viewer>
+            <h1 id="ba-heading" class="col-span-full">Aircraft Flown by London's Airmen</h1>
+
+            <div id="ba-content" class="col-span-full">
+
+                <div id="ba-model" class="col-span-full">
+                    <model-viewer src="model/military+fighter+plane+3d+model.glb" src="model/military+fighter+plane+3d+model.glb" camera-controls auto-rotate ar>
+                    </model-viewer>
+                </div>
+
+                <div id="ba-navbar">
+
+                    <ul id="ba-nav">
+                        <li class="nav-item">
+                            <button class="ba-tab active" data-content="name">Name</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="ba-tab" data-content="mechanic">Mechanic</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="ba-tab" data-content="history">History</button>
+                        </li>
+                    </ul>
+                    <div id="ba-text"></div>
+                </div>
+                <template id="name">
+                    <p>Londoners who served in the Battle of Britain flew iconic British aircraft that became symbols of the Allied struggle for air supremacy over the English Channel.</p>
+                </template>
+
+                <template id="mechanic">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum ipsum assumenda, qui ipsam fugit reprehenderit quam officiis voluptatibus suscipit repellat at dolor provident odio cumque, delectus placeat beatae excepturi laboriosam.</p>
+                </template>
+
+                <template id="history">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam, doloribus, aperiam perferendis dolorem, distinctio porro architecto voluptatibus ratione iste magni error commodi quam? Reiciendis nemo natus ea cumque rerum.</p>
+                </template>
             </div>
 
-            <div id="ba-navbar" class="col-span-full l-col-start-1 l-col-end-13">
-
-                <ul id="ba-nav">
-                    <li class="nav-item">
-                        <button class="ba-tab" data-content="name">Name</button>
-                    </li>
-
-                    <li class="nav-item">
-                        <button class="ba-tab" data-content="mechanic">Mechanic</button>
-                    </li>
-
-                    <li class="nav-item">
-                        <button class="ba-tab" data-content="history">History</button>
-                    </li>
-                </ul>
-            </div>
-            <div id="ba-text" class="col-span-full l-col-start-3 l-col-end-11"></div>
-            <template id="name">
-                <p>Londoners who served in the Battle of Britain flew iconic British aircraft that became symbols of the Allied struggle for air supremacy over the English Channel.</p>
-            </template>
-
-            <template id="mechanic">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum ipsum assumenda, qui ipsam fugit reprehenderit quam officiis voluptatibus suscipit repellat at dolor provident odio cumque, delectus placeat beatae excepturi laboriosam.</p>
-            </template>
-
-            <template id="history">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam, doloribus, aperiam perferendis dolorem, distinctio porro architecto voluptatibus ratione iste magni error commodi quam? Reiciendis nemo natus ea cumque rerum.</p>
-            </template>
-
-            <div id="ba-images" class="col-span-full l-col-start-2 l-col-end-12">
+            <div id="ba-images" class="col-span-full">
                 <div class="ba-img">
                     <picture>
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
@@ -227,15 +224,15 @@
 
         <section id="bob-gallery" class="grid-con">
             <h1 class="hidden">Battle of Britain Gallery</h1>
-            <div id="gutter-6" class="col-span-full l-col-start-1 l-col-end-13"></div>
-            <div id="bg-main" class="col-span-full l-col-start-2 l-col-end-12">
+            <div id="gutter-6" class="col-span-full"></div>
+            <div id="bg-main" class="col-span-full">
                 <picture>
                     <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 767px)">
                     <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 1199px)">
                     <img src="images/Bob/des-bob-gallery-1.jpg" alt="Model Image">
                 </picture>
             </div>
-            <div id="bg-content" class="col-span-full l-col-start-2 l-col-end-12">
+            <div id="bg-content" class="col-span-full">
                 <div class="bg-img">
                     <picture>
                         <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 767px)">

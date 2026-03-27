@@ -251,7 +251,6 @@ html, body {
 
 #our-museum {
     position: relative;
-    width: 100%;
     height: auto;
     background-color: a.$accent-color;
     padding: 0px 25px 75px 25px;
@@ -551,11 +550,6 @@ html, body {
     transition: .2s ease-in-out;
 }
 
-#our-museum #intro-video {
-    width: 100%;
-    max-width: 100%; 
-    margin: 0 auto;
-}
 
 .intro-video-player {
     width: 100%;
@@ -656,6 +650,12 @@ html, body {
     #our-museum {
         width: 100%;
         max-width: unset;
+    }
+
+    #our-museum #intro-video {
+        width: 100%;
+        max-width: unset;
+        margin: 0 auto;
     }
 
     #intro-video, #intro-player {

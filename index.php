@@ -19,7 +19,7 @@
         <div id="menu" class="col-span-full">
 
             <div id="mobile-header">
-                <div id="header-logo"><a href="index.html">
+                <div id="header-logo"><a href="index.php">
                     <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
@@ -31,7 +31,7 @@
 
             </div>
 
-            <nav id="sidebar">
+                        <nav id="sidebar">
                 <ul>
                     <li class="nav-item"><a href="index.php" class="active">Home</a></li>
                     <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
@@ -81,7 +81,7 @@
                 <section id="loop-video">
                     <h2 class="hidden">Loop Video</h2>
                     <div id="lp-container">
-                        <video id="lp-player" muted playsinline autoplay loop data-poster="" aria-label="Loop Video">
+                        <video id="lp-player" autoplay muted loop playsinline preload="auto" data-poster="" aria-label="Loop Video">
                             <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 767px)">
                             <source src="video/des-loop-video.mp4" type="video/mp4" media="(max-width: 1199px)">
                             <source src="video/des-loop-video.mp4" type="video/mp4">
