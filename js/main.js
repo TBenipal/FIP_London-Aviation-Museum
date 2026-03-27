@@ -5,6 +5,7 @@ import { bobairplane } from "./modules/bob-airplane.js";
 import { GSAP } from "./modules/gsap-animation.js";
 import { homepage } from "./modules/homepage.js";
 import './modules/ajax-forms.js';
+import { bor } from "./modules/bor.js";
 
 
 burgermenu();
@@ -25,6 +26,10 @@ if(document.body.dataset.page === "bob") {
 
 if(document.body.dataset.page === "exhibition") {
     videoplayer();
+}
+
+if(document.body.dataset.page === "bor") {
+    bor();
 }
 
 
