@@ -9,23 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
-    <title>Book of Remembrance — London Aviation Museum</title>
-    <style>
-        #pilot-search-section { padding: 3rem 1.5rem; }
-        #search-bar-container { margin-bottom: 2rem; }
-        #pilot-search-input { width: 100%; max-width: 480px; padding: 0.7rem 1rem; background: var(--color-surface, #1a1a1a); border: 1px solid var(--color-border, #444); border-radius: 4px; color: inherit; font-size: 1rem; }
-        #pilot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
-        .pilot-card { background: var(--color-surface, #1a1a1a); border: 1px solid var(--color-border, #333); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: border-color 0.2s; }
-        .pilot-card:hover { border-color: var(--color-accent, #c8a96e); }
-        .pilot-card-img { height: 140px; background: #222; overflow: hidden; }
-        .pilot-card-img img { width: 100%; height: 100%; object-fit: cover; }
-        .pilot-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0.15; font-size: 2.5rem; }
-        .pilot-card-body { padding: 0.6rem 0.8rem; }
-        .pilot-name { font-size: 0.85rem; font-weight: 600; margin: 0 0 0.2rem; }
-        .pilot-status { font-size: 0.75rem; opacity: 0.5; margin: 0; }
-    </style>
+    <title>Where London Met the Sky</title>
 </head>
-<body data-page="bor">
+<body data-page="homepage">
     <!-- Header -->
     <header id="header-section" class="grid-con">
         <h1 class="hidden">Navbar</h1>
@@ -33,8 +19,8 @@
         <div id="menu" class="col-span-full">
 
             <div id="mobile-header">
-                <div id="header-logo"><a href="index.php">
-                    <img src="images/logo_horizontal.png" alt="London Aviation Museum Logo"></a>
+                <div id="header-logo"><a href="index.html">
+                    <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
                 <button class="hamburger" aria-label="Open menu">
@@ -42,15 +28,15 @@
                     <span></span>
                     <span></span>
                 </button>
+
             </div>
 
             <nav id="sidebar">
                 <ul>
-                    <li class="nav-item"><a href="index.php">Home</a></li>
-                    <li class="nav-item"><a href="battle-of-britain.php">Battle of Britain</a></li>
+                    <li class="nav-item"><a href="index.php" class="active">Home</a></li>
+                    <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
-                    <li class="nav-item"><a href="events.php">Events</a></li>
                     <li class="nav-item"><a href="contact.php">Contact</a></li>
                     <li class="nav-item">
                         <?php if (isset($_SESSION["admin"])): ?>
@@ -66,8 +52,8 @@
                                 <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 600 700">
                                     <g data-name="Layer 1">
                                         <g>
-                                            <path class="cls-1" d="M300,300c82.84,0,150-67.16,150-150S382.84,0,300,0s-150,67.16-150,150,67.16,150,150,150Z"/>
-                                            <path class="cls-1" d="M600,550c0-82.85-67.15-150-150-150H150C67.16,400,0,467.15,0,550v150h600v-150Z"/>
+                                        <path class="cls-1" d="M300,300c82.84,0,150-67.16,150-150S382.84,0,300,0s-150,67.16-150,150,67.16,150,150,150Z"/>
+                                        <path class="cls-1" d="M600,550c0-82.85-67.15-150-150-150H150C67.16,400,0,467.15,0,550v150h600v-150Z"/>
                                         </g>
                                     </g>
                                 </svg>
@@ -75,6 +61,14 @@
                         <?php endif; ?>
                     </li>
                 </ul>
+
+                <!-- <?php if (isset($_SESSION["admin"])): ?>
+                    <div class="admin-panel">
+                        <a href="includes/admin/logout.php">Logout</a>
+                        <a href="#">Add Post</a>
+                        <a href="#">Edit Content</a>
+                    </div>
+                <?php endif; ?> -->
             </nav>
         </div>
     </header>
@@ -110,7 +104,7 @@
                         <p class="book-text">The Book of Remembrance records the names of aircrew members, instructors, and support personnel who made the ultimate sacrifice while preparing to defend freedom at London's BCATP schools. Each entry includes the individual's name, rank, squadron, date of loss, service number, and — where available — a portrait photograph and account of the circumstances of their loss.</p>
                         <ul class="book-points">
                             <li class="book-list">Individual profile pages with portraits and service histories</li>
-                            <li class="book-list">Service information and circumstances of each loss recorded</li>
+                            <li class="book-list">Service information and circumstances of each loss recorded </li>
                             <li class="book-list">Links to additional historical records from Western University</li>
                             <li class="book-list">Archives and RCAF official records</li>
                             <li class="book-list">Honouring both Canadian trainees and international</li>
@@ -127,7 +121,7 @@
                         <p class="book-text">The Book of Remembrance records the names of aircrew members, instructors, and support personnel who made the ultimate sacrifice while preparing to defend freedom at London's BCATP schools. Each entry includes the individual's name, rank, squadron, date of loss, service number, and — where available — a portrait photograph and account of the circumstances of their loss.</p>
                         <ul class="book-points">
                             <li class="book-list">Individual profile pages with portraits and service histories</li>
-                            <li class="book-list">Service information and circumstances of each loss recorded</li>
+                            <li class="book-list">Service information and circumstances of each loss recorded </li>
                             <li class="book-list">Links to additional historical records from Western University</li>
                             <li class="book-list">Archives and RCAF official records</li>
                             <li class="book-list">Honouring both Canadian trainees and international</li>
@@ -137,14 +131,15 @@
                 </div>
 
                 <div id="book-3-section" class="book-section">
-                    <div id="book-3-cover" class="book-cover"></div>
+                    <div id="book-3-cover" class="book-cover">
+                    </div>
                     <div id="book-3-container" class="book-text-container">
                         <p class="book-sub-heading">Section One · Those Lost in Training</p>
                         <h2 class="book-heading">In Memory of BCATP Trainees & Instructors</h2>
                         <p class="book-text">The Book of Remembrance records the names of aircrew members, instructors, and support personnel who made the ultimate sacrifice while preparing to defend freedom at London's BCATP schools. Each entry includes the individual's name, rank, squadron, date of loss, service number, and — where available — a portrait photograph and account of the circumstances of their loss.</p>
                         <ul class="book-points">
                             <li class="book-list">Individual profile pages with portraits and service histories</li>
-                            <li class="book-list">Service information and circumstances of each loss recorded</li>
+                            <li class="book-list">Service information and circumstances of each loss recorded </li>
                             <li class="book-list">Links to additional historical records from Western University</li>
                             <li class="book-list">Archives and RCAF official records</li>
                             <li class="book-list">Honouring both Canadian trainees and international</li>
@@ -152,20 +147,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Pilot Search Section -->
-        <section id="pilot-search-section" class="grid-con">
-            <h2 class="sub-headings col-span-full">Search the Book of Remembrance</h2>
-            <p class="col-span-full" style="opacity:0.65; margin-bottom:1.5rem;">Search by last name to find a pilot in the record.</p>
-
-            <div id="search-bar-container" class="col-span-full">
-                <input type="text" id="pilot-search-input" placeholder="Search by last name..." autocomplete="off">
-            </div>
-
-            <div id="pilot-grid" class="col-span-full">
-                <p style="opacity:0.5;">Loading pilots...</p>
             </div>
         </section>
 
@@ -185,13 +166,14 @@
                     <button id="nl-subscribe">Subscribe</button>
                 </form>
             </div>
+
         </section>
         
     </main>
 
     <footer id="footer-section" class="grid-con">
         <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12">
-            <img src="images/logo_horizontal.png" alt="London Aviation Museum Logo">
+            <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo">
         </div>
         <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
             <div id="about-museum">
@@ -223,11 +205,12 @@
             </div>
 
             <div id="professionals">
-                <h2 class="footer-sub-headers">Professionals</h2>
-                <div id="pro-content">
-                    <a class="footer-links">Media</a>
-                    <a class="footer-links">Exhibition</a>
-                    <a class="footer-links">Business With Us</a>
+                    <h2 class="footer-sub-headers">Professionals</h2>
+                    <div id="pro-content">
+                        <a class="footer-links">Media</a>
+                        <a class="footer-links">Exhibition</a>
+                        <a class="footer-links">Business With Us</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,21 +222,22 @@
                     <img src="images/instagram.png" alt="Instagram Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/facebook.png" alt="Facebook Icon">
+                    <img src="images/facebook.png" alt="Instagram Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/tiktok.png" alt="TikTok Icon">
+                    <img src="images/tiktok.png" alt="Instagram Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/x.png" alt="X Icon">
+                    <img src="images/x.png" alt="Instagram Icon">
                 </div>
             </div>
         </div>
     </footer>
-
+    
+    
+</body>
 <script src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script type="module" src="js/main.js"></script>
-</body>
 </html>
