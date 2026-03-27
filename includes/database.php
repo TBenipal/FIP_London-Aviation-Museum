@@ -4,10 +4,10 @@
 function getConfig()
 {
     return [
-        'username' => 'root',
-        'password' => '', // 'root' on OSX
+        'username' => 'zakia535_london_aviation', //root
+        'password' => 'london_aviation', // 'root' on OSX
         'host'     => 'localhost',
-        'database' => 'london_aviation_museum',
+        'database' => 'zakia535_london_aviation', //Ajaydb 'london_aviation_museum'
         'port'     => '3306' // OSX: 8889
     ];
 }
