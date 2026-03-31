@@ -2345,7 +2345,7 @@ body {
   overflow-y: auto;
   padding: 25px 0px;
   width: 90%;
-  max-width: 500px;
+  max-width: unset;
   height: auto;
   z-index: 100;
 }
@@ -2459,7 +2459,7 @@ body {
 
 .clone-content {
   position: absolute;
-  bottom: 32%;
+  bottom: 35%;
   left: 25px;
   width: 100%;
   max-width: unset;
@@ -2791,7 +2791,20 @@ model-viewer {
   width: 100%;
   max-width: 500px;
   height: 400px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 5px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
   margin: 0 auto;
+}
+
+.ba-img:hover {
+  transform: scale(1.04);
+}
+
+.ba-img.active {
+  border-color: #333223;
 }
 
 .ba-img picture, .ba-img img {
