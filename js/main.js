@@ -5,6 +5,7 @@ import { bobairplane } from "./modules/bob-airplane.js";
 import { GSAP } from "./modules/gsap-animation.js";
 import { homepage } from "./modules/homepage.js";
 import { pilot } from "./modules/bob-pilots.js";
+import { bobgallery } from "./modules/bob-gallery.js";
 import './modules/ajax-forms.js';
 
 
@@ -23,6 +24,7 @@ if(document.body.dataset.page === "wartime") {
 if(document.body.dataset.page === "bob") {
     pilot();
     bobairplane();
+    bobgallery();
 }
 
 if(document.body.dataset.page === "exhibition") {

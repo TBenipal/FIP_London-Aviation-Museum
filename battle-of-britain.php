@@ -162,8 +162,7 @@
             <div id="ba-content" class="col-span-full">
 
                 <div id="ba-model" class="col-span-full">
-                    <model-viewer src="model/military+fighter+plane+3d+model.glb" src="model/military+fighter+plane+3d+model.glb" camera-controls auto-rotate ar>
-                    </model-viewer>
+                    <model-viewer src="model/propeller airplane 3d model.glb" camera-controls auto-rotate ar></model-viewer>
                 </div>
 
                 <div id="ba-navbar">
@@ -197,25 +196,43 @@
             </div>
 
             <div id="ba-images" class="col-span-full">
-                <div class="ba-img">
+                <div class="ba-img active" 
+                    data-model="model/propeller airplane 3d model.glb"
+                    data-template="name">
                     <picture>
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Model Image">
+                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
                     </picture>
                 </div>
-                <div class="ba-img">
+
+                <div class="ba-img" 
+                    data-model="model/yellow biplane 3d model.glb"
+                    data-template="mechanic">
                     <picture>
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Model Image">
+                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
                     </picture>
                 </div>
-                <div class="ba-img">
+
+                <div class="ba-img" 
+                    data-model="model/yellow propeller airplane 3d model.glb"
+                    data-template="mechanic">
                     <picture>
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
                         <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Model Image">
+                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                    </picture>
+                </div>
+
+                <div class="ba-img" 
+                    data-model="model/yellow twin-engine airplane 3d model.glb"
+                    data-template="history">
+                    <picture>
+                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
+                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
+                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
                     </picture>
                 </div>
             </div>

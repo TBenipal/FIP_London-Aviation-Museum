@@ -19,7 +19,7 @@
         <div id="menu" class="col-span-full">
 
             <div id="mobile-header">
-                <div id="header-logo"><a href="index.html">
+                <div id="header-logo"><a href="index.php">
                     <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo"></a>
                 </div>
                 
