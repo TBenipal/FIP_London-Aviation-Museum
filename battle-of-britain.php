@@ -79,7 +79,7 @@
                     <div class="item">
                     <img src="images/Bob/des-pilot-1.jpg" alt="Switzerland" />
                     <div class="content">
-                        <h2 class="name">Pilot 1</h2>
+                        <h2 class="name">Smith R.Reilley</h2>
                         <p class="des">Position: </p>
                         <button>See More</button>
                     </div>
@@ -87,7 +87,7 @@
                     <div class="item">
                     <img src="images/Bob/des-pilot-2.jpg" alt="Pilot 2" />
                     <div class="content">
-                        <h2 class="name">Pilot 2</h2>
+                        <h2 class="name">Ernest McNab</h2>
                         <p class="des">Position: </p>
                         <button>See More</button>
                     </div>
@@ -95,7 +95,7 @@
                     <div class="item">
                     <img src="images/Bob/des-pilot-3.jpg" alt="Pilot 3" />
                     <div class="content">
-                        <h2 class="name">Pilot 3</h2>
+                        <h2 class="name">Smither</h2>
                         <p class="des">Position: </p>
                         <button>See More</button>
                     </div>
@@ -103,7 +103,7 @@
                     <div class="item">
                     <img src="images/Bob/des-pilot-4.jpg" alt="Pilot 4" />
                     <div class="content">
-                        <h2 class="name">Pilot 4</h2>
+                        <h2 class="name">Campbell N.N.</h2>
                         <p class="des">Position: </p>
                         <button>See More</button>
                     </div>
@@ -111,7 +111,7 @@
                     <div id="pilot-5" class="item">
                     <img src="images/Bob/des-pilot-5.jpg" alt="Pilot 5" />
                     <div class="content">
-                        <h2 class="name">Pilot 5</h2>
+                        <h2 class="name">Grassick</h2>
                         <p class="des">Position: </p>
                         <button>See More</button>
                     </div>
@@ -140,19 +140,18 @@
         </section>
 
         <section id="bob-description" class="grid-con">
-            <h1 class="hidden">Description</h1>
-            <div id="bd-content" class="col-span-full l-col-start-1 l-col-end-6">
-                <h2 id="bd-heading" class="sub-headings">Londoners and the Battle of Britain</h2>
-                <p class="bd-text">Individuals from the London region served as pilots, navigators, and ground crew, while others contributed indirectly through training programs that later fed into front-line squadrons. The skills developed in Canadian training schools helped sustain the Royal Air Force during one of its most challenging periods. By highlighting Londoners' involvement in the Battle of Britain, this section emphasizes the city's contribution to a global conflict. It demonstrates how local communities were deeply connected to international events and how efforts made at home influenced the outcome of the war abroad.</p>                
-                <p class="bd-text">London, Ontario, played an important supporting role through its connection to aircrew training and aviation preparation. The British Commonwealth Air Training Plan (BCATP) schools operated at Crumlin Airport prepared aviators who would go on to serve in decisive engagements over British skies. Remembering these connections helps place London's aviation history within a wider historical and global context — demonstrating that the war effort was as much a community endeavour as it was a military one.</p>                
-                <button id="bd-btn" class="col-span-full"><a href="book-of-remembrance.php">Honor & Remember</a></button>
-            </div>
+            <h1 id="bd-heading" class="sub-headings col-span-full">Londoners and the Battle of Britain</h1>
             <div id="bd-img" class="col-span-full l-col-start-7 l-col-end-13">
                 <picture>
                     <source srcset="images/Bob/des-description-img.jpg" media="(max-width: 767px)">
                     <source srcset="images/Bob/des-description-img.jpg" media="(max-width: 1199px)">
                     <img src="images/Bob/des-description-img.jpg" alt="Description Image">
                 </picture>
+            </div>
+            <div id="bd-content" class="col-span-full l-col-start-1 l-col-end-7">
+                <p class="bd-text">Individuals from the London region served as pilots, navigators, and ground crew, while others contributed indirectly through training programs that later fed into front-line squadrons. The skills developed in Canadian training schools helped sustain the Royal Air Force during one of its most challenging periods. By highlighting Londoners' involvement in the Battle of Britain, this section emphasizes the city's contribution to a global conflict. It demonstrates how local communities were deeply connected to international events and how efforts made at home influenced the outcome of the war abroad. London, Ontario, played an important supporting role through its connection to aircrew training and aviation preparation. The British Commonwealth Air Training Plan (BCATP) schools operated at Crumlin Airport prepared aviators who would go on to serve in decisive engagements over British skies. Remembering these connections helps place London's aviation history within a wider historical and global context — demonstrating that the war effort was as much a community endeavour as it was a military one.
+                </p>          
+                <button id="bd-btn" class="col-span-full"><a href="book-of-remembrance.php">Honor & Remember</a></button>
             </div>
         </section>
 
@@ -222,9 +221,9 @@
                             data-id="1"
                             data-title="Spitfire Mk I/II–type fighter">
                             <picture>
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                                <source srcset="images/Bob/Spitfire Mk12-type fighter.png" media="(max-width: 767px)">
+                                <source srcset="images/Bob/Spitfire Mk12-type fighter.png" media="(max-width: 1199px)">
+                                <img src="images/Bob/Spitfire Mk12-type fighter.png" alt="Fighter Plane">
                             </picture>
                         </div>
 
@@ -233,9 +232,9 @@
                             data-id="2"
                             data-title="Fairey Finch Mk II">
                             <picture>
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                                <source srcset="images/Bob/Fairey Finch Mk2.png" media="(max-width: 767px)">
+                                <source srcset="images/Bob/Fairey Finch Mk2.png" media="(max-width: 1199px)">
+                                <img src="images/Bob/Fairey Finch Mk2.png" alt="Fighter Plane">
                             </picture>
                         </div>
 
@@ -244,9 +243,9 @@
                             data-id="3"
                             data-title="Harvard Mk II–type trainer">
                             <picture>
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                                <source srcset="images/Bob/Harvard Mk2-type trainer.png" media="(max-width: 767px)">
+                                <source srcset="images/Bob/Harvard Mk2-type trainer.png" media="(max-width: 1199px)">
+                                <img src="images/Bob/Harvard Mk2-type trainer.png" alt="Fighter Plane">
                             </picture>
                         </div>
 
@@ -255,9 +254,9 @@
                             data-id="4"
                             data-title="Airspeed Oxford">
                             <picture>
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                                <source srcset="images/Bob/Airspeed Oxford.png" media="(max-width: 767px)">
+                                <source srcset="images/Bob/Airspeed Oxford.png" media="(max-width: 1199px)">
+                                <img src="images/Bob/Airspeed Oxford.png" alt="Fighter Plane">
                             </picture>
                         </div>
                     </div>
@@ -270,38 +269,38 @@
             <div id="gutter-6" class="col-span-full"></div>
             <div id="bg-main" class="col-span-full">
                 <picture>
-                    <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 767px)">
-                    <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 1199px)">
-                    <img src="images/Bob/des-bob-gallery-1.jpg" alt="Model Image">
+                    <source srcset="images/Bob/Spitfire Mk12-type fighter.png" media="(max-width: 767px)">
+                    <source srcset="images/Bob/Spitfire Mk12-type fighter.png" media="(max-width: 1199px)">
+                    <img src="images/Bob/Spitfire Mk12-type fighter.png" alt="Model Image">
                 </picture>
             </div>
             <div id="bg-content" class="col-span-full">
                 <div class="bg-img">
                     <picture>
-                        <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-bob-gallery-1.jpg" alt="Model Image">
+                        <source srcset="images/Bob/Spitfire Mk12-type fighter.png" media="(max-width: 767px)">
+                        <source srcset="images/Bob/Spitfire Mk12-type fighter.png" media="(max-width: 1199px)">
+                        <img src="images/Bob/Spitfire Mk12-type fighter.png" alt="Model Image">
                     </picture>
                 </div>
                 <div class="bg-img">
                     <picture>
-                        <source srcset="images/Bob/des-bob-gallery-2.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-bob-gallery-2.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-bob-gallery-2.jpg" alt="Model Image">
+                        <source srcset="images/Bob/Fairey Finch Mk2.png" media="(max-width: 767px)">
+                        <source srcset="images/Bob/Fairey Finch Mk2.png" media="(max-width: 1199px)">
+                        <img src="images/Bob/Fairey Finch Mk2.png" alt="Model Image">
                     </picture>
                 </div>
                 <div class="bg-img">
                     <picture>
-                        <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-bob-gallery-1.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-bob-gallery-1.jpg" alt="Model Image">
+                        <source srcset="images/Bob/Harvard Mk2-type trainer.png" media="(max-width: 767px)">
+                        <source srcset="images/Bob/Harvard Mk2-type trainer.png" media="(max-width: 1199px)">
+                        <img src="images/Bob/Harvard Mk2-type trainer.png" alt="Model Image">
                     </picture>
                 </div>
                 <div class="bg-img">
                     <picture>
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Model Image">
+                        <source srcset="images/Bob/Airspeed Oxford.png" media="(max-width: 767px)">
+                        <source srcset="images/Bob/Airspeed Oxford.png" media="(max-width: 1199px)">
+                        <img src="images/Bob/Airspeed Oxford.png" alt="Model Image">
                     </picture>
                 </div>
             </div>
