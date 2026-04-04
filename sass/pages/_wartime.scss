@@ -73,6 +73,7 @@
 
 #ts-text {
     font-size: 1rem;
+    font-family: a.$secondary-font;
     color: white;
     line-height: 25px;
     width: 100%;
@@ -119,6 +120,7 @@
     top: 325px;
     align-self: center;
     font-size: 3rem;
+    font-family: a.$secondary-font;
     color: white;
 }
 
@@ -126,6 +128,7 @@
     font-size: 1rem;
     color: white;
     padding: 10px 10px 20px 10px;
+    font-family: a.$secondary-font;
     line-height: 25px;
 }
 
@@ -267,6 +270,7 @@
 
 .dt-profile-text {
     font-size: 1rem;
+    font-family: a.$secondary-font;
     color: white;
     // margin: 0px 175px;
     width: 225px;

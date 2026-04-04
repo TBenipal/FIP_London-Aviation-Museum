@@ -1735,6 +1735,7 @@ html, body {
 #nl-content {
   display: flex;
   flex-direction: column;
+  font-family: "utairline";
   gap: 25px;
 }
 
@@ -2513,6 +2514,7 @@ body {
 .preview-row::-webkit-scrollbar-thumb {
   background-color: #0C0E0C;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .active-display {
@@ -2587,7 +2589,7 @@ body {
 }
 
 .content .name {
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-family: "vipnagorgialla";
   font-weight: bold;
@@ -2596,7 +2598,7 @@ body {
 }
 
 .content .des {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "ogg";
   font-weight: 800;
   margin: 10px 0 20px;
@@ -2616,6 +2618,7 @@ body {
   opacity: 0;
   animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
+
 .content button:hover {
   background-color: #0C0E0C;
 }
@@ -2677,7 +2680,7 @@ body {
 .bh-text {
   color: white;
   font-size: 1rem;
-  font-family: "ogg";
+  font-family: "utairline";
   margin: 25px 0px;
   line-height: 25px;
   width: 100%;
@@ -2719,9 +2722,11 @@ body {
 
 #bd-heading {
   font-size: 2.5rem;
-  margin-bottom: 25px;
   color: white;
-  text-align: start;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 #bd-content {
@@ -2731,15 +2736,18 @@ body {
   max-width: 500px;
   gap: 5px;
   margin: 0 auto;
+  margin-top: 25px;
+  order: 2;
 }
 
 .bd-text {
   font-size: 1rem;
-  font-family: "ogg";
+  font-family: "utairline";
   font-weight: 100;
   line-height: 25px;
   color: white;
   margin-bottom: 25px;
+  text-align: center;
 }
 
 #bd-btn {
@@ -2771,6 +2779,7 @@ body {
   max-width: 500px;
   height: 400px;
   margin: 0 auto;
+  order: 1;
 }
 
 #bd-img picture, #bd-img img {
@@ -2895,7 +2904,8 @@ model-viewer {
   justify-self: center;
   color: white;
   font-size: 1rem;
-  font-family: "ogg";
+  line-height: 25px;
+  font-family: "utairline";
   width: 100%;
   max-width: 500px;
 }
@@ -3028,7 +3038,7 @@ model-viewer {
     height: 100vh;
     overflow: hidden;
     width: 100%;
-    padding: 0 0px;
+    padding: 0px 0px;
   }
   .hero-container {
     position: relative;
@@ -3249,45 +3259,52 @@ model-viewer {
     width: 100%;
     height: auto;
     background-color: #0C0E0C;
-    padding: 50px 25px;
+    padding: 0px 25px;
+    padding-bottom: 50px;
   }
   #bh-img {
-    height: 75vw;
-    max-height: 675px;
     width: 100%;
+    height: 600px;
     max-width: 800px;
     margin: 0 auto;
   }
   #bh-heading {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: white;
-    text-align: center;
+    text-align: start;
     width: 100%;
-    max-width: unset;
+    max-width: 800px;
     margin: 0 auto;
     margin-bottom: 25px;
   }
   #bh-sub-heading {
     font-size: 1.7rem;
+    margin-top: 10px;
   }
   .bh-text {
     color: white;
     font-size: 1.2rem;
-    margin: 25px 0px;
     line-height: 25px;
     width: 100%;
     max-width: 800px;
-    margin: 25px auto;
+    margin: 0px auto;
+    margin-top: 5px;
   }
   #bh-content {
+    display: flex;
+    flex-direction: column;
     height: auto;
     width: 100%;
     max-width: 800px;
+    gap: 20px;
     margin: 0 auto;
+    margin-top: 25px;
   }
   #bh-btn {
-    padding: 10px 15px;
-    font-size: 1rem;
+    align-self: flex-end;
+    padding: 12px 15px;
+    width: 225px;
+    font-size: 1.2rem;
     font-weight: 600;
     color: white;
     background-color: #333223;
@@ -3320,29 +3337,26 @@ model-viewer {
   }
   .bd-text {
     font-size: 1.2rem;
+    text-align: start;
     color: white;
-    margin-bottom: 25px;
+    margin: 25px 0px;
   }
   #bd-btn {
-    align-self: flex-end;
-    font-size: 1.5rem;
+    align-self: self-end;
+    font-size: 1.2rem;
     font-weight: 600;
     border: none;
     background-color: #0C0E0C;
     color: white;
     width: auto;
-    padding: 10px 10px;
+    padding: 12px 15px;
     cursor: pointer;
   }
   #bd-img {
     display: block;
-    margin-top: 0px;
-    height: 75vw;
-    max-height: 675px;
-    max-width: unset;
     width: 100%;
+    height: 600px;
     max-width: 800px;
-    margin: 0 auto;
   }
   #bob-airplane {
     background-color: #A08B63;
@@ -3427,7 +3441,8 @@ model-viewer {
     justify-self: center;
     color: white;
     font-size: 1.2rem;
-    font-family: "ogg";
+    line-height: 25px;
+    font-family: "utairline";
     width: 100%;
     max-width: 800px;
   }
@@ -3493,6 +3508,12 @@ model-viewer {
   }
   #ba-heading-main {
     display: none;
+  }
+  #bd-heading-main {
+    display: none;
+  }
+  #bd-heading {
+    display: block;
   }
   #bh-heading {
     display: none;
@@ -3805,23 +3826,25 @@ model-viewer {
     padding: 50px 75px 50px 75px;
   }
   #bd-heading {
+    text-align: center;
     font-size: 3.5rem;
-    margin-bottom: 25px;
+    max-width: unset;
+    margin-bottom: 0px;
   }
   #bd-content {
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    align-self: center;
     gap: 10px;
+    order: 1;
   }
   .bd-text {
     font-size: 1.2rem;
     color: white;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
+    padding-right: 25px;
   }
   #bd-btn {
-    align-self: flex-start;
+    align-self: flex-end;
     font-size: 1.5rem;
     font-weight: 600;
     border: none;
@@ -3830,11 +3853,16 @@ model-viewer {
     width: auto;
     padding: 10px 20px;
     margin-bottom: 50px;
+    margin-right: 50px;
     cursor: pointer;
   }
   #bd-img {
-    height: 40vw;
-    align-self: center;
+    width: 100%;
+    height: auto;
+    max-width: unset;
+    margin: 0 auto;
+    margin-top: 25px;
+    order: 2;
   }
   #bob-airplane {
     position: relative;
@@ -3927,7 +3955,8 @@ model-viewer {
     justify-self: center;
     color: white;
     font-size: 1.2rem;
-    font-family: "ogg";
+    line-height: 25px;
+    font-family: "utairline";
     width: 100%;
     max-width: unset;
     padding-left: 5px;
@@ -4066,6 +4095,7 @@ model-viewer {
 
 #ts-text {
   font-size: 1rem;
+  font-family: "utairline";
   color: white;
   line-height: 25px;
   width: 100%;
@@ -4113,6 +4143,7 @@ model-viewer {
   top: 325px;
   align-self: center;
   font-size: 3rem;
+  font-family: "utairline";
   color: white;
 }
 
@@ -4120,6 +4151,7 @@ model-viewer {
   font-size: 1rem;
   color: white;
   padding: 10px 10px 20px 10px;
+  font-family: "utairline";
   line-height: 25px;
 }
 
@@ -4260,6 +4292,7 @@ model-viewer {
 
 .dt-profile-text {
   font-size: 1rem;
+  font-family: "utairline";
   color: white;
   width: 225px;
 }
@@ -4735,6 +4768,8 @@ model-viewer {
   line-height: 1.5rem;
   margin: 10px 0px;
   color: #333223;
+  font-family: "utairline";
+  line-height: 25px;
 }
 
 #contact-form {
@@ -4764,6 +4799,7 @@ model-viewer {
 #submit-btn {
   margin: 0px;
   font-size: 24px;
+  font-family: "utairline";
   font-weight: 600;
   padding: 10px 0px;
   border: none;
@@ -5014,11 +5050,14 @@ model-viewer {
 .es-sub-heading {
   color: white;
   font-size: 1.5rem;
+  font-family: "ogg";
 }
 
 .es-sub-text {
   color: white;
   font-size: 1rem;
+  font-family: "utairline";
+  line-height: 25px;
 }
 
 #es-sub-content {
@@ -5042,7 +5081,7 @@ model-viewer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
   max-width: 500px;
   padding-bottom: 25px;
@@ -5058,6 +5097,8 @@ model-viewer {
 #es-about-description {
   color: white;
   font-size: 1rem;
+  font-family: "utairline";
+  line-height: 25px;
 }
 
 #exhibition-gallery {
