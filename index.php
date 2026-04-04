@@ -316,11 +316,8 @@
         
     </main>
 
-    <footer id="footer-section" class="grid-con">
-        <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12">
-            <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo">
-        </div>
-        <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
+<footer id="footer-section" class="grid-con">
+        <div id="footer-content" class="col-span-full">
             <div id="about-museum">
                 <h2 class="footer-sub-headers">About Museum</h2>
                 <div id="am-content">
@@ -361,19 +358,18 @@
         </div>
 
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
-            <h2 id="social-header">Social Media</h2>
             <div id="social-content">
                 <div class="social-icon">
-                    <img src="images/instagram.png" alt="Instagram Icon">
+                    <img src="images/instagram-icon.svg" alt="Instagram Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/facebook.png" alt="Instagram Icon">
+                    <img src="images/facebook-icon.svg" alt="Facebook Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/tiktok.png" alt="Instagram Icon">
+                    <img src="images/tiktok-icon.svg" alt="Tiktok Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/x.png" alt="Instagram Icon">
+                    <img src="images/x-icon.svg" alt="X Icon">
                 </div>
             </div>
         </div>

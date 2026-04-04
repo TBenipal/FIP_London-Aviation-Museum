@@ -157,86 +157,112 @@
         </section>
 
         <section id="bob-airplane" class="grid-con">
-            <h1 id="ba-heading" class="col-span-full">Aircraft Flown by London's Airmen</h1>
-
+            <h1 id="ba-heading-main" class="ba-heading col-span-full">Aircraft Flown by London's Airmen</h1>
             <div id="ba-content" class="col-span-full">
 
-                <div id="ba-model" class="col-span-full">
+                <div id="ba-model">
                     <model-viewer src="model/propeller airplane 3d model.glb" camera-controls auto-rotate ar></model-viewer>
+                    <img class="ba-gif" src="images/Bob/Animated GIF.gif">
                 </div>
 
-                <div id="ba-navbar">
+                <div id="ba-text-imgs">
+                    <h2 id="ba-heading-sub" class="ba-heading">Aircraft Flown by London's Airmen</h2>
+                     <div id="ba-navbar">
+                        <ul id="ba-nav">
+                            <!-- <li class="nav-item">
+                                <button class="ba-tab active" data-content="name">Name</button>
+                            </li> -->
 
-                    <ul id="ba-nav">
-                        <li class="nav-item">
-                            <button class="ba-tab active" data-content="name">Name</button>
-                        </li>
+                            <li class="nav-item">
+                                <button class="ba-tab active" data-content="mechanic">Mechanic</button>
+                            </li>
 
-                        <li class="nav-item">
-                            <button class="ba-tab" data-content="mechanic">Mechanic</button>
-                        </li>
+                            <li class="nav-item">
+                                <button class="ba-tab" data-content="history">History</button>
+                            </li>
+                        </ul>
+                        <div id="ba-text"></div>
+                    </div>
 
-                        <li class="nav-item">
-                            <button class="ba-tab" data-content="history">History</button>
-                        </li>
-                    </ul>
-                    <div id="ba-text"></div>
+                    <template class="templates" id="mechanic">
+                        <p>The Spitfire Mk I/II–type fighter was powered by the Rolls-Royce Merlin, a liquid-cooled V12 engine producing just over 1,000 horsepower, driving a three-blade propeller for strong speed and climb performance. Its structure used a stressed-skin aluminum airframe, keeping the aircraft lightweight yet strong. The Spitfire’s distinctive elliptical wings improved aerodynamic efficiency by reducing drag and providing balanced lift across the span, contributing to its smooth handling. It was equipped with eight .303 Browning machine guns mounted in the wings, and its control surfaces allowed precise maneuvering, making it highly effective in air combat.</p>
+                    </template>
+
+                    <template class="templates" id="history">
+                        <p>The Spitfire Mk I/II–type fighter entered service with the Royal Air Force in the late 1930s and became one of the most important aircraft of the Second World War. It played a crucial role during the Battle of Britain in 1940, where its speed and maneuverability allowed it to effectively engage German fighters and bombers. While the Hawker Hurricane handled many bomber interceptions, the Spitfire was primarily used to counter enemy fighter aircraft. Its continuous development throughout the war led to many improved variants, solidifying its reputation as one of the most iconic and effective fighters of its time.</p>
+                    </template>
+
+                    <template class="templates" id="mechanic-2">
+                        <p>The Fairey Finch Mk II was powered by an Armstrong Siddeley Tiger radial engine producing around 330 horsepower, driving a two-bladed propeller suited for stable, low-speed flight. It was a two-seat biplane with a welded steel tube fuselage and fabric covering, while its wooden wings provided structural strength with relatively simple construction. The aircraft featured fixed landing gear and dual controls, allowing instructors to train pilots effectively. Its design emphasized reliability and ease of handling rather than speed, making it well-suited for basic pilot training in the early stages of flight instruction.</p>
+                    </template>
+
+                    <template class="templates" id="history-2">
+                        <p>The Fairey Finch Mk II entered service in the early 1930s as a primary trainer for the Royal Air Force and later saw extensive use with the Royal Canadian Air Force. By the start of the Second World War, it was already considered outdated compared to more modern monoplanes, but it remained in service as an elementary training aircraft. In Canada, the Finch played an important role in the British Commonwealth Air Training Plan, helping to train new pilots during the early years of the war before being gradually replaced by more advanced trainers.</p>
+                    </template>
+
+                    <template class="templates" id="mechanic-3">
+                        <p>The Harvard Mk II–type trainer was powered by a Pratt & Whitney R-1340 Wasp radial engine producing around 600 horsepower, driving a constant-speed propeller that allowed better performance control during training. It featured a low-wing monoplane design with an all-metal structure, providing greater strength and durability compared to earlier fabric-covered trainers. The aircraft was equipped with retractable landing gear and dual cockpit controls arranged in tandem, enabling instructors to guide students through more advanced flight maneuvers. Its responsive handling and more powerful engine made it an ideal step between basic trainers and high-performance combat aircraft.</p>
+                    </template>
+
+                    <template class="templates" id="history-3">
+                        <p>The Harvard Mk II was a version of the North American T-6 Texan advanced trainer, widely used by the Royal Air Force and Commonwealth air forces during the Second World War. Introduced in the late 1930s, it became a key aircraft in the British Commonwealth Air Training Plan, particularly in Canada, where it was used to train thousands of pilots in advanced flying techniques before they moved on to operational combat aircraft. Known for its reliability and more demanding handling compared to basic trainers, the Harvard helped prepare pilots for high-performance fighters and remained in service with various air forces for many years after the war.</p>
+                    </template>
+
+                    <template class="templates" id="mechanic-4">
+                        <p>The Airspeed Oxford was powered by two Armstrong Siddeley Cheetah radial engines, each producing around 350 horsepower, driving two-bladed propellers and providing reliable performance for training purposes. It featured a low-wing monoplane design with a mixed construction of wood and metal, balancing durability with ease of production and maintenance. The aircraft was equipped with dual controls to allow instructor and trainee operation, along with systems for navigation, radio communication, and bombing training. Some variants also included a dorsal gun turret for gunnery instruction, making the Oxford a versatile platform for preparing aircrew in multiple operational roles.</p>
+                    </template>
+
+                    <template class="templates" id="history-4">
+                        <p>The Airspeed Oxford was introduced in 1937 as a twin-engine advanced trainer for the Royal Air Force and became one of the most widely used training aircraft of the Second World War. It was primarily used under the British Commonwealth Air Training Plan to prepare pilots, navigators, and wireless operators for service, playing a crucial role in training thousands of aircrew across Britain, Canada, Australia, and other Allied nations. Derived from the earlier Airspeed Envoy, the Oxford was versatile and reliable, remaining in service throughout the war and continuing in training roles for several years afterward.</p>
+                    </template>
+
+                    <div id="ba-images"">
+                        <div class="ba-img active" 
+                            data-model="model/propeller airplane 3d model.glb"
+                            data-id="1"
+                            data-title="Spitfire Mk I/II–type fighter">
+                            <picture>
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
+                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                            </picture>
+                        </div>
+
+                        <div class="ba-img" 
+                            data-model="model/yellow biplane 3d model.glb"
+                            data-id="2"
+                            data-title="Fairey Finch Mk II">
+                            <picture>
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
+                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                            </picture>
+                        </div>
+
+                        <div class="ba-img" 
+                            data-model="model/yellow propeller airplane 3d model.glb"
+                            data-id="3"
+                            data-title="Harvard Mk II–type trainer">
+                            <picture>
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
+                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                            </picture>
+                        </div>
+
+                        <div class="ba-img" 
+                            data-model="model/yellow twin-engine airplane 3d model.glb"
+                            data-id="4"
+                            data-title="Airspeed Oxford">
+                            <picture>
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
+                                <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
+                            </picture>
+                        </div>
+                    </div>
                 </div>
-                <template id="name">
-                    <p>Londoners who served in the Battle of Britain flew iconic British aircraft that became symbols of the Allied struggle for air supremacy over the English Channel.</p>
-                </template>
-
-                <template id="mechanic">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum ipsum assumenda, qui ipsam fugit reprehenderit quam officiis voluptatibus suscipit repellat at dolor provident odio cumque, delectus placeat beatae excepturi laboriosam.</p>
-                </template>
-
-                <template id="history">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam, doloribus, aperiam perferendis dolorem, distinctio porro architecto voluptatibus ratione iste magni error commodi quam? Reiciendis nemo natus ea cumque rerum.</p>
-                </template>
             </div>
-
-            <div id="ba-images" class="col-span-full">
-                <div class="ba-img active" 
-                    data-model="model/propeller airplane 3d model.glb"
-                    data-template="name">
-                    <picture>
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
-                    </picture>
-                </div>
-
-                <div class="ba-img" 
-                    data-model="model/yellow biplane 3d model.glb"
-                    data-template="mechanic">
-                    <picture>
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
-                    </picture>
-                </div>
-
-                <div class="ba-img" 
-                    data-model="model/yellow propeller airplane 3d model.glb"
-                    data-template="mechanic">
-                    <picture>
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
-                    </picture>
-                </div>
-
-                <div class="ba-img" 
-                    data-model="model/yellow twin-engine airplane 3d model.glb"
-                    data-template="history">
-                    <picture>
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 767px)">
-                        <source srcset="images/Bob/des-3dmodel-img.jpg" media="(max-width: 1199px)">
-                        <img src="images/Bob/des-3dmodel-img.jpg" alt="Fighter Plane">
-                    </picture>
-                </div>
-            </div>
-
         </section>
 
         <section id="bob-gallery" class="grid-con">
@@ -304,39 +330,36 @@
     </main>
 
     <footer id="footer-section" class="grid-con">
-        <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12">
-            <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo">
-        </div>
-        <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
-                <div id="about-museum">
-                    <h2 class="footer-sub-headers">About Museum</h2>
-                    <div id="am-content">
-                        <a class="footer-links">Our Purpose</a>
-                        <a class="footer-links">Get To Know</a>
-                        <a class="footer-links">Plans</a>
-                        <a class="footer-links">Sustainability</a>
-                    </div>
+        <div id="footer-content" class="col-span-full">
+            <div id="about-museum">
+                <h2 class="footer-sub-headers">About Museum</h2>
+                <div id="am-content">
+                    <a class="footer-links">Our Purpose</a>
+                    <a class="footer-links">Get To Know</a>
+                    <a class="footer-links">Plans</a>
+                    <a class="footer-links">Sustainability</a>
                 </div>
+            </div>
 
-                <div id="services">
-                    <h2 class="footer-sub-headers">Services</h2>
-                    <div id="services-content">
-                        <a class="footer-links">Membership</a>
-                        <a class="footer-links">Way of Giving</a>
-                        <a class="footer-links">Donate</a>
-                        <a class="footer-links">Volunteer</a>
-                    </div>
+            <div id="services">
+                <h2 class="footer-sub-headers">Services</h2>
+                <div id="services-content">
+                    <a class="footer-links">Membership</a>
+                    <a class="footer-links">Way of Giving</a>
+                    <a class="footer-links">Donate</a>
+                    <a class="footer-links">Volunteer</a>
                 </div>
+            </div>
 
-                <div id="book-event">
-                    <h2 class="footer-sub-headers">Book Event</h2>
-                    <div id="bk-content">
-                        <a class="footer-links">Rental Options</a>
-                        <a class="footer-links">Catering Services</a>
-                    </div>
+            <div id="book-event">
+                <h2 class="footer-sub-headers">Book Event</h2>
+                <div id="bk-content">
+                    <a class="footer-links">Rental Options</a>
+                    <a class="footer-links">Catering Services</a>
                 </div>
+            </div>
 
-                <div id="professionals">
+            <div id="professionals">
                     <h2 class="footer-sub-headers">Professionals</h2>
                     <div id="pro-content">
                         <a class="footer-links">Media</a>
@@ -348,19 +371,18 @@
         </div>
 
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
-            <h2 id="social-header">Social Media</h2>
             <div id="social-content">
                 <div class="social-icon">
-                    <img src="images/instagram.png" alt="Instagram Icon">
+                    <img src="images/instagram-icon.svg" alt="Instagram Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/facebook.png" alt="Instagram Icon">
+                    <img src="images/facebook-icon.svg" alt="Facebook Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/tiktok.png" alt="Instagram Icon">
+                    <img src="images/tiktok-icon.svg" alt="Tiktok Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/x.png" alt="Instagram Icon">
+                    <img src="images/x-icon.svg" alt="X Icon">
                 </div>
             </div>
         </div>

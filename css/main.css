@@ -1,10 +1,44 @@
 @font-face {
   font-family: "ogg";
-  src: url(/fonts/fonnts.com-Ogg_Roman.ttf) format(TrueType);
+  src: url("../fonts/fonnts.com-Ogg_Roman.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ogg bold";
+  font-weight: bold;
+  src: url("../fonts/Ogg-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Baskervville";
-  src: url(/fonts/Baskervville-VariableFont_wght.ttf) format(TrueType);
+  src: url("../fonts/Baskervville-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "vipnagorgialla";
+  src: url("../fonts/Vipnagorgialla Rg.otf") format("opentype");
+}
+@font-face {
+  font-family: "utairline";
+  src: url("../fonts/UtAirlinesDemoRegular-JpOzB.otf") format("opentype");
+}
+@font-face {
+  font-family: "ogg";
+  src: url("../fonts/fonnts.com-Ogg_Roman.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ogg bold";
+  font-weight: bold;
+  src: url("../fonts/Ogg-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Baskervville";
+  src: url("../fonts/Baskervville-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "vipnagorgialla";
+  src: url("../fonts/Vipnagorgialla Rg.otf") format("opentype");
+}
+@font-face {
+  font-family: "utairline";
+  src: url("../fonts/UtAirlinesDemoRegular-JpOzB.otf") format("opentype");
 }
 * {
   text-decoration: none;
@@ -79,7 +113,7 @@ ul, li {
   height: 100vh;
   width: 200px;
   background-color: #0C0E0C;
-  font-family: "Ogg";
+  font-family: "ogg";
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   transform: translateX(100%);
   transition: transform 0.2s ease-in-out;
@@ -276,23 +310,13 @@ ul, li {
   justify-content: center;
 }
 
-#footer-logo {
-  margin-top: 25px;
-  width: 300px;
-}
-
-#footer-logo img {
-  width: 100%;
-}
-
 #footer-content {
-  gap: 50px;
+  gap: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
-  padding-left: 25px;
-  padding-right: 25px;
+  margin-top: 25px;
+  padding: 0px 25px;
 }
 
 #am-content, #services-content, #bk-content, #pro-content {
@@ -303,15 +327,17 @@ ul, li {
 }
 
 .footer-sub-headers {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
+  font-variant: small-caps;
+  font-family: "utairline";
+  letter-spacing: 3px;
   font-weight: 600;
-  color: white;
-  text-decoration: none;
+  color: #A08B63;
 }
 
 .footer-links {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-family: "utairline";
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -319,32 +345,45 @@ ul, li {
 
 .footer-links:hover, .footer-links:active {
   color: #A08B63;
-}
-
-#social-header {
-  margin-top: 100px;
-  font-size: 3rem;
-  color: white;
-  justify-self: center;
+  text-decoration: underline;
 }
 
 #social-content {
   display: flex;
   flex-direction: row;
-  justify-self: center;
-  gap: 10px;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 .social-icon {
-  margin-top: 25px;
-  width: 100%;
+  width: 45px;
   height: auto;
   cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon:active {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
 }
 
 .social-icon img {
-  width: 75px;
-  height: 75px;
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0px;
+  padding: 0px;
 }
 
 @media screen and (min-width: 768px) {
@@ -352,8 +391,8 @@ ul, li {
     background-color: #0C0E0C;
     height: auto;
     padding-bottom: 50px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
     justify-content: center;
   }
   #footer-logo {
@@ -363,10 +402,21 @@ ul, li {
   #footer-logo img {
     width: 100%;
   }
+  .footer-sub-headers {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .footer-links {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
   #footer-content {
     gap: 50px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 50px;
     padding: 0px;
@@ -374,18 +424,28 @@ ul, li {
   #social-content {
     display: flex;
     flex-direction: row;
-    justify-self: center;
-    gap: 50px;
+    justify-content: flex-end;
+    gap: 25px;
+    margin: 0 auto;
+    margin-top: 25px;
   }
   .social-icon {
-    margin-top: 25px;
-    width: 100%;
+    width: 50px;
     height: auto;
     cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .social-icon img {
-    width: 100px;
-    height: 100px;
+    display: block;
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 0px;
+    padding: 0px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -394,7 +454,7 @@ ul, li {
     height: auto;
     padding-left: 75px;
     padding-right: 75px;
-    padding-bottom: 100px;
+    padding-bottom: 75px;
   }
   #footer-logo {
     margin-top: 50px;
@@ -422,7 +482,6 @@ ul, li {
   .footer-sub-headers {
     font-size: 2rem;
     font-weight: 600;
-    color: white;
     text-decoration: none;
   }
   .footer-links {
@@ -444,18 +503,28 @@ ul, li {
   #social-content {
     display: flex;
     flex-direction: row;
-    justify-self: center;
-    gap: 50px;
+    justify-content: flex-end;
+    gap: 25px;
+    margin: 0 auto;
+    margin-top: 50px;
   }
   .social-icon {
-    margin-top: 25px;
-    width: 100%;
+    width: 50px;
     height: auto;
     cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .social-icon img {
-    width: 100px;
-    height: 100px;
+    display: block;
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 0px;
+    padding: 0px;
   }
 }
 #login-container {
@@ -1320,7 +1389,8 @@ html, body {
 }
 
 .hero-sub-heading {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  font-family: "ogg";
   font-weight: 600;
   text-align: center;
   color: white;
@@ -1477,6 +1547,7 @@ html, body {
 
 #om-text-block {
   background-color: #0C0E0C;
+  font-family: "utairline";
   max-width: 500px;
   height: auto;
   align-self: start;
@@ -1494,6 +1565,7 @@ html, body {
 
 #om-text {
   font-size: 1rem;
+  font-family: "utairline";
   line-height: 25px;
 }
 
@@ -1572,18 +1644,25 @@ html, body {
 .wo-block-headings, .ss-block-headings {
   color: #333223;
   font-size: 1.5rem;
+  font-family: "utairline";
+  font-weight: 600;
   padding: 10px 10px 0px 10px;
+  line-height: 30px;
 }
 
 .wo-block-texts, .ss-block-texts {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: "utairline";
+  line-height: 25px;
   padding: 10px;
+  font-weight: 400;
 }
 
 #wo-content-btn {
   margin-top: 50px;
   padding: 15px 25px;
+  font-family: "utairline";
   background-color: #A08B63;
   align-self: center;
   justify-self: center;
@@ -2227,7 +2306,7 @@ html, body {
   .wo-block-texts {
     color: white;
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   #gutter-2 {
     bottom: -75px;
@@ -2257,6 +2336,11 @@ html, body {
     order: 2;
     font-size: 4.5rem;
     justify-self: center;
+  }
+  .ss-block-texts {
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
   }
   #ss-content {
     margin-top: 50px;
@@ -2503,8 +2587,9 @@ body {
 }
 
 .content .name {
-  font-size: 4rem;
+  font-size: 3rem;
   text-transform: uppercase;
+  font-family: "vipnagorgialla";
   font-weight: bold;
   opacity: 0;
   animation: animate 1s ease-in-out 1 forwards;
@@ -2512,14 +2597,17 @@ body {
 
 .content .des {
   font-size: 2rem;
-  font-weight: 600;
+  font-family: "ogg";
+  font-weight: 800;
   margin: 10px 0 20px;
   opacity: 0;
   animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 
 .content button {
-  padding: 10px 25px;
+  padding: 5px 25px;
+  font-family: "ogg";
+  font-weight: 800;
   border: none;
   font-size: 1rem;
   background-color: #333223;
@@ -2582,11 +2670,14 @@ body {
 
 #bh-sub-heading {
   font-size: 1.5rem;
+  font-family: "utairline";
+  line-height: 30px;
 }
 
 .bh-text {
   color: white;
   font-size: 1rem;
+  font-family: "ogg";
   margin: 25px 0px;
   line-height: 25px;
   width: 100%;
@@ -2604,6 +2695,8 @@ body {
 #bh-btn {
   padding: 10px 15px;
   font-size: 1rem;
+  font-family: "utairline";
+  letter-spacing: 1px;
   font-weight: 600;
   color: white;
   background-color: #333223;
@@ -2628,7 +2721,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 25px;
   color: white;
-  text-align: center;
+  text-align: start;
 }
 
 #bd-content {
@@ -2642,6 +2735,8 @@ body {
 
 .bd-text {
   font-size: 1rem;
+  font-family: "ogg";
+  font-weight: 100;
   line-height: 25px;
   color: white;
   margin-bottom: 25px;
@@ -2650,6 +2745,8 @@ body {
 #bd-btn {
   align-self: center;
   font-size: 1.2rem;
+  font-family: "utairline";
+  letter-spacing: 1px;
   font-weight: 600;
   border: none;
   background-color: #0C0E0C;
@@ -2709,12 +2806,32 @@ model-viewer {
   width: 100%;
   height: 100%;
   z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 3px solid #333223;
 }
 
-#ba-heading {
-  color: white;
+.ba-gif {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+}
+
+#ba-heading-sub {
+  display: none;
+}
+
+#ba-heading-main {
+  display: block;
+}
+
+.ba-heading {
+  color: #333223;
   text-align: center;
-  font-size: 2.5rem;
+  font-family: "utairline";
+  font-size: 2.2rem;
   margin-bottom: 25px;
 }
 
@@ -2731,12 +2848,15 @@ model-viewer {
 
 #ba-nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 25px;
 }
 
 #ba-nav .ba-tab {
   position: relative;
   font-size: 1.5rem;
+  font-family: "utairline";
+  letter-spacing: 2px;
   font-weight: 600;
   color: white;
   border: none;
@@ -2775,28 +2895,30 @@ model-viewer {
   justify-self: center;
   color: white;
   font-size: 1rem;
-  padding: 0px 25px 50px 25px;
+  font-family: "ogg";
   width: 100%;
-  max-width: 475px;
+  max-width: 500px;
 }
 
 #ba-images {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: self-start;
   gap: 25px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .ba-img {
   width: 100%;
-  max-width: 500px;
-  height: 400px;
+  height: auto;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 5px solid transparent;
   border-radius: 10px;
   overflow: hidden;
-  margin: 0 auto;
 }
 
 .ba-img:hover {
@@ -2814,6 +2936,13 @@ model-viewer {
 }
 
 .ba-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#ba-model img, .ba-gif {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -2873,6 +3002,7 @@ model-viewer {
   flex: 0 0 30%;
   height: 25vw;
   max-height: 140px;
+  cursor: pointer;
 }
 
 .bg-img picture, .bg-img img {
@@ -3238,16 +3368,17 @@ model-viewer {
     height: 100%;
     z-index: 1;
   }
-  #ba-heading {
-    color: white;
+  .ba-heading {
+    color: #333223;
     text-align: center;
-    font-size: 3rem;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    font-family: "utairline";
+    font-size: 2.7rem;
     margin-bottom: 25px;
   }
   #ba-navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     position: relative;
     z-index: 10;
     width: 100%;
@@ -3256,11 +3387,14 @@ model-viewer {
   }
   #ba-nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 25px;
   }
   #ba-nav .ba-tab {
     position: relative;
     font-size: 2rem;
+    font-family: "utairline";
+    letter-spacing: 2px;
     font-weight: 600;
     color: white;
     border: none;
@@ -3291,25 +3425,21 @@ model-viewer {
   }
   #ba-text {
     justify-self: center;
-    margin-top: 25px;
     color: white;
     font-size: 1.2rem;
-    padding: 0px 0px 50px 0px;
+    font-family: "ogg";
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
   }
   #ba-images {
-    display: flex;
+    display: grid;
     flex-direction: row;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: self-start;
+    gap: 10px;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-  }
-  .ba-img {
-    width: 30vw;
-    height: 23vw;
   }
   #bob-gallery {
     position: relative;
@@ -3358,6 +3488,12 @@ model-viewer {
   }
 }
 @media screen and (min-width: 1200px) {
+  #ba-heading-sub {
+    display: block;
+  }
+  #ba-heading-main {
+    display: none;
+  }
   #bh-heading {
     display: none;
   }
@@ -3701,24 +3837,28 @@ model-viewer {
     align-self: center;
   }
   #bob-airplane {
+    position: relative;
     background-color: #A08B63;
-    padding: 50px 75px 200px 75px;
-  }
-  #ba-content {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    margin-bottom: 50px;
+    padding: 50px 25px 200px 25px;
   }
   #ba-model {
     position: relative;
-    height: 700px;
+    height: 600px;
     overflow: hidden;
     display: flex;
     align-items: end;
     justify-content: center;
+    width: 100%;
     max-width: unset;
+    margin: 0 auto;
     background-color: gray;
+    flex: 0 0 50%;
+  }
+  #ba-content {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    gap: 25px;
   }
   model-viewer {
     position: absolute;
@@ -3728,27 +3868,33 @@ model-viewer {
     height: 100%;
     z-index: 1;
   }
-  #ba-heading {
-    color: white;
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 25px;
-    max-width: unset;
+  .ba-heading {
+    color: #333223;
+    text-align: start;
+    font-family: "utairline";
+    font-size: 3vw;
   }
   #ba-navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     position: relative;
-    margin-top: 50px;
     z-index: 10;
+    width: 100%;
     max-width: unset;
+    margin-top: 0px;
   }
   #ba-nav {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    justify-content: flex-start;
+    gap: 25px;
+    padding-left: 5px;
   }
   #ba-nav .ba-tab {
     position: relative;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-family: "utairline";
+    letter-spacing: 2px;
     font-weight: 600;
     color: white;
     border: none;
@@ -3779,22 +3925,31 @@ model-viewer {
   }
   #ba-text {
     justify-self: center;
-    margin-top: 25px;
     color: white;
-    font-size: 1.5rem;
-    padding-bottom: 50px;
+    font-size: 1.2rem;
+    font-family: "ogg";
+    width: 100%;
     max-width: unset;
+    padding-left: 5px;
   }
   #ba-images {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: self-start;
+    gap: 10px;
+    width: 100%;
+    height: auto;
     max-width: unset;
+    z-index: 100;
   }
   .ba-img {
     width: 100%;
-    height: 23vw;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
   }
   #bob-gallery {
     position: relative;
@@ -4641,7 +4796,7 @@ model-viewer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Ogg";
+  font-family: "ogg";
   background: #A08B63;
   color: white;
   padding: 10vw 10vw;
