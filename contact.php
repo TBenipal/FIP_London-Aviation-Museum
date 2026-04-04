@@ -126,40 +126,37 @@
         
     </main>
 
-        <footer id="footer-section" class="grid-con">
-            <div id="footer-logo" class="col-start-1 m-col-start-2 m-col-end-9 l-col-start-2 l-col-end-12">
-                <img src="images/horizontal-logo.svg" alt="London Aviation Museum Logo">
+<footer id="footer-section" class="grid-con">
+        <div id="footer-content" class="col-span-full">
+            <div id="about-museum">
+                <h2 class="footer-sub-headers">About Museum</h2>
+                <div id="am-content">
+                    <a class="footer-links">Our Purpose</a>
+                    <a class="footer-links">Get To Know</a>
+                    <a class="footer-links">Plans</a>
+                    <a class="footer-links">Sustainability</a>
+                </div>
             </div>
-            <div id="footer-content" class="col-span-full m-col-start-2 m-col-end-8 l-col-start-2 l-col-end-12">
-                <div id="about-museum">
-                    <h2 class="footer-sub-headers">About Museum</h2>
-                    <div id="am-content">
-                        <a class="footer-links">Our Purpose</a>
-                        <a class="footer-links">Get To Know</a>
-                        <a class="footer-links">Plans</a>
-                        <a class="footer-links">Sustainability</a>
-                    </div>
-                </div>
 
-                <div id="services">
-                    <h2 class="footer-sub-headers">Services</h2>
-                    <div id="services-content">
-                        <a class="footer-links">Membership</a>
-                        <a class="footer-links">Way of Giving</a>
-                        <a class="footer-links">Donate</a>
-                        <a class="footer-links">Volunteer</a>
-                    </div>
+            <div id="services">
+                <h2 class="footer-sub-headers">Services</h2>
+                <div id="services-content">
+                    <a class="footer-links">Membership</a>
+                    <a class="footer-links">Way of Giving</a>
+                    <a class="footer-links">Donate</a>
+                    <a class="footer-links">Volunteer</a>
                 </div>
+            </div>
 
-                <div id="book-event">
-                    <h2 class="footer-sub-headers">Book Event</h2>
-                    <div id="bk-content">
-                        <a class="footer-links">Rental Options</a>
-                        <a class="footer-links">Catering Services</a>
-                    </div>
+            <div id="book-event">
+                <h2 class="footer-sub-headers">Book Event</h2>
+                <div id="bk-content">
+                    <a class="footer-links">Rental Options</a>
+                    <a class="footer-links">Catering Services</a>
                 </div>
+            </div>
 
-                <div id="professionals">
+            <div id="professionals">
                     <h2 class="footer-sub-headers">Professionals</h2>
                     <div id="pro-content">
                         <a class="footer-links">Media</a>
@@ -171,19 +168,18 @@
         </div>
 
         <div id="social" class="col-span-full l-col-start-1 l-col-end-13">
-            <h2 id="social-header">Social Media</h2>
             <div id="social-content">
                 <div class="social-icon">
-                    <img src="images/instagram.png" alt="Instagram Icon">
+                    <img src="images/instagram-icon.svg" alt="Instagram Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/facebook.png" alt="Instagram Icon">
+                    <img src="images/facebook-icon.svg" alt="Facebook Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/tiktok.png" alt="Instagram Icon">
+                    <img src="images/tiktok-icon.svg" alt="Tiktok Icon">
                 </div>
                 <div class="social-icon">
-                    <img src="images/x.png" alt="Instagram Icon">
+                    <img src="images/x-icon.svg" alt="X Icon">
                 </div>
             </div>
         </div>

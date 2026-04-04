@@ -21,38 +21,46 @@ export function bobairplane() {
         tab.addEventListener("click", function () {
             tabs.forEach(t => t.classList.remove("active"));
             this.classList.add("active");
-            textContainer.innerHTML = "";
-            const template = document.querySelector(`#${this.dataset.content}`);
-            if (template) {
-                textContainer.appendChild(template.content.cloneNode(true));
+
+            const activeThumbnail = document.querySelector('.ba-img.active');
+            if (activeThumbnail) {
+                loadContent(activeThumbnail);
             }
         });
     });
-}
 
-function loadContent(thumbnail) {
-    const modelViewer = document.querySelector('#ba-model model-viewer');
-    const textContainer = document.querySelector('#ba-text');
-    const newModelSrc = thumbnail.dataset.model;
-    const templateId = thumbnail.dataset.template || "name";
+    function loadContent(thumbnail) {
+        const modelViewer = document.querySelector('#ba-model model-viewer');
+        const textContainer = document.querySelector('#ba-text');
+        const headings = document.querySelectorAll('.ba-heading');
 
-    if (newModelSrc) {
-        modelViewer.src = newModelSrc;
+        const newModelSrc = thumbnail.dataset.model;
+        const modelId = thumbnail.dataset.id;
+        const title = thumbnail.dataset.title;
 
-        modelViewer.style.opacity = "0.6";
-        modelViewer.addEventListener('load', () => {
-            modelViewer.style.opacity = "1";
-        }, { once: true });
+        if (title) {
+            headings.forEach(h => h.textContent = title);
+        }
 
-        modelViewer.addEventListener('error', (e) => {
-            modelViewer.style.opacity = "1";
-        }, { once: true });
-    }
-    textContainer.innerHTML = "";
-    const template = document.querySelector(`#${templateId}`);
-    if (template) {
-        textContainer.appendChild(template.content.cloneNode(true));
-    } else {
-        textContainer.innerHTML = `<p>Template "${templateId}" not found.</p>`;
+        const activeTab = document.querySelector('.ba-tab.active');
+        const tabType = activeTab ? activeTab.dataset.content : "mechanic";
+
+
+        const templateId = modelId === "1" 
+            ? tabType 
+            : `${tabType}-${modelId}`;
+
+        if (newModelSrc) {
+            modelViewer.src = newModelSrc;
+        }
+
+        textContainer.innerHTML = "";
+        const template = document.querySelector(`#${templateId}`);
+
+        if (template) {
+            textContainer.appendChild(template.content.cloneNode(true));
+        } else {
+            textContainer.innerHTML = `<p>No content found.</p>`;
+        }
     }
 }

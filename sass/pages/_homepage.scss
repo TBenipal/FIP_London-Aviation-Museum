@@ -61,25 +61,7 @@ html, body {
     animation: arrow-bounce 2s infinite;
 }
 
-// // Slider Version
-
-// // .scroll-arrow {
-// //     display: none;
-// // }
-
-// // #hero-container {
-// //     position: relative;
-// //     background-color: a.$primary-color;
-// //     height: 47vh;
-// // }
-
-// // #lp-player {
-// //     width: 100%;
-// //     height: 47vh;
-// //     object-fit: cover;
-// // }
-
-  .slide-prev, .slide-next {
+.slide-prev, .slide-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -90,7 +72,7 @@ html, body {
     padding: 10px 15px;
     cursor: pointer;
     z-index: 10;
-  }
+    }
 
 .slide-prev { 
     left: 10px; 
@@ -99,33 +81,6 @@ html, body {
 .slide-next { 
     right: 10px; 
 }
-
-
-// // #hs-container {
-// //     position: relative;
-// //     overflow: hidden;
-// //     padding: 0px;
-// //     margin-bottom: 25px;
-// // }
-
-// // #hs-slider {
-// //     display: flex;
-// //     flex-direction: row;
-// //     overflow-x: hidden;
-// //     scroll-behavior: smooth;
-// //     gap: 0;
-// //     margin-top: 50px;
-// // }
-
-
-// // .hero-sub-container {
-// //     display: flex;
-// //     flex-direction: column;
-// //     flex: 0 0 100%;   /* THIS is the important fix */
-// //     flex-shrink: 0;
-// //     padding: 0 25px;
-// //     gap: 10px;
-// // }
 
 
 #hs-container {
@@ -174,7 +129,8 @@ html, body {
 }
 
 .hero-sub-heading {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-family: a.$primary-font;
     font-weight: 600;
     text-align: center;
     color: white;
@@ -283,6 +239,7 @@ html, body {
 #mobile-om-heading {
     text-align: center;
     margin-top: 50px;
+    // font-family: a.$secondary-font;
     font-size: 3rem;
     color: white;
     margin-bottom: 25px;
@@ -330,6 +287,7 @@ html, body {
 
 #om-text-block {
     background-color: a.$primary-color;
+    font-family: a.$secondary-font;
     max-width: 500px;
     height: auto;
     align-self: start;
@@ -347,6 +305,7 @@ html, body {
 
 #om-text {
     font-size: 1rem;
+    font-family: a.$secondary-font;
     line-height: 25px;
 }
 
@@ -426,18 +385,25 @@ html, body {
 .wo-block-headings, .ss-block-headings {
     color: a.$secondary-color;
     font-size: 1.5rem;
+    font-family: a.$secondary-font;
+    font-weight: 600;
     padding: 10px 10px 0px 10px;
+    line-height: 30px;
 }
 
 .wo-block-texts, .ss-block-texts {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-family: a.$secondary-font;
+    line-height: 25px;
     padding: 10px;
+    font-weight: 400;
 }
 
 #wo-content-btn {
     margin-top: 50px;
     padding: 15px 25px;
+    font-family: a.$secondary-font;
     background-color: a.$accent-color;
     align-self: center;
     justify-self: center;
@@ -1244,7 +1210,7 @@ html, body {
     .wo-block-texts {
         color: white;
         padding: 10px;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     #gutter-2 {
@@ -1278,6 +1244,12 @@ html, body {
         order: 2;
         font-size: 4.5rem;
         justify-self: center;
+    }
+
+    .ss-block-texts {
+        color: white;
+        padding: 10px;
+        font-size: 1.2rem;
     }
 
     #ss-content {
