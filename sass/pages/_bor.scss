@@ -32,6 +32,7 @@
 .bor-text {
     color: white;
     font-size: 1rem;
+    font-family: a.$secondary-font;
     line-height: 27px;
     margin: 0 auto;
     width: 100%;
@@ -127,12 +128,14 @@
 .book-sub-heading {
     color: white;
     font-size: 1.3rem;
+    font-family: a.$secondary-font;
     font-weight: 600;
 }
 
 .book-heading {
     color: a.$secondary-color;
     font-size: 2rem;
+    font-family: a.$secondary-font;
     font-weight: 800;
 }
 
@@ -144,6 +147,7 @@
 .book-text {
     color: white;
     font-size: 1.2rem;
+    font-family: a.$secondary-font;
 }
 
 .book-points {

@@ -33,8 +33,8 @@
 
             <nav id="sidebar">
                 <ul>
-                    <li class="nav-item"><a href="index.php" class="active">Home</a></li>
-                    <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
+                    <li class="nav-item"><a href="index.php">Home</a></li>
+                    <li class="nav-item"><a href="battle-of-britain.php" class="active">Battle of Britian</a></li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
                     <li class="nav-item"><a href="contact.php">Contact</a></li>

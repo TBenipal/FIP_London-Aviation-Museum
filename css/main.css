@@ -2409,23 +2409,25 @@ body {
 }
 
 .hero-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background-color: #0C0E0C;
   width: 100%;
-  height: 93vh;
+  height: auto;
   border-radius: 0;
   overflow: hidden;
   margin: 0 auto;
 }
 
 .preview-row {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
+  position: relative;
+  bottom: unset;
+  left: unset;
   top: unset;
   right: unset;
   display: flex;
-  gap: 35px;
+  gap: 17px;
   overflow-x: scroll;
   overflow-y: auto;
   padding: 25px 0px;
@@ -2433,6 +2435,7 @@ body {
   max-width: unset;
   height: auto;
   z-index: 100;
+  margin: 5px 25px;
 }
 
 .preview-row .item {
@@ -2471,15 +2474,18 @@ body {
 }
 
 .active-display {
-  position: absolute;
+  position: relative;
+  width: 100%;
+  height: 65vh;
   inset: 0;
   background-size: cover;
   background-position: center top;
   z-index: 1;
+  flex-shrink: 0;
 }
 
 .grow-clone {
-  position: absolute;
+  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2498,12 +2504,11 @@ body {
 }
 
 .grow-clone {
-  position: absolute;
+  position: relative;
   top: 0%;
   left: 100px;
   width: 350px;
   color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .preview-row::-webkit-scrollbar {
@@ -2512,15 +2517,9 @@ body {
 }
 
 .preview-row::-webkit-scrollbar-thumb {
-  background-color: #0C0E0C;
+  background-color: #A08B63;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.active-display {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
 }
 
 .grow-clone {
@@ -2545,13 +2544,12 @@ body {
 
 .clone-content {
   position: absolute;
-  bottom: 35%;
+  bottom: 10%;
   left: 25px;
   width: 100%;
-  max-width: unset;
+  max-width: 500px;
   margin: 0 auto;
   color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .clone-content .name,
@@ -2608,19 +2606,21 @@ body {
 
 .content button {
   padding: 5px 25px;
-  font-family: "ogg";
-  font-weight: 800;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "utairline";
   background-color: #333223;
   color: white;
   cursor: pointer;
   opacity: 0;
-  animation: animate 1s ease-in-out 0.6s 1 forwards;
+  animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
-
 .content button:hover {
   background-color: #0C0E0C;
+}
+.content button {
+  margin-top: 10px;
 }
 
 @keyframes animate {
@@ -3032,16 +3032,25 @@ model-viewer {
 
 @media screen and (min-width: 768px) {
   #bob-hero {
+    position: relative;
     background-color: #0C0E0C;
     display: flex;
     justify-content: end;
     height: 100vh;
     overflow: hidden;
     width: 100%;
-    padding: 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+  .bob-slider {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    height: 100%;
+    width: 100%;
   }
   .hero-container {
-    position: relative;
+    display: flex;
+    flex-direction: row;
     background-color: #0C0E0C;
     width: 100%;
     height: 90%;
@@ -3049,37 +3058,42 @@ model-viewer {
     overflow: hidden;
   }
   .preview-row {
-    position: absolute;
-    top: 8%;
-    right: 25px;
+    align-self: center;
+    position: relative;
     left: unset;
     transform: translateX(0%);
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 50px;
     overflow-x: auto;
     overflow-y: scroll;
+    direction: rtl;
     padding: 25px;
     width: auto;
     max-width: unset;
-    height: 725px;
+    height: 100%;
     z-index: 100;
+    order: 1;
+    margin-top: 75px;
   }
   .preview-row .item {
-    width: 140px;
-    height: 200px;
+    width: 125px;
+    height: 160px;
     border-radius: 15px;
     flex-shrink: 0;
     cursor: pointer;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
+    margin-top: -5px;
   }
   .preview-row .item img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
     pointer-events: none;
     display: block;
   }
@@ -3095,11 +3109,12 @@ model-viewer {
     display: none;
   }
   .active-display {
-    position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center top;
+    height: 100vh;
     z-index: 1;
+    order: 2;
   }
   .grow-clone {
     position: absolute;
@@ -3120,23 +3135,22 @@ model-viewer {
   }
   .grow-clone .clone-content {
     position: absolute;
-    top: 50%;
-    left: 75px;
-    transform: translateY(-50%);
-    width: 350px;
+    top: 75%;
+    left: 50px;
+    width: auto;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
   .preview-row::-webkit-scrollbar {
-    display: none;
-    height: 10px;
+    display: block;
+    width: 5px;
   }
   .preview-row::-webkit-scrollbar-thumb {
-    background-color: #0C0E0C;
+    background-color: #A08B63;
     border-radius: 10px;
   }
   .active-display {
-    position: absolute;
+    position: relative;
+    flex: 1;
     inset: 0;
     z-index: 1;
   }
@@ -3165,7 +3179,6 @@ model-viewer {
     transform: translateY(-50%);
     width: 350px;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
   .clone-content .name,
   .clone-content .des,
@@ -3198,7 +3211,7 @@ model-viewer {
     color: black;
   }
   .content .name {
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
     opacity: 0;
@@ -3211,17 +3224,22 @@ model-viewer {
     animation: animate 1s ease-in-out 0.3s 1 forwards;
   }
   .content button {
-    padding: 10px 25px;
+    padding: 5px 25px;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "utairline";
     background-color: #333223;
     color: white;
     cursor: pointer;
     opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
   }
   .content button:hover {
     background-color: #0C0E0C;
+  }
+  .content button {
+    margin-top: 10px;
   }
   .nav-buttons {
     width: 100%;
@@ -3316,7 +3334,7 @@ model-viewer {
     width: 100%;
     height: auto;
     background-color: #333223;
-    padding: 50px 25px 50px 25px;
+    padding: 50px 75px 50px 75px;
   }
   #bd-heading {
     text-align: start;
@@ -3515,23 +3533,23 @@ model-viewer {
   #bd-heading {
     display: block;
   }
-  #bh-heading {
-    display: none;
-  }
-  #des-bh-heading {
-    display: block;
-  }
   #bob-hero {
+    position: relative;
     background-color: #0C0E0C;
     display: flex;
     justify-content: end;
     height: 100vh;
     overflow: hidden;
     width: 100%;
-    padding: 0 0px;
+    padding: 0px 75px 0px 50px;
+  }
+  .bob-slider {
+    display: flex;
+    gap: 25px;
+    height: 100%;
+    margin: 0 auto;
   }
   .hero-container {
-    position: relative;
     background-color: #0C0E0C;
     width: 100%;
     height: 90%;
@@ -3539,35 +3557,43 @@ model-viewer {
     overflow: hidden;
   }
   .preview-row {
-    position: absolute;
-    top: 8%;
-    right: 25px;
+    align-self: center;
+    position: relative;
+    left: unset;
+    transform: translateX(0%);
     display: flex;
     flex-direction: column;
     gap: 35px;
     overflow-x: auto;
     overflow-y: scroll;
-    padding: 0px 25px;
+    direction: rtl;
+    padding: 25px;
     width: auto;
-    height: 725px;
+    max-width: unset;
+    height: 100%;
     z-index: 100;
+    order: 1;
+    margin-top: 50px;
   }
   .preview-row .item {
-    width: 140px;
-    height: 200px;
+    width: 180px;
+    height: 240px;
     border-radius: 15px;
     flex-shrink: 0;
     cursor: pointer;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: -7px;
+    margin-bottom: 15px;
   }
   .preview-row .item img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
     pointer-events: none;
     display: block;
   }
@@ -3577,21 +3603,21 @@ model-viewer {
   }
   .preview-row .item.active {
     transform: scale(1.15);
-    border: 3px solid #A08B63;
+    border: 4px solid #A08B63;
   }
   .preview-row .item .content {
     display: none;
   }
   .active-display {
-    position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center top;
     z-index: 1;
+    order: 2;
   }
   .grow-clone {
     position: absolute;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
@@ -3608,23 +3634,23 @@ model-viewer {
   }
   .grow-clone .clone-content {
     position: absolute;
-    top: 50%;
-    left: 100px;
-    transform: translateY(-50%);
-    width: 350px;
+    top: 60%;
+    left: 75px;
+    width: 100%;
+    max-width: 500px;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
   .preview-row::-webkit-scrollbar {
     display: block;
     width: 5px;
   }
   .preview-row::-webkit-scrollbar-thumb {
-    background-color: #0C0E0C;
+    background-color: #A08B63;
     border-radius: 10px;
   }
   .active-display {
-    position: absolute;
+    position: relative;
+    flex: 1;
     inset: 0;
     z-index: 1;
   }
@@ -3648,12 +3674,10 @@ model-viewer {
   }
   .clone-content {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 100px;
     transform: translateY(-50%);
-    width: 350px;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
   .clone-content .name,
   .clone-content .des,
@@ -3686,7 +3710,7 @@ model-viewer {
     color: black;
   }
   .content .name {
-    font-size: 4rem;
+    font-size: 3rem;
     text-transform: uppercase;
     font-weight: bold;
     opacity: 0;
@@ -3699,17 +3723,22 @@ model-viewer {
     animation: animate 1s ease-in-out 0.3s 1 forwards;
   }
   .content button {
-    padding: 10px 25px;
+    padding: 5px 25px;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "utairline";
     background-color: #333223;
     color: white;
     cursor: pointer;
     opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
   }
   .content button:hover {
     background-color: #0C0E0C;
+  }
+  .content button {
+    margin-top: 10px;
   }
   .nav-buttons {
     width: 100%;
@@ -3742,6 +3771,12 @@ model-viewer {
       transform: translate(0);
       filter: blur(0);
     }
+  }
+  #bh-heading {
+    display: none;
+  }
+  #des-bh-heading {
+    display: block;
   }
   #bh-img {
     height: 600px;
@@ -5619,6 +5654,7 @@ model-viewer {
 .bor-text {
   color: white;
   font-size: 1rem;
+  font-family: "utairline";
   line-height: 27px;
   margin: 0 auto;
   width: 100%;
@@ -5716,12 +5752,14 @@ model-viewer {
 .book-sub-heading {
   color: white;
   font-size: 1.3rem;
+  font-family: "utairline";
   font-weight: 600;
 }
 
 .book-heading {
   color: #333223;
   font-size: 2rem;
+  font-family: "utairline";
   font-weight: 800;
 }
 
@@ -5733,6 +5771,7 @@ model-viewer {
 .book-text {
   color: white;
   font-size: 1.2rem;
+  font-family: "utairline";
 }
 
 .book-points {
