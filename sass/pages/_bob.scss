@@ -10,6 +10,7 @@ body {
     display: none;
 }
 
+
 #bob-hero {
     background-color: a.$primary-color;
     display: flex;
@@ -20,25 +21,28 @@ body {
     padding: 0px 0px;
 }
 
+
 .hero-container {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-color: a.$primary-color;
     width: 100%;
     // max-width: 600px;
-    height: 93vh;
+    height: auto;
     border-radius: 0;
     overflow: hidden;
     margin: 0 auto;
 }
 
 .preview-row {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
+    position: relative;
+    bottom: unset;
+    left: unset;
     top: unset;
     right: unset;
     display: flex;
-    gap: 35px;
+    gap: 17px;
     overflow-x: scroll;
     overflow-y: auto;
     padding: 25px 0px;
@@ -46,6 +50,7 @@ body {
     max-width: unset;
     height: auto;
     z-index: 100;
+    margin: 5px 25px;
 }
 
 .preview-row .item {
@@ -83,15 +88,18 @@ body {
 }
 
 .active-display {
-    position: absolute;
+    position: relative;
+    width: 100%;
+    height: 65vh;
     inset: 0;
     background-size: cover;
     background-position: center top;
     z-index: 1;
+    flex-shrink: 0;
 }
 
 .grow-clone {
-    position: absolute;
+    position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -110,12 +118,11 @@ body {
 }
 
 .grow-clone {
-    position: absolute;
+    position: relative;
     top: 0%;
     left: 100px;
     width: 350px;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
 .preview-row::-webkit-scrollbar {
@@ -124,15 +131,9 @@ body {
 }
 
 .preview-row::-webkit-scrollbar-thumb {
-    background-color: a.$primary-color;
+    background-color: a.$accent-color;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.active-display {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
 }
 
 .grow-clone {
@@ -157,13 +158,12 @@ body {
 
 .clone-content {
     position: absolute;
-    bottom: 35%;
+    bottom: 10%;
     left: 25px;
     width: 100%;
-    max-width: unset;
+    max-width: 500px;
     margin: 0 auto;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
 .clone-content .name,
@@ -220,19 +220,17 @@ body {
 
 .content button {
     padding: 5px 25px;
-    font-family: a.$primary-font;
-    font-weight: 800;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: a.$secondary-font;
     background-color: a.$secondary-color;
     color: white;
     cursor: pointer;
     opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
-
-.content button:hover {
-    background-color: a.$primary-color;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    &:hover { background-color: a.$primary-color; }
+    margin-top: 10px;
 }
 
 
@@ -645,17 +643,28 @@ model-viewer {
 @media screen and (min-width: 768px) {
 
     #bob-hero {
+        position: relative;
         background-color: a.$primary-color;
         display: flex;
         justify-content: end;
         height: 100vh;
         overflow: hidden;
         width: 100%;
-        padding: 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+
+    .bob-slider {
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+        height: 100%;
+        width: 100%;
+
     }
 
     .hero-container {
-        position: relative;
+        display: flex;
+        flex-direction: row;
         background-color: a.$primary-color;
         width: 100%;
         height: 90%;
@@ -664,38 +673,42 @@ model-viewer {
     }
 
     .preview-row {
-        position: absolute;
-        top: 8%;
-        right: 25px;
+        align-self: center;
+        position: relative;
         left: unset;
         transform: translateX(-0%);
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 50px;
         overflow-x: auto;
         overflow-y: scroll;
+        direction: rtl;
         padding: 25px;
         width: auto;
         max-width: unset;
-        height: 725px;
+        height: 100%;
         z-index: 100;
+        order: 1;
+        margin-top: 75px;
     }
 
     .preview-row .item {
-        width: 140px;
-        height: 200px;
+        width: 125px;
+        height: 160px;
         border-radius: 15px;
         flex-shrink: 0;
         cursor: pointer;
         position: relative;
         transition: transform 0.3s, box-shadow 0.3s;
         overflow: hidden;
+        margin-top: -5px;
     }
 
     .preview-row .item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top;
         pointer-events: none;
         display: block;
     }
@@ -715,11 +728,12 @@ model-viewer {
     }
 
     .active-display {
-        position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center top;
+        height: 100vh;
         z-index: 1;
+        order: 2;
     }
 
     .grow-clone {
@@ -743,26 +757,25 @@ model-viewer {
 
     .grow-clone .clone-content {
         position: absolute;
-        top: 50%;
-        left: 75px;
-        transform: translateY(-50%);
-        width: 350px;
+        top: 75%;
+        left: 50px;
+        width: auto;
         color: #fff;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .preview-row::-webkit-scrollbar {
-        display: none;
-        height: 10px;
+        display: block;
+        width: 5px;
     }
 
     .preview-row::-webkit-scrollbar-thumb {
-        background-color: a.$primary-color;
+        background-color: a.$accent-color;
         border-radius: 10px;
     }
 
     .active-display {
-        position: absolute;
+        position: relative;
+        flex: 1;
         inset: 0;
         z-index: 1;
     }
@@ -794,7 +807,6 @@ model-viewer {
         transform: translateY(-50%);
         width: 350px;
         color: #fff;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .clone-content .name,
@@ -832,7 +844,7 @@ model-viewer {
     }
 
     .content .name {
-        font-size: 4rem;
+        font-size: 2.5rem;
         text-transform: uppercase;
         font-weight: bold;
         opacity: 0;
@@ -847,15 +859,18 @@ model-viewer {
     }
 
     .content button {
-        padding: 10px 25px;
+        padding: 5px 25px;
         border: none;
-        font-size: 1rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: a.$secondary-font;
         background-color: a.$secondary-color;
         color: white;
         cursor: pointer;
         opacity: 0;
-        animation: animate 1s ease-in-out 0.6s 1 forwards;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
         &:hover { background-color: a.$primary-color; }
+        margin-top: 10px;
     }
 
     .nav-buttons {
@@ -961,7 +976,7 @@ model-viewer {
         width: 100%;
         height: auto;
         background-color: a.$secondary-color;
-        padding: 50px 25px 50px 25px;
+        padding: 50px 75px 50px 75px;
     }
 
     #bd-heading {
@@ -1193,27 +1208,25 @@ model-viewer {
         display: block;
     }
 
-    #bh-heading {
-        display: none;
-    }
-
-    #des-bh-heading {
-        display: block;
-    }
-
-
     #bob-hero {
+        position: relative;
         background-color: a.$primary-color;
         display: flex;
         justify-content: end;
         height: 100vh;
         overflow: hidden;
         width: 100%;
-        padding: 0 0px;
+        padding: 0px 75px 0px 50px;
     }
 
+    .bob-slider {
+        display: flex;
+        gap: 25px;
+        height: 100%;
+        margin: 0 auto;
+
+    }
     .hero-container {
-        position: relative;
         background-color: a.$primary-color;
         width: 100%;
         height: 90%;
@@ -1222,36 +1235,43 @@ model-viewer {
     }
 
     .preview-row {
-        position: absolute;
-        top: 8%;
-        right: 25px;
+        align-self: center;
+        position: relative;
+        left: unset;
+        transform: translateX(-0%);
         display: flex;
         flex-direction: column;
         gap: 35px;
         overflow-x: auto;
         overflow-y: scroll;
-        padding: 0px 25px;
+        direction: rtl;
+        padding: 25px;
         width: auto;
-        height: 725px;
+        max-width: unset;
+        height: 100%;
         z-index: 100;
+        order: 1;
+        margin-top: 50px;
     }
 
     .preview-row .item {
-        width: 140px;
-        height: 200px;
+        width: 180px;
+        height: 240px;
         border-radius: 15px;
         flex-shrink: 0;
         cursor: pointer;
         position: relative;
         transition: transform 0.3s, box-shadow 0.3s;
         overflow: hidden;
-        margin-top: 15px;
+        margin-top: -7px;
+        margin-bottom: 15px;
     }
 
     .preview-row .item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top;
         pointer-events: none;
         display: block;
     }
@@ -1263,7 +1283,7 @@ model-viewer {
 
     .preview-row .item.active {
         transform: scale(1.15);
-        border: 3px solid a.$accent-color;
+        border: 4px solid a.$accent-color;
     }
 
     .preview-row .item .content {
@@ -1271,20 +1291,16 @@ model-viewer {
     }
 
     .active-display {
-        position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center top;
         z-index: 1;
+        order: 2;
     }
-
-    // .active-display #pilot-5 {
-    //     background-position: center;
-    // }
 
     .grow-clone {
         position: absolute;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         z-index: 0;
@@ -1303,12 +1319,11 @@ model-viewer {
 
     .grow-clone .clone-content {
         position: absolute;
-        top: 50%;
-        left: 100px;
-        transform: translateY(-50%);
-        width: 350px;
+        top: 60%;
+        left: 75px;
+        width: 100%;
+        max-width: 500px;
         color: #fff;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .preview-row::-webkit-scrollbar {
@@ -1317,12 +1332,13 @@ model-viewer {
     }
 
     .preview-row::-webkit-scrollbar-thumb {
-        background-color: a.$primary-color;
+        background-color: a.$accent-color;
         border-radius: 10px;
     }
 
     .active-display {
-        position: absolute;
+        position: relative;
+        flex: 1;
         inset: 0;
         z-index: 1;
     }
@@ -1349,12 +1365,10 @@ model-viewer {
 
     .clone-content {
         position: absolute;
-        top: 50%;
+        top: 75%;
         left: 100px;
         transform: translateY(-50%);
-        width: 350px;
         color: #fff;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .clone-content .name,
@@ -1392,7 +1406,7 @@ model-viewer {
     }
 
     .content .name {
-        font-size: 4rem;
+        font-size: 3rem;
         text-transform: uppercase;
         font-weight: bold;
         opacity: 0;
@@ -1407,15 +1421,18 @@ model-viewer {
     }
 
     .content button {
-        padding: 10px 25px;
+        padding: 5px 25px;
         border: none;
-        font-size: 1rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: a.$secondary-font;
         background-color: a.$secondary-color;
         color: white;
         cursor: pointer;
         opacity: 0;
-        animation: animate 1s ease-in-out 0.6s 1 forwards;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
         &:hover { background-color: a.$primary-color; }
+        margin-top: 10px;
     }
 
     .nav-buttons {
@@ -1452,6 +1469,15 @@ model-viewer {
             filter: blur(0);
         }
     }
+
+    #bh-heading {
+        display: none;
+    }
+
+    #des-bh-heading {
+        display: block;
+    }
+
 
     #bh-img {
         height: 600px;

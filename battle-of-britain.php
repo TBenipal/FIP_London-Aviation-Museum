@@ -76,48 +76,55 @@
                 <div class="active-display"></div>
 
                 <div class="preview-row">
-                    <div class="item">
-                    <img src="images/Bob/des-pilot-1.jpg" alt="Switzerland" />
-                    <div class="content">
-                        <h2 class="name">Smith R.Reilley</h2>
-                        <p class="des">Position: </p>
-                        <button>See More</button>
+                    <div id="pilot-1" class="item focus-none">
+                        <picture>
+                            <source srcset="images/Bob/des-pilot-1.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Bob/des-pilot-1.jpg" media="(max-width: 1199px)">
+                            <img src="images/Bob/des-pilot-1.jpg" alt="Smith R.Reilley" />
+                        </picture>
+                        <div class="content">
+                            <h2 class="name">Smith R.Reilley</h2>
+                            <!-- <p class="des">Position: </p> -->
+                            <button>See More</button>
+                        </div>
                     </div>
+                    <div id="pilot-2" class="item">
+                        <picture>
+                            <source srcset="images/Bob/Verschoyle Philip Cronyn.jpg" media="(max-width: 767px)">
+                            <source srcset="images/Bob/Verschoyle Philip Cronyn.jpg" media="(max-width: 1199px)">
+                            <img src="images/Bob/Verschoyle Philip Cronyn.jpg" alt="Smith R.Reilley" />
+                        </picture>
+                        <div class="content">
+                            <h2 class="name">Verschoyle Philip Cronyn</h2>
+                            <!-- <p class="des">Position: </p> -->
+                            <button>See More</button>
+                        </div>
                     </div>
-                    <div class="item">
-                    <img src="images/Bob/des-pilot-2.jpg" alt="Pilot 2" />
-                    <div class="content">
-                        <h2 class="name">Ernest McNab</h2>
-                        <p class="des">Position: </p>
-                        <button>See More</button>
+                    <div id="pilot-3" class="item">
+                        <img src="images/Bob/Smither.jpg" alt="Pilot 3" />
+                        <div class="content">
+                            <h2 class="name">Smither</h2>
+                            <!-- <p class="des">Position: </p> -->
+                            <button>See More</button>
+                        </div>
                     </div>
-                    </div>
-                    <div class="item">
-                    <img src="images/Bob/des-pilot-3.jpg" alt="Pilot 3" />
-                    <div class="content">
-                        <h2 class="name">Smither</h2>
-                        <p class="des">Position: </p>
-                        <button>See More</button>
-                    </div>
-                    </div>
-                    <div class="item">
-                    <img src="images/Bob/des-pilot-4.jpg" alt="Pilot 4" />
-                    <div class="content">
-                        <h2 class="name">Campbell N.N.</h2>
-                        <p class="des">Position: </p>
-                        <button>See More</button>
-                    </div>
+                    <div id="pilot-4" class="item">
+                        <img src="images/Bob/p3.jpg" alt="Pilot 4" />
+                        <div class="content">
+                            <h2 class="name">John William.</h2>
+                            <!-- <p class="des">Position: </p> -->
+                            <button>See More</button>
+                        </div>
                     </div>
                     <div id="pilot-5" class="item">
-                    <img src="images/Bob/des-pilot-5.jpg" alt="Pilot 5" />
-                    <div class="content">
-                        <h2 class="name">Grassick</h2>
-                        <p class="des">Position: </p>
-                        <button>See More</button>
-                    </div>
+                        <img src="images/Bob/Grassick.jpg" alt="Pilot 5" />
+                        <div class="content">
+                            <h2 class="name">Grassick</h2>
+                            <!-- <p class="des">Position: </p> -->
+                            <button>See More</button>
+                        </div>
                     </div>
                 </div>
-
                 </div>
             </div>
         </section>
