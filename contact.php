@@ -103,6 +103,7 @@
             </form>
 
             <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit !</button>
+            <div id="contact-feedback" class="col-span-full"></div>
         </section>
 
         <section id="newsletter" class="grid-con">
@@ -119,6 +120,7 @@
                         <br>
                     </div>
                     <button id="nl-subscribe">Subscribe</button>
+                    <div id="nl-feedback"></div>
                 </form>
             </div>
 
