@@ -1,18 +1,12 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 header('Content-Type: application/json');
-
-
 require_once __DIR__ . '/database.php';
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $name_raw  = $_POST['nl_name']  ?? '';
-    $email_raw = $_POST['nl_email'] ?? '';
+    
+    $name_raw  = $_POST['first_name'] ?? '';
+    $email_raw = $_POST['email']      ?? '';
 
     $name        = trim(strip_tags($name_raw));
     $email_clean = str_replace(["\r", "\n", "%0a", "%0d"], '', trim($email_raw));
@@ -22,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($name === '') $fail[] = 'Name is required.';
     if (!$email)      $fail[] = 'A valid email is required.';
-
 
     if (!empty($fail)) {
         echo json_encode(['errors' => $fail]);
@@ -39,23 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':name'  => $name,
             ':email' => $email,
         ]);
-
-        echo json_encode([
-            'message' => "You're subscribed! Thanks for joining our newsletter."
-        ]);
+        echo json_encode(['message' => "You're subscribed! Thanks for joining our newsletter."]);
         exit;
 
     } catch (PDOException $e) {
-        // Duplicate email
         if ($e->getCode() == 23000) {
-            echo json_encode([
-                'message' => "This email is already subscribed."
-            ]);
+            echo json_encode(['message' => 'This email is already subscribed.']);
             exit;
         }
-        echo json_encode([
-            'errors' => ['Subscription failed. Please try again.']
-        ]);
+        echo json_encode(['errors' => ['Subscription failed. Please try again.']]);
         exit;
     }
 

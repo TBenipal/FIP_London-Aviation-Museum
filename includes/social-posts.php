@@ -102,6 +102,52 @@ try {
         http_response_code(201);
         echo json_encode(['message' => 'Post created.', 'id' => $db->lastInsertId()]);
 
+    } elseif ($method === 'PUT') {
+        requireAdmin();
+        if (!$id) {
+            echo json_encode(['error' => 'ID required']);
+            exit;
+        }
+
+        // I only update text fields on edit — media replacement requires a new upload
+        $data     = json_decode(file_get_contents('php://input'), true);
+        $platform = $data['platform'] ?? '';
+        $caption  = trim($data['caption'] ?? '');
+        $hashtags = trim($data['hashtags'] ?? '');
+        $ext_link = trim($data['external_link'] ?? '');
+
+        $status = 'draft';
+        if (in_array($data['status'] ?? '', ['draft', 'published'])) {
+            $status = $data['status'];
+        }
+
+        if (!in_array($platform, ['instagram', 'facebook', 'twitter', 'youtube'])) {
+            echo json_encode(['error' => 'Invalid platform.']);
+            exit;
+        }
+
+        $published_at = null;
+        if ($status === 'published') {
+            $published_at = date('Y-m-d H:i:s');
+        }
+
+        $stmt = $db->prepare('
+            UPDATE social_posts
+            SET platform = :platform, caption = :caption, hashtags = :hashtags,
+                external_link = :ext_link, status = :status, published_at = :published_at
+            WHERE id = :id
+        ');
+        $stmt->execute([
+            ':platform'     => $platform,
+            ':caption'      => $caption,
+            ':hashtags'     => $hashtags,
+            ':ext_link'     => $ext_link,
+            ':status'       => $status,
+            ':published_at' => $published_at,
+            ':id'           => $id,
+        ]);
+        echo json_encode(['message' => 'Post updated.']);
+
     } elseif ($method === 'DELETE') {
         requireAdmin();
         if (!$id) {
