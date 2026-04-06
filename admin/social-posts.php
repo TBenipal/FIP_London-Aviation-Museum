@@ -29,10 +29,9 @@ if (!isset($_SESSION['admin'])) {
     <div id="posts-container"><div id="loading">Loading posts...</div></div>
 </div>
 
-<!-- Upload Modal -->
 <div class="modal-overlay" id="modal">
     <div class="modal">
-        <h2>Upload Post</h2>
+        <h2 id="modal-title">Upload Post</h2>
 
         <div class="form-group">
             <label>Platform *</label>
@@ -45,13 +44,17 @@ if (!isset($_SESSION['admin'])) {
             </select>
         </div>
 
-        <div class="form-group">
+        <div id="media-upload-section" class="form-group">
             <label>Media (Image or Video) *</label>
             <div class="drop-zone" id="drop-zone">
                 <p>Click or drag & drop an image (JPG, PNG, WebP) or video (MP4)</p>
             </div>
             <input type="file" id="f-media" accept="image/jpeg,image/png,image/webp,video/mp4" style="display:none">
             <div class="preview-box" id="preview-box"></div>
+        </div>
+
+        <div id="media-edit-note" class="form-group" style="display:none;">
+            <p style="opacity:0.6; font-size:0.85rem;">To replace the media, delete this post and upload a new one.</p>
         </div>
 
         <div class="form-group">
@@ -84,17 +87,20 @@ if (!isset($_SESSION['admin'])) {
 <script>
 const API            = '../includes/social-posts.php';
 let selectedFile     = null;
+let currentEditId    = null;
 
 const dropZone       = document.querySelector('#drop-zone');
 const fileInput      = document.querySelector('#f-media');
 const previewBox     = document.querySelector('#preview-box');
 const modal          = document.querySelector('#modal');
+const modalTitle     = document.querySelector('#modal-title');
 const saveBtn        = document.querySelector('#save-btn');
 const feedbackEl     = document.querySelector('#feedback');
 const postsContainer = document.querySelector('#posts-container');
+const mediaUpload    = document.querySelector('#media-upload-section');
+const mediaEditNote  = document.querySelector('#media-edit-note');
 
 function escapeHtml(str) {
-    // I use split/join to avoid regex per the no-regex rule
     const s = String(str);
     return s.split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;').split('"').join('&quot;');
 }
@@ -124,19 +130,28 @@ function buildPostCard(post) {
         '<span class="badge badge-' + escapeHtml(post.status) + '" style="margin-left:0.4rem;">' + escapeHtml(post.status) + '</span>' +
         '<p class="post-caption">' + escapeHtml(caption) + '</p>' +
         '<div class="post-actions">' +
-        '<button class="btn btn-sm btn-danger" data-id="' + post.id + '">Delete</button>' +
+        '<button class="btn btn-sm btn-primary" data-edit-id="' + post.id + '">Edit</button>' +
+        '<button class="btn btn-sm btn-danger" data-id="' + post.id + '" style="margin-left:0.4rem;">Delete</button>' +
         viewLinkHtml +
         '</div>' +
         '</div>' +
         '</div>';
 }
 
-function attachDeleteListeners() {
-    const deleteButtons = postsContainer.querySelectorAll('.btn-danger[data-id]');
+function attachCardListeners() {
+    const editButtons   = postsContainer.querySelectorAll('[data-edit-id]');
+    const deleteButtons = postsContainer.querySelectorAll('[data-id]');
+
     let i = 0;
-    while (i < deleteButtons.length) {
-        deleteButtons[i].addEventListener('click', handleDeleteClick);
+    while (i < editButtons.length) {
+        editButtons[i].addEventListener('click', handleEditClick);
         i++;
+    }
+
+    let j = 0;
+    while (j < deleteButtons.length) {
+        deleteButtons[j].addEventListener('click', handleDeleteClick);
+        j++;
     }
 }
 
@@ -162,7 +177,7 @@ async function loadPosts() {
     }
 
     postsContainer.innerHTML = '<div class="posts-grid">' + cardsHtml + '</div>';
-    attachDeleteListeners();
+    attachCardListeners();
 }
 
 function setFile(file) {
@@ -178,15 +193,44 @@ function setFile(file) {
     dropZone.querySelector('p').textContent = file.name;
 }
 
-function openModal() {
-    selectedFile = null;
-    previewBox.innerHTML = '';
+function openNewModal() {
+    currentEditId        = null;
+    selectedFile         = null;
+    modalTitle.textContent = 'Upload Post';
+    saveBtn.textContent    = 'Upload Post';
+    previewBox.innerHTML   = '';
+    mediaUpload.style.display   = '';
+    mediaEditNote.style.display = 'none';
     dropZone.querySelector('p').textContent = 'Click or drag & drop an image (JPG, PNG, WebP) or video (MP4)';
     document.querySelector('#f-platform').value = '';
     document.querySelector('#f-caption').value  = '';
     document.querySelector('#f-hashtags').value = '';
     document.querySelector('#f-link').value     = '';
     document.querySelector('#f-status').value   = 'draft';
+    modal.classList.add('active');
+}
+
+async function openEditModal(id) {
+    const res  = await fetch(API + '?id=' + id);
+    const post = await res.json();
+
+    if (post.error) {
+        showFeedback('Could not load post.', true);
+        return;
+    }
+
+    currentEditId          = id;
+    modalTitle.textContent = 'Edit Post';
+    saveBtn.textContent    = 'Save Changes';
+    mediaUpload.style.display   = 'none';
+    mediaEditNote.style.display = '';
+
+    document.querySelector('#f-platform').value = post.platform;
+    document.querySelector('#f-caption').value  = post.caption || '';
+    document.querySelector('#f-hashtags').value = post.hashtags || '';
+    document.querySelector('#f-link').value     = post.external_link || '';
+    document.querySelector('#f-status').value   = post.status;
+
     modal.classList.add('active');
 }
 
@@ -209,53 +253,96 @@ function clearFeedback() {
 }
 
 async function savePost() {
-    if (!selectedFile) {
-        showFeedback('Please select a media file.', true);
-        return;
-    }
-
     const platform = document.querySelector('#f-platform').value;
+
     if (!platform) {
         showFeedback('Please select a platform.', true);
         return;
     }
 
-    saveBtn.textContent = 'Uploading...';
-    saveBtn.disabled    = true;
+    saveBtn.disabled = true;
+    if (currentEditId) {
+        const requestBody = {
+            platform:      platform,
+            caption:       document.querySelector('#f-caption').value,
+            hashtags:      document.querySelector('#f-hashtags').value,
+            external_link: document.querySelector('#f-link').value,
+            status:        document.querySelector('#f-status').value,
+        };
 
-    const form = new FormData();
-    form.append('media',         selectedFile);
-    form.append('platform',      platform);
-    form.append('caption',       document.querySelector('#f-caption').value);
-    form.append('hashtags',      document.querySelector('#f-hashtags').value);
-    form.append('external_link', document.querySelector('#f-link').value);
-    form.append('status',        document.querySelector('#f-status').value);
+        const res  = await fetch(API + '?id=' + currentEditId, {
+            method:  'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(requestBody),
+        });
+        const data = await res.json();
 
-    const res  = await fetch(API, { method: 'POST', body: form });
-    const data = await res.json();
+        saveBtn.disabled = false;
 
-    saveBtn.textContent = 'Upload Post';
-    saveBtn.disabled    = false;
+        let feedbackMsg;
+        if (data.error) {
+            feedbackMsg = data.error;
+        } else {
+            feedbackMsg = data.message;
+        }
 
-    let feedbackMsg;
-    if (data.error) {
-        feedbackMsg = data.error;
+        let isError;
+        if (data.error) {
+            isError = true;
+        } else {
+            isError = false;
+        }
+
+        showFeedback(feedbackMsg, isError);
+
+        if (!data.error) {
+            closeModal();
+            loadPosts();
+        }
+
     } else {
-        feedbackMsg = data.message;
-    }
+        if (!selectedFile) {
+            showFeedback('Please select a media file.', true);
+            saveBtn.disabled = false;
+            return;
+        }
 
-    let isError;
-    if (data.error) {
-        isError = true;
-    } else {
-        isError = false;
-    }
+        saveBtn.textContent = 'Uploading...';
 
-    showFeedback(feedbackMsg, isError);
+        const form = new FormData();
+        form.append('media',         selectedFile);
+        form.append('platform',      platform);
+        form.append('caption',       document.querySelector('#f-caption').value);
+        form.append('hashtags',      document.querySelector('#f-hashtags').value);
+        form.append('external_link', document.querySelector('#f-link').value);
+        form.append('status',        document.querySelector('#f-status').value);
 
-    if (!data.error) {
-        closeModal();
-        loadPosts();
+        const res  = await fetch(API, { method: 'POST', body: form });
+        const data = await res.json();
+
+        saveBtn.textContent = 'Upload Post';
+        saveBtn.disabled    = false;
+
+        let feedbackMsg;
+        if (data.error) {
+            feedbackMsg = data.error;
+        } else {
+            feedbackMsg = data.message;
+        }
+
+        let isError;
+        if (data.error) {
+            isError = true;
+        } else {
+            isError = false;
+        }
+
+        showFeedback(feedbackMsg, isError);
+
+        if (!data.error) {
+            closeModal();
+            loadPosts();
+        }
     }
 }
 
@@ -298,6 +385,11 @@ function handleDropZoneClick() {
     fileInput.click();
 }
 
+function handleEditClick(event) {
+    const id = event.currentTarget.getAttribute('data-edit-id');
+    openEditModal(id);
+}
+
 function handleDeleteClick(event) {
     const id = event.currentTarget.getAttribute('data-id');
     deletePost(id);
@@ -309,7 +401,7 @@ dropZone.addEventListener('drop',      handleDrop);
 dropZone.addEventListener('click',     handleDropZoneClick);
 fileInput.addEventListener('change',   handleFileChange);
 
-document.querySelector('#upload-btn').addEventListener('click', openModal);
+document.querySelector('#upload-btn').addEventListener('click', openNewModal);
 document.querySelector('#cancel-btn').addEventListener('click', closeModal);
 document.querySelector('#save-btn').addEventListener('click',   savePost);
 
