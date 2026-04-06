@@ -218,97 +218,111 @@
                 </div>
             </div>
 
-            <div id="dt-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <div id="timeline-content">
-                    <svg id="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1019 2906" fill="none">
-                        <path id="timeline-path" d="M353.495 5.97217C611.661 30.9722 1102.99 124.272 1002.99 297.472C877.995 513.972 125.494 575.472 139.494 947.472C153.494 1319.47 1141.49 1801.97 927.994 2085.47C714.494 2368.97 255.994 2212.97 39.494 2551.97C-177.006 2890.97 722.994 2740.97 825.494 2901.97" stroke="#A28C63" stroke-width="12" fill="none"/>
-                        <g class="plane" transform="translate(0 0) scale(0.20)" fill="#A08B63">
-                            <path id="plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
-                            c-12.698,7.339-36.19,23.066-71.663,47.974L80.701,127.669c-6.554-1.758-13.534-0.836-19.405,2.56l-22.144,12.8
-                            c-8.047,4.651-12.945,13.312-12.783,22.622c0.162,9.301,5.359,17.792,13.568,22.161l138.257,73.574
-                            c-23.356,16.41-46.106,32.068-59.904,41.515l-62.037-36.523c-7.936-4.676-17.775-4.71-25.754-0.102l-17.715,10.24
-                            c-7.262,4.198-12.006,11.699-12.698,20.062c-0.691,8.371,2.765,16.538,9.242,21.879l84.369,69.478
-                            c4.983,4.104,11.332,6.17,17.775,5.786l57.079-3.43c3.959-0.239,7.817-1.399,11.255-3.379l243.61-140.8
-                            c48.956-28.297,82.935-79.275,84.352-81.434C512.3,157.809,513.256,149.181,510.338,141.484z"/>
-                        </g>
+            <section id="timeline-animation" class="col-span-full">
+                <div id="timeline">
+                    <svg id="timeline-svg" xmlns="http://www.w3.org/2000/svg" width="370" height="2500" viewBox="0 0 370 2500" fill="none">
+                        <path id="mobile-path" class="timeline-path" d="M10 -300 L10 2000" fill="none" stroke="#A08B63" stroke-width="69"/>                                            
+                        <path id="path" class="timeline-path" d="M184 -225 L184 3000" fill="none" stroke="#A08B63" stroke-width="69"/>                    
+                        <path class="plane" d="M184.073 552.627L197.086 575.997L248.748 575.779C250.379 579.854 246.366 588.734 246.366 588.734C235.943 602.514 201.28 617.13 201.28 617.13L212.337 753.551L348.014 761.083C370.63 764.216 369.084 780.306 369.084 780.306C369.138 793.251 345.762 797.401 345.762 797.401L210.975 813.232L196.871 852.665L229.067 852.884L229.067 859.296L194.322 859.389C194.322 859.389 187.873 871.409 184.746 871.409C181.619 871.409 175.681 859.468 175.681 859.468L140.048 859.618L140.02 852.884L173.324 852.743L157.474 813.45L24.488 798.759C24.488 798.759 1.04575 794.807 0.991024 781.862C0.991024 781.862 -0.691144 765.786 21.8977 762.462L157.474 753.786L167.401 617.277C167.401 617.277 132.589 602.955 122.077 589.267C122.077 589.267 117.989 580.425 119.586 576.333L171.224 576.114L184.073 552.627Z" fill="#A08B63"/>
+                        <path class="mobile-plane" xmlns="http://www.w3.org/2000/svg" d="M24.2128 314.811C13.4767 305.141 -0.0236981 272.033 2.56045e-05 257.676L0.421024 2.36603e-05L50.3211 6.17008e-05L50.4073 32.2768L50.599 106.063L50.7906 179.838L49.3515 258.78C48.776 273.521 32.6248 307.425 24.7284 314.802L24.2128 314.811Z" fill="#A08B63"/>
                     </svg>
-
-                    <div id="mobile-timeline-container">
-                        <svg id="mobile-timeline" xmlns="http://www.w3.org/2000/svg" width="10" height="1475px" fill="none">
-                            <path id="mobile-timeline-path" d="M5 0V2473.36" stroke="#A28C63" stroke-width="10"/>
-                            <g class="mobile-plane" transform="translate(0 0) scale(0.15)" fill="#A08B63">
-                                <path id="mobile-plane-path" d="M510.338,141.484c-2.918-7.697-9.353-13.517-17.289-15.65c-8.201-2.202-81.596-20.617-133.564,9.412
-                                c-12.698,7.339-36.19,23.066-71.663,47.974L80.701,127.669c-6.554-1.758-13.534-0.836-19.405,2.56l-22.144,12.8
-                                c-8.047,4.651-12.945,13.312-12.783,22.622c0.162,9.301,5.359,17.792,13.568,22.161l138.257,73.574
-                                c-23.356,16.41-46.106,32.068-59.904,41.515l-62.037-36.523c-7.936-4.676-17.775-4.71-25.754-0.102l-17.715,10.24
-                                c-7.262,4.198-12.006,11.699-12.698,20.062c-0.691,8.371,2.765,16.538,9.242,21.879l84.369,69.478
-                                c4.983,4.104,11.332,6.17,17.775,5.786l57.079-3.43c3.959-0.239,7.817-1.399,11.255-3.379l243.61-140.8
-                                c48.956-28.297,82.935-79.275,84.352-81.434C512.3,157.809,513.256,149.181,510.338,141.484z"/>
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div id="dt-profile-container">
-                        <div id="dt1-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-1918.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-1918.png" alt="Detail Timeline 1900-1918">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">1900-1918</h2>
-                                <p class="dt-profile-text">The earliest chapter in London's aviation history was shaped by international pioneers whose daring flights captivated local communities. Public demonstrations introduced the city to heavier-than-air flight, and the characteristics of early aircraft design — fragile frames, open cockpits, and uncertain engines — made every flight an act of bravery.</p>
-                            </div>
-                        </div>
-
-                        <div id="dt2-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-1939.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-1939.png" alt="Detail Timeline 1919-1939">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">1919-1939</h2>
-                                <p class="dt-profile-text">The interwar years brought a surge of public enthusiasm for aviation. Post-war aerial photography awakened civilian interest, while ambitious plans — including the proposed London-to-London transatlantic flight — captured the imagination of the city. The formation of Lambeth Airfield and the establishment of flying clubs transformed aviation from spectacle into an accessible community endeavour.</p>
-                            </div>
-                        </div>
-
-                        <div id="dt3-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-1945.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-1945.png" alt="Detail Timeline 1940-1945">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">1940-1945</h2>
-                                <p class="dt-profile-text">London's wartime role was defined by the British Commonwealth Air Training Plan — a massive international effort that trained thousands of aircrew from Canada, Britain, Australia, New Zealand, and other Allied nations. Two major BCATP schools operated at Crumlin Airport, transforming civilian infrastructure into a vital engine of the Allied war machine.</p>
-                            </div>
-                        </div>
-
-                        <div id="dt4-profile" class="dt-profile"> 
-                            <div class="dt-container">
-                                <div class="dt-profile-img">
-                                    <picture>
-                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 767px)">
-                                        <source srcset="images/Wartime/des-detail-postwar.png" media="(max-width: 1199px)">
-                                        <img src="images/Wartime/des-detail-postwar.png" alt="Detail Timeline Post War">
-                                    </picture>
-                                </div>
-                                <h2 class="dt-profile-heading">Post War</h2>
-                                <p class="dt-profile-text">The post-war years saw London transition from a wartime training hub to a modern aviation centre. Auxiliary squadrons maintained military readiness, while the infrastructure built for the BCATP became the foundation of the London International Airport. The wartime canteen — now the museum — stands as the last surviving link to this transformative era.</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
+
+                <div id="timeline-1918" class="timeline-event">
+                    <div class="te-content">
+                        <div id="img-1918" class="te-img">
+                            <picture>
+                                <source srcset="images/Wartime/1900-1918.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Wartime/1900-1918.jpg" media="(max-width: 1199px)">
+                                <img src="images/Wartime/1900-1918.jpg" alt="1900-1918">
+                            </picture>
+                        </div>
+                        
+                        <h2 id="heading-1918" class="te-heading">19<br>00<br>|<br>19<br>18</h2>
+                        
+                        <div id="content-1918" class="tc-content">
+                            <h3 class="tc-heading">1900-1918</h3>
+                            <p id="des-1918" class="tc-description">
+                                The earliest chapter in London's aviation history was shaped by international pioneers whose daring flights captivated local communities. Public demonstrations introduced the city to heavier-than-air flight, and the characteristics of early aircraft design — fragile frames, open cockpits, and uncertain engines — made every flight an act of bravery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="timeline-1939" class="timeline-event">
+                    <div class="te-content">
+                        <div id="img-1939" class="te-img">
+                            <picture>
+                                <source srcset="images/Wartime/1919-1939.png" media="(max-width: 767px)">
+                                <source srcset="images/Wartime/1919-1939.png" media="(max-width: 1199px)">
+                                <img src="images/Wartime/1919-1939.png" alt="1900-1918">
+                            </picture>
+                        </div>
+                        
+                        <h2 id="heading-1939" class="te-heading">19<br>19<br>|<br>19<br>39</h2>
+                        
+                        <div id="content-1939" class="tc-content">
+                            <h3 class="tc-heading">1919-1939</h3>
+                            <p id="des-1939" class="tc-description">
+                                The interwar years brought a surge of public enthusiasm for aviation. Post-war aerial photography awakened civilian interest, while ambitious plans — including the proposed London-to-London transatlantic flight — captured the imagination of the city. The formation of Lambeth Airfield and the establishment of flying clubs transformed aviation from spectacle into an accessible community endeavour.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="timeline-1945" class="timeline-event">
+                    <div class="te-content">
+                        <div id="img-1945" class="te-img">
+                            <picture>
+                                <source srcset="images/Wartime/1940-1945.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Wartime/1940-1945.jpg" media="(max-width: 1199px)">
+                                <img src="images/Wartime/1940-1945.jpg" alt="1900-1918">
+                            </picture>
+                        </div>
+                        
+                        <h2 id="heading-1945" class="te-heading">19<br>40<br>|<br>19<br>45</h2>
+                        
+                        <div id="content-1945" class="tc-content">
+                            <h3 class="tc-heading">1940-1945</h3>
+                            <p id="des-1945" class="tc-description">
+                                London's wartime role was defined by the British Commonwealth Air Training Plan — a massive international effort that trained thousands of aircrew from Canada, Britain, Australia, New Zealand, and other Allied nations. Two major BCATP schools operated at Crumlin Airport, transforming civilian infrastructure into a vital engine of the Allied war machine.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="timeline-post" class="timeline-event">
+                    <div class="te-content">
+                        <div id="img-post" class="te-img">
+                            <picture>
+                                <source srcset="images/Wartime/POST WAR.jpg" media="(max-width: 767px)">
+                                <source srcset="images/Wartime/POST WAR.jpg" media="(max-width: 1199px)">
+                                <img src="images/Wartime/POST WAR.jpg" alt="1900-1918">
+                            </picture>
+                        </div>
+                        
+                        <h2 id="heading-post" class="te-heading">P<br>O<br>S<br>T<br>|<br>W<br>A<br>R</h2>
+                        
+                        <div id="content-post" class="tc-content">
+                            <h3 class="tc-heading">POST-WAR</h3>
+                            <p id="des-post" class="tc-description">
+                                The post-war years saw London transition from a wartime training hub to a modern aviation centre. Auxiliary squadrons maintained military readiness, while the infrastructure built for the BCATP became the foundation of the London International Airport. The wartime canteen — now the museum — stands as the last surviving link to this transformative era.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </section>
+
+        <!-- <section id="timeline-animation" class="grid-con">
+            <div id="timeline" class="col-span-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="370" height="873" viewBox="0 0 370 873" fill="none">
+                    <path id="timeline-path" d="M184 0 L184 600" fill="none" stroke="#A08B63" stroke-width="68"/>                    
+                    <path class="plane" d="M184.073 552.627L197.086 575.997L248.748 575.779C250.379 579.854 246.366 588.734 246.366 588.734C235.943 602.514 201.28 617.13 201.28 617.13L212.337 753.551L348.014 761.083C370.63 764.216 369.084 780.306 369.084 780.306C369.138 793.251 345.762 797.401 345.762 797.401L210.975 813.232L196.871 852.665L229.067 852.884L229.067 859.296L194.322 859.389C194.322 859.389 187.873 871.409 184.746 871.409C181.619 871.409 175.681 859.468 175.681 859.468L140.048 859.618L140.02 852.884L173.324 852.743L157.474 813.45L24.488 798.759C24.488 798.759 1.04575 794.807 0.991024 781.862C0.991024 781.862 -0.691144 765.786 21.8977 762.462L157.474 753.786L167.401 617.277C167.401 617.277 132.589 602.955 122.077 589.267C122.077 589.267 117.989 580.425 119.586 576.333L171.224 576.114L184.073 552.627Z" fill="#A08B63"/>
+                </svg>
+            </div>
+        </section> -->
     
 
         <section id="newsletter" class="grid-con">

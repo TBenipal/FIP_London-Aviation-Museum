@@ -309,7 +309,6 @@
                         <br>
                     </div>
                     <button id="nl-subscribe">Subscribe</button>
-                    <div id="nl-feedback"></div>
                 </form>
             </div>
 

@@ -19,6 +19,7 @@ if(document.body.dataset.page === "homepage") {
 
 if(document.body.dataset.page === "wartime") {
     timeline();
+    GSAP();
 }
 
 if(document.body.dataset.page === "bob") {
