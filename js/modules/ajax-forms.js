@@ -1,112 +1,98 @@
-const contactForm = document.querySelector('#contact-form');
-const contactBtn  = document.querySelector('#submit-btn');
-const nlForm      = document.querySelector('#nl-form-con');
-const nlBtn       = document.querySelector('#nl-subscribe');
+(() => {
 
-// flags to block duplicate submissions 
-let contactSubmitting = false;
-let nlSubmitting      = false;
+    const contactForm = document.getElementById('contact-form');
+    const contactBtn  = document.getElementById('submit-btn');
+    const nlForm      = document.getElementById('nl-form-con');
+    const nlBtn       = document.getElementById('nl-subscribe');
 
-function showContactFeedback(html) {
-    const el = document.querySelector('#contact-feedback');
-    if (el) {
-        el.innerHTML = html;
-    }
-}
+    // --- CONTACT FORM ---
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-function showNlFeedback(html) {
-    const el = document.querySelector('#nl-feedback');
-    if (el) {
-        el.innerHTML = html;
-    }
-}
+            contactBtn.disabled = true;
+            contactBtn.textContent = 'Sending...';
 
-async function handleContactSubmit(event) {
-    event.preventDefault();
+            const formData = new FormData(contactForm);
+            const feedback = document.getElementById('contact-feedback');
 
-    if (contactSubmitting) {
-        return;
-    }
+            try {
+                const res  = await fetch('includes/send.php', {
+                    method: 'POST',
+                    body: formData
+                });
 
-    contactSubmitting     = true;
-    contactBtn.disabled   = true;
-    contactBtn.textContent = 'Sending...';
+                const text = await res.text();
+                let data;
 
-    const formData = new FormData(contactForm);
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    feedback.innerHTML = `<p class="form-error">Server error — check console.</p>`;
+                    console.error('Non-JSON response:', text);
+                    return;
+                }
 
-    try {
-        const res  = await fetch('includes/send.php', { method: 'POST', body: formData });
-        const text = await res.text();
+                if (data.errors) {
+                    feedback.innerHTML = `<p class="form-error">${data.errors.join('<br>')}</p>`;
+                } else {
+                    feedback.innerHTML = `<p class="form-success">${data.message}</p>`;
+                    contactForm.reset();
+                }
 
-        let data;
-        try {
-            data = JSON.parse(text);
-        } catch (parseErr) {
-            showContactFeedback('<p class="form-error">Server error. Please try again.</p>');
-            return;
-        }
-
-        if (data.errors) {
-            showContactFeedback('<p class="form-error">' + data.errors.join('<br>') + '</p>');
-        } else {
-            showContactFeedback('<p class="form-success">' + data.message + '</p>');
-            contactForm.reset();
-        }
-
-    } catch (err) {
-        showContactFeedback('<p class="form-error">Something went wrong. Please try again.</p>');
-    } finally {
-        contactSubmitting     = false;
-        contactBtn.disabled   = false;
-        contactBtn.textContent = 'Submit !';
-    }
-}
-
-async function handleNlSubmit(event) {
-    event.preventDefault();
-
-    if (nlSubmitting) {
-        return;
+            } catch (err) {
+                feedback.innerHTML = `<p class="form-error">Something went wrong. Please try again.</p>`;
+                console.error(err);
+            } finally {
+                contactBtn.disabled = false;
+                contactBtn.textContent = 'Submit!';
+            }
+        });
     }
 
-    nlSubmitting     = true;
-    nlBtn.disabled   = true;
-    nlBtn.textContent = 'Subscribing...';
+    // --- NEWSLETTER FORM ---
+    if (nlForm) {
+        nlForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    const formData = new FormData(nlForm);
+            nlBtn.disabled = true;
+            nlBtn.textContent = 'Subscribing...';
 
-    try {
-        const res  = await fetch('includes/newsletter.php', { method: 'POST', body: formData });
-        const text = await res.text();
+            const formData = new FormData(nlForm);
+            const feedback = document.getElementById('nl-feedback');
 
-        let data;
-        try {
-            data = JSON.parse(text);
-        } catch (parseErr) {
-            showNlFeedback('<p class="form-error">Server error. Please try again.</p>');
-            return;
-        }
+            try {
+                const res  = await fetch('includes/newsletter.php', {
+                    method: 'POST',
+                    body: formData
+                });
 
-        if (data.errors) {
-            showNlFeedback('<p class="form-error">' + data.errors.join('<br>') + '</p>');
-        } else {
-            showNlFeedback('<p class="form-success">' + data.message + '</p>');
-            nlForm.reset();
-        }
+                const text = await res.text();
+                let data;
 
-    } catch (err) {
-        showNlFeedback('<p class="form-error">Something went wrong. Please try again.</p>');
-    } finally {
-        nlSubmitting     = false;
-        nlBtn.disabled   = false;
-        nlBtn.textContent = 'Subscribe';
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    feedback.innerHTML = `<p class="form-error">Server error — check console.</p>`;
+                    console.error('Non-JSON response:', text);
+                    return;
+                }
+
+                if (data.errors) {
+                    feedback.innerHTML = `<p class="form-error">${data.errors.join('<br>')}</p>`;
+                } else {
+                    feedback.innerHTML = `<p class="form-success">${data.message}</p>`;
+                    nlForm.reset();
+                }
+
+            } catch (err) {
+                feedback.innerHTML = `<p class="form-error">Something went wrong. Please try again.</p>`;
+                console.error(err);
+            } finally {
+                nlBtn.disabled = false;
+                nlBtn.textContent = 'Subscribe';
+            }
+        });
     }
-}
 
-if (contactForm) {
-    contactForm.addEventListener('submit', handleContactSubmit);
-}
-
-if (nlForm) {
-    nlForm.addEventListener('submit', handleNlSubmit);
-}
+})();

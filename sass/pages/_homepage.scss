@@ -460,11 +460,13 @@ html, body {
 }
 
 #newsletter {
+    position: relative;
     width: 100%;
     background-color: a.$secondary-color;
     height: auto;
     margin: 0 auto;
     padding: 25px 25px 50px 25px;
+    z-index: 10;
 }
 
 #nl-header {

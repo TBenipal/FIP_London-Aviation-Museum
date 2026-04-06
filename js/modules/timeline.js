@@ -1,16 +1,52 @@
 export function timeline() {
     gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
-    function timeline() {
+    const screen = window.innerWidth
 
+    if (screen < 768) {
         gsap.timeline({
             scrollTrigger: {
-                trigger: "#timeline-content",
+                trigger: "#timeline-animation",
                 start: "top 90%",
-                end: "bottom 0%",
-                scrub: 1
+                end: "bottom 60%",
+                scrub: .8,
+                anticipatePin: 1,
+                ease: "none"
             }
             })
-            .fromTo("#timeline-path", { 
+            .fromTo("#mobile-path", { 
+                drawSVG: "0%" 
+
+            }, { 
+                drawSVG: "100%", 
+                ease: "none" 
+            })
+            .fromTo(".mobile-plane", { 
+                opacity: 1
+            }, {
+                motionPath: {
+                    path: "#mobile-path",
+                    align: "#mobile-path",
+                    alignOrigin: [.2, .1],
+                    scrub: .8
+                },
+                ease: "none"
+            },
+        0
+        );
+    }
+
+    if(screen > 768 && screen < 1200) {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#timeline-animation",
+                start: "top 90%",
+                end: "+=3000", 
+                scrub: .8,
+                anticipatePin: 1,
+                ease: "none"
+            }
+            })
+            .fromTo("#path", { 
                 drawSVG: "0%" 
 
             }, { 
@@ -21,47 +57,47 @@ export function timeline() {
                 opacity: 1
             }, {
                 motionPath: {
-                    path: "#timeline-path",
-                    align: "#timeline-path",
-                    alignOrigin: [.6, .5],
-                    autoRotate: 30
+                    path: "#path",
+                    align: "#path",
+                    alignOrigin: [0.497, 0.1],
+                    scrub: .8
                 },
                 ease: "none"
             },
-            0
+        0
         );
     }
-    timeline();
 
-    function mobtimeline() {
+    if(screen > 1200) {
         gsap.timeline({
             scrollTrigger: {
-                trigger: "#mobile-timeline-container",
-                start: "top 50%",
-                end: "bottom 0%",
-                scrub: 1
+                trigger: "#timeline-animation",
+                start: "top 80%",
+                end: "+=3000", 
+                scrub: .8,
+                anticipatePin: 1,
+                ease: "none"
             }
             })
-            .fromTo("#mobile-timeline-path", { 
+            .fromTo("#path", { 
                 drawSVG: "0%" 
 
             }, { 
                 drawSVG: "100%", 
                 ease: "none" 
             })
-            .fromTo(".mobile-plane", { 
-                opacity: 1,
+            .fromTo(".plane", { 
+                opacity: 1
             }, {
                 motionPath: {
-                    path: "#mobile-timeline-path",
-                    align: "#mobile-timeline-path",
-                    alignOrigin: [1.2, .5],
-                    autoRotate: 30
+                    path: "#path",
+                    align: "#path",
+                    alignOrigin: [0.497, 0.1],
+                    scrub: .8
                 },
                 ease: "none"
             },
-            0
+        0
         );
     }
-    mobtimeline();
 }
