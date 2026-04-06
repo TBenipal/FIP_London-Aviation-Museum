@@ -2,12 +2,21 @@
 <?php
 
 function getConfig()
+// {
+//     return [
+//         'username' => 'zakia535_london_aviation', //root
+//         'password' => 'london_aviation', // 'root' on OSX
+//         'host'     => 'localhost',
+//         'database' => 'zakia535_london_aviation', //Ajaydb 'london_aviation_museum'
+//         'port'     => '3306' // OSX: 8889
+//     ];
+// }
 {
     return [
-        'username' => 'zakia535_london_aviation', //root
-        'password' => 'london_aviation', // 'root' on OSX
+        'username' => 'root', //root
+        'password' => '', // 'root' on OSX
         'host'     => 'localhost',
-        'database' => 'zakia535_london_aviation', //Ajaydb 'london_aviation_museum'
+        'database' => 'london_aviation_museum', //Ajaydb 'london_aviation_museum'
         'port'     => '3306' // OSX: 8889
     ];
 }
