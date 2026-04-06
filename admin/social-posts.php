@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header('Location: ../includes/admin/login.php');
+    header('Location: login.php');
     exit;
 }
 ?>
@@ -15,14 +15,14 @@ if (!isset($_SESSION['admin'])) {
     <link href="../css/grid.css" rel="stylesheet">
 </head>
 <body id="social-panel">
-    
+
 <div id="admin-social">
     <div class="page-header">
         <div>
             <a href="dashboard.php" style="font-size:0.85rem; opacity:0.6; text-decoration:none;">← Dashboard</a>
             <h1 style="margin:0.25rem 0 0;">Social Media Posts</h1>
         </div>
-        <button class="btn btn-primary" onclick="openModal()">+ Upload Post</button>
+        <button class="btn btn-primary" id="upload-btn">+ Upload Post</button>
     </div>
 
     <div id="feedback"></div>
@@ -47,7 +47,7 @@ if (!isset($_SESSION['admin'])) {
 
         <div class="form-group">
             <label>Media (Image or Video) *</label>
-            <div class="drop-zone" id="drop-zone" onclick="document.getElementById('f-media').click()">
+            <div class="drop-zone" id="drop-zone">
                 <p>Click or drag & drop an image (JPG, PNG, WebP) or video (MP4)</p>
             </div>
             <input type="file" id="f-media" accept="image/jpeg,image/png,image/webp,video/mp4" style="display:none">
@@ -75,133 +75,245 @@ if (!isset($_SESSION['admin'])) {
         </div>
 
         <div class="modal-actions">
-            <button class="btn" onclick="closeModal()" style="background:transparent; border:1px solid #555;">Cancel</button>
-            <button class="btn btn-primary" id="save-btn" onclick="savePost()">Upload Post</button>
+            <button class="btn" id="cancel-btn" style="background:transparent; border:1px solid #555;">Cancel</button>
+            <button class="btn btn-primary" id="save-btn">Upload Post</button>
         </div>
     </div>
 </div>
 
 <script>
-(function () {
-    const API = '../includes/social-posts.php';
-    let selectedFile = null;
+const API            = '../includes/social-posts.php';
+let selectedFile     = null;
 
-    // Drag-and-drop
-    const dz = document.getElementById('drop-zone');
-    dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('over'); });
-    dz.addEventListener('dragleave', () => dz.classList.remove('over'));
-    dz.addEventListener('drop', e => {
-        e.preventDefault(); dz.classList.remove('over');
-        if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]);
-    });
-    document.getElementById('f-media').addEventListener('change', e => {
-        if (e.target.files[0]) setFile(e.target.files[0]);
-    });
+const dropZone       = document.querySelector('#drop-zone');
+const fileInput      = document.querySelector('#f-media');
+const previewBox     = document.querySelector('#preview-box');
+const modal          = document.querySelector('#modal');
+const saveBtn        = document.querySelector('#save-btn');
+const feedbackEl     = document.querySelector('#feedback');
+const postsContainer = document.querySelector('#posts-container');
 
-    function setFile(file) {
-        selectedFile = file;
-        const preview = document.getElementById('preview-box');
-        const url = URL.createObjectURL(file);
-        if (file.type.startsWith('image')) {
-            preview.innerHTML = `<img src="${url}" alt="preview">`;
-        } else {
-            preview.innerHTML = `<video src="${url}" controls></video>`;
-        }
-        dz.querySelector('p').textContent = file.name;
+function escapeHtml(str) {
+    // I use split/join to avoid regex per the no-regex rule
+    const s = String(str);
+    return s.split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;').split('"').join('&quot;');
+}
+
+function buildPostCard(post) {
+    let mediaHtml;
+    if (post.media_type === 'video') {
+        mediaHtml = '<video src="../' + escapeHtml(post.media_url) + '" muted></video>';
+    } else {
+        mediaHtml = '<img src="../' + escapeHtml(post.media_url) + '" alt="Post image" loading="lazy">';
     }
 
-    async function loadPosts() {
-        const res  = await fetch(API + '?all=1');
-        const data = await res.json();
-        const container = document.getElementById('posts-container');
-
-        if (!data.length) {
-            container.innerHTML = '<p style="opacity:0.5;">No posts yet. Upload your first one.</p>';
-            return;
-        }
-
-        container.innerHTML = `<div class="posts-grid">${
-            data.map(p => `
-                <div class="post-card">
-                    ${p.media_type === 'video'
-                        ? `<video src="../${esc(p.media_url)}" muted></video>`
-                        : `<img src="../${esc(p.media_url)}" alt="Post image" loading="lazy">`
-                    }
-                    <div class="post-card-body">
-                        <span class="post-platform">${esc(p.platform)}</span>
-                        <span class="badge badge-${p.status}" style="margin-left:0.4rem;">${p.status}</span>
-                        <p class="post-caption">${esc(p.caption || '—')}</p>
-                        <div class="post-actions">
-                            <button class="btn btn-sm btn-danger" onclick="deletePost(${p.id})">Delete</button>
-                            ${p.external_link ? `<a href="${esc(p.external_link)}" target="_blank" class="btn btn-sm" style="background:transparent;border:1px solid #555;font-size:0.8rem;">View</a>` : ''}
-                        </div>
-                    </div>
-                </div>
-            `).join('')
-        }</div>`;
+    let viewLinkHtml = '';
+    if (post.external_link) {
+        viewLinkHtml = '<a href="' + escapeHtml(post.external_link) + '" target="_blank" class="btn btn-sm" style="background:transparent;border:1px solid #555;font-size:0.8rem;">View</a>';
     }
 
-    window.openModal = function () {
-        selectedFile = null;
-        document.getElementById('preview-box').innerHTML = '';
-        document.getElementById('drop-zone').querySelector('p').textContent = 'Click or drag & drop an image (JPG, PNG, WebP) or video (MP4)';
-        ['f-platform','f-caption','f-hashtags','f-link'].forEach(id => document.getElementById(id).value = '');
-        document.getElementById('f-status').value = 'draft';
-        document.getElementById('modal').classList.add('active');
-    };
+    let caption = '—';
+    if (post.caption) {
+        caption = post.caption;
+    }
 
-    window.closeModal = function () {
-        document.getElementById('modal').classList.remove('active');
-    };
+    return '<div class="post-card">' +
+        mediaHtml +
+        '<div class="post-card-body">' +
+        '<span class="post-platform">' + escapeHtml(post.platform) + '</span>' +
+        '<span class="badge badge-' + escapeHtml(post.status) + '" style="margin-left:0.4rem;">' + escapeHtml(post.status) + '</span>' +
+        '<p class="post-caption">' + escapeHtml(caption) + '</p>' +
+        '<div class="post-actions">' +
+        '<button class="btn btn-sm btn-danger" data-id="' + post.id + '">Delete</button>' +
+        viewLinkHtml +
+        '</div>' +
+        '</div>' +
+        '</div>';
+}
 
-    window.savePost = async function () {
-        if (!selectedFile) { showFeedback('Please select a media file.', true); return; }
-        const platform = document.getElementById('f-platform').value;
-        if (!platform) { showFeedback('Please select a platform.', true); return; }
+function attachDeleteListeners() {
+    const deleteButtons = postsContainer.querySelectorAll('.btn-danger[data-id]');
+    let i = 0;
+    while (i < deleteButtons.length) {
+        deleteButtons[i].addEventListener('click', handleDeleteClick);
+        i++;
+    }
+}
 
-        const btn = document.getElementById('save-btn');
-        btn.textContent = 'Uploading...';
-        btn.disabled = true;
+async function loadPosts() {
+    const res  = await fetch(API + '?all=1');
+    const data = await res.json();
 
-        const form = new FormData();
-        form.append('media',         selectedFile);
-        form.append('platform',      platform);
-        form.append('caption',       document.getElementById('f-caption').value);
-        form.append('hashtags',      document.getElementById('f-hashtags').value);
-        form.append('external_link', document.getElementById('f-link').value);
-        form.append('status',        document.getElementById('f-status').value);
+    if (data.error) {
+        postsContainer.innerHTML = '<p style="opacity:0.5;">Could not load posts.</p>';
+        return;
+    }
 
-        const res  = await fetch(API, { method: 'POST', body: form });
-        const data = await res.json();
+    if (!data.length) {
+        postsContainer.innerHTML = '<p style="opacity:0.5;">No posts yet. Upload your first one.</p>';
+        return;
+    }
 
-        btn.textContent = 'Upload Post';
-        btn.disabled = false;
+    let cardsHtml = '';
+    let i = 0;
+    while (i < data.length) {
+        cardsHtml += buildPostCard(data[i]);
+        i++;
+    }
 
-        showFeedback(data.error || data.message, !!data.error);
-        if (!data.error) { closeModal(); loadPosts(); }
-    };
+    postsContainer.innerHTML = '<div class="posts-grid">' + cardsHtml + '</div>';
+    attachDeleteListeners();
+}
 
-    window.deletePost = async function (id) {
-        if (!confirm('Delete this post? This cannot be undone.')) return;
-        const res  = await fetch(API + '?id=' + id, { method: 'DELETE' });
-        const data = await res.json();
-        showFeedback(data.message, false);
+function setFile(file) {
+    selectedFile = file;
+    const url    = URL.createObjectURL(file);
+
+    if (file.type.startsWith('image')) {
+        previewBox.innerHTML = '<img src="' + url + '" alt="preview">';
+    } else {
+        previewBox.innerHTML = '<video src="' + url + '" controls></video>';
+    }
+
+    dropZone.querySelector('p').textContent = file.name;
+}
+
+function openModal() {
+    selectedFile = null;
+    previewBox.innerHTML = '';
+    dropZone.querySelector('p').textContent = 'Click or drag & drop an image (JPG, PNG, WebP) or video (MP4)';
+    document.querySelector('#f-platform').value = '';
+    document.querySelector('#f-caption').value  = '';
+    document.querySelector('#f-hashtags').value = '';
+    document.querySelector('#f-link').value     = '';
+    document.querySelector('#f-status').value   = 'draft';
+    modal.classList.add('active');
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+}
+
+function showFeedback(msg, isError) {
+    feedbackEl.textContent = msg;
+    if (isError) {
+        feedbackEl.className = 'error';
+    } else {
+        feedbackEl.className = 'success';
+    }
+    setTimeout(clearFeedback, 4000);
+}
+
+function clearFeedback() {
+    feedbackEl.className = '';
+}
+
+async function savePost() {
+    if (!selectedFile) {
+        showFeedback('Please select a media file.', true);
+        return;
+    }
+
+    const platform = document.querySelector('#f-platform').value;
+    if (!platform) {
+        showFeedback('Please select a platform.', true);
+        return;
+    }
+
+    saveBtn.textContent = 'Uploading...';
+    saveBtn.disabled    = true;
+
+    const form = new FormData();
+    form.append('media',         selectedFile);
+    form.append('platform',      platform);
+    form.append('caption',       document.querySelector('#f-caption').value);
+    form.append('hashtags',      document.querySelector('#f-hashtags').value);
+    form.append('external_link', document.querySelector('#f-link').value);
+    form.append('status',        document.querySelector('#f-status').value);
+
+    const res  = await fetch(API, { method: 'POST', body: form });
+    const data = await res.json();
+
+    saveBtn.textContent = 'Upload Post';
+    saveBtn.disabled    = false;
+
+    let feedbackMsg;
+    if (data.error) {
+        feedbackMsg = data.error;
+    } else {
+        feedbackMsg = data.message;
+    }
+
+    let isError;
+    if (data.error) {
+        isError = true;
+    } else {
+        isError = false;
+    }
+
+    showFeedback(feedbackMsg, isError);
+
+    if (!data.error) {
+        closeModal();
         loadPosts();
-    };
-
-    function showFeedback(msg, isError) {
-        const el = document.getElementById('feedback');
-        el.textContent = msg;
-        el.className   = isError ? 'error' : 'success';
-        setTimeout(() => el.className = '', 4000);
     }
+}
 
-    function esc(s) {
-        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+async function deletePost(id) {
+    if (!confirm('Delete this post? This cannot be undone.')) {
+        return;
     }
-
+    const res  = await fetch(API + '?id=' + id, { method: 'DELETE' });
+    const data = await res.json();
+    showFeedback(data.message, false);
     loadPosts();
-})();
+}
+
+function handleDragOver(event) {
+    event.preventDefault();
+    dropZone.classList.add('over');
+}
+
+function handleDragLeave() {
+    dropZone.classList.remove('over');
+}
+
+function handleDrop(event) {
+    event.preventDefault();
+    dropZone.classList.remove('over');
+    const file = event.dataTransfer.files[0];
+    if (file) {
+        setFile(file);
+    }
+}
+
+function handleFileChange(event) {
+    const file = event.target.files[0];
+    if (file) {
+        setFile(file);
+    }
+}
+
+function handleDropZoneClick() {
+    fileInput.click();
+}
+
+function handleDeleteClick(event) {
+    const id = event.currentTarget.getAttribute('data-id');
+    deletePost(id);
+}
+
+dropZone.addEventListener('dragover',  handleDragOver);
+dropZone.addEventListener('dragleave', handleDragLeave);
+dropZone.addEventListener('drop',      handleDrop);
+dropZone.addEventListener('click',     handleDropZoneClick);
+fileInput.addEventListener('change',   handleFileChange);
+
+document.querySelector('#upload-btn').addEventListener('click', openModal);
+document.querySelector('#cancel-btn').addEventListener('click', closeModal);
+document.querySelector('#save-btn').addEventListener('click',   savePost);
+
+loadPosts();
 </script>
 </body>
 </html>

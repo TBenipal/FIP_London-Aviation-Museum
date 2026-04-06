@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header('Location: ../includes/admin/login.php');
+    header('Location: login.php');
     exit;
 }
 ?>
@@ -21,7 +21,7 @@ if (!isset($_SESSION['admin'])) {
             <a href="dashboard.php" style="font-size:0.85rem; opacity:0.6; text-decoration:none;">← Dashboard</a>
             <h1 style="margin:0.25rem 0 0;">Events</h1>
         </div>
-        <button class="btn btn-primary" onclick="openModal()">+ New Event</button>
+        <button class="btn btn-primary" id="new-event-btn">+ New Event</button>
     </div>
 
     <div id="feedback"></div>
@@ -45,7 +45,6 @@ if (!isset($_SESSION['admin'])) {
 <div class="modal-overlay" id="modal">
     <div class="modal">
         <h2 id="modal-title">New Event</h2>
-        <input type="hidden" id="edit-id">
 
         <div class="form-group">
             <label>Title *</label>
@@ -97,123 +96,232 @@ if (!isset($_SESSION['admin'])) {
         </div>
 
         <div class="modal-actions">
-            <button class="btn" onclick="closeModal()" style="background:transparent; border:1px solid #555;">Cancel</button>
-            <button class="btn btn-primary" onclick="saveEvent()">Save Event</button>
+            <button class="btn" id="cancel-btn" style="background:transparent; border:1px solid #555;">Cancel</button>
+            <button class="btn btn-primary" id="save-btn">Save Event</button>
         </div>
     </div>
 </div>
 
 <script>
-(function () {
-    const API = '../includes/events.php';
+const API        = '../includes/events.php';
+const modal      = document.querySelector('#modal');
+const feedbackEl = document.querySelector('#feedback');
+const eventsBody = document.querySelector('#events-body');
 
-    async function loadEvents() {
-        const res  = await fetch(API + '?all=1');
-        const data = await res.json();
-        const body = document.getElementById('events-body');
+let currentEditId = null;
 
-        if (!data.length) {
-            body.innerHTML = '<tr><td colspan="5" style="opacity:0.5;">No events yet.</td></tr>';
-            return;
-        }
+function escapeHtml(str) {
+    // I use split/join to avoid regex per the no-regex rule
+    const s = String(str);
+    return s.split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;');
+}
 
-        body.innerHTML = data.map(e => `
-            <tr>
-                <td><strong>${esc(e.title)}</strong></td>
-                <td>${formatDate(e.event_date)}</td>
-                <td>${esc(e.category || '—')}</td>
-                <td><span class="badge badge-${e.status}">${e.status}</span></td>
-                <td>
-                    <button class="btn btn-sm btn-primary" onclick="editEvent(${e.id})">Edit</button>
-                    <button class="btn btn-sm btn-danger" onclick="deleteEvent(${e.id})" style="margin-left:0.4rem;">Delete</button>
-                </td>
-            </tr>
-        `).join('');
+function formatDate(dateStr) {
+    if (!dateStr) {
+        return '—';
+    }
+    const parts  = dateStr.split('-');
+    const year   = parts[0];
+    const month  = parseInt(parts[1], 10);
+    const day    = parseInt(parts[2], 10);
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months[month - 1] + ' ' + day + ', ' + year;
+}
+
+function showFeedback(msg, isError) {
+    feedbackEl.textContent = msg;
+    if (isError) {
+        feedbackEl.className = 'error';
+    } else {
+        feedbackEl.className = 'success';
+    }
+    setTimeout(clearFeedback, 4000);
+}
+
+function clearFeedback() {
+    feedbackEl.className = '';
+}
+
+function buildEventRow(event) {
+    let category = '—';
+    if (event.category) {
+        category = event.category;
     }
 
-    window.openModal = function (reset = true) {
-        if (reset) {
-            document.getElementById('modal-title').textContent = 'New Event';
-            document.getElementById('edit-id').value = '';
-            ['title','desc','date','time','location','img'].forEach(f => document.getElementById('f-' + f).value = '');
-            document.getElementById('f-category').value = '';
-            document.getElementById('f-status').value = 'draft';
-        }
-        document.getElementById('modal').classList.add('active');
+    return '<tr>' +
+        '<td><strong>' + escapeHtml(event.title) + '</strong></td>' +
+        '<td>' + formatDate(event.event_date) + '</td>' +
+        '<td>' + escapeHtml(category) + '</td>' +
+        '<td><span class="badge badge-' + escapeHtml(event.status) + '">' + escapeHtml(event.status) + '</span></td>' +
+        '<td>' +
+        '<button class="btn btn-sm btn-primary" data-edit-id="' + event.id + '">Edit</button>' +
+        '<button class="btn btn-sm btn-danger" data-delete-id="' + event.id + '" style="margin-left:0.4rem;">Delete</button>' +
+        '</td>' +
+        '</tr>';
+}
+
+function attachTableListeners() {
+    const editBtns   = eventsBody.querySelectorAll('[data-edit-id]');
+    const deleteBtns = eventsBody.querySelectorAll('[data-delete-id]');
+
+    let i = 0;
+    while (i < editBtns.length) {
+        editBtns[i].addEventListener('click', handleEditClick);
+        i++;
+    }
+
+    let j = 0;
+    while (j < deleteBtns.length) {
+        deleteBtns[j].addEventListener('click', handleDeleteClick);
+        j++;
+    }
+}
+
+async function loadEvents() {
+    const res  = await fetch(API + '?all=1');
+    const data = await res.json();
+
+    if (data.error) {
+        eventsBody.innerHTML = '<tr><td colspan="5" style="opacity:0.5;">Could not load events.</td></tr>';
+        return;
+    }
+
+    if (!data.length) {
+        eventsBody.innerHTML = '<tr><td colspan="5" style="opacity:0.5;">No events yet.</td></tr>';
+        return;
+    }
+
+    let rowsHtml = '';
+    let i = 0;
+    while (i < data.length) {
+        rowsHtml += buildEventRow(data[i]);
+        i++;
+    }
+    eventsBody.innerHTML = rowsHtml;
+    attachTableListeners();
+}
+
+function resetModalFields() {
+    document.querySelector('#modal-title').textContent = 'New Event';
+    document.querySelector('#f-title').value           = '';
+    document.querySelector('#f-desc').value            = '';
+    document.querySelector('#f-date').value            = '';
+    document.querySelector('#f-time').value            = '';
+    document.querySelector('#f-location').value        = '';
+    document.querySelector('#f-category').value        = '';
+    document.querySelector('#f-img').value             = '';
+    document.querySelector('#f-status').value          = 'draft';
+    currentEditId = null;
+}
+
+function showModal() {
+    modal.classList.add('active');
+}
+
+function openNewEventModal() {
+    resetModalFields();
+    showModal();
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+}
+
+async function openEditEventModal(id) {
+    const res   = await fetch(API + '?id=' + id);
+    const event = await res.json();
+
+    document.querySelector('#modal-title').textContent = 'Edit Event';
+    document.querySelector('#f-title').value           = event.title;
+    document.querySelector('#f-desc').value            = event.description;
+    document.querySelector('#f-date').value            = event.event_date;
+    document.querySelector('#f-location').value        = event.location || '';
+    document.querySelector('#f-category').value        = event.category || '';
+    document.querySelector('#f-img').value             = event.featured_image_url || '';
+    document.querySelector('#f-status').value          = event.status;
+
+    if (event.event_time) {
+        document.querySelector('#f-time').value = event.event_time;
+    } else {
+        document.querySelector('#f-time').value = '';
+    }
+
+    currentEditId = id;
+    showModal();
+}
+
+async function saveEvent() {
+    const requestBody = {
+        title:              document.querySelector('#f-title').value,
+        description:        document.querySelector('#f-desc').value,
+        event_date:         document.querySelector('#f-date').value,
+        event_time:         document.querySelector('#f-time').value,
+        location:           document.querySelector('#f-location').value,
+        category:           document.querySelector('#f-category').value,
+        featured_image_url: document.querySelector('#f-img').value,
+        status:             document.querySelector('#f-status').value,
     };
 
-    window.closeModal = function () {
-        document.getElementById('modal').classList.remove('active');
-    };
+    let method;
+    let url;
+    if (currentEditId) {
+        method = 'PUT';
+        url    = API + '?id=' + currentEditId;
+    } else {
+        method = 'POST';
+        url    = API;
+    }
 
-    window.editEvent = async function (id) {
-        const res  = await fetch(API + '?id=' + id);
-        const e    = await res.json();
+    const res  = await fetch(url, { method: method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
+    const data = await res.json();
 
-        document.getElementById('modal-title').textContent = 'Edit Event';
-        document.getElementById('edit-id').value  = e.id;
-        document.getElementById('f-title').value  = e.title;
-        document.getElementById('f-desc').value   = e.description;
-        document.getElementById('f-date').value   = e.event_date;
-        document.getElementById('f-time').value   = e.event_time || '';
-        document.getElementById('f-location').value = e.location || '';
-        document.getElementById('f-category').value = e.category || '';
-        document.getElementById('f-img').value    = e.featured_image_url || '';
-        document.getElementById('f-status').value = e.status;
-        openModal(false);
-    };
+    let feedbackMsg;
+    if (data.error) {
+        feedbackMsg = data.error;
+    } else {
+        feedbackMsg = data.message;
+    }
 
-    window.saveEvent = async function () {
-        const id = document.getElementById('edit-id').value;
-        const body = {
-            title:              document.getElementById('f-title').value,
-            description:        document.getElementById('f-desc').value,
-            event_date:         document.getElementById('f-date').value,
-            event_time:         document.getElementById('f-time').value,
-            location:           document.getElementById('f-location').value,
-            category:           document.getElementById('f-category').value,
-            featured_image_url: document.getElementById('f-img').value,
-            status:             document.getElementById('f-status').value,
-        };
+    let isError;
+    if (data.error) {
+        isError = true;
+    } else {
+        isError = false;
+    }
 
-        const method = id ? 'PUT' : 'POST';
-        const url    = id ? API + '?id=' + id : API;
+    showFeedback(feedbackMsg, isError);
 
-        const res  = await fetch(url, { method, headers: {'Content-Type':'application/json'}, body: JSON.stringify(body) });
-        const data = await res.json();
-
-        showFeedback(data.error || data.message, !!data.error);
-        if (!data.error) { closeModal(); loadEvents(); }
-    };
-
-    window.deleteEvent = async function (id) {
-        if (!confirm('Delete this event? This cannot be undone.')) return;
-        const res  = await fetch(API + '?id=' + id, { method: 'DELETE' });
-        const data = await res.json();
-        showFeedback(data.message, false);
+    if (!data.error) {
+        closeModal();
         loadEvents();
-    };
-
-    function showFeedback(msg, isError) {
-        const el = document.getElementById('feedback');
-        el.textContent = msg;
-        el.className   = isError ? 'error' : 'success';
-        setTimeout(() => el.className = '', 4000);
     }
+}
 
-    function formatDate(d) {
-        if (!d) return '—';
-        const [y, m, day] = d.split('-');
-        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        return `${months[+m - 1]} ${+day}, ${y}`;
+async function deleteEvent(id) {
+    if (!confirm('Delete this event? This cannot be undone.')) {
+        return;
     }
-
-    function esc(s) {
-        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    }
-
+    const res  = await fetch(API + '?id=' + id, { method: 'DELETE' });
+    const data = await res.json();
+    showFeedback(data.message, false);
     loadEvents();
-})();
+}
+
+function handleEditClick(event) {
+    const id = event.currentTarget.getAttribute('data-edit-id');
+    openEditEventModal(id);
+}
+
+function handleDeleteClick(event) {
+    const id = event.currentTarget.getAttribute('data-delete-id');
+    deleteEvent(id);
+}
+
+document.querySelector('#new-event-btn').addEventListener('click', openNewEventModal);
+document.querySelector('#cancel-btn').addEventListener('click',    closeModal);
+document.querySelector('#save-btn').addEventListener('click',      saveEvent);
+
+loadEvents();
 </script>
 </body>
 </html>

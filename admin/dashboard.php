@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header('Location: ../includes/admin/login.php');
+    header('Location: login.php');
     exit;
 }
 ?>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin'])) {
                 <h2>Social Media Posts</h2>
                 <p>Upload and manage social media content</p>
             </a>
-            <a href="../contact.php" class="dash-card">
+            <a href="messages.php" class="dash-card">
                 <div class="dash-icon">✉️</div>
                 <h2>Contact Submissions</h2>
                 <p>View messages from the contact form</p>
