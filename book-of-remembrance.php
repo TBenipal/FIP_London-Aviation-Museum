@@ -10,8 +10,9 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <title>Where London Met the Sky</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body data-page="homepage">
+<body data-page="bor">
     <!-- Header -->
     <header id="header-section" class="grid-con">
         <h1 class="hidden">Navbar</h1>
@@ -104,7 +105,8 @@
             <h1 class="hidden">Books</h1>
 
             <div id="books" class="col-span-full">
-                <div id="book-1-section" class="book-section">
+
+                <div id="book-1-section" class="book-section" >
                     <div id="book-1-cover" class="book-cover">
                         <img src="images/Bor/book1_cover.png" alt="In Memory of BCATP Trainees & Instructors Book Cover">
                     </div>
@@ -122,6 +124,17 @@
                         </ul>
                     </div>
                 </div>
+
+                <section id="bor-viewer" class="hidden col-span-full">
+                        <h2 class="sub-headings">Pilot Records</h2>
+                        <input 
+                            type="text" 
+                            id="pilot-search-input" 
+                            placeholder="Search by last name..."
+                            style="margin:20px 0; padding:10px; width:100%; max-width:400px;"
+                        />
+                        <div id="pilot-grid"></div>
+                    </section>
 
                 <div id="book-2-section" class="book-section">
                     <div id="book-2-cover" class="book-cover">
@@ -156,26 +169,29 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
+
         </section>
 
-        <section id="newsletter" class="grid-con">
-            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
-
-            <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Sign up for updates on the museum's opening, new exhibitions, and upcoming events honouring London's aviation heritage.</p>
-                
-                <form id="nl-form-con" class="col-span-full">
-                    <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
-                        <br>
-                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
-                        <br>
-                    </div>
-                    <button id="nl-subscribe">Subscribe</button>
-                </form>
-            </div>
-
+        <section id="newsletter-app">
+            <section id="newsletter" class="grid-con">    
+                <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
+                <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
+                    <p id="nl-text"> Sign up for updates on the museum's opening, new exhibitions, and upcoming eventshonouring London's aviation heritage.</p>
+                    
+                    <form id="nl-form-con" class="col-span-full" @submit.prevent="submitNewsletter">
+                        <div id="nl-form">
+                            <input type="text" placeholder="Name *" class="nl-field" v-model="firstName" required/>
+                            <br />
+                            <input type="email" placeholder="Email *" class="nl-field" v-model="email" required/>
+                            <br />
+                        </div>
+                        <button id="nl-subscribe" :disabled="loading">{{ loading ? 'Subscribing...' : 'Subscribe' }}</button>
+                    </form>
+                    <div v-if="feedbackMessage" :class="feedbackClass" id="nl-feedback" v-html="feedbackMessage"></div>
+                </div>
+            </section>
         </section>
         
     </main>

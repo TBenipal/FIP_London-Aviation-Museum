@@ -6,10 +6,13 @@ import { GSAP } from "./modules/gsap-animation.js";
 import { homepage } from "./modules/homepage.js";
 import { pilot } from "./modules/bob-pilots.js";
 import { bobgallery } from "./modules/bob-gallery.js";
-import './modules/ajax-forms.js';
+import { contactform } from "./modules/ajax-forms.js";
+import { nlform } from "./modules/vue-form.js";
+import { bor } from "./modules/bor.js";
 
 
 burgermenu();
+nlform();
 
 if(document.body.dataset.page === "homepage") {
     videoplayer();
@@ -30,6 +33,14 @@ if(document.body.dataset.page === "bob") {
 
 if(document.body.dataset.page === "exhibition") {
     videoplayer();
+}
+
+if(document.body.dataset.page === "bor") {
+    bor();
+}
+
+if(document.body.dataset.page === "contact") {
+    contactform();
 }
 
 

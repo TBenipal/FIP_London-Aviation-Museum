@@ -880,6 +880,28 @@ ul, li {
   background-color: #0C0E0C;
 }
 
+#header-dashboard {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+#header-events {
+  margin: 0.25rem 0;
+}
+
+#loading {
+  opacity: 0.5;
+}
+
+#save-btn {
+  background-color: #A08B63;
+}
+
+#save-btn:hover, #save-btn:active {
+  background-color: #333223;
+}
+
 .btn-danger {
   background: #8b0000;
   color: #fff;
@@ -1034,7 +1056,6 @@ th {
 
 .admin-info {
   font-size: 1.5rem;
-  font-weight: 400;
 }
 
 .dash-header {
@@ -1043,6 +1064,7 @@ th {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.5rem;
+  font-family: "utairline";
 }
 
 .dash-header h1 {
@@ -1054,6 +1076,17 @@ th {
   display: block;
   width: 30px;
   height: 30px;
+}
+
+.dash-icon {
+  width: 75px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#camera-icon {
+  width: 90px;
+  height: auto;
 }
 
 .logout-btn .admin-icon:hover .cls-2 {
@@ -1105,10 +1138,7 @@ th {
 
 .logout-btn {
   display: block;
-}
-
-.logout-btn:hover {
-  opacity: 1;
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -1180,9 +1210,7 @@ th {
   }
   .logout-btn {
     display: block;
-  }
-  .logout-btn:hover {
-    opacity: 1;
+    transform: scale(1.2);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1235,7 +1263,9 @@ th {
     text-decoration: none;
     color: inherit;
     transition: border-color 0.2s;
-    width: auto;
+    width: 100%;
+    max-width: 350px;
+    font-family: "utairline";
   }
   .dash-card:hover {
     transform: scale(1.1);
@@ -1244,24 +1274,58 @@ th {
   .dash-card h2 {
     font-size: 1.5rem;
     color: white;
-    margin: 10px 0px;
+    margin: 0px 0px;
   }
   .dash-card p {
     color: white;
     font-size: 1rem;
     opacity: 0.65;
-    margin: 0px;
+    margin-top: 5px;
   }
   .dash-icon {
-    font-size: 2.5rem;
+    width: 75px;
+    height: auto;
+    margin: 0 auto;
   }
   .logout-btn {
     display: block;
-  }
-  .logout-btn:hover {
-    opacity: 1;
+    transform: scale(1.3);
   }
 }
+#messages-panel {
+  background-color: #A08B63;
+  color: white;
+}
+
+#admin-messages {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+#header-messages {
+  margin: 0.25rem 0;
+}
+
+#table-content {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+#table-content::-webkit-scrollbar {
+  height: 10px;
+}
+
+#table-content::-webkit-scrollbar-track {
+  background: #333223;
+}
+
+#table-content::-webkit-scrollbar-thumb {
+  background: #0C0E0C;
+  border-radius: 10px;
+}
+
 @keyframes arrow-bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -1375,6 +1439,12 @@ html, body {
   height: auto;
   overflow: hidden;
   background-color: gray;
+  transition: all 0.3s ease;
+}
+
+.hero-sub-img:hover, .hero-sub-img:active {
+  transform: scale(1.01);
+  cursor: pointer;
 }
 
 .hero-sub-img picture, .hero-sub-img img {
@@ -1394,6 +1464,13 @@ html, body {
   font-weight: 600;
   text-align: center;
   color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-sub-heading:hover, .hero-sub-heading:active {
+  text-decoration: underline;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 #our-museum #intro-video {
@@ -1457,6 +1534,26 @@ html, body {
 .plyr--full-ui input[type=range]:hover::-webkit-slider-thumb {
   background: #A08B63 !important;
   transform: rotate(90deg) scale(1.5);
+}
+
+.plyr--full-ui .plyr__captions {
+  display: block;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+
+.plyr__caption {
+  background: rgba(12, 14, 12, 0.8) !important;
+  color: white !important;
+  font-family: "utairline" !important;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.plyr--captions-active .plyr__controls [data-plyr=captions] {
+  color: #A08B63 !important;
 }
 
 .intro-video-container {
@@ -1744,7 +1841,7 @@ html, body {
 #nl-text {
   color: white;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 30px;
   width: 100%;
 }
 
@@ -1775,6 +1872,29 @@ html, body {
 #nl-subscribe:hover {
   background-color: #0C0E0C;
   transition: 0.2s ease-in-out;
+}
+
+#nl-feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  min-width: 300px;
+  max-width: 90%;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  font-family: "utairline";
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: popIn 0.3s ease-out;
+}
+
+.form-success, .form-error {
+  background-color: #0C0E0C;
+  color: #A08B63;
+  border: 3px solid #A08B63;
 }
 
 .intro-video-player {
@@ -4057,6 +4177,7 @@ model-viewer {
     height: 15vw;
     max-height: unset;
     width: 30vw;
+    border: 2px;
   }
 }
 #timeline {
@@ -4155,6 +4276,19 @@ model-viewer {
   flex-direction: column;
   text-align: center;
   height: auto;
+  transition: all 0.3s ease;
+}
+
+#ts1-container:hover, #ts1-container:active,
+#ts4-container:hover, #ts4-container:active {
+  margin: 25px 0px;
+  cursor: pointer;
+}
+
+#ts2-container:hover, #ts2-container:active,
+#ts3-container:hover, #ts3-container:active {
+  margin: 25px 0px;
+  cursor: pointer;
 }
 
 .ts-img {
@@ -4449,6 +4583,7 @@ model-viewer {
     width: 100%;
     max-width: unset;
     margin: 25px auto;
+    margin-top: 50px;
   }
   .ts-container {
     position: relative;
@@ -4457,9 +4592,20 @@ model-viewer {
     text-align: center;
     width: 250px;
     height: auto;
+    transition: all 0.3s ease;
   }
   #ts2-container, #ts4-container {
+    margin-top: -25px;
+  }
+  #ts1-container:hover, #ts1-container:active,
+  #ts3-container:hover, #ts3-container:active {
     margin-top: 25px;
+    cursor: pointer;
+  }
+  #ts2-container:hover, #ts2-container:active,
+  #ts4-container:hover, #ts4-container:active {
+    margin-top: 25px;
+    cursor: pointer;
   }
   .ts-img {
     background-color: gray;
@@ -4764,9 +4910,6 @@ model-viewer {
     color: white;
     padding: 10px 10px 20px 10px;
   }
-  #ts2-container, #ts4-container {
-    margin-top: 50px;
-  }
   #detail-timeline {
     position: relative;
     width: 100%;
@@ -4940,26 +5083,25 @@ model-viewer {
     text-align: right;
   }
 }
-#contact-section {
-  width: 90%;
-  padding: 25px;
+#contact-content {
+  display: flex;
+  flex-direction: column;
   background-color: #A08B63;
-  margin-top: 25px;
-  margin-bottom: 75px;
+  padding: 25px;
+  width: 100%;
 }
 
 .contact-header {
-  font-size: 48px;
+  font-size: 3rem;
   color: #333223;
 }
 
 #contact-text {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.2rem;
   margin: 10px 0px;
   color: #333223;
   font-family: "utairline";
-  line-height: 25px;
+  line-height: 30px;
 }
 
 #contact-form {
@@ -4987,15 +5129,18 @@ model-viewer {
 }
 
 #submit-btn {
+  align-self: flex-end;
   margin: 0px;
   font-size: 24px;
   font-family: "utairline";
   font-weight: 600;
   padding: 10px 0px;
+  width: 200px;
   border: none;
   cursor: pointer;
   background-color: white;
   color: black;
+  margin-top: 10px;
 }
 
 #submit-btn:hover, #submit-btn:active {
@@ -5056,23 +5201,71 @@ model-viewer {
   line-height: normal;
 }
 
+@media screen and (min-width: 768px) {
+  #contact-section {
+    padding: 25px;
+    background-color: #333223;
+  }
+  #contact-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #A08B63;
+    padding: 50px;
+    width: 100%;
+  }
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .field {
+    height: 50px;
+    margin: 15px 0px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    color: black;
+    background-color: white;
+  }
+  #message {
+    height: 215px;
+    width: 100%;
+  }
+  #submit-btn {
+    align-self: flex-end;
+    margin: 0px;
+    font-size: 24px;
+    font-family: "utairline";
+    font-weight: 600;
+    padding: 10px 0px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+  }
+}
 @media screen and (min-width: 1200px) {
   #contact-section {
-    width: 90%;
+    padding: 75px;
+  }
+  #contact-content {
     padding: 50px;
-    background-color: #A08B63;
-    margin-top: 75px;
-    margin-bottom: 75px;
   }
   .contact-header {
-    font-size: 48px;
+    font-size: 3rem;
     color: #333223;
   }
   #contact-text {
     justify-self: center;
-    font-size: 24px;
+    font-size: 1.3rem;
     margin: 10px 0px;
     color: #333223;
+    line-height: 30px;
   }
   #contact-form {
     display: flex;
@@ -5104,6 +5297,7 @@ model-viewer {
     cursor: pointer;
     background-color: white;
     color: black;
+    margin-top: 10px;
   }
   #submit-btn:hover, #submit-btn:active {
     color: #A08B63;
@@ -5937,6 +6131,227 @@ model-viewer {
   list-style-type: circle;
   color: white;
   font-size: 1.2rem;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+#bor-viewer {
+  background-color: #0b0b0b;
+  padding: 60px 20px;
+  margin-top: 60px;
+  text-align: center;
+  position: relative;
+}
+
+#bor-viewer .sub-headings {
+  color: #e8e4dc;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+#pilot-search-input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px 16px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 25px;
+  outline: none;
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+#pilot-search-input:focus {
+  border-color: #888;
+}
+
+#pilot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pilot-card {
+  text-decoration: none;
+  color: #e8e4dc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.pilot-card:hover {
+  transform: scale(1.05);
+}
+
+.pilot-card-img {
+  width: 180px;
+  height: 240px;
+  background: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pilot-card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pilot-placeholder {
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+.pilot-card-body {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.pilot-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pilot-status {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+#pilot-counter {
+  background: #5a5a5a;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  display: inline-block;
+  margin: 20px auto;
+  font-size: 0.9rem;
+}
+
+.viewer-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.viewer-btn {
+  background: none;
+  border: none;
+  color: #e8e4dc;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.viewer-btn:hover {
+  transform: scale(1.2);
+}
+
+#profile-section {
+  max-width: 100%;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.back-link {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+.profile-photo {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  background: #222;
+}
+
+.profile-placeholder {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+  font-size: 5rem;
+}
+
+.profile-name {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0 0 0.5rem;
+}
+
+.profile-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin: 1.5rem 0 0.3rem;
+}
+
+.profile-value {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.profile-notes {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.75;
+  margin-top: 0.3rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.status-Yes {
+  background: #1a4a1a;
+  color: #6fcf6f;
+}
+
+.status-No {
+  background: #2a2a2a;
+  color: #888;
+}
+
+.status-KindOf {
+  background: #2a2a3a;
+  color: #8888cf;
+}
+
+.status-Maybe {
+  background: #3a3a1a;
+  color: #cfcf6f;
+}
+
+.status-Additional {
+  background: #1a3a4a;
+  color: #6fcfcf;
 }
 
 @media screen and (min-width: 768px) {

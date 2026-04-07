@@ -34,25 +34,6 @@ $displayName = $pilot['full_name'] ?: ($pilot['last_name'] . ($pilot['initials']
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <title><?php echo htmlspecialchars($displayName); ?> — Book of Remembrance</title>
-    <style>
-        #profile-section { max-width: 860px; margin: 4rem auto; padding: 0 1.5rem; }
-        .back-link { font-size: 0.85rem; opacity: 0.6; text-decoration: none; display: inline-block; margin-bottom: 2rem; }
-        .back-link:hover { opacity: 1; }
-        .profile-grid { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; }
-        @media (max-width: 640px) { .profile-grid { grid-template-columns: 1fr; } }
-        .profile-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; background: #222; }
-        .profile-placeholder { width: 100%; aspect-ratio: 3/4; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; opacity: 0.2; font-size: 5rem; }
-        .profile-name { font-size: clamp(1.5rem, 4vw, 2.2rem); margin: 0 0 0.5rem; }
-        .profile-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin: 1.5rem 0 0.3rem; }
-        .profile-value { font-size: 0.95rem; margin: 0; }
-        .profile-notes { font-size: 0.9rem; line-height: 1.7; opacity: 0.75; margin-top: 0.3rem; }
-        .status-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; margin-top: 0.5rem; }
-        .status-Yes      { background: #1a4a1a; color: #6fcf6f; }
-        .status-No       { background: #2a2a2a; color: #888; }
-        .status-KindOf   { background: #2a2a3a; color: #8888cf; }
-        .status-Maybe    { background: #3a3a1a; color: #cfcf6f; }
-        .status-Additional { background: #1a3a4a; color: #6fcfcf; }
-    </style>
 </head>
 <body data-page="bor-profile">
 
@@ -102,48 +83,50 @@ $displayName = $pilot['full_name'] ?: ($pilot['last_name'] . ($pilot['initials']
         </div>
     </header>
 
-    <div id="profile-section">
-        <a href="book-of-remembrance.php" class="back-link">← Back to Book of Remembrance</a>
+    <section id="profile-section" class="grid-con">
+        <div id="ps-content" class="col-span-full">
+            <a href="book-of-remembrance.php" class="back-link">← Back to Book of Remembrance</a>
 
-        <div class="profile-grid">
-            <div>
-                <?php if ($pilot['photo_path']): ?>
-                    <img class="profile-photo" src="<?php echo htmlspecialchars($pilot['photo_path']); ?>" alt="<?php echo htmlspecialchars($displayName); ?>">
-                <?php else: ?>
-                    <div class="profile-placeholder">✦</div>
-                <?php endif; ?>
-            </div>
+            <div class="profile-grid">
+                <div>
+                    <?php if ($pilot['photo_path']): ?>
+                        <img class="profile-photo" src="<?php echo htmlspecialchars($pilot['photo_path']); ?>" alt="<?php echo htmlspecialchars($displayName); ?>">
+                    <?php else: ?>
+                        <div class="profile-placeholder">✦</div>
+                    <?php endif; ?>
+                </div>
 
-            <div>
-                <h1 class="profile-name"><?php echo htmlspecialchars($displayName); ?></h1>
+                <div>
+                    <h1 class="profile-name"><?php echo htmlspecialchars($displayName); ?></h1>
 
-                <?php
-                $statusClass = 'status-' . str_replace(' ', '', $pilot['in_book']);
-                ?>
-                <span class="status-badge <?php echo $statusClass; ?>">
-                    <?php echo htmlspecialchars($pilot['in_book']); ?>
-                </span>
+                    <?php
+                    $statusClass = 'status-' . str_replace(' ', '', $pilot['in_book']);
+                    ?>
+                    <span class="status-badge <?php echo $statusClass; ?>">
+                        <?php echo htmlspecialchars($pilot['in_book']); ?>
+                    </span>
 
-                <?php if ($pilot['initials']): ?>
-                    <p class="profile-label">Initials</p>
-                    <p class="profile-value"><?php echo htmlspecialchars($pilot['initials']); ?></p>
-                <?php endif; ?>
+                    <?php if ($pilot['initials']): ?>
+                        <p class="profile-label">Initials</p>
+                        <p class="profile-value"><?php echo htmlspecialchars($pilot['initials']); ?></p>
+                    <?php endif; ?>
 
-                <?php if ($pilot['full_name']): ?>
-                    <p class="profile-label">Full Name</p>
-                    <p class="profile-value"><?php echo htmlspecialchars($pilot['full_name']); ?></p>
-                <?php endif; ?>
+                    <?php if ($pilot['full_name']): ?>
+                        <p class="profile-label">Full Name</p>
+                        <p class="profile-value"><?php echo htmlspecialchars($pilot['full_name']); ?></p>
+                    <?php endif; ?>
 
-                <?php if ($pilot['notes']): ?>
-                    <p class="profile-label">Notes</p>
-                    <p class="profile-notes"><?php echo htmlspecialchars($pilot['notes']); ?></p>
-                <?php endif; ?>
+                    <?php if ($pilot['notes']): ?>
+                        <p class="profile-label">Notes</p>
+                        <p class="profile-notes"><?php echo htmlspecialchars($pilot['notes']); ?></p>
+                    <?php endif; ?>
 
-                <p class="profile-label">Record Added</p>
-                <p class="profile-value"><?php echo date('F j, Y', strtotime($pilot['created_at'])); ?></p>
+                    <p class="profile-label">Record Added</p>
+                    <p class="profile-value"><?php echo date('F j, Y', strtotime($pilot['created_at'])); ?></p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>

@@ -10,6 +10,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <title>Exhibition</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body data-page="exhibition">
     <!-- Header -->
@@ -244,23 +245,24 @@
             </div>
         </section>
 
-        <section id="newsletter" class="grid-con">
-            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
-
-            <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Sign up for updates on the museum's opening, new exhibitions, and upcoming events honouring London's aviation heritage.</p>
-                
-                <form id="nl-form-con" class="col-span-full">
-                    <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
-                        <br>
-                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
-                        <br>
-                    </div>
-                    <button id="nl-subscribe">Subscribe</button>
-                </form>
-            </div>
-
+        <section id="newsletter-app">
+            <section id="newsletter" class="grid-con">    
+                <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
+                <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
+                    <p id="nl-text"> Sign up for updates on the museum's opening, new exhibitions, and upcoming eventshonouring London's aviation heritage.</p>
+                    
+                    <form id="nl-form-con" class="col-span-full" @submit.prevent="submitNewsletter">
+                        <div id="nl-form">
+                            <input type="text" placeholder="Name *" class="nl-field" v-model="firstName" required/>
+                            <br />
+                            <input type="email" placeholder="Email *" class="nl-field" v-model="email" required/>
+                            <br />
+                        </div>
+                        <button id="nl-subscribe" :disabled="loading">{{ loading ? 'Subscribing...' : 'Subscribe' }}</button>
+                    </form>
+                    <div v-if="feedbackMessage" :class="feedbackClass" id="nl-feedback" v-html="feedbackMessage"></div>
+                </div>
+            </section>
         </section>
         
     </main>

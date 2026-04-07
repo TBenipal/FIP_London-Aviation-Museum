@@ -78,7 +78,7 @@ if (!isset($_SESSION['admin'])) {
         </div>
 
         <div class="modal-actions">
-            <button class="btn" id="cancel-btn" style="background:transparent; border:1px solid #555;">Cancel</button>
+            <button class="btn" id="cancel-btn">Cancel</button>
             <button class="btn btn-primary" id="save-btn">Upload Post</button>
         </div>
     </div>
