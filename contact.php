@@ -74,56 +74,38 @@
 
         <!--Contact-->
         <section id="contact-section" class="grid-con">
-            <h2 class="contact-header col-span-full l-col-start-1 l-col-end-13">Contact!</h2>
-            <p id="contact-text" class="col-span-full l-col-start-1 l-col-end-13">Get in touch with 427 Wing's Museum, located in the historic 1943 airmen’s canteen at London International Airport. Whether you have questions about visiting, supporting the museum, volunteering, or learning more about the British Commonwealth Air Training Plan and the nearly 250 local men who served with the RCAF during the Second World War, we’re here to help.</p>
-            
-            <?php
-                if (isset($_GET['msg'])) {
-                    echo '
-                    <div id="thanks-container">
-                        <div id="thanks">
-                            <h3>Thank you for<br>contacting</h3>
-                            <a id="explore-btn" href="index.php#project-1">Explore!</a>
-                            <p>' . htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8') . '</p>
-                        </div>
-                    </div>'; 
-                } ?>
-
-            <!--Form-->
-           <form id="contact-form" class="col-span-full" method="post" action="includes/send.php">
-                <div id="form">
-                    <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required aria-label="First Name">
-                    <br>
-                    <input type="text" placeholder="Last Name *" class="field" name="last_name" id="last_name" required aria-label="Last Name">
-                    <br>
-                    <input type="email" placeholder="Email *" class="field" name="email" id="email" required aria-label="Email Address">
-                    <br>
-                </div>
-                <textarea id="message" placeholder="Message *" class="field" name="message" required aria-label="Your Message"></textarea>
-            </form>
-
-            <button id="submit-btn" form="contact-form" type="submit" class="col-start-2 col-end-4 m-col-start-7 m-col-end-9 l-col-start-11 l-col-end-13" aria-label="Submit contact form">Submit !</button>
-        </section>
-
-        <section id="newsletter" class="grid-con">
-            <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
-
-            <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Sign up for updates on the museum's opening, new exhibitions, and upcoming events honouring London's aviation heritage.</p>
+            <div id="contact-content" class="col-span-full l-col-start-1 l-col-end-13">
+                <h2 class="contact-header">Contact!</h2>
+                <p id="contact-text">Get in touch with 427 Wing's Museum, located in the historic 1943 airmen’s canteen at London International Airport. Whether you have questions about visiting, supporting the museum, volunteering, or learning more about the British Commonwealth Air Training Plan and the nearly 250 local men who served with the RCAF during the Second World War, we’re here to help.</p>
                 
-                <form id="nl-form-con" class="col-span-full">
-                    <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
+                <?php
+                    if (isset($_GET['msg'])) {
+                        echo '
+                        <div id="thanks-container">
+                            <div id="thanks">
+                                <h3>Thank you for<br>contacting</h3>
+                                <a id="explore-btn" href="index.php#project-1">Explore!</a>
+                                <p>' . htmlspecialchars($_GET['msg'], ENT_QUOTES, 'UTF-8') . '</p>
+                            </div>
+                        </div>'; 
+                    } ?>
+
+                <!--Form-->
+            <form id="contact-form" method="post" action="includes/send.php">
+                    <div id="form">
+                        <input type="text" placeholder="Name *" class="field" name="first_name" id="first_name" required aria-label="First Name">
                         <br>
-                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
+                        <input type="text" placeholder="Last Name *" class="field" name="last_name" id="last_name" required aria-label="Last Name">
+                        <br>
+                        <input type="email" placeholder="Email *" class="field" name="email" id="email" required aria-label="Email Address">
                         <br>
                     </div>
-                    <button id="nl-subscribe">Subscribe</button>
+                    <textarea id="message" placeholder="Message *" class="field" name="message" required aria-label="Your Message"></textarea>
                 </form>
-            </div>
 
+                <button id="submit-btn" form="contact-form" type="submit" aria-label="Submit contact form">Submit !</button>
+            </div>
         </section>
-        
     </main>
 
 <footer id="footer-section" class="grid-con">

@@ -35,6 +35,29 @@
     background-color: a.$primary-color;
 }
 
+#header-dashboard {
+    font-size:0.85rem; 
+    opacity:0.6; 
+    text-decoration:none;
+}
+
+#header-events {
+    margin: 0.25rem 0;
+}
+
+#loading {
+    opacity:0.5;
+}
+
+#save-btn {
+    background-color: a.$accent-color;
+}
+
+#save-btn:hover, #save-btn:active {
+    background-color: a.$secondary-color;
+}
+
+
 .btn-danger { 
     background: #8b0000; 
     color: #fff; 

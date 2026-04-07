@@ -15,28 +15,32 @@ if (!isset($_SESSION['admin'])) {
     <link href="../css/grid.css" rel="stylesheet">
 </head>
 <body id="messages-panel">
-<div id="admin-messages">
-    <div class="page-header">
-        <div>
-            <a href="dashboard.php" style="font-size:0.85rem; opacity:0.6; text-decoration:none;">← Dashboard</a>
-            <h1 style="margin:0.25rem 0 0;">Contact Messages</h1>
-        </div>
-    </div>
+    <section id="admin-messages" class="grid-con">
+        <div class="col-span-full">
+            <div class="page-header">
+                <div>
+                    <a id="header-dashboard" href="dashboard.php">← Dashboard</a>
+                    <h1 id="header-messages">Contact Messages</h1>
+                </div>
+            </div>
 
-    <table id="messages-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Message</th>
-                <th>Received</th>
-            </tr>
-        </thead>
-        <tbody id="messages-body">
-            <tr><td colspan="4" style="opacity:0.5;">Loading...</td></tr>
-        </tbody>
-    </table>
-</div>
+            <div id="table-content">
+                <table id="messages-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Received</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messages-body">
+                        <tr><td id="loading" colspan="4">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
 <script>
 const API          = '../includes/messages.php';

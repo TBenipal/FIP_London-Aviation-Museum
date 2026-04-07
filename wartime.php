@@ -10,6 +10,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body data-page="wartime">
     <!-- Header -->
@@ -209,7 +210,7 @@
                         <img src="images/Wartime/des-detail-img-2.jpg" alt="Detail Timeline Gallery Image 2">
                     </picture>
                 </div>
-                <div class="dt-img">
+                <div id="dt-img-last" class="dt-img">
                     <picture>
                         <source srcset="images/Wartime/des-detail-img-3.jpg" media="(max-width: 767px)">
                         <source srcset="images/Wartime/des-detail-img-3.jpg" media="(max-width: 1199px)">
@@ -314,35 +315,28 @@
 
             </section>
         </section>
-
-        <!-- <section id="timeline-animation" class="grid-con">
-            <div id="timeline" class="col-span-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="370" height="873" viewBox="0 0 370 873" fill="none">
-                    <path id="timeline-path" d="M184 0 L184 600" fill="none" stroke="#A08B63" stroke-width="68"/>                    
-                    <path class="plane" d="M184.073 552.627L197.086 575.997L248.748 575.779C250.379 579.854 246.366 588.734 246.366 588.734C235.943 602.514 201.28 617.13 201.28 617.13L212.337 753.551L348.014 761.083C370.63 764.216 369.084 780.306 369.084 780.306C369.138 793.251 345.762 797.401 345.762 797.401L210.975 813.232L196.871 852.665L229.067 852.884L229.067 859.296L194.322 859.389C194.322 859.389 187.873 871.409 184.746 871.409C181.619 871.409 175.681 859.468 175.681 859.468L140.048 859.618L140.02 852.884L173.324 852.743L157.474 813.45L24.488 798.759C24.488 798.759 1.04575 794.807 0.991024 781.862C0.991024 781.862 -0.691144 765.786 21.8977 762.462L157.474 753.786L167.401 617.277C167.401 617.277 132.589 602.955 122.077 589.267C122.077 589.267 117.989 580.425 119.586 576.333L171.224 576.114L184.073 552.627Z" fill="#A08B63"/>
-                </svg>
-            </div>
-        </section> -->
     
 
-        <section id="newsletter" class="grid-con">
+    <section id="newsletter-app">
+        <section id="newsletter" class="grid-con">    
             <h1 id="nl-header" class="sub-headings col-span-full l-col-start-1 l-col-end-13">Stay Informed!</h1>
-
             <div id="nl-content" class="col-span-full l-col-start-1 l-col-end-13">
-                <p id="nl-text">Sign up for updates on the museum's opening, new exhibitions, and upcoming events honouring London's aviation heritage.</p>
+                <p id="nl-text"> Sign up for updates on the museum's opening, new exhibitions, and upcoming eventshonouring London's aviation heritage.</p>
                 
-                <form id="nl-form-con" class="col-span-full">
+                <form id="nl-form-con" class="col-span-full" @submit.prevent="submitNewsletter">
                     <div id="nl-form">
-                        <input type="text" placeholder="Name *" class="nl-field" name="first_name" id="first_name" required>
-                        <br>
-                        <input type="email" placeholder="Email *" class="nl-field" name="email" id="email" required>
-                        <br>
+                        <input type="text" placeholder="Name *" class="nl-field" v-model="firstName" required/>
+                        <br />
+                        <input type="email" placeholder="Email *" class="nl-field" v-model="email" required/>
+                        <br />
                     </div>
-                    <button id="nl-subscribe">Subscribe</button>
+                    <button id="nl-subscribe" :disabled="loading">{{ loading ? 'Subscribing...' : 'Subscribe' }}</button>
                 </form>
+                <div v-if="feedbackMessage" :class="feedbackClass" id="nl-feedback" v-html="feedbackMessage"></div>
             </div>
-
         </section>
+    </section>
+    
         
     </main>
 

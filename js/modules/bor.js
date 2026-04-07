@@ -2,6 +2,11 @@ export function bor() {
     const API = 'includes/bor.php';
     let allPilots = [];
 
+    // ✅ ADD THIS
+    const viewer = document.querySelector('#bor-viewer');
+    const bookTriggers = document.querySelectorAll('.book-cover, .book-heading');
+    let loaded = false;
+
     async function loadPilots() {
         const res = await fetch(API);
         allPilots = await res.json();
@@ -9,7 +14,11 @@ export function bor() {
     }
 
     const searchInput = document.querySelector('#pilot-search-input');
-    searchInput.addEventListener('input', handleSearch);
+
+    // ✅ FIX (safe check)
+    if (searchInput) {
+        searchInput.addEventListener('input', handleSearch);
+    }
 
     function handleSearch() {
         const query = searchInput.value.toLowerCase().trim();
@@ -48,5 +57,22 @@ export function bor() {
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
-    loadPilots();
+    bookTriggers.forEach(el => {
+        el.addEventListener('click', async () => {
+
+            if (!viewer) return;
+
+            viewer.classList.remove('hidden');
+
+            if (!loaded) {
+                await loadPilots();
+                loaded = true;
+            }
+
+            viewer.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+loadPilots();
+
 }

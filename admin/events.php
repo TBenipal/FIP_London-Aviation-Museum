@@ -14,12 +14,12 @@ if (!isset($_SESSION['admin'])) {
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/grid.css" rel="stylesheet">
 </head>
-<body id="event-panel">
+<body data-page="events" id="event-panel">
 <div id="admin-events">
     <div class="page-header">
         <div>
-            <a href="dashboard.php" style="font-size:0.85rem; opacity:0.6; text-decoration:none;">← Dashboard</a>
-            <h1 style="margin:0.25rem 0 0;">Events</h1>
+            <a id="header-dashboard" href="dashboard.php">← Dashboard</a>
+            <h1 id="header-events">Events</h1>
         </div>
         <button class="btn btn-primary" id="new-event-btn">+ New Event</button>
     </div>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['admin'])) {
             </tr>
         </thead>
         <tbody id="events-body">
-            <tr><td colspan="5" style="opacity:0.5;">Loading...</td></tr>
+            <tr><td id="loading" colspan="5">Loading...</td></tr>
         </tbody>
     </table>
 </div>
@@ -96,7 +96,7 @@ if (!isset($_SESSION['admin'])) {
         </div>
 
         <div class="modal-actions">
-            <button class="btn" id="cancel-btn" style="background:transparent; border:1px solid #555;">Cancel</button>
+            <button class="btn" id="cancel-btn">Cancel</button>
             <button class="btn btn-primary" id="save-btn">Save Event</button>
         </div>
     </div>
