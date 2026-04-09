@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body data-page="bor">
-    <!-- Header -->
+<!-- Header -->
     <header id="header-section" class="grid-con">
         <h1 class="hidden">Navbar</h1>
 
@@ -31,11 +31,20 @@
                 </button>
 
             </div>
-
             <nav id="sidebar">
                 <ul>
                     <li class="nav-item"><a href="index.php">Home</a></li>
-                    <li class="nav-item"><a href="battle-of-britain.php" class="active">Battle of Britian</a></li>
+                    <li class="nav-item dropdown">
+                        <div class="select active">
+                            <span class="selected active">Battle of Britain</span>
+                            <div class="caret"></div>
+                        </div>
+
+                        <ul class="menu">
+                            <li class="active"><a href="battle-of-britain.php">Battle of Britain</a></li>
+                            <li><a href="book-of-remembrance.php">Book of Remembrance</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
                     <li class="nav-item"><a href="contact.php">Contact</a></li>
@@ -49,7 +58,7 @@
                                 </svg>
                             </a>
                         <?php else: ?>
-                            <a class="icon-link" href="includes/admin/login.php">
+                            <a class="icon-link" href="admin/login.php">
                                 <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 600 700">
                                     <g data-name="Layer 1">
                                         <g>
