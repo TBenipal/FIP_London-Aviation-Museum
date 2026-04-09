@@ -31,7 +31,17 @@
             <nav id="sidebar">
                 <ul>
                     <li class="nav-item"><a href="index.php">Home</a></li>
-                    <li class="nav-item"><a href="battle-of-britain.php">Battle of Britian</a></li>
+                    <li class="nav-item dropdown">
+                        <div class="select">
+                            <span class="selected">Battle of Britain</span>
+                            <div class="caret"></div>
+                        </div>
+
+                        <ul class="menu">
+                            <li class="active"><a href="battle-of-britain.php">Battle of Britain</a></li>
+                            <li><a href="book-of-remembrance.php">Book of Remembrance</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="wartime.php">Wartime</a></li>
                     <li class="nav-item"><a href="exhibition.php">Exhibition</a></li>
                     <li class="nav-item"><a href="contact.php" class="active">Contact</a></li>
