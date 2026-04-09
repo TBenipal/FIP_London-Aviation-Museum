@@ -6,8 +6,6 @@
   box-sizing: border-box;
 }
 
-/* Header */
-
 .hidden {
   display: none;
 }
@@ -239,34 +237,14 @@ ul, li {
   cursor: pointer;
 }
 
-.selected::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background-color: a.$accent-color;
-  transition: width 0.3s ease;
-}
-
 .selected:hover {
   color: a.$accent-color;
-}
-
-.selected:hover::after {
-  width: 100%;
-  left: 0;
-  right: 0;
 }
 
 .select.active .selected {
   color: a.$accent-color;
 }
 
-.selected:hover::after {
-  width: 100%;
-}
 
 .selected.active {
   color: a.$accent-color;
@@ -347,7 +325,7 @@ ul, li {
   }
 
   .nav-item a:hover::after {
-    transform: scaleX(1);  /* 👈 animate smoothly */
+    transform: scaleX(1);
   }
 
   .nav-item .admin-icon {
